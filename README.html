@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DS1300: A Practical Introduction to Data Science &#8212; DS 1300</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">DS 1300</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_introduction.html">
+   DS1300: A Practical Introduction to Data Science
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_data_science_overview.html">
+   High-performance Computing and Using ManeFrame II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_the_practice_of_data_science.html">
+   GitHub, Jupyter, and Python Overview
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/README.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contact-information">
+   Contact Information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dates-and-times">
+   Dates and Times
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-overview">
+   Course Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-outcomes">
+   Learning Outcomes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#university-requirement-fulfillment">
+   University Requirement Fulfillment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uc-requirement-matriculation-fall-2016-to-spring-2020">
+     UC Requirement (matriculation Fall 2016 to Spring 2020)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cc-requirement-for-students-entering-fall-2020-or-later">
+     CC Requirement (for students entering Fall 2020 or later)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#required-materials">
+   Required Materials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-structure">
+   Course Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation">
+   Evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syllabus">
+   Syllabus
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#semester-long-project">
+     Semester-Long Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#university-policies">
+     University Policies
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ds1300-a-practical-introduction-to-data-science">
+<h1>DS1300: A Practical Introduction to Data Science<a class="headerlink" href="#ds1300-a-practical-introduction-to-data-science" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="contact-information">
+<h2>Contact Information<a class="headerlink" href="#contact-information" title="Permalink to this headline">¶</a></h2>
+<div class="longtabu">
+<p>to Instructor &amp; Email &amp; Phone &amp; Office &amp; Office Hours<br />
+Dr. Robert Kalescky &amp; <a class="reference external" href="mailto:rkalescky&#37;&#52;&#48;smu&#46;edu">rkalescky<span>&#64;</span>smu<span>&#46;</span>edu</a> &amp; 8-3070 &amp; Heroy Hall 303 &amp;
+TBD<br />
+Dr. Eric Godat &amp; <a class="reference external" href="mailto:egodat&#37;&#52;&#48;smu&#46;edu">egodat<span>&#64;</span>smu<span>&#46;</span>edu</a> &amp; 8-4599 &amp; Ford Hall 119 &amp; TBD</p>
+</div>
+<p>Students will be encouraged to use the course Slack channel for
+communication with instructors and their fellow classmates. This will be
+especially important when communicating with group members while working
+on the semester project.</p>
+<p>Class information and assignments will be posted in Canvas.</p>
+</div>
+<div class="section" id="dates-and-times">
+<h2>Dates and Times<a class="headerlink" href="#dates-and-times" title="Permalink to this headline">¶</a></h2>
+<p>May Term, May 13 through 27<br />
+9:30 AM - 12:00 PM, 1:00 PM - 3:00 PM</p>
+</div>
+<div class="section" id="course-overview">
+<h2>Course Overview<a class="headerlink" href="#course-overview" title="Permalink to this headline">¶</a></h2>
+<p>We live in a world driven by computers, algorithms, and data. This
+course seeks to equip students with the basic knowledge and skills to
+not only understand but to use the tools needed to model and make
+decisions about the world around them. Students will be introduced to
+basic programming in Python, high-performance computing using ManeFrame
+II, and data science. This course is not a programming course, though
+programming will be required to complete assignments. Prior knowledge of
+programming is neither expected nor required.</p>
+</div>
+<div class="section" id="learning-outcomes">
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">¶</a></h2>
+<p>At the end of the course you will be able to:</p>
+<ul class="simple">
+<li><p>Identify applications of data science in today’s world</p></li>
+<li><p>Identify the privacy and ethical issues associated with the use of
+data</p></li>
+<li><p>Clearly and concisely communicate data analyses via visualization
+and meaningful metrics</p></li>
+<li><p>Have had exposure to computational thinking, programming, and
+high-performance computing</p></li>
+</ul>
+</div>
+<div class="section" id="university-requirement-fulfillment">
+<h2>University Requirement Fulfillment<a class="headerlink" href="#university-requirement-fulfillment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="uc-requirement-matriculation-fall-2016-to-spring-2020">
+<h3>UC Requirement (matriculation Fall 2016 to Spring 2020)<a class="headerlink" href="#uc-requirement-matriculation-fall-2016-to-spring-2020" title="Permalink to this headline">¶</a></h3>
+<p>This course meets a UC Breadth requirement for Technology and
+Mathematics</p>
+<p>1b<br />
+Students will demonstrate an ability to analyze complex mathematical
+problems that arise in a particular discipline or area</p>
+<p>1c<br />
+Students will demonstrate an understanding of how particular
+technologies work</p>
+</div>
+<div class="section" id="cc-requirement-for-students-entering-fall-2020-or-later">
+<h3>CC Requirement (for students entering Fall 2020 or later)<a class="headerlink" href="#cc-requirement-for-students-entering-fall-2020-or-later" title="Permalink to this headline">¶</a></h3>
+<p>This course fulfills the CC Breadth requirement for Technological
+Advances and Society (TAS) by introducing students to the technology
+used in computational and data sciences, how this technology affects
+society by highlighting its use in different domains, and discussing
+issues like privacy and ownership of information.</p>
+</div>
+</div>
+<div class="section" id="required-materials">
+<h2>Required Materials<a class="headerlink" href="#required-materials" title="Permalink to this headline">¶</a></h2>
+<p>For this course, you will need a computer that has internet access. All
+programming will be done on through SMU’s OnDemand Portal so the
+specifications of your machine are minimal as long as you can connect to
+an internet browser.</p>
+<p>The <u>required</u> reading for this class will be assigned out of:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.hannahfry.co.uk/books">Hello World: Being Human in the Age of
+Algorithms</a> by Hannah Fry</p></li>
+</ul>
+<p>Suggested readings will come from an assortment of sources including:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mitpress.mit.edu/books/introduction-computation-and-programming-using-python-third-edition">Introduction to Computation and Programming using
+Python</a>
+by John V. Guttag</p></li>
+</ul>
+</div>
+<div class="section" id="course-structure">
+<h2>Course Structure<a class="headerlink" href="#course-structure" title="Permalink to this headline">¶</a></h2>
+<p>This course will be lecture based with in-class activities designed to
+demonstrate and reinforce concepts. Given the accelerated nature of
+short semester courses, a given day will be divided into lecture, coding
+demonstrations, hands-on programming exercises, and collaborative work
+sessions. Students will be expected to complete homework assignments
+after class, though these assignments will follow closely from what is
+covered in class. Participation in class is expected and will be
+critical to student success.</p>
+<p>This course is not a programming course, though programming will be
+required to complete assignments. Prior knowledge of programming is
+neither expected nor required. The instructors will equip students with
+the skills and tools needed to complete each assignment and be available
+to provide programming support should need arise.</p>
+<p>The course also contains a group project that will span the length of
+the semester. Students will be divided into teams by the instructors.
+These groups will work together for the duration of the semester. Group
+work will be evaluated as a sum of individual efforts and, as such, each
+member is expected to contribute equally to the success of the project.
+Issues within teams should be brought to the instructors attention
+immediately so they can be resolved quickly.</p>
+</div>
+<div class="section" id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
+<p>In-class coding assignments, homework sets, and a semester-long group
+project will be used to evaluate understanding and proficiency with the
+material.</p>
+<div class="longtabu">
+<p>ll Category &amp; Percentage<br />
+In-class Participation &amp; 20%<br />
+Homework Problems &amp; 40%<br />
+Semester Project &amp; 40%</p>
+</div>
+<p>The semester project will culminate in a group presentation to the class
+during the time designated by the University Registrar for the final
+exam. This presentation will involve a question and answer session from
+peer students, attendees, and the instructors. Students will be graded
+on their presentation skills, content, ability to answer questions, and
+engagement in other student presentations.</p>
+</div>
+<div class="section" id="syllabus">
+<h2>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this headline">¶</a></h2>
+<p>Each calendar date on the syllabus corresponds to 4 lecture hours, in
+line with the structure of a May Term semester.</p>
+<div class="longtabu">
+<p>to Date &amp; Topics &amp; Assignments/Readings<br />
+May 13 &amp; The Practice of Data Science</p>
+<ul class="simple">
+<li><p>Data Science Overview</p></li>
+<li><p>High-performance Computing and Using ManeFrame II</p></li>
+<li><p>GitHub, Jupyter, and Python Overview</p></li>
+</ul>
+<p>&amp;<br />
+May 14 &amp; Data Generation: What is data?</p>
+<ul class="simple">
+<li><p>Numbers as Data</p></li>
+<li><p>Text as Data</p></li>
+<li><p>People as Data</p></li>
+<li><p>Ethics and Bias in Data</p></li>
+</ul>
+<p>&amp;<br />
+May 17 &amp; Data Collection, Management, and Storage</p>
+<ul class="simple">
+<li><p>Methods for Data Collection</p></li>
+<li><p>Managing and Storing Data of Various Sizes</p></li>
+<li><p>Scoping and Scaling Data Projects</p></li>
+</ul>
+<p>&amp;<br />
+May 18 &amp; Data Processing: Cleaning and Structuring</p>
+<ul class="simple">
+<li><p>Exploring Data Sets</p></li>
+<li><p>Structured Data</p></li>
+<li><p>Cleaning Data</p></li>
+</ul>
+<p>&amp;<br />
+May 19 &amp; Midway Project Checkpoint and Work Day &amp;<br />
+May 20 &amp; Data Analysis 1</p>
+<ul class="simple">
+<li><p>Performing Operations on Data</p></li>
+<li><p>Counting, Aggregations, and Metadata</p></li>
+</ul>
+<p>&amp;<br />
+May 21 &amp; Data Visualization</p>
+<ul class="simple">
+<li><p>Types of Visualizations</p></li>
+<li><p>Visualizing Various Types of Data</p></li>
+</ul>
+<p>&amp;<br />
+May 24 &amp; Data Modeling</p>
+<ul class="simple">
+<li><p>Building Models and Making Predictions with Data</p></li>
+<li><p>Understanding the Limits of Models and Predictions</p></li>
+</ul>
+<p>&amp;<br />
+May 25 &amp; Data Analysis 2</p>
+<ul class="simple">
+<li><p>Customizing Analysis Functions</p></li>
+<li><p>Metric Building</p></li>
+</ul>
+<p>&amp;<br />
+May 26 &amp; Data Interpretation</p>
+<ul class="simple">
+<li><p>Story Telling with Data</p></li>
+<li><p>Communicating Data Analysis, Models, and Predictions</p></li>
+</ul>
+<p>&amp;<br />
+May 27 &amp; Project Presentations &amp;</p>
+</div>
+<div class="section" id="semester-long-project">
+<h3>Semester-Long Project<a class="headerlink" href="#semester-long-project" title="Permalink to this headline">¶</a></h3>
+<p>Each student will be assigned a semester-long project that will require
+the student to apply the methods and tools discussed in the class to a
+unique dataset. The goal of the project is to reinforce core data
+science concepts and techniques through application.</p>
+</div>
+<div class="section" id="university-policies">
+<h3>University Policies<a class="headerlink" href="#university-policies" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Disability Accommodations: Students needing academic accommodations
+for a disability must first register with Disability Accommodations
+&amp; Success Strategies (DASS). Students can call 214- 768-1470 or
+visit: <a class="reference external" href="http://www.smu.edu/Provost/ALEC/DASS">http://www.smu.edu/Provost/ALEC/DASS</a> to begin the process.
+Once registered, students should then schedule an appointment with
+the professor as early in the semester as possible, present a DASS
+Accommodation Letter, and make appropriate arrangements. Please note
+that accommodations are not retroactive and require advance notice
+to implement.</p></li>
+<li><p>Religious Observance: Religiously observant students wishing to be
+absent on holidays that require missing class should notify their
+professors in writing at the beginning of the semester, and should
+discuss with them, in advance, acceptable ways of making up any work
+missed because of the absence. (See University Policy No. 1.9.)</p></li>
+<li><p>Excused Absences for University Extracurricular Activities: Students
+participating in an officially sanctioned, scheduled University
+extracurricular activity should be given the opportunity to make up
+class assignments or other graded assignments missed as a result of
+their participation. It is the responsibility of the student to make
+arrangements with the instructor prior to any missed scheduled
+examination or other missed assignment for making up the work.
+(University Undergraduate Catalogue)</p></li>
+<li><p>Student Learning Outcomes: Please include in your syllabi all
+student learning outcomes, both those specific to your course, as
+well as those that satisfy major and general education requirements.</p></li>
+<li><p>Final Exams: Final course examinations shall be given in all courses
+where they are appropriate, and some form of final assessment is
+essential. Final exams or final assessments must be administered as
+specified in the official examination schedule, and shall not be
+administered during the last week of classes or during the Reading
+Period. Please state clearly in the syllabus the date/time and form
+of the final exam or assessment.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
