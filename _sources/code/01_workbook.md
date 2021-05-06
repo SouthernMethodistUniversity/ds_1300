@@ -61,12 +61,6 @@ Python can do simple mathematical operations just like a calculator. Try executi
 2.5-2.0
 ```
 
-> Let's now add a cell and have it calculate the sum of the populations of Dallas (1,345,000) and Fort Worth (895,000).
-
-```python
-# Add a cell below this one to do your calculation
-```
-
 ## Variables and Objects
 
 
@@ -103,13 +97,6 @@ Strings allow us to store and operate on text data. Strings in Python are surrou
 ```python
 ourstring = "Here is a string in Python!"
 ourstring
-```
-
-> Try uncommenting the next cell and making a string of your own.
-
-```python
-#mystring = <put your string here>
-#mystring
 ```
 
 If we later want to see the value stored in a variable we can always use the built in **print** function. **Print** is recognized as a keyword by our notebook and so the color changes to make our lives as programmers easier.
@@ -152,14 +139,6 @@ print(first,last)
 len(ourlist)
 ```
 
-> Try making a list and printing the 2nd element from your list. Make sure to remove the #'s for comments.
-
-```python
-#mylist=
-#
-#
-```
-
 ### Dictionaries
 
 
@@ -180,45 +159,6 @@ ourdictionary
 ourdictionary["Taos"] 
 #NOTE: ourdictionary[5668] will NOT give you "Taos", but an error.
 ```
-
-Here are the word counts for the *Lord of the Rings* books ([citation](http://lotrproject.com/statistics/books/wordscount)). We will use this data for some exercises below.
-
-|__Book__|__Word Count__|
-|---|---|
-|The Silmarillion|130115|
-|The Hobbit|95506|
-|The Fellowship of the Ring|187726|
-|The Two Towers|156147|
-|The Return of the King|137037|
-
-
-
->1) Can you build a dictionary of the information in the table above?
->2) Calculate the difference between the number of words in *The Fellowship of the Ring* and *The Hobbit*.
->3) Calculate the total number of words for books in the *Lord of the Rings* Trilogy.
-
-```python
-
-```
-
-<!-- #raw -->
-# Example Solution
-
-tolkien = {"The Silmarillion":130115,"The Hobbit":95506,"The Fellowship of the Ring":187726, "The Two Towers":156147, "The Return of the King":137037}
-
-bilbo=tolkien["The Hobbit"]
-
-frodo=tolkien["The Fellowship of the Ring"]
-
-print("The Fellowship of the Ring - The Hobbit")
-
-print(frodo-bilbo)
-
-print("Total Words for the Lord of the Rings Trilogy")
-
-print(tolkien["The Fellowship of the Ring"]+tolkien["The Two Towers"]+tolkien["The Return of the King"])
-
-<!-- #endraw -->
 
 ## Loops and Functions
 
@@ -265,27 +205,9 @@ def square_me(n):
 square_me(4)
 ```
 
->**Think**: What is something that you do over and over again?
+>**Discussion**: What is something that you do over and over again?
 >Is that task something you could use a *loop* for or a *function* for?
 
-
->Try to build your own loop that prints the individual letters in a string. *Hint: Python is clever enough to do this without making a list first*
-
-```python
-# for
-```
-
->Try defining your own function that takes 2 arguments and adds them together.
-
-```python
-#def add_me
-#
-#
-```
-
-```python
-#add_me(7,11)
-```
 
 Putting loops and functions together is where python can become very powerful.
 
@@ -305,9 +227,6 @@ def print_numbers(start,stop):
 ```python
 print_numbers(0,4)
 ```
-
->Define a function that uses a loop to add the squares of the numbers 0 to n. (e.g. with n = 3, return 0+1+4+9 = 14)
-
 
 # Libraries
 
@@ -338,7 +257,6 @@ import pandas as pd
 ```
 
 ```python
-#Notice here the data is a dictionary, similar to the one we used above but with the titles and wordcounts as nested lists
 d = {"Books":["The Silmarillion","The Hobbit","The Fellowship of the Ring","The Two Towers","The Return of the King"],
      "Words":[130115,95506,187726,156147,137037]
     }
@@ -374,9 +292,6 @@ You can also operate on entire columns in your DataFrame. Just be careful becaus
 total = sum(df["Words"])
 total
 ```
-
-> Use slicing to determine how much longer is the "Lord of the Rings" Trilogy than the other two books combined?
-
 
 ## More Complex Data
 
@@ -496,12 +411,6 @@ titles = ['The Hobbit','The Fellowship of the Ring', 'The Two Towers', 'The Retu
 data['CollectionName']=data['CollectionNum'].apply(lambda x: titles[x])
 ```
 
-> Can you use apply to estimate the time it takes to read each chapter? How long would it take to read all the chapters? Assume someone reads at 225 words per minute.
-
-```python
-
-```
-
 ## [GroupBy](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html)
 
 
@@ -513,14 +422,9 @@ Groupby is a powerful tool but if you don't understand your data, it can quickly
 data.groupby(by='CollectionName').count()
 ```
 
-> What happened here? Why are all the values in a row the same?
-
 ```python
 data.groupby(by='CollectionName').sum()
 ```
-
-> What happened here? Explain where these values came from.
-
 
 ## Selecting (Advanced Slicing)
 
@@ -549,12 +453,6 @@ df[df['Books'].str.contains('ing')]
 ```python
 # Select values on multiple conditions using different columns
 df[(df['Books'].str.contains('ing')) & (df['Words']>150000)]
-```
-
->Can you select the books with a lowercase 'r' in their name but not a capital 'R'? *Hint: you can use "~" to negate a function*
-
-```python
-
 ```
 
 ## Joining
@@ -592,11 +490,6 @@ Notice that our merge duplicated our matching column because they had different 
 merged = pd.merge(df,dates, left_on="Books", right_on="Name", how = 'inner').drop(columns=['Name'])
 merged
 ```
-
-> 1) Assuming Tolkien wrote consistently, how many words per year did he write between the publication of "The Hobbit" and the "The Lord of the Rings" trilogy?
-> 2) The trilogy and the rlease of "The Silmarillion"?
-> 3) Using those rates, predict when he might have started writing "The Hobbit".
-
 
 # Plotting
 
