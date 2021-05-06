@@ -1,0 +1,892 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Python Programming &#8212; DS 1300</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">DS 1300</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/00_introduction.html">
+   DS1300: A Practical Introduction to Data Science
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/01_data_science.html">
+   Introduction to Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/02_hpc.html">
+   Introduction to High-Performance Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/03_github.html">
+   Introduction to GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/04_jupyter.html">
+   Introduction to Jupyter Lab and Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/05_python.html">
+   Introduction to Programming in Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/code/01_workbook.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to Python Programming
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intro-to-python-basics">
+   Intro to Python Basics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operating-this-notebook">
+     Operating this notebook
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#basic-math">
+       Basic Math
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables-and-objects">
+     Variables and Objects
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dictionaries">
+       Dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-solution">
+   Example Solution
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loops-and-functions">
+     Loops and Functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loops">
+       Loops
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#functions">
+       Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#libraries">
+   Libraries
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframes-and-pandas">
+   DataFrames and Pandas
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-complex-data">
+     More Complex Data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#groupby">
+     GroupBy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-advanced-slicing">
+     Selecting (Advanced Slicing)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining">
+     Joining
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting">
+   Plotting
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-complex-plotting">
+     More Complex Plotting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrapping-up">
+   Wrapping up
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-python-programming">
+<h1>Introduction to Python Programming<a class="headerlink" href="#introduction-to-python-programming" title="Permalink to this headline">¶</a></h1>
+<p>By: Dr. Eric Godat and Dr. Rob Kalescky</p>
+</div>
+<div class="section" id="intro-to-python-basics">
+<h1>Intro to Python Basics<a class="headerlink" href="#intro-to-python-basics" title="Permalink to this headline">¶</a></h1>
+<p><em>This section is designed to guide you from having never used Python before to feeling comfortable with basic operations.</em></p>
+<p>Python is a programming language capable of just about anything you could want to do. It is designed to be human readable and robust. This particular document is called a Jupyter Notebook. Notebooks are tools for developing Python code and running that code in small steps and see the intermediate results in line.</p>
+<div class="section" id="operating-this-notebook">
+<h2>Operating this notebook<a class="headerlink" href="#operating-this-notebook" title="Permalink to this headline">¶</a></h2>
+<p>To operate this notebook, you will need to execute boxes of code, called cells. To do this you can either click the <em>Run</em> button on the toolbar or use [Shift]+[Enter].</p>
+<p>Throughout this notebook you will see cells that are not code (like this one). These cells contain text in a language called Markdown. You can execute these cells to render formatted text. A cheatsheet for Markdown can be found by clicking <code class="docutils literal notranslate"><span class="pre">Help</span> <span class="pre">-&gt;</span> <span class="pre">Markdown</span> <span class="pre">Reference</span></code> or articles <a class="reference external" href="https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd">like this</a>. There will also be comments with in the code itself that give additional information about the operation of the code, describe functions or show you places where you might want to make changes. These comments are always preceded by an octothorp (#) and in most cases be a different color from the surrounding text.</p>
+<p>Notebooks save automatically, however if you have made big changes your code, you can checkpoint it. This allows you to roll back changes to this point (or any previous checkpoints) should something break in the future.</p>
+<p>There are a few useful <a class="reference external" href="https://gist.github.com/discdiver/9e00618756d120a8c9fa344ac1c375ac">keyboard shortcuts</a> for modifying the cells in a notebook. To use these, click on the far left side of the cell such that the outline changes color (to blue in most cases), press [Enter]] to return to editing the cell’s contents.</p>
+<p>-Add a cell <strong>a</strong>bove the current cell   [A]</p>
+<p>-Add a cell <strong>b</strong>elow the current cell   [B]</p>
+<p>-<strong>D</strong>elete the current cell   [D,D]</p>
+<p><strong>Let’s try it out!</strong></p>
+<div class="section" id="basic-math">
+<h3>Basic Math<a class="headerlink" href="#basic-math" title="Permalink to this headline">¶</a></h3>
+<p>Python can do simple mathematical operations just like a calculator. Try executing the following cells.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">2.5</span><span class="o">-</span><span class="mf">2.0</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Let’s now add a cell and have it calculate the sum of the populations of Dallas (1,345,000) and Fort Worth (895,000).</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add a cell below this one to do your calculation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="variables-and-objects">
+<h2>Variables and Objects<a class="headerlink" href="#variables-and-objects" title="Permalink to this headline">¶</a></h2>
+<p>Calculations are nice but we really want to be able to store our calculations in memory so that we can access them later. We do that by assigning variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+</div>
+<p>Variables can be named just about anything</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Dallas</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">SMU</span><span class="o">=</span><span class="mi">7</span>
+<span class="n">texas_TX</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Notice that if we assign a value to a variable, our notebook won&#39;t return that value to our screen.</span>
+<span class="c1">#If we want it to show us the value, we can call that variable after it is assigned.</span>
+<span class="n">ouranswer</span> <span class="o">=</span> <span class="n">SMU</span><span class="o">*</span><span class="n">Dallas</span><span class="o">*</span><span class="n">texas_TX</span>
+<span class="n">ouranswer</span>
+</pre></div>
+</div>
+<p>So far we have been doing all of our operations on numbers, integers and floats (decimals), but there are other useful objects we can use in Python.</p>
+<p>Strings allow us to store and operate on text data. Strings in Python are surrounded by either single quotes ‘’ or double quotes “”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ourstring</span> <span class="o">=</span> <span class="s2">&quot;Here is a string in Python!&quot;</span>
+<span class="n">ourstring</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Try uncommenting the next cell and making a string of your own.</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#mystring = &lt;put your string here&gt;</span>
+<span class="c1">#mystring</span>
+</pre></div>
+</div>
+<p>If we later want to see the value stored in a variable we can always use the built in <strong>print</strong> function. <strong>Print</strong> is recognized as a keyword by our notebook and so the color changes to make our lives as programmers easier.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ourstring</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What if we want to have multiple strings stored at once but we don’t want to assign a bunch of variables? Then we can use a list.</p>
+<p>Lists are enclosed by brackets [] and separated by commas.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ourlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;This&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="s1">&#39;of&#39;</span><span class="p">,</span> <span class="s2">&quot;strings&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ourlist</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To access individual elements in a list you call it by its reference number.</p>
+<p><em><strong>Note:</strong> In Python, counting starts with 0. Thus in the list [a,b,c], a is the 0th element and c is the 2nd</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="n">ourlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Notice we can call the last element by using a negative reference number. This lets us see the end without knowing how long the list is.</span>
+<span class="n">last</span> <span class="o">=</span> <span class="n">ourlist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">last</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># If we did want to know the length of our list we can use the len() function</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ourlist</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Try making a list and printing the 2nd element from your list. Make sure to remove the #’s for comments.</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#mylist=</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<div class="section" id="dictionaries">
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
+<p>Dictionaries are a different way of storing data than lists. They rely on a key and value system as opposed to the order of the entries.</p>
+<p>Dictionaries are enclosed in curly braces {}, the key and value are separated by a colon : and entries are separated by commas ,</p>
+<p>Values can then be accessed by referencing the key.</p>
+<p><em><strong>Note:</strong> Finding dictionary values does not go both ways, so using the value to find the key will cause an error.</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ourdictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Dallas&quot;</span><span class="p">:</span><span class="mi">1345000</span><span class="p">,</span><span class="s2">&quot;Taos&quot;</span><span class="p">:</span><span class="mi">5668</span><span class="p">,</span><span class="s1">&#39;Houston&#39;</span><span class="p">:</span><span class="mi">2326000</span><span class="p">}</span>
+<span class="n">ourdictionary</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ourdictionary</span><span class="p">[</span><span class="s2">&quot;Taos&quot;</span><span class="p">]</span> 
+<span class="c1">#NOTE: ourdictionary[5668] will NOT give you &quot;Taos&quot;, but an error.</span>
+</pre></div>
+</div>
+<p>Here are the word counts for the <em>Lord of the Rings</em> books (<a class="reference external" href="http://lotrproject.com/statistics/books/wordscount">citation</a>). We will use this data for some exercises below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Book</strong></p></th>
+<th class="head"><p><strong>Word Count</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The Silmarillion</p></td>
+<td><p>130115</p></td>
+</tr>
+<tr class="row-odd"><td><p>The Hobbit</p></td>
+<td><p>95506</p></td>
+</tr>
+<tr class="row-even"><td><p>The Fellowship of the Ring</p></td>
+<td><p>187726</p></td>
+</tr>
+<tr class="row-odd"><td><p>The Two Towers</p></td>
+<td><p>156147</p></td>
+</tr>
+<tr class="row-even"><td><p>The Return of the King</p></td>
+<td><p>137037</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><ol class="simple">
+<li><p>Can you build a dictionary of the information in the table above?</p></li>
+<li><p>Calculate the difference between the number of words in <em>The Fellowship of the Ring</em> and <em>The Hobbit</em>.</p></li>
+<li><p>Calculate the total number of words for books in the <em>Lord of the Rings</em> Trilogy.</p></li>
+</ol>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<!-- #raw -->
+</div>
+</div>
+</div>
+<div class="section" id="example-solution">
+<h1>Example Solution<a class="headerlink" href="#example-solution" title="Permalink to this headline">¶</a></h1>
+<p>tolkien = {“The Silmarillion”:130115,”The Hobbit”:95506,”The Fellowship of the Ring”:187726, “The Two Towers”:156147, “The Return of the King”:137037}</p>
+<p>bilbo=tolkien[“The Hobbit”]</p>
+<p>frodo=tolkien[“The Fellowship of the Ring”]</p>
+<p>print(“The Fellowship of the Ring - The Hobbit”)</p>
+<p>print(frodo-bilbo)</p>
+<p>print(“Total Words for the Lord of the Rings Trilogy”)</p>
+<p>print(tolkien[“The Fellowship of the Ring”]+tolkien[“The Two Towers”]+tolkien[“The Return of the King”])</p>
+<!-- #endraw -->
+<div class="section" id="loops-and-functions">
+<h2>Loops and Functions<a class="headerlink" href="#loops-and-functions" title="Permalink to this headline">¶</a></h2>
+<p>Computers are much better at doing simple repeatable tasks than humans are so to leverage this advantage, we will cover two different ways of writing these kind of repeatable instructions.</p>
+<div class="section" id="loops">
+<h3>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h3>
+<p>Loops are a way of having Python complete a task over and over.</p>
+<p>The most common form if a <strong>for</strong> loop. A <strong>for</strong> loop completes a task a fixed number of times by iterating a variable over the members of a sequence in order.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example for loop</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em><strong>Note</strong>: The indention is important, it tells Python that the line <em>print(i)</em> belongs inside the loop.</em></p>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes it would be nice to be able to save a group of instructions in a single block, that way we won’t need to rewrite several lines of code each time we want to do that set of operations.</p>
+<p>To do this we define a <strong>function</strong>.</p>
+<p>Functions allow us to define a more complicated set of instructions as a single entity and call that entire block of code directly.</p>
+<p>Functions are defined (<em>def</em>), named (lowercase is a standard practice) and accept arguments (). They then can return a value if needed (<em>return</em>).</p>
+<p>Python has several built in functions (<em>print()</em> is a good example) and when you combine external packages and libraries, there are functions for just about everything you could think of.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example function</span>
+<span class="k">def</span> <span class="nf">square_me</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">n</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">square_me</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Think</strong>: What is something that you do over and over again?
+Is that task something you could use a <em>loop</em> for or a <em>function</em> for?</p>
+</div></blockquote>
+<blockquote>
+<div><p>Try to build your own loop that prints the individual letters in a string. <em>Hint: Python is clever enough to do this without making a list first</em></p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># for</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Try defining your own function that takes 2 arguments and adds them together.</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#def add_me</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#add_me(7,11)</span>
+</pre></div>
+</div>
+<p>Putting loops and functions together is where python can become very powerful.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Looping over a function</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">square_me</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># note that this is still tabbed in within the for loop</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># A function with a loop</span>
+<span class="k">def</span> <span class="nf">print_numbers</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">stop</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">stop</span><span class="p">):</span> <span class="c1">#Here the range() function gives us all the values from start up to but excluding the stop value</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># this is indented twice, so Python knows it is within the loop within the function</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_numbers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Define a function that uses a loop to add the squares of the numbers 0 to n. (e.g. with n = 3, return 0+1+4+9 = 14)</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="libraries">
+<h1>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h1>
+<p>Libraries are pre-written chunks of code designed to be integrated into projects for a specific purpose.  The idea is to keep people from having to reinvent the wheel every time they want to write a program.  When we encounter situations where a libary might be useful, we use the keyword <em>import</em> to tell the program that we want to use this pre-existing code.  As an example, in the next section you will use a library called Pandas which helps visualize data and make it easier to digest, which is very useful for us.  Because of this, we will import that code into this program simply by running the cell with the import that goes with that code.  Here is what you will see, only in commented code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#import pandas as pd</span>
+
+<span class="c1">#by using the keyword *as* and giving pandas an alternative name (pd) in this program, it allows us to use the</span>
+<span class="c1">#functions within pandas while only having to type our pd instead of pandas every time.</span>
+</pre></div>
+</div>
+<p>Most programming languages have libraries that allow you to import code this way, and it will save you a lot of time and allow you to quickly use many new functions that are highly polished.</p>
+</div>
+<div class="section" id="dataframes-and-pandas">
+<h1>DataFrames and Pandas<a class="headerlink" href="#dataframes-and-pandas" title="Permalink to this headline">¶</a></h1>
+<p>Now it is time to use what we have learned to start doing some data science.</p>
+<p>Pandas is the name of a library in which there are functions and tools for doing operations common in data analysis and data science. One particularly great feature is the DataFrame structure which allows us to work with an object similar to an Excel spreadsheet but with the flexibility and power of Python behind it.</p>
+<p>First we will need to import the Pandas library and create a DataFrame. DataFrames are can also be created when you import files (like CSV’s) or tables from a database (like SQL).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Notice here the data is a dictionary, similar to the one we used above but with the titles and wordcounts as nested lists</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Books&quot;</span><span class="p">:[</span><span class="s2">&quot;The Silmarillion&quot;</span><span class="p">,</span><span class="s2">&quot;The Hobbit&quot;</span><span class="p">,</span><span class="s2">&quot;The Fellowship of the Ring&quot;</span><span class="p">,</span><span class="s2">&quot;The Two Towers&quot;</span><span class="p">,</span><span class="s2">&quot;The Return of the King&quot;</span><span class="p">],</span>
+     <span class="s2">&quot;Words&quot;</span><span class="p">:[</span><span class="mi">130115</span><span class="p">,</span><span class="mi">95506</span><span class="p">,</span><span class="mi">187726</span><span class="p">,</span><span class="mi">156147</span><span class="p">,</span><span class="mi">137037</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>Now we can operate on entire rows or columns in our DataFrame.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Books&quot;</span><span class="p">]</span> <span class="c1">#Selecting the column &quot;Books&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="c1">#Selecting the first 2 rows</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1">#Selecting rows 2 up to 4</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Words&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1">#Selecting the second and third row from the &quot;Words&quot; column.</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">][</span><span class="s2">&quot;Words&quot;</span><span class="p">]</span> <span class="c1">#Same result but from the opposite order</span>
+</pre></div>
+</div>
+<p>You can also operate on entire columns in your DataFrame. Just be careful because this can give you unexpected results. Rows are generally more consistent for elements within a DataFrame.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Words&quot;</span><span class="p">])</span>
+<span class="n">total</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Use slicing to determine how much longer is the “Lord of the Rings” Trilogy than the other two books combined?</p>
+</div></blockquote>
+<div class="section" id="more-complex-data">
+<h2>More Complex Data<a class="headerlink" href="#more-complex-data" title="Permalink to this headline">¶</a></h2>
+<p>To look at slightly more complex data operations, we need more complex data.</p>
+<p>Below we have all the chapters from the Hobbit and Lord of the Rings books along with their word counts. Notice that each chapter is a list of information and then each of those list is an element in a larger list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chapters</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;An Unexpected Party&#39;</span><span class="p">,</span><span class="mi">8638</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Roast Mutton&#39;</span><span class="p">,</span><span class="mi">5257</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;A Short Rest&#39;</span><span class="p">,</span><span class="mi">2876</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Over Hill and Under Hill&#39;</span><span class="p">,</span><span class="mi">4034</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;Riddles in the Dark&#39;</span><span class="p">,</span><span class="mi">6967</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;Out of the Frying Pan into the Fire&#39;</span><span class="p">,</span><span class="mi">6703</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Queer Lodgings&#39;</span><span class="p">,</span><span class="mi">9027</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;Flies and Spiders&#39;</span><span class="p">,</span><span class="mi">10223</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;Barrels Out of Bond&#39;</span><span class="p">,</span><span class="mi">5833</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;A Warm Welcome&#39;</span><span class="p">,</span><span class="mi">3930</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;On the Doorstep&#39;</span><span class="p">,</span><span class="mi">3001</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;Inside Information&#39;</span><span class="p">,</span><span class="mi">7132</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="s1">&#39;Not At Home&#39;</span><span class="p">,</span><span class="mi">3909</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;Fire and Water&#39;</span><span class="p">,</span><span class="mi">3236</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="s1">&#39;The Gathering of the Clouds&#39;</span><span class="p">,</span><span class="mi">3362</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;A Thief in the Night&#39;</span><span class="p">,</span><span class="mi">2153</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="s1">&#39;The Clouds Burst&#39;</span><span class="p">,</span><span class="mi">3949</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="s1">&#39;The Return Journey&#39;</span><span class="p">,</span><span class="mi">2815</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="s1">&#39;The Last Stage&#39;</span><span class="p">,</span><span class="mi">2461</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Concerning Hobbits&#39;</span><span class="p">,</span><span class="mi">3406</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Concerning Pipeweed&#39;</span><span class="p">,</span><span class="mi">600</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Of the Ordering of the Shire&#39;</span><span class="p">,</span><span class="mi">2431</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Note on the Shire Records&#39;</span><span class="p">,</span><span class="mi">914</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;A Long-expected Party&#39;</span><span class="p">,</span><span class="mi">10012</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;The Shadow of the Past&#39;</span><span class="p">,</span><span class="mi">11311</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Three is Company&#39;</span><span class="p">,</span><span class="mi">9763</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;A Short Cut to Mushrooms&#39;</span><span class="p">,</span><span class="mi">5957</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;A Conspiracy Unmasked&#39;</span><span class="p">,</span><span class="mi">5196</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;The Old Forest&#39;</span><span class="p">,</span><span class="mi">6502</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;In the House of Tom Bombadil&#39;</span><span class="p">,</span><span class="mi">5501</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;Fog on the Barrow-downs&#39;</span><span class="p">,</span><span class="mi">6694</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;At the Sign of the Prancing Pony&#39;</span><span class="p">,</span><span class="mi">6251</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;Strider&#39;</span><span class="p">,</span><span class="mi">5905</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;A Knife in the Dark&#39;</span><span class="p">,</span><span class="mi">9468</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;Flight to the Ford&#39;</span><span class="p">,</span><span class="mi">8805</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Many Meetings&#39;</span><span class="p">,</span><span class="mi">9085</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;The Council of Elrond&#39;</span><span class="p">,</span><span class="mi">16360</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;The Ring goes South&#39;</span><span class="p">,</span><span class="mi">10656</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;A Journey in the Dark&#39;</span><span class="p">,</span><span class="mi">11501</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;The Bridge of Khazad-dum&#39;</span><span class="p">,</span><span class="mi">5428</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;Lothlorien&#39;</span><span class="p">,</span><span class="mi">9387</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;The Mirror of Gladriel&#39;</span><span class="p">,</span><span class="mi">6896</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;Farewell to Lorien&#39;</span><span class="p">,</span><span class="mi">6174</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;The Great River&#39;</span><span class="p">,</span><span class="mi">7218</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;The Breaking of the Fellowship&#39;</span><span class="p">,</span><span class="mi">6305</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;The Departure of Boromir&#39;</span><span class="p">,</span><span class="mi">3397</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;The Riders of Rohan&#39;</span><span class="p">,</span><span class="mi">11133</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;The Uruk-hai&#39;</span><span class="p">,</span><span class="mi">7854</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Treebeard&#39;</span><span class="p">,</span><span class="mi">12876</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;The White Rider&#39;</span><span class="p">,</span><span class="mi">8856</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;The King of the Golden Hall&#39;</span><span class="p">,</span><span class="mi">9303</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s2">&quot;Helm&#39;s Deep&quot;</span><span class="p">,</span><span class="mi">7575</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;The Road to Isengard&#39;</span><span class="p">,</span><span class="mi">7899</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;Flotsam and Jetsam&#39;</span><span class="p">,</span><span class="mi">7789</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;The Voice of Saruman&#39;</span><span class="p">,</span><span class="mi">5663</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;The Palantir&#39;</span><span class="p">,</span><span class="mi">6325</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;The Taming of Smeagol&#39;</span><span class="p">,</span><span class="mi">8375</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;The Passage of the Marshes&#39;</span><span class="p">,</span><span class="mi">7357</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;The Black Gate is Closed&#39;</span><span class="p">,</span><span class="mi">5881</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Of Herbs and Stewed Rabbit&#39;</span><span class="p">,</span><span class="mi">6975</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;The Window on the West&#39;</span><span class="p">,</span><span class="mi">10120</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;The Forbidden Pool&#39;</span><span class="p">,</span><span class="mi">5179</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Journey to the Crossroads&#39;</span><span class="p">,</span><span class="mi">4266</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;The Stairs of Cirith Ungol&#39;</span><span class="p">,</span><span class="mi">6793</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="s2">&quot;Shelob&#39;s Lair&quot;</span><span class="p">,</span><span class="mi">5209</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;The Choices of Master Samwise&#39;</span><span class="p">,</span><span class="mi">7322</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Minas Tirith&#39;</span><span class="p">,</span><span class="mi">13100</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;The Passing of the Grey Company&#39;</span><span class="p">,</span><span class="mi">8586</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;The Muster of Rohan&#39;</span><span class="p">,</span><span class="mi">6951</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;The Siege of Gondor&#39;</span><span class="p">,</span><span class="mi">11793</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;The Ride of the Rohirrim&#39;</span><span class="p">,</span><span class="mi">4358</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;The Battle of the Pelennor Fields&#39;</span><span class="p">,</span><span class="mi">5225</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;The Pyre of Denethor&#39;</span><span class="p">,</span><span class="mi">3736</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;The Houses of Healing&#39;</span><span class="p">,</span><span class="mi">6731</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;The Last Debate&#39;</span><span class="p">,</span><span class="mi">5416</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;The Black Gate Opens&#39;</span><span class="p">,</span><span class="mi">5204</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;The Tower of Cirith Ungol&#39;</span><span class="p">,</span><span class="mi">9721</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;The Land of Shadow&#39;</span><span class="p">,</span><span class="mi">8446</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Mount Doom&#39;</span><span class="p">,</span><span class="mi">7777</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;The Field of Cormallen&#39;</span><span class="p">,</span><span class="mi">4721</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;The Steward and the King&#39;</span><span class="p">,</span><span class="mi">7639</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;Many Partings&#39;</span><span class="p">,</span><span class="mi">7440</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Homeward Bound&#39;</span><span class="p">,</span><span class="mi">4106</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;The Scouring of the Shire&#39;</span><span class="p">,</span><span class="mi">11296</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;The Grey Havens&#39;</span><span class="p">,</span><span class="mi">4791</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+           <span class="p">]</span>
+</pre></div>
+</div>
+<p>Now we can turn the list of the lists into a dataframe. We have also named our columns. This isn’t necessary but it does make things clearer to work with.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CollectionNum&#39;</span><span class="p">,</span><span class="s1">&#39;ChapterNum&#39;</span><span class="p">,</span><span class="s1">&#39;ChapterName&#39;</span><span class="p">,</span><span class="s1">&#39;WordCount&#39;</span><span class="p">,</span><span class="s1">&#39;BookNum&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">chapters</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+<p>Now we might want to apply the names of each of the traditional “books” you might think of when you think about the Lord of the Rings. To do this we need to use a function that is very powerful and flexible: <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.apply.html">apply</a>. This function will allow us to apply an operation or function to each value in a column and save it into a new column. In this example, our “function” is using our <em>CollectionNum</em> to reference a book name in our list <em>titles</em>.</p>
+<p>The structure of the apply function is: <code class="docutils literal notranslate"><span class="pre">apply(lambda</span> <span class="pre">*variable*</span> <span class="pre">:</span> <span class="pre">*function*(*variable*)</span> <span class="pre">)</span></code>
+Where the variable represents the value in each row and the opertaion of function will return a value that can be stored in our new column.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;The Hobbit&#39;</span><span class="p">,</span><span class="s1">&#39;The Fellowship of the Ring&#39;</span><span class="p">,</span> <span class="s1">&#39;The Two Towers&#39;</span><span class="p">,</span> <span class="s1">&#39;The Return of the King&#39;</span><span class="p">]</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;CollectionName&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;CollectionNum&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">titles</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Can you use apply to estimate the time it takes to read each chapter? How long would it take to read all the chapters? Assume someone reads at 225 words per minute.</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="groupby">
+<h2><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">GroupBy</a><a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have data for each of the chapters, we can group them using groupby. This lets us do aggregate operations like “add all the wordcounts for each book” or “count how many chapters there are in each book”.</p>
+<p>Groupby is a powerful tool but if you don’t understand your data, it can quickly introduce errors.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;CollectionName&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>What happened here? Why are all the values in a row the same?</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;CollectionName&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>What happened here? Explain where these values came from.</p>
+</div></blockquote>
+</div>
+<div class="section" id="selecting-advanced-slicing">
+<h2>Selecting (Advanced Slicing)<a class="headerlink" href="#selecting-advanced-slicing" title="Permalink to this headline">¶</a></h2>
+<p>You can select slices of your dataframe using conditional logic as well. Conditional logic means determining if a condition is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> and often relies on operations like: equals <code class="docutils literal notranslate"><span class="pre">==</span></code>, not <code class="docutils literal notranslate"><span class="pre">!</span></code>, and <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, or <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select values based on exact matches</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;The Hobbit&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select values by negating a match</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;The Hobbit&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select values containing substrings</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;ing&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select values on multiple conditions using different columns</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;ing&#39;</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Words&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">150000</span><span class="p">)]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Can you select the books with a lowercase ‘r’ in their name but not a capital ‘R’? <em>Hint: you can use “~” to negate a function</em></p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="joining">
+<h2>Joining<a class="headerlink" href="#joining" title="Permalink to this headline">¶</a></h2>
+<p>You can also merge 2 dataframes if you want. Merging allows you to combine datasets in new ways and is a great tool to have when working with complex datasets.</p>
+<p>First we need a second dataframe to work with. Here, we have made a dataframe with the publication year of each of of our Tolkien books.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">],</span><span class="s1">&#39;Year&#39;</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1977</span><span class="p">,</span><span class="mi">1934</span><span class="p">,</span><span class="mi">1954</span><span class="p">,</span><span class="mi">1954</span><span class="p">,</span><span class="mi">1954</span><span class="p">])})</span>
+<span class="n">dates</span>
+<span class="c1"># NOTE: We named our column &#39;Name&#39; for instructional purposes, but a better name would be &#39;Books&#39; so that it matches my other dataframe.</span>
+<span class="c1">#       Typically you want to use a unique identifier in your data and then merge based on that column.</span>
+</pre></div>
+</div>
+<p>Now we can merge our new dates dataframe with our existing dataframe.</p>
+<p>We have done an inner join (only rows that match in both dataframes will appear in our join) where the column in the left dataframe is called “Books” and the column in the right dataframe is called “Name”.</p>
+<p>More documentation on merging dataframes can be found <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html">here</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">dates</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;Books&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice that our merge duplicated our matching column because they had different names. This would not happen if we had the same name for columns in both dataframes. However, will not always be the case, so you can clean up your dataframe by dropping one of the redundant columns.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">dates</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;Books&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
+<span class="n">merged</span>
+</pre></div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Assuming Tolkien wrote consistently, how many words per year did he write between the publication of “The Hobbit” and the “The Lord of the Rings” trilogy?</p></li>
+<li><p>The trilogy and the rlease of “The Silmarillion”?</p></li>
+<li><p>Using those rates, predict when he might have started writing “The Hobbit”.</p></li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="plotting">
+<h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
+<p>Visualizing data is incredibly important when trying to convey findings. There are several libraries available for doing data visualization. Pandas has some built in plotting functionality, but we have provided access to MatPlotLib as well.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is only needed in this case because we wanted to show the names of the books. You could make a similar plot in Pandas.</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="c1"># This allows the plot to be shown inline in the notebook</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span> <span class="c1"># we are setting the type of plot to a bar graph</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Books&#39;</span><span class="p">]);</span> <span class="c1">#This lets us rename the x axis labels</span>
+</pre></div>
+</div>
+<div class="section" id="more-complex-plotting">
+<h2>More Complex Plotting<a class="headerlink" href="#more-complex-plotting" title="Permalink to this headline">¶</a></h2>
+<p>Lastly, we can combine several of the things we have learned into a single plot. Here we can group each book together and then look at the word counts by chapter throughout the story.</p>
+<p>First, we want to come up with a way to step through the books in a linear way. We have provided a few ways to do this in increasing complexity.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple - add the collection number to the chapter number divided by 10</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;BookChapter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;CollectionNum&#39;</span><span class="p">]</span><span class="o">+</span><span class="mf">0.1</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;ChapterNum&#39;</span><span class="p">]</span>
+
+<span class="c1"># Much better - add the book number to the chapter number divided by 10</span>
+<span class="c1">#data[&#39;BookChapter&#39;] = data[&#39;BookNum&#39;]+0.1*data[&#39;ChapterNum&#39;]</span>
+
+<span class="c1"># Best but complicated - add the book number to the chapter number scaled by 1/n where n is the max number of chapters in that book.</span>
+<span class="c1">#data[&#39;BookChapter&#39;]=data.apply(lambda x: x[&#39;BookNum&#39;]+(1/data.groupby(by=&#39;BookNum&#39;).max()[&#39;ChapterNum&#39;][x[&#39;BookNum&#39;]])*x[&#39;ChapterNum&#39;], axis=1)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">groups</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;CollectionName&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s2">&quot;BookChapter&quot;</span><span class="p">],</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;WordCount&quot;</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+</pre></div>
+</div>
+<p>Notice that the prologue materials in <em>The Fellowship of the Ring</em> cause it to overlap with the <em>Hobbit</em>. If we wanted to resolve this, we would need to revisit our conventions in our data.</p>
+</div>
+</div>
+<div class="section" id="wrapping-up">
+<h1>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this headline">¶</a></h1>
+<p>We covered:</p>
+<ul class="simple">
+<li><p>Basic Math</p></li>
+<li><p>Variables and Objects</p></li>
+<li><p>Dictionaries</p></li>
+<li><p>Loops and Functions</p></li>
+<li><p>DataFrames in Pandas</p></li>
+<li><p>Plotting</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./code"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
