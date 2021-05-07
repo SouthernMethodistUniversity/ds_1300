@@ -13,10 +13,7 @@ jupyter:
     name: python3
 ---
 
-# Working with Data
-
-
-By: Dr. Eric Godat and Dr. Rob Kalescky 
+# Data Visualization
 
 ```python
 
