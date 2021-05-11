@@ -5,7 +5,7 @@
 * [Version Control with Git](http://faculty.smu.edu/csc/workshops/2020/summer/git/)
 * [Getting Started with GitHub](https://docs.github.com/en/github/getting-started-with-github)
 
-## Initial Setup Your Repository and Python Environment
+## Initial Setup of Your Repository and Python Environment
 
 1. Go to the [GitHub repository for our class Jupyter notebooks](https://github.com/SouthernMethodistUniversity/ds_1300_notebooks).
 2. Select "Fork". This will create a personal copy of the repository.
@@ -35,7 +35,7 @@ module load python/3
 conda env create -f environment.yml --force
 ```
 
-## Launching a Jupyter Lab Session and Accessing Your Notebooks
+## Launching a JupyterLab Session and Accessing Your Notebooks
 
 1. Go to the [HPC Portal](https://hpc.smu.edu) and log in.
 2. Select "Interactive Apps" and then "JupyterLab".
