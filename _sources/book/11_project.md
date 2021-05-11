@@ -10,7 +10,7 @@ The project will include several elements that you will need as a data scientist
  - Visualization
  - Interpretation
 
-Collectively this is called the Data Lifecycle  Ref:[Wing, J. M. (2019). The Data Life Cycle.](https://doi.org/10.1162/99608f92.e26845b4)
+Collectively this is called the Data Life Cycle<sup>[1](https://doi.org/10.1162/99608f92.e26845b4 "Wing, J. M. (2019). The Data Life Cycle.")</sup>.
 
 ## Project Structure
 
