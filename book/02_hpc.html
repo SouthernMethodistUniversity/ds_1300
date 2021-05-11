@@ -49,6 +49,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="GitHub, Jupyter, and Python Overview" href="03_github.html" />
@@ -191,6 +193,223 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#high-performance-computing">
+   High-Performance Computing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motivation">
+     Motivation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#moore-s-law">
+       Moore’s law
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cpu-vs-memory-disk-speed">
+       CPU vs. Memory/Disk Speed
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-parallel-solution">
+     The Parallel Solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flynn-s-parallel-architecture-taxonomy">
+     Flynn’s parallel architecture taxonomy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parallel-computing-hardware">
+   Parallel Computing Hardware
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiprocessors">
+     Multiprocessors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multicore-processors">
+     Multicore Processors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multicomputers">
+     Multicomputers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-size-history">
+     Machine Size History
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#history-of-parallel-architectures">
+     History of Parallel Architectures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distributed-parallel-networks">
+     Distributed Parallel Networks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parallel-computing-paradigms-shared-vs-distributed-memory">
+   Parallel Computing Paradigms: Shared vs. Distributed Memory
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mimd-example-the-jiffy-lube-model">
+     MIMD example – the “Jiffy Lube” model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-parallel-computing-definitions">
+     General parallel computing definitions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-primary-question-in-parallel-algorithms-decomposition">
+     The primary question in parallel algorithms – decomposition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overhead-and-load-balancing">
+     Overhead and load balancing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-decompositions">
+     Data decompositions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#domain-decomposition">
+       Domain decomposition
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#domain-decomposition-example-pde-approximation-of-an-aircraft">
+         Domain decomposition example: PDE approximation of an aircraft
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#work-pool-model">
+       Work pool model
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#work-pool-example-particle-dynamics">
+         Work pool example: particle dynamics
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functional-decompositions">
+     Functional decompositions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#manager-worker">
+       Manager-worker
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#manager-worker-example-simulated-annealing">
+         Manager-worker example: simulated annealing
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pipeline-model">
+       Pipeline model
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#pipeline-example-repeated-lu-solves">
+         Pipeline example: repeated LU solves
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parallel-computing-metrics-parallel-computing-metrics">
+     Parallel computing metrics {#parallel_computing_metrics}
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-discussion-parallel-decomposition">
+   Group Discussion: Parallel Decomposition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maneframe-ii-m2">
+   ManeFrame II (M2)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hardware">
+     Hardware
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#software">
+     Software
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#introduction-to-unix">
+       Introduction to UNIX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lmod-environment-module-system">
+       Lmod Environment Module System
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#slurm-resource-management-and-job-scheduling-system">
+       Slurm Resource Management and Job Scheduling System
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-maneframe-ii-m2">
+   Accessing ManeFrame II (M2)
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -201,6 +420,633 @@
                 
   <div class="section" id="introduction-to-high-performance-computing">
 <h1>Introduction to High-Performance Computing<a class="headerlink" href="#introduction-to-high-performance-computing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="high-performance-computing">
+<h2>High-Performance Computing<a class="headerlink" href="#high-performance-computing" title="Permalink to this headline">¶</a></h2>
+<p>In essence, high-performance computing (HPC) merely means the use
+computing resources that are significantly more powerful than what is
+common. As such, it’s always a moving target.</p>
+<div class="section" id="motivation">
+<h3>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="moore-s-law">
+<h4>Moore’s law<a class="headerlink" href="#moore-s-law" title="Permalink to this headline">¶</a></h4>
+<p>Historically, we have depended on hardware advances to enable faster and
+larger simulations. In 1965, Gordon Moore observed that the CPU and RAM
+transistor count about doubled each year. “Moore’s Law” has since been
+revised to a doubling once every 2 years, with startling accuracy.
+However physical limits, e.g. power consumption, heat emission, and even
+the size of the atom, have currently stopped this expansion on
+individual processors, with speeds that have leveled off since around
+2008.</p>
+<p><img alt="Moore's Law" src="book/images/Moore_law.png" /></p>
+</div>
+<div class="section" id="cpu-vs-memory-disk-speed">
+<h4>CPU vs. Memory/Disk Speed<a class="headerlink" href="#cpu-vs-memory-disk-speed" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>The overall rate of any computation is determined not just by the
+processor speed, but also by the ability of the memory system to
+feed data to it.</p></li>
+<li><p>Thanks to Moore’s law, clock rates of high-end processors have
+increased at roughly 40% per year since the 1970’s.</p></li>
+<li><p>However, over that same time interval, RAM access times have
+improved at roughly 10% per year.</p></li>
+<li><p>This growing mismatch between processor speed and RAM latency
+presents an increasing performance bottleneck, since the CPU spends
+more and more time idle, waiting on data from RAM.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="the-parallel-solution">
+<h3>The Parallel Solution<a class="headerlink" href="#the-parallel-solution" title="Permalink to this headline">¶</a></h3>
+<p>In addition, many simulations require incredible amounts of memory to
+achieve high-accuracy solutions (PDE &amp; MD solvers, etc.), which cannot
+fit on a single computer alone.</p>
+<p>The natural solution to these problems is the use of parallel computing:</p>
+<ul class="simple">
+<li><p>Use multiple processors concurrently to solve a problem in less
+time.</p></li>
+<li><p>Use multiple computers to store data for large problems.</p></li>
+</ul>
+<p>The Gordon Bell Prize (below) is awarded to each year’s simulation that
+achieves the highest FLOP rate:</p>
+<p><img alt="[from David E. Keyes, HiPC2007]" src="book/images/algorithm_moore.png" /></p>
+</div>
+<div class="section" id="flynn-s-parallel-architecture-taxonomy">
+<h3>Flynn’s parallel architecture taxonomy<a class="headerlink" href="#flynn-s-parallel-architecture-taxonomy" title="Permalink to this headline">¶</a></h3>
+<p>We classify parallel computers according to their control structure
+along the metrics:</p>
+<p><img alt="image" src="book/images/flynn.png" /></p>
+<ul class="simple">
+<li><p>Single/multiple instruction streams: how many types of instructions
+may be performed at once?</p></li>
+<li><p>Single/multiple data streams: how many data streams may be operated
+on at once?</p></li>
+<li><p>Most modern parallel computers (and personal comp.) are MIMD.</p></li>
+<li><p>SIMD was popular until 1990s.</p></li>
+<li><p>MISD never used to large extent.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="parallel-computing-hardware">
+<h2>Parallel Computing Hardware<a class="headerlink" href="#parallel-computing-hardware" title="Permalink to this headline">¶</a></h2>
+<p>We historically group parallel computing architectures into two primary
+categories according to the memory layout on these machines: <em>shared
+memory</em> and <em>distributed memory</em>. However, modern parallel computers are
+a hybrid between these two categories.</p>
+<div class="section" id="multiprocessors">
+<h3>Multiprocessors<a class="headerlink" href="#multiprocessors" title="Permalink to this headline">¶</a></h3>
+<p>In the 80’s, vendors began to attach multiple processors to the same
+memory.</p>
+<p><img alt="image" src="book/images/smp.png" /></p>
+<p>Perhaps the most easily usable (but costliest) approach for parallelism:</p>
+<ul class="simple">
+<li><p>Straightforward extension of uniprocessor: multiple CPUs are
+attached to the bus, all sharing the same primary memory, so the
+same memory address on different CPUs refers to the same memory
+location.</p></li>
+<li><p>Also called a Shared Memory Parallel (SMP) computer.</p></li>
+<li><p>Processors interact and synchronize with each other through shared
+variables.</p></li>
+<li><p>Local cache memory keeps CPUs busy; but can lead to cache coherency
+issues.</p></li>
+<li><p>Performance is limited by bus bandwidth.</p></li>
+<li><p>Allows efficient use of at most a few dozen processors.</p></li>
+<li><p>Larger SMP systems exist, but rapidly become prohibitively
+expensive.</p></li>
+</ul>
+</div>
+<div class="section" id="multicore-processors">
+<h3>Multicore Processors<a class="headerlink" href="#multicore-processors" title="Permalink to this headline">¶</a></h3>
+<p>Most modern computer processors employ multiple computational cores:</p>
+<p><img alt="image" src="book/images/multicore.png" /></p>
+<ul class="simple">
+<li><p>Replicates much (but not all) of a processor’s logic on multiple
+chips.</p></li>
+<li><p>Allows the processor to behave like a shared-memory parallel
+machine.</p></li>
+<li><p>Each core has local cache: Data, Instruction and Address (TLB).</p></li>
+<li><p>These local caches are all at Level 1 (closest to the CPU).</p></li>
+</ul>
+<p>However, the cores <em>share</em> the unified L2 cache:</p>
+<ul class="simple">
+<li><p>Typically much larger than L1 cache.</p></li>
+<li><p>Contains both instructions and data.</p></li>
+</ul>
+<p>Limitations:</p>
+<ul class="simple">
+<li><p>Bus bandwidth (like SMPs).</p></li>
+<li><p>Slower effective cache bandwidth than SMPs, since L2 cache is
+shared.</p></li>
+</ul>
+</div>
+<div class="section" id="multicomputers">
+<h3>Multicomputers<a class="headerlink" href="#multicomputers" title="Permalink to this headline">¶</a></h3>
+<p>A more cost-effective approach to construction of larger parallel
+computers relies on a network to connect disjoint computers together:</p>
+<p><img alt="image" src="book/images/distributed.png" /></p>
+<ul class="simple">
+<li><p>Each processor only has direct access to its own local memory
+address space; the same address on different processors refers to
+different memory locations.</p></li>
+<li><p>Processors interact with one another through passing messages.</p></li>
+<li><p>Commercial multicomputers typically provide a custom switching
+network to provide low-latency, high-bandwidth access between
+processors.</p></li>
+<li><p>Commodity clusters are build using commodity computers and
+switches/LANs.</p></li>
+<li><p>Clearly less costly than SMP, but have increased latency/decreased
+bandwidth between CPUs.</p></li>
+<li><p>Construction may be <em>symmetric</em>, <em>asymmetric</em>, or <em>mixed</em>.</p></li>
+<li><p>Theoretically extensible to arbitrary processor counts, but software
+becomes complicated and networking gets expensive.</p></li>
+</ul>
+</div>
+<div class="section" id="machine-size-history">
+<h3>Machine Size History<a class="headerlink" href="#machine-size-history" title="Permalink to this headline">¶</a></h3>
+<p>Historical plot of the processor/core count in computers comprising the
+Top500 list from 1993-2010.</p>
+<p><img alt="In June 2010, ManeFrame [Mana atthat time] was #68 on the Top500 list, with 9210 total cores (figurefromhttp://www.top500.org)." src="book/images/parallelism_history.png" /></p>
+<p>Note the trend to achieve performance advances through increases in
+parallelism.</p>
+<p>Such rapid parallelism increases have put limitations on the parallel
+architectures that may be used.</p>
+</div>
+<div class="section" id="history-of-parallel-architectures">
+<h3>History of Parallel Architectures<a class="headerlink" href="#history-of-parallel-architectures" title="Permalink to this headline">¶</a></h3>
+<p>Historical plot of the computer architectures comprising the Top500 list
+from 1993-2010:</p>
+<p><img alt="(figure fromhttp://www.top500.org)" src="book/images/architecture_history.png" /></p>
+<p>Definitions of terms above:</p>
+<ul class="simple">
+<li><p>MPP: Massively Parallel Processors (commercially-designed)</p></li>
+<li><p>Cluster: ‘loosely’ coupled commodity parts [ManeFrame]</p></li>
+<li><p>SMP: Shared Memory Parallel</p></li>
+<li><p>Constellations: Distributed group of SMP Machines</p></li>
+</ul>
+<p>Note the extinction of large shared-memory machines, replaced by
+distributed-memory MPP and Cluster machines.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>“Anyone can build a fast CPU. The trick is to build a fast system.”
+– Seymour Cray</p>
+</div>
+</div>
+<div class="section" id="distributed-parallel-networks">
+<h3>Distributed Parallel Networks<a class="headerlink" href="#distributed-parallel-networks" title="Permalink to this headline">¶</a></h3>
+<p>Since clusters pass messages to communicate between CPUs, the speed of a
+parallel computation inherently depends on the speed of the network.</p>
+<ul class="simple">
+<li><p>Networks can consist of simple LAN networks, or can be customized
+switches.</p></li>
+<li><p>A shared medium (e.g. LAN) allows only one message at a time.</p>
+<ul>
+<li><p>Each processor ‘listens’ to every message, receiving only those
+sent to it.</p></li>
+<li><p>To send a message, a processor must wait until the medium is
+unused.</p></li>
+<li><p>If two processors send at the same time, messages interfere and
+must re-send.</p></li>
+</ul>
+</li>
+<li><p>Switched media support point-to-point messages among pairs of
+processors, with each processor having its own communication path to
+the switch.</p>
+<ul>
+<li><p>Allow concurrent transmission of messages between different
+processor pairs.</p></li>
+<li><p>Support the scaling of the network to allow large numbers of
+processors.</p></li>
+</ul>
+</li>
+<li><p>Switched network topologies vary by computer: ring, mesh,
+binary-tree, hypertree, butterfly, hypercube and shuffle-exchange
+networks are all common.</p></li>
+</ul>
+<p>Common switches for commodity clusters include:</p>
+<ul class="simple">
+<li><p><em>Fast Ethernet</em>: 100 Mbit/sec bandwidth, 100 μsec latency</p></li>
+<li><p><em>Gigabit Ethernet</em>: 1-10 Gbit/sec bandwidth, 100 μsec latency</p></li>
+<li><p><em>Infiniband</em>: 40 Gbit/sec bandwidth, 1.07 μsec latency</p></li>
+</ul>
+<p><img alt="(figure fromhttp://www.top500.org)" src="book/images/network_pie.png" /></p>
+<p>Compare these to on-computer speeds of:</p>
+<ul class="simple">
+<li><p>L1 cache: 700 Gbit/sec (Intel Sandybridge)</p></li>
+<li><p>L2 cache: 400 Gbit/sec (Intel Sandybridge)</p></li>
+<li><p>Memory bus: 168 Gbit/sec (PC3-1333 DDR3-SDRAM)</p></li>
+<li><p>Disk: 6 Gbit/sec (SATA-3)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="parallel-computing-paradigms-shared-vs-distributed-memory">
+<h2>Parallel Computing Paradigms: Shared vs. Distributed Memory<a class="headerlink" href="#parallel-computing-paradigms-shared-vs-distributed-memory" title="Permalink to this headline">¶</a></h2>
+<p>The question then arises as to how we may use these parallel computers.
+There are a number of options:</p>
+<ul class="simple">
+<li><p>Auto-parallelizing compilers (easiest):</p>
+<ul>
+<li><p>Automatically identify and parallelize existing sequential
+programs.</p></li>
+<li><p>Difficult to do well: although an algorithm may be inherently
+parallelizable, the compiler may have difficulty realizing the
+extent, and putting it into practice.</p></li>
+<li><p>Only readily available for shared-memory parallelization.</p></li>
+</ul>
+</li>
+<li><p>Extend a sequential language (most popular):</p>
+<ul>
+<li><p>Extend sequential programming languages with functions that
+allow creation, termination synchronization and communication of
+parallel processes.</p></li>
+<li><p>May be developed as a subroutine library or compiler directives;
+thereby allowing reuse of the sequential language, compiler, and
+most code.</p></li>
+</ul>
+</li>
+<li><p>Create a new parallel language from scratch (High Performance
+Fortran, UPC, C*)</p></li>
+<li><p>Add a parallel programming layer: A separate parallel programming
+system calls sequential procedures to orchestrate the combined
+program.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>“I know how to make 4 hourses pull a cart – I don’t know how to make
+1024 chickens do it.” – Enrico Clementi</p>
+</div>
+<div class="section" id="mimd-example-the-jiffy-lube-model">
+<h3>MIMD example – the “Jiffy Lube” model<a class="headerlink" href="#mimd-example-the-jiffy-lube-model" title="Permalink to this headline">¶</a></h3>
+<p>Jiffy Lube advertises a “12-point check”, consisting of changing the oil
+and filter, interior vacuum, battery check, windshield wiper check,
+brake fluid check, tire pressure check, etc.; 6 attendants cooperate to
+do these tasks on each car.</p>
+<ul class="simple">
+<li><p>In <em>coarse-grained parallelism</em>, the major tasks are done in
+parallel. Here, the vacuuming, battery and fluid checks can be done
+while the oil is being changed.</p></li>
+<li><p>In <em>fine-grained parallelism</em>, tasks requiring similar processing
+are done in parallel – 4 attendants could each check the pressure
+of a tire.</p></li>
+<li><p><em>Data dependencies</em> arise when certain tasks must wait to be started
+until others have finished and their results are made available.</p>
+<ul>
+<li><p>The oil cannot be refilled until the oil filter has been
+changed, creating a <em>coarse-grained data dependency</em>.</p></li>
+<li><p>If a tire needs to be changed and 5 attendants are each assigned
+to tighten a different lug nut, they cannot proceed concurrently
+since the nuts must be tightened in a given order – a
+<em>fine-grained data dependency</em>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Other relevant MIMD definitions [and their Jiffy Lube equivalents]:</p>
+<ul class="simple">
+<li><p><em>Data partitioning</em> – multiple but essentially identical processes
+each work on a portion of the data to be processed [check tire
+pressure or tighten lug nuts]</p></li>
+<li><p><em>Function partitioning</em> – multiple processes perform different
+kinds of tasks [one vacuums, another checks the battery, a third
+does the oil change]</p></li>
+<li><p><em>Prescheduled loops</em> – work distribution to multiple processors is
+fixed by the programmer in the code or by the compiler at compile
+time [Pete always checks the battery, Flo always does the oil
+change]</p></li>
+<li><p><em>Statically scheduled loops</em> – work distribution is fixed at run
+time. For example, it can depend on the number of processors [the
+first one to work in the morning gets to do wipers all day]</p></li>
+<li><p><em>Dynamically scheduled loops</em> – work distribution determined during
+execution, when a processor becomes available it takes the next item
+that needs work [once Frank finishes vacuuming, he does the next
+item on the checklist]</p></li>
+</ul>
+</div>
+<div class="section" id="general-parallel-computing-definitions">
+<h3>General parallel computing definitions<a class="headerlink" href="#general-parallel-computing-definitions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><em>Partitioning/Decomposition</em>: the means by which an overall
+computation is divided into smaller parts, some or all of which may
+be executed in parallel.</p></li>
+<li><p><em>Tasks</em>: programmer-defined computational subunits determined
+through the decomposition.</p></li>
+<li><p><em>Concurrency</em>: the degree to which multiple tasks can be executed in
+parallel at any given time (more is better).</p></li>
+<li><p><em>Granularity</em>: the size of tasks into which a problem is decomposed</p>
+<ul>
+<li><p>A decomposition into a large number of small tasks is called
+<em>fine-grained</em>.</p></li>
+<li><p>A decomposition into a small number of large tasks is called
+<em>coarse-grained</em>.</p></li>
+</ul>
+</li>
+<li><p><em>Task-interaction</em>: the tasks that a problem is decomposed into
+often share input, output, or intermediate data that must be
+communicated.</p></li>
+<li><p><em>Processes</em>: individual threads of execution. A single processor may
+execute multiple processes, each of which can operate on multiple
+tasks.</p></li>
+</ul>
+</div>
+<div class="section" id="the-primary-question-in-parallel-algorithms-decomposition">
+<h3>The primary question in parallel algorithms – decomposition<a class="headerlink" href="#the-primary-question-in-parallel-algorithms-decomposition" title="Permalink to this headline">¶</a></h3>
+<p>Any decomposition strategy must determine a set of primitive tasks.</p>
+<p><em>Goals</em>:</p>
+<ul class="simple">
+<li><p>Identify as many primitive tasks as possible (increases potential
+parallelism): prefer at least an order of magnitude more tasks than
+processors.</p></li>
+<li><p>Minimize redundant computations and data storage (efficiency,
+scalability).</p></li>
+<li><p>Want primitive tasks to be roughly equal work (load balancing).</p></li>
+<li><p>Want the number of tasks to increase as the problem gets larger
+(scalability).</p></li>
+</ul>
+<p><em>Data decompositions</em> are approaches that first divide the data into
+pieces and then determine how to associate computations with each piece
+of data.</p>
+<p><em>Functional decompositions</em> are approaches that first divide the
+computation into functional parts and then determine how to associate
+data items with the individual computations.</p>
+</div>
+<div class="section" id="overhead-and-load-balancing">
+<h3>Overhead and load balancing<a class="headerlink" href="#overhead-and-load-balancing" title="Permalink to this headline">¶</a></h3>
+<p>After decomposition, we must map tasks onto processes with the goal that
+all tasks finish in the shortest time.</p>
+<p>We strive to minimize <em>overheads</em> for executing the tasks, including:</p>
+<ul class="simple">
+<li><p>The time spent communicating between processors,</p></li>
+<li><p>The time some processors spend sitting idle,</p></li>
+<li><p>The time spent in the spawning of new threads.</p></li>
+</ul>
+<p>Idle processes occur due to:</p>
+<ul class="simple">
+<li><p>An uneven load distribution,</p></li>
+<li><p>Unresolved dependencies from an earlier parallel task set,</p></li>
+<li><p>A heterogeneous machine, where processors operate at different
+speeds.</p></li>
+</ul>
+<p><em>Load balancing</em> is the attempt to map processes with the dual
+objectives:</p>
+<ul class="simple">
+<li><p>Reduce the amount of inter-processor communication.</p></li>
+<li><p>Reduce the amount of time some processors are idle while others are
+working.</p></li>
+</ul>
+<p>This can be a non-trivial task, since these two objectives usually
+conflict with each other.</p>
+</div>
+<div class="section" id="data-decompositions">
+<h3>Data decompositions<a class="headerlink" href="#data-decompositions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="domain-decomposition">
+<h4>Domain decomposition<a class="headerlink" href="#domain-decomposition" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Tasks are statically or semi-statically mapped onto processes based
+on spatial location; each task performs similar operations on
+different data (subdomains).</p></li>
+<li><p>Work is interspersed with communication to synchronize the tasks or
+share data.</p></li>
+<li><p>The degree of parallelism increases with problem size, enabling
+effective use of more processes on larger problems.</p></li>
+</ul>
+<p>Typical domain decomposition approaches:</p>
+<p><img alt="1D -- decompose processes along a single physicaldimension." src="book/images/decomp_1D.png" /></p>
+<p><img alt="2D -- decompose processes along two physical dimensions; thistypically requires a logically-rectangular physicaldomain." src="book/images/decomp_2D.png" /></p>
+<p><img alt="3D -- decompose processes along three physical dimensions; typicallyrequires a logically-cuboid physicaldomain." src="book/images/decomp_3D.png" /></p>
+<div class="section" id="domain-decomposition-example-pde-approximation-of-an-aircraft">
+<h5>Domain decomposition example: PDE approximation of an aircraft<a class="headerlink" href="#domain-decomposition-example-pde-approximation-of-an-aircraft" title="Permalink to this headline">¶</a></h5>
+<p>Suppose we want to simulate 3D elasticity for vibrations/deformations in
+an aircraft.</p>
+<ul class="simple">
+<li><p>A relevant domain decomposition of the problem could be:</p>
+<ul>
+<li><p>Process 0 solves the model over the fuselage,</p></li>
+<li><p>Process 1 solves the model over the left wing,</p></li>
+<li><p>Process 2 solves the model over the right wing,</p></li>
+<li><p>Process 3 solves the model over the tail.</p></li>
+</ul>
+</li>
+<li><p>The processes must communicate to send relevant data about how the
+fuselage interacts with the wings and tail.</p></li>
+<li><p>Not all processes need to communicate – only those who own adjacent
+parts of the plane.</p></li>
+<li><p>If the wing deformations are greater than the tail, computations on
+processes 1 and 2 could take longer than process 3.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="work-pool-model">
+<h4>Work pool model<a class="headerlink" href="#work-pool-model" title="Permalink to this headline">¶</a></h4>
+<p><img alt="image" src="book/images/work_pool.png" /></p>
+<ul class="simple">
+<li><p>Tasks are dynamically mapped onto processes, where any task may
+potentially be performed by any process.</p></li>
+<li><p>Useful for load balancing if individual tasks may take dramatically
+different amounts of time.</p></li>
+<li><p>Typical when the data is small compared to the computation
+associated with tasks, and/or there are <em>many</em> more tasks than
+processes.</p></li>
+</ul>
+<div class="section" id="work-pool-example-particle-dynamics">
+<h5>Work pool example: particle dynamics<a class="headerlink" href="#work-pool-example-particle-dynamics" title="Permalink to this headline">¶</a></h5>
+<p>Suppose we wish to simulate the dynamics (position and velocity) of a
+large number of collisionless particles in an external force field, and
+where particles with a greater speed require increased processing.</p>
+<ul class="simple">
+<li><p>This model first divides the overall set into a large number of
+subsets [e.g. each particle, or small packets of particles].</p></li>
+<li><p>Each process begins work on evolving a different subset of
+particles.</p></li>
+<li><p>When each task finishes with their set, they begin work on another
+set, until all of the sets of particles have been processed.</p></li>
+<li><p>The granularity of tasks can be adjusted to trade-off between load
+imbalance and the overhead of accessing the queue of remaining
+particles.</p></li>
+<li><p>The pool may be stored in a physically-shared list, or some
+physically-distributed data structure requiring communication to
+determine the remaining work to be done.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="functional-decompositions">
+<h3>Functional decompositions<a class="headerlink" href="#functional-decompositions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="manager-worker">
+<h4>Manager-worker<a class="headerlink" href="#manager-worker" title="Permalink to this headline">¶</a></h4>
+<p>This approach goes by many names: <em>master-slave</em>, <em>professor-student</em>,
+<em>Wonka-Loompa</em>.</p>
+<p><img alt="image" src="book/images/manager_worker.png" /></p>
+<ul class="simple">
+<li><p>One or more manager processes generate tasks and assign them to
+worker processes.</p></li>
+<li><p>Tasks may be allocated <em>a priori</em> if the manager can estimate the
+task size.</p></li>
+<li><p>Alternatively, workers can be assigned small pieces when they are
+ready for more work.</p></li>
+<li><p>Care must be taken to ensure that the manager does not become a
+bottleneck.</p></li>
+<li><p>Should choose granularity of tasks so that the cost of doing work
+dominates the cost of assigning/transferring work.</p></li>
+</ul>
+<div class="section" id="manager-worker-example-simulated-annealing">
+<h5>Manager-worker example: simulated annealing<a class="headerlink" href="#manager-worker-example-simulated-annealing" title="Permalink to this headline">¶</a></h5>
+<p><em>Simulated annealing</em> is a stochastic optimization algorithm for
+functions with multiple local minima.</p>
+<ul class="simple">
+<li><p>At each iteration, a current solution is randomly changed to create
+an alternate solution in the neighborhood of the current solution.</p></li>
+<li><p>The new iterate replaces the current solution if its function value
+is lower.</p></li>
+<li><p>If the value is higher it can also replace the objective function
+with probability <span class="math notranslate nohighlight">\(e^{-\Delta/T}\)</span>, where <span class="math notranslate nohighlight">\(\Delta\)</span> is the difference
+in function values and <span class="math notranslate nohighlight">\(T\)</span> is the ‘temperature’.</p></li>
+</ul>
+<p>A manager process can set up a work queue with many initial iterates.</p>
+<ul class="simple">
+<li><p>The manager assigns workers to each investigate different
+neighborhoods.</p></li>
+<li><p>The manager keeps track of the <em>n</em> best solutions, adding new,
+refined neighborhoods to the queue to improve these ‘optimal’
+solutions.</p></li>
+<li><p>The manager decides when work stops by either setting a pre-defined
+iteration limit, or by noticing stagnation of the optimal solution
+set.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="pipeline-model">
+<h4>Pipeline model<a class="headerlink" href="#pipeline-model" title="Permalink to this headline">¶</a></h4>
+<p><img alt="image" src="book/images/pipeline.png" /></p>
+<ul class="simple">
+<li><p>A stream of data is passed through a succession of processes, each
+of which performs some task on the data.</p></li>
+<li><p>The pipeline typically involves a static mapping of tasks onto
+processes.</p></li>
+<li><p>Forms a chain of producers and consumers, with each process
+consuming the output of preceding processes, and producing data for
+subsequent processes.</p></li>
+<li><p>Load balancing is a function of task granularity:</p>
+<ul>
+<li><p>The larger the granularity the longer it takes to fill the
+pipeline.</p></li>
+<li><p>Too fine a granularity can increase overheads in the
+transmission of data.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="pipeline-example-repeated-lu-solves">
+<h5>Pipeline example: repeated LU solves<a class="headerlink" href="#pipeline-example-repeated-lu-solves" title="Permalink to this headline">¶</a></h5>
+<p>Suppose we have the matrix decomposition <span class="math notranslate nohighlight">\(A=LU\)</span>, where <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(U\)</span> are
+lower and upper triangular matrices, respectively, and we wish to solve
+<span class="math notranslate nohighlight">\(Ax=b\)</span> for many different right-hand side vectors <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<ul class="simple">
+<li><p>Solution of <span class="math notranslate nohighlight">\(Ax=b\)</span> may be performed through the two solves <span class="math notranslate nohighlight">\(Ly=b\)</span>
+and then <span class="math notranslate nohighlight">\(Ux=y\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Ly=b\)</span> involves forward substitution:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(y_1\)</span> is computed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_j, j=2,\ldots,n\)</span> are computed by updating <span class="math notranslate nohighlight">\(b\)</span> with the
+preceding <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Then, <span class="math notranslate nohighlight">\(Ux=y\)</span> involves backward substitution:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x_n\)</span> is computed</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_j, j=1,\ldots,n-1\)</span> are computed by updating <span class="math notranslate nohighlight">\(y\)</span> with the
+previously-computed <span class="math notranslate nohighlight">\(x\)</span> values.</p></li>
+</ul>
+</li>
+<li><p>By distributing matrix rows onto processors, <span class="math notranslate nohighlight">\(Ly=b\)</span> is a pipeline
+from top to bottom, and <span class="math notranslate nohighlight">\(Ux=y\)</span> is a pipeline in the reverse
+direction.</p></li>
+<li><p>Once one <span class="math notranslate nohighlight">\(b\)</span> is finished we start the next.</p></li>
+</ul>
+<p><img alt="image" src="book/images/LU_parallel.png" /></p>
+</div>
+</div>
+</div>
+<div class="section" id="parallel-computing-metrics-parallel-computing-metrics">
+<h3>Parallel computing metrics {#parallel_computing_metrics}<a class="headerlink" href="#parallel-computing-metrics-parallel-computing-metrics" title="Permalink to this headline">¶</a></h3>
+<p><em>Scalability</em> is the ability of a parallel algorithm to effectively
+utilize a parallel machine.</p>
+<p><em>Strong scaling</em>: the goal is speed up algorithms that are possible on
+one computer, but slow.</p>
+<ul class="simple">
+<li><p><em>Fix overall problem size</em> and increase the number of processors,
+<em>p</em>.</p></li>
+<li><p>Hope that the execution time decreases in inverse proportion to <em>p</em>.</p></li>
+</ul>
+<p><img alt="[from David E. Keyes, HiPC2007]" src="book/images/strong_scaling.png" /></p>
+<p><em>Weak scaling</em>: the goal is to enable problems that cannot fit on one
+computer due to large size (resolution-limited).</p>
+<ul class="simple">
+<li><p><em>Fix problem size per processor</em>, and increase <em>p</em>.</p></li>
+<li><p>Hope that the execution time remains constant, as both problem size
+and process count are increased proportionately.</p></li>
+</ul>
+<p><img alt="[from David E. Keyes, HiPC2007]" src="book/images/weak_scaling.png" /></p>
+<p>For strong-scaling tests, we also compute the following performance
+measures:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mbox{Parallel speedup} &amp;\ = \ \frac{\mbox{sequential execution time}}{\mbox{parallel execution time}} \\
+\mbox{Parallel efficiency} &amp;\ = \ \frac{\mbox{Parallel speedup}}{\mbox{processors used}}
+\ = \ \frac{\mbox{sequential execution time}}{(\mbox{parallel execution time})(\mbox{processors used})}
+\end{aligned}\end{split}\]</div>
+<p>We typically compare these metrics against the theoretically “best-case
+scenario”, as determined through <em>Amdahl’s Law</em> (1967):</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f\)</span> be the fraction of work that is not parallelizable; and
+<span class="math notranslate nohighlight">\((1-f)\)</span> be the fraction of work that is perfectly parallelizable.</p></li>
+<li><p>Assume it takes time <span class="math notranslate nohighlight">\(t\)</span> to complete the task on one processor.</p></li>
+<li><p>The theoretical time for <span class="math notranslate nohighlight">\(p\)</span> processors to accomplish the same task
+should be <span class="math notranslate nohighlight">\(t \left(f + \frac{1-f}{p}\right)\)</span>.</p></li>
+</ul>
+<p><img alt="image" src="book/images/amdahl_speedups.png" /></p>
+</div>
+</div>
+<div class="section" id="group-discussion-parallel-decomposition">
+<h2>Group Discussion: Parallel Decomposition<a class="headerlink" href="#group-discussion-parallel-decomposition" title="Permalink to this headline">¶</a></h2>
+<p>You need to compute the sum of 1000 numbers as rapidly as possible.</p>
+<p>You have a stack of 1000 index cards, each with a single number, and you
+are in charge of 1000 accountants, each with a pencil and a set of blank
+index cards.</p>
+<p>These accountants are sitting at desks in a large room, where the desks
+are organized into 50 rows of 20 desks each. Each accountant can only
+pass cards to her four nearest accountants (front, back, left and
+right). You can choose to use any number of these accountants that you
+wish, and you can have accountants do different tasks.</p>
+<ol class="simple">
+<li><p>What is an optimal method for distributing cards to accountants?</p></li>
+<li><p>What is an optimal method for accumulating subtotals generated by
+the active accountants into a grand total?</p></li>
+<li><p>How will these approaches change if you increase the work to adding
+10^4^ numbers with the same 1000 accountants? What about 10^5^
+numbers?</p></li>
+<li><p>Is it possible for 1000 accountants to perform the task 1000 times
+faster than only one accountant?</p></li>
+<li><p>Is there a better way to arrange the desks to reduce the time needed
+to distribute cards and collect subtotals?</p></li>
+</ol>
+</div>
+<div class="section" id="maneframe-ii-m2">
+<h2>ManeFrame II (M2)<a class="headerlink" href="#maneframe-ii-m2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hardware">
+<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="software">
+<h3>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="introduction-to-unix">
+<h4>Introduction to UNIX<a class="headerlink" href="#introduction-to-unix" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="lmod-environment-module-system">
+<h4>Lmod Environment Module System<a class="headerlink" href="#lmod-environment-module-system" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="slurm-resource-management-and-job-scheduling-system">
+<h4>Slurm Resource Management and Job Scheduling System<a class="headerlink" href="#slurm-resource-management-and-job-scheduling-system" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-maneframe-ii-m2">
+<h2>Accessing ManeFrame II (M2)<a class="headerlink" href="#accessing-maneframe-ii-m2" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
