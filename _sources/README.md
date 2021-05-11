@@ -27,7 +27,7 @@ information on getting started can be found
 
 ## Using the `ds_1300` Environment
 
-1. `conda activate ds_1300` to start (`source ~/.venv/ds_1300/bin/activate` on M2)
+1. `conda activate ds_1300` to start (`source activate ~/.conda/envs/ds_1300` on M2)
 2. `conda deactivate` when finished
 
 ## Remove Environment
