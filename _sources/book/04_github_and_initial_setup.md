@@ -1,6 +1,6 @@
-# Introduction to GitHub
+# Introduction to GitHub and Getting Setup
 
-## Getting Started
+## Getting Started with GitHub
 
 * [Version Control with Git](http://faculty.smu.edu/csc/workshops/2020/summer/git/)
 * [Getting Started with GitHub](https://docs.github.com/en/github/getting-started-with-github)
