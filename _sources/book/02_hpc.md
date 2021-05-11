@@ -601,15 +601,9 @@ wish, and you can have accountants do different tasks.
 
 ## ManeFrame II (M2)
 
-### Hardware
-
-### Software
-
-#### Introduction to UNIX
-
-#### Lmod Environment Module System
-
-#### Slurm Resource Management and Job Scheduling System
-
-## Accessing ManeFrame II (M2)
+* [Hardware](http://faculty.smu.edu/csc/documentation/about.html)
+* Software
+  * [Introduction to UNIX](http://faculty.smu.edu/csc/documentation/unix.html)
+  * [Lmod Environment Module System](http://faculty.smu.edu/csc/documentation/modules.html)
+  * [Slurm Resource Management and Job Scheduling System](http://faculty.smu.edu/csc/documentation/slurm.html)
 
