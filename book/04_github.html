@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to Jupyter Lab and Jupyter Notebooks &#8212; DS 1300</title>
+    <title>Introduction to GitHub &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -179,6 +179,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-your-repository-and-python-environment">
+   Setting Up Your Repository and Python Environment
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -187,8 +205,30 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-jupyter-lab-and-jupyter-notebooks">
-<h1>Introduction to Jupyter Lab and Jupyter Notebooks<a class="headerlink" href="#introduction-to-jupyter-lab-and-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="introduction-to-github">
+<h1>Introduction to GitHub<a class="headerlink" href="#introduction-to-github" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://faculty.smu.edu/csc/workshops/2020/summer/git/">Version Control with Git</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github">Getting Started with GitHub</a></p></li>
+</ul>
+</div>
+<div class="section" id="setting-up-your-repository-and-python-environment">
+<h2>Setting Up Your Repository and Python Environment<a class="headerlink" href="#setting-up-your-repository-and-python-environment" title="Permalink to this headline">¶</a></h2>
+<p>#. Go to the <a class="reference external" href="https://github.com/SouthernMethodistUniversity/ds_1300_notebooks">GitHub repository for our class Jupyter notebooks</a>.
+#. Select Fork. This will create a personal copy of the repository.
+#. Select Code and copy the HTTPS URL for the forked repository.
+#. Go to the <a class="reference external" href="https://hpc.smu.edu">HPC Portal</a> and log in.
+#. Select Clusters and then ManeFrame II Shell Access.
+#. In the terminal session, type each command and press Enter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">paste</span> <span class="n">the</span> <span class="n">URL</span> <span class="k">for</span> <span class="n">the</span> <span class="n">forked</span> <span class="n">repository</span> <span class="n">without</span> <span class="n">brackets</span><span class="o">&gt;</span>
+<span class="n">cd</span> <span class="n">ds_1300_notebooks</span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">python</span><span class="o">/</span><span class="mi">3</span>
+<span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> <span class="o">--</span><span class="n">force</span>
+</pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

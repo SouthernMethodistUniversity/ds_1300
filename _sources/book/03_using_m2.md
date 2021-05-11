@@ -1,12 +1,5 @@
-# GitHub, Jupyter, and Python Overview
+# Using ManeFrame II for Class
 
-## GitHub
+* [Portal Overview](http://faculty.smu.edu/csc/documentation/portal.html)
 
-### Class Workflow
-
-### Getting Started with GitHub
-
-- GitHub tutorials
-
-## Jupyter Introduction 
 
