@@ -7,7 +7,7 @@
 | Dr. Robert Kalescky | rkalescky@smu.edu | 8-3070 | Heroy Hall 303 | TBD          |
 | Dr. Eric Godat      | egodat@smu.edu    | 8-4599 | Ford Hall 119  | TBD          |
 
-Students will be encouraged to use the course Slack channel for
+Students will be encouraged to use the course Teams channel for
 communication with instructors and their fellow classmates. This will be
 especially important when communicating with group members while working
 on the semester project.
