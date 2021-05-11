@@ -23,7 +23,7 @@ information on getting started can be found
 
 ## Installing the `ds_1300` Environment
 
-1. `conda env create -f environments/ds_1300.yml --force`
+1. `conda env create -f environments.yml --force`
 
 ## Using the `ds_1300` Environment
 
