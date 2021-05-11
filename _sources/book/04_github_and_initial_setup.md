@@ -30,6 +30,7 @@
 ```
 git clone <paste the URL for the forked repository without brackets>
 cd ds_1300_notebooks
+mkdir work
 module load python/3
 conda env create -f environment.yml --force
 ```
@@ -52,6 +53,35 @@ conda env create -f environment.yml --force
 5. Select "Connect to JupyterLab", which will appear when the JupyterLab session has started.
 6. Select the "File Browser" icon at the top of the left sidebar and browse to your `ds_1300_notebooks` directory.
 
-## How to Submit Assignments via GitHub
+## Working on Notebooks
 
+1. Right-click on a notebook and select "Copy".
+2. Browse into your work directory.
+3. Right-click with the directory and select "Paste".
+4. Double click the notebook to open.
+
+## Pulling New Notebooks
+
+1. Save the notebook.
+2. Open a terminal session via "File", "New", "Terminal".
+3. In the terminal session, type each command and press Enter after each line:
+
+```
+cd ds_1300_notebooks
+git pull --rebase
+```
+
+## Submitting Completed Assignments via GitHub
+
+1. Save the notebook.
+2. Open a terminal session via "File", "New", "Terminal".
+3. In the terminal session, type each command and press Enter after each line:
+
+```
+cd ds_1300_notebooks
+git add work/<the name of the completed notebook without brackets>.ipynb
+git commit -m "<Brief note about work witout brackets>"
+git tag -a <assignment number without brackets> -m "<Completed assignment number without brackets>"
+git push
+```
 
