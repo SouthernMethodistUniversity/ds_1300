@@ -18,6 +18,39 @@ jupyter:
 
 By: Dr. Eric Godat and Dr. Rob Kalescky 
 
+
+## Numbers as Data
+
+
+## Text as Data
+
+
+## People as Data
+
+
+## Common Issues
+
+
+### Names and Unique Identifiers
+
+
+### Dates
+
+
+## Loading Data into Python
+
+
+### From csv
+
+
+## Getting Help
+
+
+### Python Documentation
+
+
+### Stack Overflow, Stack Exchange, and more
+
 ```python
 
 ```

@@ -631,13 +631,13 @@ First, we want to come up with a way to step through the books in a linear way. 
 
 ```python
 # Simple - add the collection number to the chapter number divided by 10
-data['BookChapter'] = data['CollectionNum']+0.1*data['ChapterNum']
+#data['BookChapter'] = data['CollectionNum']+0.1*data['ChapterNum']
 
 # Much better - add the book number to the chapter number divided by 10
 #data['BookChapter'] = data['BookNum']+0.1*data['ChapterNum']
 
 # Best but complicated - add the book number to the chapter number scaled by 1/n where n is the max number of chapters in that book.
-#data['BookChapter']=data.apply(lambda x: x['BookNum']+(1/data.groupby(by='BookNum').max()['ChapterNum'][x['BookNum']])*x['ChapterNum'], axis=1)
+data['BookChapter']=data.apply(lambda x: x['BookNum']+(1/data.groupby(by='BookNum').max()['ChapterNum'][x['BookNum']])*x['ChapterNum'], axis=1)
 ```
 
 ```python
