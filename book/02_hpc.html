@@ -437,7 +437,7 @@ However physical limits, e.g. power consumption, heat emission, and even
 the size of the atom, have currently stopped this expansion on
 individual processors, with speeds that have leveled off since around
 2008.</p>
-<p><img alt="Moore's Law" src="book/images/Moore_law.png" /></p>
+<p><img alt="Moore's Law" src="../_images/Moore_law.png" /></p>
 </div>
 <div class="section" id="cpu-vs-memory-disk-speed">
 <h4>CPU vs. Memory/Disk Speed<a class="headerlink" href="#cpu-vs-memory-disk-speed" title="Permalink to this headline">¶</a></h4>
@@ -468,13 +468,13 @@ time.</p></li>
 </ul>
 <p>The Gordon Bell Prize (below) is awarded to each year’s simulation that
 achieves the highest FLOP rate:</p>
-<p><img alt="[from David E. Keyes, HiPC2007]" src="book/images/algorithm_moore.png" /></p>
+<p><img alt="[from David E. Keyes, HiPC2007]" src="../_images/algorithm_moore.png" /></p>
 </div>
 <div class="section" id="flynn-s-parallel-architecture-taxonomy">
 <h3>Flynn’s parallel architecture taxonomy<a class="headerlink" href="#flynn-s-parallel-architecture-taxonomy" title="Permalink to this headline">¶</a></h3>
 <p>We classify parallel computers according to their control structure
 along the metrics:</p>
-<p><img alt="image" src="book/images/flynn.png" /></p>
+<p><img alt="image" src="../_images/flynn.png" /></p>
 <ul class="simple">
 <li><p>Single/multiple instruction streams: how many types of instructions
 may be performed at once?</p></li>
@@ -496,7 +496,7 @@ a hybrid between these two categories.</p>
 <h3>Multiprocessors<a class="headerlink" href="#multiprocessors" title="Permalink to this headline">¶</a></h3>
 <p>In the 80’s, vendors began to attach multiple processors to the same
 memory.</p>
-<p><img alt="image" src="book/images/smp.png" /></p>
+<p><img alt="image" src="../_images/smp.png" /></p>
 <p>Perhaps the most easily usable (but costliest) approach for parallelism:</p>
 <ul class="simple">
 <li><p>Straightforward extension of uniprocessor: multiple CPUs are
@@ -517,7 +517,7 @@ expensive.</p></li>
 <div class="section" id="multicore-processors">
 <h3>Multicore Processors<a class="headerlink" href="#multicore-processors" title="Permalink to this headline">¶</a></h3>
 <p>Most modern computer processors employ multiple computational cores:</p>
-<p><img alt="image" src="book/images/multicore.png" /></p>
+<p><img alt="image" src="../_images/multicore.png" /></p>
 <ul class="simple">
 <li><p>Replicates much (but not all) of a processor’s logic on multiple
 chips.</p></li>
@@ -542,7 +542,7 @@ shared.</p></li>
 <h3>Multicomputers<a class="headerlink" href="#multicomputers" title="Permalink to this headline">¶</a></h3>
 <p>A more cost-effective approach to construction of larger parallel
 computers relies on a network to connect disjoint computers together:</p>
-<p><img alt="image" src="book/images/distributed.png" /></p>
+<p><img alt="image" src="../_images/distributed.png" /></p>
 <ul class="simple">
 <li><p>Each processor only has direct access to its own local memory
 address space; the same address on different processors refers to
@@ -564,7 +564,7 @@ becomes complicated and networking gets expensive.</p></li>
 <h3>Machine Size History<a class="headerlink" href="#machine-size-history" title="Permalink to this headline">¶</a></h3>
 <p>Historical plot of the processor/core count in computers comprising the
 Top500 list from 1993-2010.</p>
-<p><img alt="In June 2010, ManeFrame [Mana atthat time] was #68 on the Top500 list, with 9210 total cores (figurefromhttp://www.top500.org)." src="book/images/parallelism_history.png" /></p>
+<p><img alt="In June 2010, ManeFrame [Mana atthat time] was #68 on the Top500 list, with 9210 total cores (figurefromhttp://www.top500.org)." src="../_images/parallelism_history.png" /></p>
 <p>Note the trend to achieve performance advances through increases in
 parallelism.</p>
 <p>Such rapid parallelism increases have put limitations on the parallel
@@ -574,7 +574,7 @@ architectures that may be used.</p>
 <h3>History of Parallel Architectures<a class="headerlink" href="#history-of-parallel-architectures" title="Permalink to this headline">¶</a></h3>
 <p>Historical plot of the computer architectures comprising the Top500 list
 from 1993-2010:</p>
-<p><img alt="(figure fromhttp://www.top500.org)" src="book/images/architecture_history.png" /></p>
+<p><img alt="(figure fromhttp://www.top500.org)" src="../_images/architecture_history.png" /></p>
 <p>Definitions of terms above:</p>
 <ul class="simple">
 <li><p>MPP: Massively Parallel Processors (commercially-designed)</p></li>
@@ -627,7 +627,7 @@ networks are all common.</p></li>
 <li><p><em>Gigabit Ethernet</em>: 1-10 Gbit/sec bandwidth, 100 μsec latency</p></li>
 <li><p><em>Infiniband</em>: 40 Gbit/sec bandwidth, 1.07 μsec latency</p></li>
 </ul>
-<p><img alt="(figure fromhttp://www.top500.org)" src="book/images/network_pie.png" /></p>
+<p><img alt="(figure fromhttp://www.top500.org)" src="../_images/network_pie.png" /></p>
 <p>Compare these to on-computer speeds of:</p>
 <ul class="simple">
 <li><p>L1 cache: 700 Gbit/sec (Intel Sandybridge)</p></li>
@@ -807,9 +807,9 @@ share data.</p></li>
 effective use of more processes on larger problems.</p></li>
 </ul>
 <p>Typical domain decomposition approaches:</p>
-<p><img alt="1D -- decompose processes along a single physicaldimension." src="book/images/decomp_1D.png" /></p>
-<p><img alt="2D -- decompose processes along two physical dimensions; thistypically requires a logically-rectangular physicaldomain." src="book/images/decomp_2D.png" /></p>
-<p><img alt="3D -- decompose processes along three physical dimensions; typicallyrequires a logically-cuboid physicaldomain." src="book/images/decomp_3D.png" /></p>
+<p><img alt="1D -- decompose processes along a single physicaldimension." src="../_images/decomp_1D.png" /></p>
+<p><img alt="2D -- decompose processes along two physical dimensions; thistypically requires a logically-rectangular physicaldomain." src="../_images/decomp_2D.png" /></p>
+<p><img alt="3D -- decompose processes along three physical dimensions; typicallyrequires a logically-cuboid physicaldomain." src="../_images/decomp_3D.png" /></p>
 <div class="section" id="domain-decomposition-example-pde-approximation-of-an-aircraft">
 <h5>Domain decomposition example: PDE approximation of an aircraft<a class="headerlink" href="#domain-decomposition-example-pde-approximation-of-an-aircraft" title="Permalink to this headline">¶</a></h5>
 <p>Suppose we want to simulate 3D elasticity for vibrations/deformations in
@@ -834,7 +834,7 @@ processes 1 and 2 could take longer than process 3.</p></li>
 </div>
 <div class="section" id="work-pool-model">
 <h4>Work pool model<a class="headerlink" href="#work-pool-model" title="Permalink to this headline">¶</a></h4>
-<p><img alt="image" src="book/images/work_pool.png" /></p>
+<p><img alt="image" src="../_images/work_pool.png" /></p>
 <ul class="simple">
 <li><p>Tasks are dynamically mapped onto processes, where any task may
 potentially be performed by any process.</p></li>
@@ -872,7 +872,7 @@ determine the remaining work to be done.</p></li>
 <h4>Manager-worker<a class="headerlink" href="#manager-worker" title="Permalink to this headline">¶</a></h4>
 <p>This approach goes by many names: <em>master-slave</em>, <em>professor-student</em>,
 <em>Wonka-Loompa</em>.</p>
-<p><img alt="image" src="book/images/manager_worker.png" /></p>
+<p><img alt="image" src="../_images/manager_worker.png" /></p>
 <ul class="simple">
 <li><p>One or more manager processes generate tasks and assign them to
 worker processes.</p></li>
@@ -913,7 +913,7 @@ set.</p></li>
 </div>
 <div class="section" id="pipeline-model">
 <h4>Pipeline model<a class="headerlink" href="#pipeline-model" title="Permalink to this headline">¶</a></h4>
-<p><img alt="image" src="book/images/pipeline.png" /></p>
+<p><img alt="image" src="../_images/pipeline.png" /></p>
 <ul class="simple">
 <li><p>A stream of data is passed through a succession of processes, each
 of which performs some task on the data.</p></li>
@@ -958,7 +958,7 @@ from top to bottom, and <span class="math notranslate nohighlight">\(Ux=y\)</spa
 direction.</p></li>
 <li><p>Once one <span class="math notranslate nohighlight">\(b\)</span> is finished we start the next.</p></li>
 </ul>
-<p><img alt="image" src="book/images/LU_parallel.png" /></p>
+<p><img alt="image" src="../_images/LU_parallel.png" /></p>
 </div>
 </div>
 </div>
@@ -973,7 +973,7 @@ one computer, but slow.</p>
 <em>p</em>.</p></li>
 <li><p>Hope that the execution time decreases in inverse proportion to <em>p</em>.</p></li>
 </ul>
-<p><img alt="[from David E. Keyes, HiPC2007]" src="book/images/strong_scaling.png" /></p>
+<p><img alt="[from David E. Keyes, HiPC2007]" src="../_images/strong_scaling.png" /></p>
 <p><em>Weak scaling</em>: the goal is to enable problems that cannot fit on one
 computer due to large size (resolution-limited).</p>
 <ul class="simple">
@@ -981,7 +981,7 @@ computer due to large size (resolution-limited).</p>
 <li><p>Hope that the execution time remains constant, as both problem size
 and process count are increased proportionately.</p></li>
 </ul>
-<p><img alt="[from David E. Keyes, HiPC2007]" src="book/images/weak_scaling.png" /></p>
+<p><img alt="[from David E. Keyes, HiPC2007]" src="../_images/weak_scaling.png" /></p>
 <p>For strong-scaling tests, we also compute the following performance
 measures:</p>
 <div class="math notranslate nohighlight">
@@ -999,7 +999,7 @@ scenario”, as determined through <em>Amdahl’s Law</em> (1967):</p>
 <li><p>The theoretical time for <span class="math notranslate nohighlight">\(p\)</span> processors to accomplish the same task
 should be <span class="math notranslate nohighlight">\(t \left(f + \frac{1-f}{p}\right)\)</span>.</p></li>
 </ul>
-<p><img alt="image" src="book/images/amdahl_speedups.png" /></p>
+<p><img alt="image" src="../_images/amdahl_speedups.png" /></p>
 </div>
 </div>
 <div class="section" id="group-discussion-parallel-decomposition">
