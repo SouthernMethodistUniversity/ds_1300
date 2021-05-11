@@ -238,12 +238,14 @@
 </div>
 <div class="section" id="initial-setup-your-repository-and-python-environment">
 <h2>Initial Setup Your Repository and Python Environment<a class="headerlink" href="#initial-setup-your-repository-and-python-environment" title="Permalink to this headline">¶</a></h2>
-<p>#. Go to the <a class="reference external" href="https://github.com/SouthernMethodistUniversity/ds_1300_notebooks">GitHub repository for our class Jupyter notebooks</a>.
-#. Select “Fork”. This will create a personal copy of the repository.
-#. Select “Code” and copy the HTTPS URL for the forked repository.
-#. Go to the <a class="reference external" href="https://hpc.smu.edu">HPC Portal</a> and log in.
-#. Select “Interactive Apps” and then “JupyterLab”.
-#. Set the fields to:</p>
+<ol class="simple">
+<li><p>Go to the <a class="reference external" href="https://github.com/SouthernMethodistUniversity/ds_1300_notebooks">GitHub repository for our class Jupyter notebooks</a>.</p></li>
+<li><p>Select “Fork”. This will create a personal copy of the repository.</p></li>
+<li><p>Select “Code” and copy the HTTPS URL for the forked repository.</p></li>
+<li><p>Go to the <a class="reference external" href="https://hpc.smu.edu">HPC Portal</a> and log in.</p></li>
+<li><p>Select “Interactive Apps” and then “JupyterLab”.</p></li>
+<li><p>Set the fields to:</p></li>
+</ol>
 <ul class="simple">
 <li><p>“Additional environment modules to load”: <code class="docutils literal notranslate"><span class="pre">python/3</span></code></p></li>
 <li><p>“Custom module paths”: Clear the contents if any</p></li>
@@ -253,12 +255,14 @@
 <li><p>“Number of nodes”: <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
 <li><p>“Cores per node”: <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
 <li><p>“GPUs per node”: <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
-<li><p>“Memory”: <code class="docutils literal notranslate"><span class="pre">6</span></code>
-#. Select “Launch” and wait for the job and JupyterLab session to begin (this can take a few minutes).
-#. Select “Connect to JupyterLab”, which will appear when the JupyterLab session has started.
-#. Select “File”, “New”, “Terminal” to start a new terminal session within JupyterLab.
-#. In the terminal session, type each command and press Enter:</p></li>
+<li><p>“Memory”: <code class="docutils literal notranslate"><span class="pre">6</span></code></p></li>
 </ul>
+<ol class="simple">
+<li><p>Select “Launch” and wait for the job and JupyterLab session to begin (this can take a few minutes).</p></li>
+<li><p>Select “Connect to JupyterLab”, which will appear when the JupyterLab session has started.</p></li>
+<li><p>Select “File”, “New”, “Terminal” to start a new terminal session within JupyterLab.</p></li>
+<li><p>In the terminal session, type each command and press Enter:</p></li>
+</ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">paste</span> <span class="n">the</span> <span class="n">URL</span> <span class="k">for</span> <span class="n">the</span> <span class="n">forked</span> <span class="n">repository</span> <span class="n">without</span> <span class="n">brackets</span><span class="o">&gt;</span>
 <span class="n">cd</span> <span class="n">ds_1300_notebooks</span>
 <span class="n">module</span> <span class="n">load</span> <span class="n">python</span><span class="o">/</span><span class="mi">3</span>
@@ -268,9 +272,11 @@
 </div>
 <div class="section" id="launching-a-jupyter-lab-session-and-accessing-your-notebooks">
 <h2>Launching a Jupyter Lab Session and Accessing Your Notebooks<a class="headerlink" href="#launching-a-jupyter-lab-session-and-accessing-your-notebooks" title="Permalink to this headline">¶</a></h2>
-<p>#. Go to the <a class="reference external" href="https://hpc.smu.edu">HPC Portal</a> and log in.
-#. Select “Interactive Apps” and then “JupyterLab”.
-#. Set the fields to:</p>
+<ol class="simple">
+<li><p>Go to the <a class="reference external" href="https://hpc.smu.edu">HPC Portal</a> and log in.</p></li>
+<li><p>Select “Interactive Apps” and then “JupyterLab”.</p></li>
+<li><p>Set the fields to:</p></li>
+</ol>
 <ul class="simple">
 <li><p>“Additional environment modules to load”: <code class="docutils literal notranslate"><span class="pre">python/3</span></code></p></li>
 <li><p>“Custom module paths”: Clear the contents if any</p></li>
@@ -280,11 +286,13 @@
 <li><p>“Number of nodes”: <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
 <li><p>“Cores per node”: <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
 <li><p>“GPUs per node”: <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
-<li><p>“Memory”: <code class="docutils literal notranslate"><span class="pre">6</span></code>
-#. Select “Launch” and wait for the job and JupyterLab session to begin (this can take a few minutes).
-#. Select “Connect to JupyterLab”, which will appear when the JupyterLab session has started.
-#. Select the “File Browser” icon at the top of the left sidebar and browse to your <code class="docutils literal notranslate"><span class="pre">ds_1300_notebooks</span></code> directory.</p></li>
+<li><p>“Memory”: <code class="docutils literal notranslate"><span class="pre">6</span></code></p></li>
 </ul>
+<ol class="simple">
+<li><p>Select “Launch” and wait for the job and JupyterLab session to begin (this can take a few minutes).</p></li>
+<li><p>Select “Connect to JupyterLab”, which will appear when the JupyterLab session has started.</p></li>
+<li><p>Select the “File Browser” icon at the top of the left sidebar and browse to your <code class="docutils literal notranslate"><span class="pre">ds_1300_notebooks</span></code> directory.</p></li>
+</ol>
 </div>
 <div class="section" id="how-to-submit-assignments-via-github">
 <h2>How to Submit Assignments via GitHub<a class="headerlink" href="#how-to-submit-assignments-via-github" title="Permalink to this headline">¶</a></h2>
