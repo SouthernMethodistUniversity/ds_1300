@@ -13,6 +13,20 @@ jupyter:
     name: python3
 ---
 
+# Working with Data
+
+```python
+import pandas as pd
+```
+
+```python
+df = pd.read_csv('../data/state_facts.tsv',delimiter="\t")
+```
+
+```python
+df
+```
+
 ```python
 
 ```

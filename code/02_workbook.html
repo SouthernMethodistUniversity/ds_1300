@@ -197,6 +197,18 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-data-into-python">
+   Loading Data into Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-csv">
+     From csv
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numbers-as-data">
    Numbers as Data
   </a>
@@ -226,16 +238,9 @@
      Dates
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loading-data-into-python">
-   Loading Data into Python
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#from-csv">
-     From csv
+    <a class="reference internal nav-link" href="#missing-values">
+     Missing Values
     </a>
    </li>
   </ul>
@@ -271,14 +276,53 @@
   <div class="section" id="working-with-data">
 <h1>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h1>
 <p>By: Dr. Eric Godat and Dr. Rob Kalescky</p>
+<p>As implied by the name, a Data Scientist needs to be able to work with data. However, what consitutes data can vary wildly depending on the project you’re working on.</p>
+<p>In this notebook, we will dive into a few common types of data and some of the common pitfalls you’ll encounter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+<div class="section" id="loading-data-into-python">
+<h2>Loading Data into Python<a class="headerlink" href="#loading-data-into-python" title="Permalink to this headline">¶</a></h2>
+<p>The first step is getting data into python. While you could type the data into a dictionary, list, or other data format, that quickly becomes unsustainable. Fortunately there are several ways to load our data directly.</p>
+<div class="section" id="from-csv">
+<h3>From csv<a class="headerlink" href="#from-csv" title="Permalink to this headline">¶</a></h3>
+<p>The easiest way to load data is to use pandas to <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read a csv</a> (comma separated values) file into a data frame. This also works with other deliminators (things that split your data fields) too.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/sample_data.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="numbers-as-data">
 <h2>Numbers as Data<a class="headerlink" href="#numbers-as-data" title="Permalink to this headline">¶</a></h2>
+<p>The most classic example of data (and the one most people think of when you say data) is numerical data.</p>
+<p>Using the data we just loaded. Let’s do some basic calculations.</p>
+<p>We’re going to start by summing our data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Obviously this doesn’t make any sense, but why doesn’t it?</p>
+</div></blockquote>
+<p>How about the difference in price between two houses?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_2&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_1&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="text-as-data">
 <h2>Text as Data<a class="headerlink" href="#text-as-data" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/folktales.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="people-as-data">
 <h2>People as Data<a class="headerlink" href="#people-as-data" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/messy_data.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="common-issues">
 <h2>Common Issues<a class="headerlink" href="#common-issues" title="Permalink to this headline">¶</a></h2>
@@ -288,11 +332,8 @@
 <div class="section" id="dates">
 <h3>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">¶</a></h3>
 </div>
-</div>
-<div class="section" id="loading-data-into-python">
-<h2>Loading Data into Python<a class="headerlink" href="#loading-data-into-python" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="from-csv">
-<h3>From csv<a class="headerlink" href="#from-csv" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="missing-values">
+<h3>Missing Values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="getting-help">
