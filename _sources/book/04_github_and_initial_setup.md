@@ -30,6 +30,7 @@
 ```
 git clone <paste the URL for the forked repository without brackets>
 cd ds_1300_notebooks
+git remote add upstream https://github.com/SouthernMethodistUniversity/ds_1300_notebooks.git
 mkdir work
 module load python/3
 conda env create -f environment.yml --force
@@ -55,8 +56,9 @@ conda env create -f environment.yml --force
 
 ## Working on Notebooks
 
+1. Browser into "code" directory.
 1. Right-click on a notebook and select "Copy".
-2. Browse into your work directory.
+2. Browse into your "work" directory.
 3. Right-click with the directory and select "Paste".
 4. Double click the notebook to open.
 
@@ -68,7 +70,8 @@ conda env create -f environment.yml --force
 
 ```
 cd ds_1300_notebooks
-git pull --rebase
+git fetch upstream
+git merge upstream/main
 ```
 
 ## Submitting Completed Assignments via GitHub
@@ -82,6 +85,6 @@ cd ds_1300_notebooks
 git add work/<the name of the completed notebook without brackets>.ipynb
 git commit -m "<Brief note about work witout brackets>"
 git tag -a <assignment number without brackets> -m "<Completed assignment number without brackets>"
-git push
+git push --tags
 ```
 
