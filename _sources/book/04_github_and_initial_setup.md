@@ -45,7 +45,7 @@ conda env create -f environment.yml --force
   * "Custom module paths": Clear the contents if any
   * "Custom environment settings": `source activate ~/.conda/envs/ds_1300`
   * "Partition": `htc`
-  * "Number of hours" `1`
+  * "Number of hours" `24`
   * "Number of nodes": `1`
   * "Cores per node": `1`
   * "GPUs per node": `0`
