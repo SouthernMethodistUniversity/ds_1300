@@ -19,7 +19,7 @@
 - What comes to mind with the phrase "garbage in equals garbage out"?
 - What are some sources of data?
 - What is bias?
-- Are you a source of data and, if so, how and too whom?
+- Are you a source of data and, if so, how and to whom?
 
 ### Reading Schedule
 
