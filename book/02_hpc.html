@@ -269,7 +269,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mimd-example-the-jiffy-lube-model">
-     MIMD example – the “Jiffy Lube” model
+     MIMD Example – The “Jiffy Lube” Model
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -339,19 +339,12 @@
       <a class="reference internal nav-link" href="#pipeline-model">
        Pipeline model
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pipeline-example-repeated-lu-solves">
-         Pipeline example: repeated LU solves
-        </a>
-       </li>
-      </ul>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parallel-computing-metrics-parallel-computing-metrics">
-     Parallel computing metrics {#parallel_computing_metrics}
+    <a class="reference internal nav-link" href="#parallel-computing-metrics">
+     Parallel computing metrics
     </a>
    </li>
   </ul>
@@ -543,11 +536,10 @@ from 1993-2010:</p>
 </ul>
 <p>Note the extinction of large shared-memory machines, replaced by
 distributed-memory MPP and Cluster machines.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>“Anyone can build a fast CPU. The trick is to build a fast system.”
+<blockquote>
+<div><p>“Anyone can build a fast CPU. The trick is to build a fast system.”
 – Seymour Cray</p>
-</div>
+</div></blockquote>
 </div>
 <div class="section" id="distributed-parallel-networks">
 <h3>Distributed Parallel Networks<a class="headerlink" href="#distributed-parallel-networks" title="Permalink to this headline">¶</a></h3>
@@ -627,13 +619,12 @@ Fortran, UPC, C*)</p></li>
 system calls sequential procedures to orchestrate the combined
 program.</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>“I know how to make 4 hourses pull a cart – I don’t know how to make
+<blockquote>
+<div><p>“I know how to make 4 horses pull a cart – I don’t know how to make
 1024 chickens do it.” – Enrico Clementi</p>
-</div>
+</div></blockquote>
 <div class="section" id="mimd-example-the-jiffy-lube-model">
-<h3>MIMD example – the “Jiffy Lube” model<a class="headerlink" href="#mimd-example-the-jiffy-lube-model" title="Permalink to this headline">¶</a></h3>
+<h3>MIMD Example – The “Jiffy Lube” Model<a class="headerlink" href="#mimd-example-the-jiffy-lube-model" title="Permalink to this headline">¶</a></h3>
 <p>Jiffy Lube advertises a “12-point check”, consisting of changing the oil
 and filter, interior vacuum, battery check, windshield wiper check,
 brake fluid check, tire pressure check, etc.; 6 attendants cooperate to
@@ -657,7 +648,7 @@ since the nuts must be tightened in a given order – a
 </ul>
 </li>
 </ul>
-<p>Other relevant MIMD definitions [and their Jiffy Lube equivalents]:</p>
+<p>Other relevant MIMD definitions (and their Jiffy Lube equivalents):</p>
 <ul class="simple">
 <li><p><em>Data partitioning</em> – multiple but essentially identical processes
 each work on a portion of the data to be processed [check tire
@@ -890,39 +881,10 @@ transmission of data.</p></li>
 </ul>
 </li>
 </ul>
-<div class="section" id="pipeline-example-repeated-lu-solves">
-<h5>Pipeline example: repeated LU solves<a class="headerlink" href="#pipeline-example-repeated-lu-solves" title="Permalink to this headline">¶</a></h5>
-<p>Suppose we have the matrix decomposition <span class="math notranslate nohighlight">\(A=LU\)</span>, where <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(U\)</span> are
-lower and upper triangular matrices, respectively, and we wish to solve
-<span class="math notranslate nohighlight">\(Ax=b\)</span> for many different right-hand side vectors <span class="math notranslate nohighlight">\(b\)</span>.</p>
-<ul class="simple">
-<li><p>Solution of <span class="math notranslate nohighlight">\(Ax=b\)</span> may be performed through the two solves <span class="math notranslate nohighlight">\(Ly=b\)</span>
-and then <span class="math notranslate nohighlight">\(Ux=y\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(Ly=b\)</span> involves forward substitution:</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(y_1\)</span> is computed.</p></li>
-<li><p><span class="math notranslate nohighlight">\(y_j, j=2,\ldots,n\)</span> are computed by updating <span class="math notranslate nohighlight">\(b\)</span> with the
-preceding <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
-</ul>
-</li>
-<li><p>Then, <span class="math notranslate nohighlight">\(Ux=y\)</span> involves backward substitution:</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(x_n\)</span> is computed</p></li>
-<li><p><span class="math notranslate nohighlight">\(x_j, j=1,\ldots,n-1\)</span> are computed by updating <span class="math notranslate nohighlight">\(y\)</span> with the
-previously-computed <span class="math notranslate nohighlight">\(x\)</span> values.</p></li>
-</ul>
-</li>
-<li><p>By distributing matrix rows onto processors, <span class="math notranslate nohighlight">\(Ly=b\)</span> is a pipeline
-from top to bottom, and <span class="math notranslate nohighlight">\(Ux=y\)</span> is a pipeline in the reverse
-direction.</p></li>
-<li><p>Once one <span class="math notranslate nohighlight">\(b\)</span> is finished we start the next.</p></li>
-</ul>
-<p><img alt="image" src="../_images/LU_parallel.png" /></p>
 </div>
 </div>
-</div>
-<div class="section" id="parallel-computing-metrics-parallel-computing-metrics">
-<h3>Parallel computing metrics {#parallel_computing_metrics}<a class="headerlink" href="#parallel-computing-metrics-parallel-computing-metrics" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="parallel-computing-metrics">
+<h3>Parallel computing metrics<a class="headerlink" href="#parallel-computing-metrics" title="Permalink to this headline">¶</a></h3>
 <p><em>Scalability</em> is the ability of a parallel algorithm to effectively
 utilize a parallel machine.</p>
 <p><em>Strong scaling</em>: the goal is speed up algorithms that are possible on

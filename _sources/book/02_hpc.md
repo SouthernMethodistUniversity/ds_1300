@@ -4,7 +4,7 @@
 
 In essence, high-performance computing (HPC) merely means the use
 computing resources that are significantly more powerful than what is
-common. As such, it\'s always a moving target.
+common. As such, it's always a moving target.
 
 ### Motivation
 
@@ -177,10 +177,8 @@ Definitions of terms above:
 Note the extinction of large shared-memory machines, replaced by
 distributed-memory MPP and Cluster machines.
 
-``` {note}
-"Anyone can build a fast CPU. The trick is to build a fast system."
--- Seymour Cray 
-```
+> "Anyone can build a fast CPU. The trick is to build a fast system."
+> -- Seymour Cray 
 
 ### Distributed Parallel Networks
 
@@ -248,12 +246,10 @@ There are a number of options:
     system calls sequential procedures to orchestrate the combined
     program.
 
-``` {note}
-“I know how to make 4 hourses pull a cart – I don’t know how to make
-1024 chickens do it.” -- Enrico Clementi
-```
+> "I know how to make 4 horses pull a cart – I don’t know how to make
+> 1024 chickens do it." -- Enrico Clementi
 
-### MIMD example \-- the \"Jiffy Lube\" model
+### MIMD Example -- The "Jiffy Lube" Model
 
 Jiffy Lube advertises a "12-point check", consisting of changing the oil
 and filter, interior vacuum, battery check, windshield wiper check,
@@ -275,7 +271,7 @@ do these tasks on each car.
         since the nuts must be tightened in a given order -- a
         *fine-grained data dependency*.
 
-Other relevant MIMD definitions \[and their Jiffy Lube equivalents\]:
+Other relevant MIMD definitions (and their Jiffy Lube equivalents):
 
 -   *Data partitioning* -- multiple but essentially identical processes
     each work on a portion of the data to be processed \[check tire
@@ -506,30 +502,7 @@ A manager process can set up a work queue with many initial iterates.
     -   Too fine a granularity can increase overheads in the
         transmission of data.
 
-##### Pipeline example: repeated LU solves
-
-Suppose we have the matrix decomposition $A=LU$, where $L$ and $U$ are
-lower and upper triangular matrices, respectively, and we wish to solve
-$Ax=b$ for many different right-hand side vectors $b$.
-
--   Solution of $Ax=b$ may be performed through the two solves $Ly=b$
-    and then $Ux=y$.
--   $Ly=b$ involves forward substitution:
-    -   $y_1$ is computed.
-    -   $y_j, j=2,\ldots,n$ are computed by updating $b$ with the
-        preceding $y$.
--   Then, $Ux=y$ involves backward substitution:
-    -   $x_n$ is computed
-    -   $x_j, j=1,\ldots,n-1$ are computed by updating $y$ with the
-        previously-computed $x$ values.
--   By distributing matrix rows onto processors, $Ly=b$ is a pipeline
-    from top to bottom, and $Ux=y$ is a pipeline in the reverse
-    direction.
--   Once one $b$ is finished we start the next.
-
-![image](images/LU_parallel.png)
-
-### Parallel computing metrics {#parallel_computing_metrics}
+### Parallel computing metrics
 
 *Scalability* is the ability of a parallel algorithm to effectively
 utilize a parallel machine.
