@@ -18,6 +18,9 @@ First you will want to talk in your group about something that you all are inter
 
 You will then need to formulate a research question based on your interests? This could be some thing broad like "[how can we stop a pandemic?](https://pudding.cool/2021/03/covid-science/)" or specific "[is the book really better than the movie?](https://fivethirtyeight.com/features/the-20-most-extreme-cases-of-the-book-was-better-than-the-movie/)"
 
+- [Vox looks at falsetto video](https://youtu.be/qJT2h5uGAC0)
+- [Reddit n-gram viewer](https://projects.fivethirtyeight.com/reddit-ngram/)
+
 Once you have your research question, go looking for a data set "in the wild". This means the data set you pick might or might not exist in a reasonable form, much less be clean and structured. Most data used in research starts this way. Some starting points are listed below.
 
 Each member of the group will then be responsible for taking their own unique spin on answering the research question.
