@@ -84,7 +84,19 @@ git merge upstream/main
 cd ds_1300_notebooks
 git add work/<the name of the completed notebook without brackets>.ipynb
 git commit -m "<Brief note about work witout brackets>"
+git push
 git tag -a <assignment number without brackets> -m "<Completed assignment number without brackets>"
 git push --tags
 ```
+## Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository
 
+1. Log into GitHub
+2. Go to your ds_1300_notebooks repository
+3. Select "Settings"
+4. Select "Manage access" on the left-side panel
+5. Select "Invite a collaborator"
+6. Type "egodat" in the field and then select "Eric Godat" when it appears
+7. Select "Add egodat to this repository"
+8. Select "Invite a collaborator"
+9. Type "rkalescky" in the field and then select "Robert Kalescky" when it appears
+10. Select "Add rkalescky to this repository"
