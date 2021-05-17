@@ -1,0 +1,614 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working with Data &#8212; DS 1300</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">DS 1300</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/00_introduction.html">
+   DS1300: A Practical Introduction to Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Practice of Data Science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/01_data_science.html">
+   Data Science Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/02_hpc.html">
+   Introduction to High-Performance Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/03_using_m2.html">
+   Using ManeFrame II for Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
+   Introduction to GitHub and Getting Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_workbook.html">
+   Introduction to Python Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/08_project.html">
+   Semester Project
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/code/02_workbook.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-data-into-python">
+   Loading Data into Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-csv">
+     From csv
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numbers-as-data">
+   Numbers as Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3">
+     Question 1) Which property increased in value the most from price 1 to price 3?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft">
+     Question 2) Which property is the best price (year_3) per square foot (sqft)?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options">
+     Question 3) I’m in the market for a house that has more than 3 bedrooms and more than 2 bathrooms, what are my options?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination">
+     Question 4) I’m a relator and trying to write a formula for the best house to show my clients. I want to show them the place with high bed/bath/sqft with a low price but consistent growth. How could I make that determination?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-as-data">
+   Text as Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1-what-countries-do-we-have-stories-from">
+     Question 1) What countries do we have stories from?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm">
+     Question 2) What fraction of my stories were written by the Brothers Grimm?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-3-how-many-titles-contain-animals">
+     Question 3) How many titles contain animals?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#people-as-data">
+   People as Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tricks-for-messy-data">
+   Tricks for messy data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#names">
+     Names
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dates">
+     Dates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#missing-values">
+     Missing Values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-sensitivity">
+     Case Sensitivity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wrap-up">
+     Wrap Up
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="working-with-data">
+<h1>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h1>
+<p>By: Dr. Eric Godat and Dr. Rob Kalescky</p>
+<p>As implied by the name, a Data Scientist needs to be able to work with data. However, what consitutes data can vary wildly depending on the project you’re working on.</p>
+<p>In this notebook, we will dive into a few common types of data and some of the common pitfalls you’ll encounter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+<div class="section" id="loading-data-into-python">
+<h2>Loading Data into Python<a class="headerlink" href="#loading-data-into-python" title="Permalink to this headline">¶</a></h2>
+<p>The first step is getting data into python. While you could type the data into a dictionary, list, or other data format, that quickly becomes unsustainable. Fortunately there are several ways to load our data directly.</p>
+<div class="section" id="from-csv">
+<h3>From csv<a class="headerlink" href="#from-csv" title="Permalink to this headline">¶</a></h3>
+<p>The easiest way to load data is to use pandas to <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read a csv</a> (comma separated values) file into a data frame. This also works with other deliminators (things that split your data fields) too.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/sample_data.csv&quot;</span><span class="p">)</span> <span class="c1"># This means that our data lives one level up (..) and in a directory named data</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="numbers-as-data">
+<h2>Numbers as Data<a class="headerlink" href="#numbers-as-data" title="Permalink to this headline">¶</a></h2>
+<p>The most classic example of data (and the one most people think of when you say data) is numerical data.</p>
+<p>Using the data we just loaded. Let’s ask a question and work towards a solution.</p>
+<p>Before we start, let’s look at two neat tricks that will come in handy as we explore our data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trick 1: Getting a list of columns names</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trick 2: Slicing multiple columns</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Property&#39;</span><span class="p">,</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">,</span><span class="s1">&#39;bathrooms&#39;</span><span class="p">]]</span> <span class="c1"># Rember that a single [] will give us a single column. Using [[]] lets us select multiple columns</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trick 3: Only showing a few lines</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3">
+<h3>Question 1) Which property increased in value the most from price 1 to price 3?<a class="headerlink" href="#question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3" title="Permalink to this headline">¶</a></h3>
+<p>Let’s assume that our data means price in year 1, year 2, year 3. This is a guess we have to make because we don’t know much about where this data comes from.</p>
+<p>Now that we have a little less to look at, we want to make a column with the increase in price.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;increase&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_3&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_1&#39;</span><span class="p">]</span> <span class="c1">#operation on 2 columns, saving to a new column</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;increase&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1">#Sort values by the column &#39;increase&#39;, we want the largest values at the top so ascending needs to be false</span>
+</pre></div>
+</div>
+<p>Answer 1) Property F has increased the most in value</p>
+</div>
+<div class="section" id="question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft">
+<h3>Question 2) Which property is the best price (year_3) per square foot (sqft)?<a class="headerlink" href="#question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;p/sqft&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_3&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sqft&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;p/sqft&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Answer 2) Property C has the best price per square foot</p>
+</div>
+<div class="section" id="question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options">
+<h3>Question 3) I’m in the market for a house that has more than 3 bedrooms and more than 2 bathrooms, what are my options?<a class="headerlink" href="#question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bathrooms&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Answer 3) B or C are good options for what I’m looking for</p>
+</div>
+<div class="section" id="question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination">
+<h3>Question 4) I’m a relator and trying to write a formula for the best house to show my clients. I want to show them the place with high bed/bath/sqft with a low price but consistent growth. How could I make that determination?<a class="headerlink" href="#question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination" title="Permalink to this headline">¶</a></h3>
+<p>Let’s break this one down into smaller pieces. I need to:</p>
+<ul class="simple">
+<li><p>Combine bedrooms, bathrooms, and sqft into a single number (larger is better)</p></li>
+<li><p>Factor in price (smaller is better)</p></li>
+<li><p>Consistent growth, maybe this could be an average of price_1 -&gt; price_2 and price_2 -&gt; price_3 ? Maybe we need to think about this one.</p></li>
+<li><p>Combine all of this into a single score</p></li>
+<li><p>Finally sort and cut the results down for the client</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bbsqft&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bathrooms&#39;</span><span class="p">])</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sqft&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bbsqft/p3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;bbsqft&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_3&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;p2-p1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_2&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;p3-p2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_3&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_2&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;growth_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;p3-p2&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;p2-p1&#39;</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#This gives us a boolean column. Booleans can act like 1 (True) and 0 (False) if we want to use them in calculations</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;growth_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;p3-p2&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;p2-p1&#39;</span><span class="p">]</span>
+<span class="c1">#This will let us zero out scores that don&#39;t meet our criteria</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bbsqft/p3&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;growth_1&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;growth_2&#39;</span><span class="p">]</span> <span class="c1"># Added a scaling factor to make the numbers easier</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Property&#39;</span><span class="p">,</span><span class="s1">&#39;price_3&#39;</span><span class="p">,</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">,</span><span class="s1">&#39;bathrooms&#39;</span><span class="p">,</span><span class="s1">&#39;score&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;score&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If I find out later that my client has a budget of 600, can I adapt my data to only show them those?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_3&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">600</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_3&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">600</span><span class="p">][[</span><span class="s1">&#39;Property&#39;</span><span class="p">,</span><span class="s1">&#39;price_3&#39;</span><span class="p">,</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">,</span><span class="s1">&#39;bathrooms&#39;</span><span class="p">,</span><span class="s1">&#39;score&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;score&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Looks like I should start by showing my client property A</p>
+<p><strong>Is this the only way I could do this? What could we change?</strong></p>
+</div>
+</div>
+<div class="section" id="text-as-data">
+<h2>Text as Data<a class="headerlink" href="#text-as-data" title="Permalink to this headline">¶</a></h2>
+<p>A type of data that has become especially popular and powerful to investigate is text. Turns out there is a lot that we can learn by looking at what we write down. We’ll spend more time working with text later in the class but for now, we’ll just load the data and do some basic parsing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/folktales.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+<div class="section" id="question-1-what-countries-do-we-have-stories-from">
+<h3>Question 1) What countries do we have stories from?<a class="headerlink" href="#question-1-what-countries-do-we-have-stories-from" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country of Origin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># How about a more compressed list</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country of Origin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm">
+<h3>Question 2) What fraction of my stories were written by the Brothers Grimm?<a class="headerlink" href="#question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_stories</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">total_stories</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grimm</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Author&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Grimm&#39;</span><span class="p">))</span><span class="o">==</span><span class="kc">True</span><span class="p">])</span>
+<span class="n">grimm</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grimm</span><span class="o">/</span><span class="n">total_stories</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="question-3-how-many-titles-contain-animals">
+<h3>Question 3) How many titles contain animals?<a class="headerlink" href="#question-3-how-many-titles-contain-animals" title="Permalink to this headline">¶</a></h3>
+<p>How would I even do this?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;animals&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>That clearly doesn’t seem like what the question is asking… Maybe this isn’t something we can answer. Why not? What would we need to answer this question?</p>
+</div>
+</div>
+<div class="section" id="people-as-data">
+<h2>People as Data<a class="headerlink" href="#people-as-data" title="Permalink to this headline">¶</a></h2>
+<p>Another common type of data set is personal information. Just think of every sign up sheet, grade book, or class roster. One major problem with personal data is that people generally don’t fit into clean data “boxes”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/messy_data.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="n">messy</span>
+</pre></div>
+</div>
+<p>Let’s just look at this data. How many data issues can you find that would hinder an analysis? How would you handle it?</p>
+</div>
+<div class="section" id="tricks-for-messy-data">
+<h2>Tricks for messy data<a class="headerlink" href="#tricks-for-messy-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="names">
+<h3>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h3>
+<p>One common problem is that names tend to be really bad ways to identify people. Why is that?</p>
+<p>A solution to this is to use something called a unique identifier (think your SMU ID number). A unique identifier can be used instead of a name because it will have a standard format and generally can be used to link an individual across multiple data sets. If used properly it can also be a good way to de-identify individuals.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">messy</span><span class="p">[</span><span class="s1">&#39;uID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">messy</span><span class="p">))]</span>
+<span class="n">messy</span>
+</pre></div>
+</div>
+<p>There is a lot to unpack with what we did there, let’s break that down:</p>
+<ul class="simple">
+<li><p>First we’re generating a list using a single line for loop</p></li>
+<li><p>Our loop is over the elements in the range that goes from 0 to the length of our data frame - effectively saying make the list the same length as our dataframe</p></li>
+<li><p>Then our loop generates a random integer from 0 to 1000 but we needed to import python’s random number generator to do that for us</p></li>
+<li><p>Then we want to convert our random integer to a string. We wouldn’t want to accidentally do math with our unique ID numbers</p></li>
+<li><p>We want to make sure our IDs are all the same length using zfill to add 0s to the front of our string. This is common for numbers like this. Just think of your credit card number, social security number, SMU ID….</p></li>
+<li><p>Lastly, we assign our list to the new column in our dataframe ‘uID’</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The same code but unpacked</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">ll</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#initialize an empty list</span>
+<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">messy</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">s4</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">ll</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span> <span class="c1"># This lets us add elements to a list</span>
+<span class="n">messy</span><span class="p">[</span><span class="s1">&#39;uID&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">ll</span>
+<span class="n">messy</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dates">
+<h3>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">¶</a></h3>
+<p>Another common issue is that there are lots of formats for dates and times. This isn’t just an issue with personal data but is one that can cause huge headaches when working with data sets. Even asking simple questions can become complicated when working with dates if you aren’t sure of the formatting.</p>
+<p>Think about all the steps your brain makes if I ask you what the date was 3 weeks ago?</p>
+<p>Somewhat incredibly, pandas can actually recognize several forms of dates and guess what the date formats are and convert them to a standardize format using the function <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html?highlight=to_datetime#pandas.to_datetime">to_datetime</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span><span class="p">[</span><span class="s1">&#39;Date_Fixed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">messy</span><span class="p">[</span><span class="s1">&#39;Air_Date&#39;</span><span class="p">],</span><span class="n">errors</span><span class="o">=</span><span class="s1">&#39;raise&#39;</span><span class="p">)</span>
+<span class="n">messy</span><span class="p">[[</span><span class="s1">&#39;Air_Date&#39;</span><span class="p">,</span><span class="s1">&#39;Date_Fixed&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="missing-values">
+<h3>Missing Values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h3>
+<p>Another problem we can encounter is missing data. This happens all the time with “wild data” and can happen for numerous reasons, for example:</p>
+<ul class="simple">
+<li><p>no data should exist for a reason</p></li>
+<li><p>an error in the data creation</p></li>
+<li><p>an operation induced the missing data</p></li>
+</ul>
+<p>Pandas has a simple function to handle this called <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html">fillna</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span> <span class="o">=</span> <span class="n">messy</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;No Data Available&#39;</span><span class="p">)</span> <span class="c1">#Note this will change our data</span>
+<span class="n">messy</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="case-sensitivity">
+<h3>Case Sensitivity<a class="headerlink" href="#case-sensitivity" title="Permalink to this headline">¶</a></h3>
+<p>Another common issue with dealing with messy data is case sensitivity. Since python sees ‘A’ and ‘a’ as two different characters, it is important to be aware of case sensitivity. The easiest way to do this is to send all the characters in a particular column to a single case pattern. Fortunately, pandas has a family of functions to do that for us. <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.lower.html?highlight=lower#pandas.Series.str.lower">lower</a> is a good example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span><span class="p">[</span><span class="s1">&#39;Ship&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">messy</span><span class="p">[</span><span class="s1">&#39;Ship&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">messy</span>
+</pre></div>
+</div>
+<p>That might not actually be what we want but at least we can compare the values now.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span><span class="p">[</span><span class="s1">&#39;Ship&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wrap-up">
+<h3>Wrap Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h3>
+<p>Let’s look at our messy data before:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">before</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/messy_data.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="n">before</span>
+</pre></div>
+</div>
+<p>and after:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span>
+</pre></div>
+</div>
+<p>What were we able to fix? What else could we do?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./code"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
