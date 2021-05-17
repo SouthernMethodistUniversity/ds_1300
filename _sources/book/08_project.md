@@ -35,7 +35,7 @@ As part of the project, you'll need to complete an analysis, starting with your 
  - A jointly written paper (min 5 pages) explaining their project, dataset, analyses, and conclusions
  - A 20 minute presentation explaining their project on the last day of classes
  - A 10 minute "checkpoint" presentation at the halfway point in the semester
- As well as other components as the semester progresses
+ - As well as other components as the semester progresses
  
 ### Each member will also provide:
  - A paper explaining each individual analysis (min 3 pages)
