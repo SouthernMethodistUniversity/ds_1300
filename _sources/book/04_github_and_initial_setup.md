@@ -71,14 +71,14 @@ conda env create -f environment.yml --force
 ```
 cd ds_1300_notebooks
 git fetch upstream
-git merge upstream/main
+git merge upstream/main -m "Merge from upstream."
 ```
 
 ```{note}
 If you have edited a file tracked upstream, *e.g.*  `code/01_assignment.ipynb`,
 you won't be able to merge. Checkout the file to clear the changes, *e.g.* `git
 checkout code/01_assignment.ipynb`, and then proceed with `git merge
-upstream/main`.
+upstream/main -m "Merge from upstream."`.
 ```
 
 ## Submitting Completed Assignments via GitHub
