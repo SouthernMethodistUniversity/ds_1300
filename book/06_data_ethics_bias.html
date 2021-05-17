@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using ManeFrame II for Class &#8212; DS 1300</title>
+    <title>Data Ethics and Bias &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to GitHub and Getting Setup" href="04_github_and_initial_setup.html" />
-    <link rel="prev" title="Introduction to High-Performance Computing" href="02_hpc.html" />
+    <link rel="prev" title="Semester Project" href="08_project.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,7 +91,7 @@
   The Practice of Data Science
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01_data_science.html">
    Data Science Overview
@@ -103,8 +102,8 @@
    Introduction to High-Performance Computing
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_using_m2.html">
    Using ManeFrame II for Class
   </a>
  </li>
@@ -129,9 +128,9 @@
   Data
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="06_data_ethics_bias.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Data Ethics and Bias
   </a>
  </li>
@@ -176,7 +175,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/book/03_using_m2.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/book/06_data_ethics_bias.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -201,6 +200,39 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hello-world-discussion">
+   <em>
+    Hello World
+   </em>
+   Discussion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power">
+     Power
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lies-damned-lies-and-statistics">
+   Lies, Damned Lies, and Statistics
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -209,11 +241,115 @@
         
               <div>
                 
-  <div class="section" id="using-maneframe-ii-for-class">
-<h1>Using ManeFrame II for Class<a class="headerlink" href="#using-maneframe-ii-for-class" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="data-ethics-and-bias">
+<h1>Data Ethics and Bias<a class="headerlink" href="#data-ethics-and-bias" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hello-world-discussion">
+<h2><em>Hello World</em> Discussion<a class="headerlink" href="#hello-world-discussion" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="power">
+<h3>Power<a class="headerlink" href="#power" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="http://faculty.smu.edu/csc/documentation/portal.html">Portal Overview</a></p></li>
+<li><p>What is an algorithm?</p></li>
+<li><p>Are algorithms given authority?</p></li>
+<li><p>Are algorithms used without knowing how they work?</p></li>
+<li><p>What does the middle ground look like between black box algorithms and having non at all?</p></li>
+<li><p>Do we have agency when using algorithms?</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p>GPS</p></li>
+<li><p>Budgeting tool</p></li>
+<li><p>Stanislav Petrov</p></li>
+<li><p><em>Clinical versus Statistical Prediction</em></p></li>
 </ul>
+</li>
+</ul>
+</div>
+<div class="section" id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>What are some long-term impacts of collecting personal data?</p></li>
+<li><p>Where is Eric Schmidt’s “imaginary creepy line”?</p></li>
+<li><p>How can data be monetized?</p></li>
+<li><p>What are some benefits of personalized big data?</p></li>
+<li><p>What are some detriments of personalized big data?</p></li>
+<li><p>Why are Mozilla Firefox and Google Chrome browsers free?</p></li>
+<li><p>Do we have data-collection agency?</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p>Tesco</p></li>
+<li><p>Target</p></li>
+<li><p>Data brokers</p></li>
+<li><p>Cambridge Analytica</p></li>
+<li><p>Facebook manipulating mood</p></li>
+<li><p>China’s Social Credit System</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lies-damned-lies-and-statistics">
+<h2>Lies, Damned Lies, and Statistics<a class="headerlink" href="#lies-damned-lies-and-statistics" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>“If you can’t prove what you want to prove, demonstrate something else and
+pretend they are the same thing. In the daze that follows the collision of
+statistics with the human mind, hardly anyone will notice the difference.”
+– Darrell Huff, <em>How to Lie with Statistics</em>, 1954</p>
+</div></blockquote>
+<p>Since the dawn of statistics in the 17th century statistics have been used used
+to guide and mislead. Here we’ll discuss a few of the ways issues can arise
+when working with datasets.</p>
+<ul class="simple">
+<li><p>Garbage In, Garbage Out</p>
+<ul>
+<li><p>No amount of statistical work can make up for unreliable or missing data.</p></li>
+<li><p>Don’t assume data independence.</p></li>
+</ul>
+</li>
+<li><p>Tests are Imperfect</p>
+<ul>
+<li><p>False negatives</p></li>
+<li><p>False positives</p></li>
+</ul>
+</li>
+<li><p>Pictures Can Be Deceiving</p>
+<ul>
+<li><p>Examples via <a class="reference external" href="https://www.forbes.com/sites/naomirobbins/2012/03/13/finding-examples-of-misleading-and-deceptive-graphs/?sh=4b68872b73c6">Finding Examples of Misleading and Deceptive Graphs</a></p></li>
+<li><p><img alt="What's wrong with this figue?" src="../_images/bad_figure_0.jpg" /></p></li>
+<li><p><img alt="What's wrong with this figue?" src="../_images/bad_figure_1.jpg" /></p></li>
+<li><p><img alt="What's wrong with this figue?" src="../_images/bad_figure_2.jpg" /></p></li>
+<li><p><img alt="What's wrong with this figue?" src="../_images/bad_figure_3.png" /></p></li>
+</ul>
+</li>
+<li><p><em>Cum Hoc Ergo Propter Hoc</em></p>
+<ul>
+<li><p>Correlation is when two variables move via some relationship</p>
+<ul>
+<li><p>Positive correlation when they move in the same direction</p></li>
+<li><p>Negative correlation when they move in opposite directions</p></li>
+<li><p>Zero correlation, there is no relationship</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://tylervigen.com/spurious-correlations">Correlation vs. causation</a></p></li>
+</ul>
+</li>
+<li><p>Statistical Measures Don’t Tell the Whole Story</p>
+<ul>
+<li><p>Look at the raw data</p></li>
+<li><p>Data reduction (be wary of extrapolation)</p></li>
+</ul>
+</li>
+<li><p>Sampling Bias</p>
+<ul>
+<li><p>Non-response bias</p></li>
+<li><p>Convenience or accidental sampling</p></li>
+</ul>
+</li>
+<li><p>Context Matters</p>
+<ul>
+<li><p>Statistics must be thought of in the wider context</p></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -241,8 +377,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="02_hpc.html" title="previous page">Introduction to High-Performance Computing</a>
-    <a class='right-next' id="next-link" href="04_github_and_initial_setup.html" title="next page">Introduction to GitHub and Getting Setup</a>
+    <a class='left-prev' id="prev-link" href="08_project.html" title="previous page">Semester Project</a>
 
         </div>
         
