@@ -74,6 +74,13 @@ git fetch upstream
 git merge upstream/main
 ```
 
+```{note}
+If you have edited a file tracked upstream, *e.g.*  `code/01_assignment.ipynb`,
+you won't be able to merge. Checkout the file to clear the changes, *e.g.* `git
+checkout code/01_assignment.ipynb`, and then proceed with `git merge
+upstream/main`.
+```
+
 ## Submitting Completed Assignments via GitHub
 
 1. Save the notebook.
