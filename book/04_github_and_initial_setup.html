@@ -242,6 +242,33 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-new-packages">
+   Installing New Packages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#new-packages-via-pip">
+     New Packages via
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pip
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#new-packages-via-requirements-txt">
+     New Packages via
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requirements.txt
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#submitting-completed-assignments-via-github">
    Submitting Completed Assignments via GitHub
   </a>
@@ -357,6 +384,36 @@
 <p class="admonition-title">Note</p>
 <p>If you have edited a file tracked upstream, <em>e.g.</em>  <code class="docutils literal notranslate"><span class="pre">code/01_assignment.ipynb</span></code>,
 you won’t be able to merge. Checkout the file to clear the changes, <em>e.g.</em> <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">code/01_assignment.ipynb</span></code>, and then proceed with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">upstream/main</span> <span class="pre">-m</span> <span class="pre">&quot;Merge</span> <span class="pre">from</span> <span class="pre">upstream.&quot;</span></code>.</p>
+</div>
+</div>
+<div class="section" id="installing-new-packages">
+<h2>Installing New Packages<a class="headerlink" href="#installing-new-packages" title="Permalink to this headline">¶</a></h2>
+<p>New Python packages can be installed allowing you to build upon the work of
+others. Both methods should be run from the Terminal from within the Jupyter
+Lab session. Installing packages directly via <code class="docutils literal notranslate"><span class="pre">pip</span></code> is the suggested procedure
+for the class when installing your personaly selected packges, while
+installation via the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> should be reserved for packages pushed
+from upstream.</p>
+<ol class="simple">
+<li><p>Open a terminal session via “File”, “New”, “Terminal”.</p></li>
+<li><p>In the terminal session, type each command and press Enter after each line:</p></li>
+</ol>
+<div class="section" id="new-packages-via-pip">
+<h3>New Packages via <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#new-packages-via-pip" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ds_1300_notebooks</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">package_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="new-packages-via-requirements-txt">
+<h3>New Packages via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#new-packages-via-requirements-txt" title="Permalink to this headline">¶</a></h3>
+<p>Before executing the following commands do the “Pulling New Notebooks” commands
+above first. This will make sure that you have the most recent version of the
+<code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file available to you.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ds_1300_notebooks</span>                                                          
+<span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">ignore</span><span class="o">-</span><span class="n">installed</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="submitting-completed-assignments-via-github">

@@ -81,6 +81,36 @@ checkout code/01_assignment.ipynb`, and then proceed with `git merge
 upstream/main -m "Merge from upstream."`.
 ```
 
+## Installing New Packages
+
+New Python packages can be installed allowing you to build upon the work of
+others. Both methods should be run from the Terminal from within the Jupyter
+Lab session. Installing packages directly via `pip` is the suggested procedure
+for the class when installing your personaly selected packges, while
+installation via the `requirements.txt` should be reserved for packages pushed
+from upstream.
+
+1. Open a terminal session via "File", "New", "Terminal".
+2. In the terminal session, type each command and press Enter after each line:
+
+### New Packages via `pip`
+
+```
+cd ds_1300_notebooks
+pip install <package_name>
+```
+
+### New Packages via `requirements.txt`
+
+Before executing the following commands do the "Pulling New Notebooks" commands
+above first. This will make sure that you have the most recent version of the
+`requirements.txt` file available to you. 
+
+```                                                                           
+cd ds_1300_notebooks                                                          
+pip install --ignore-installed -r requirements.txt
+```                                                                           
+
 ## Submitting Completed Assignments via GitHub
 
 1. Save the notebook.
