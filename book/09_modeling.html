@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Working with Data &#8212; DS 1300</title>
+    <title>Building Models with Data &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Exploring and Cleaning a Data Set" href="../code/04_workbook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -80,7 +81,7 @@
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/00_introduction.html">
+  <a class="reference internal" href="00_introduction.html">
    DS1300: A Practical Introduction to Data Science
   </a>
  </li>
@@ -92,32 +93,32 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/01_data_science.html">
+  <a class="reference internal" href="01_data_science.html">
    Data Science Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/02_hpc.html">
+  <a class="reference internal" href="02_hpc.html">
    Introduction to High-Performance Computing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/03_using_m2.html">
+  <a class="reference internal" href="03_using_m2.html">
    Using ManeFrame II for Class
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
+  <a class="reference internal" href="04_github_and_initial_setup.html">
    Introduction to GitHub and Getting Setup
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_workbook.html">
+  <a class="reference internal" href="../code/01_workbook.html">
    Introduction to Python Programming
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/08_project.html">
+  <a class="reference internal" href="08_project.html">
    Semester Project
   </a>
  </li>
@@ -129,17 +130,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/06_data_ethics_bias.html">
+  <a class="reference internal" href="06_data_ethics_bias.html">
    Data Ethics and Bias
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_workbook.html">
+  <a class="reference internal" href="../code/02_workbook.html">
    Working with Data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04_workbook.html">
+  <a class="reference internal" href="../code/04_workbook.html">
    Exploring and Cleaning a Data Set
   </a>
  </li>
@@ -149,9 +150,9 @@
   Modeling
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/09_modeling.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Building Models with Data
   </a>
  </li>
@@ -196,7 +197,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/code/02_assignment.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/book/09_modeling.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -221,6 +222,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hello-world-discussion">
+   <em>
+    Hello World
+   </em>
+   Discussion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#justice">
+     Justice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#medicine">
+     Medicine
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -229,55 +258,138 @@
         
               <div>
                 
-  <div class="section" id="working-with-data">
-<h1>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="building-models-with-data">
+<h1>Building Models with Data<a class="headerlink" href="#building-models-with-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hello-world-discussion">
+<h2><em>Hello World</em> Discussion<a class="headerlink" href="#hello-world-discussion" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="justice">
+<h3>Justice<a class="headerlink" href="#justice" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Do you think the US justice system has been historically fair or unfair accross all citizens?</p></li>
+<li><p>How would you judge the fictious case:</p>
 <blockquote>
-<div><p>Using the data below, answer the following questions:</p>
+<div><p>“An 18-year-old female defendant was apprehended for possession of
+marijuana, arrested with her boyfriend and seven other acquaintances. There was
+evidence of a substantial amount of smoked and un-smoked marijuana found, but
+no marijuana was discovered directly on her person. She had no previous
+criminal record, was a good student from a middle-class home and was neither
+rebellious nor apologetic for her actions.” – Hannah Fry. “Hello World:
+Being Human in the Age of Algorithms.”</p>
 </div></blockquote>
+</li>
+<li><p>Can historical data be used to predict future crimes?</p></li>
+<li><p>What do you think of the classifications of ‘hobo’, ‘drunkard’, ‘ne’re
+do-well’, ‘farm boy’, and ‘immigrant’?</p></li>
+<li><p>Do you think modern crimes fit historical crime patterns?</p></li>
+<li><p>What is the <em>random forests</em> method?</p></li>
+<li><p>What are some issues with predicting human behavior particularly as it applies to justice?</p></li>
+<li><p>What happens when the risk assessment score is wrong?</p></li>
+<li><p>What are some examples of <em>false negatives</em> and <em>false positives</em>?</p></li>
+<li><p>Should risk assessment tools be proprietary?</p></li>
+<li><p>Should risk assessment tools be unregulated?</p></li>
+<li><p>What are you thoughts on the risk assessment of David Brooks if he were 36 at
+the time of the crime?</p></li>
+<li><p>What are you thoughts on:</p>
 <blockquote>
-<div><ol class="simple">
-<li><p>Which entities (top 5) had the largest population density in 2020?</p></li>
-<li><p>Which entities have more water area than land area?</p></li>
-<li><p>Which entities increased in population the most in the last 10 years?</p></li>
-<li><p>What state bird accounts for the largest population as of 2020? Land area?</p></li>
-<li><p>How many entities’ largest city is their capital city?</p></li>
-<li><p>Which city has the largest percent drop from their largest city to their 5th largest? 100*(1st largest - 5th largest)/(1st largest)</p></li>
-</ol>
+<div><p>“The courts are concerned about not making mistakes – especially the judges
+who are appointed by the public. The algorithm provides them a way to do less
+work while not being accountable. – Hannah Fry. “Hello World: Being Human
+in the Age of Algorithms.”</p>
 </div></blockquote>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
+</li>
+<li><p>Are algorithms based on historical data biased?</p></li>
+<li><p>What would you expect from an unbiased representation?</p></li>
+<li><p>Is there a moral responsibilty to not perpetuate historical injustices?</p></li>
+<li><p>What is the <em>anchoring effect</em>?</p></li>
+<li><p>What is Wber’s Law?</p></li>
+<li><p>Examples</p>
+<ul class="simple">
+<li><p>Richard Johnson and Nicholas Robinson</p></li>
+<li><p>Ernest W. Burgess</p></li>
+<li><p>New York City and Rhode Island</p></li>
+<li><p>Paul Zilly</p></li>
+<li><p>COMPAS</p></li>
+<li><p>David Brooks</p></li>
+<li><p>Predicting male versus female murderers</p></li>
+<li><p>Bat and ball price</p></li>
+</ul>
+</li>
+</ul>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">facts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/state_facts.tsv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">facts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="section" id="medicine">
+<h3>Medicine<a class="headerlink" href="#medicine" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>What is a pattern?</p></li>
+<li><p>What did Hippocrates do that was so profound?</p></li>
+<li><p>What do you think about the 15th century smallpox inoculations?</p></li>
+<li><p>Beyond a diagnosis, what can a physician provid to a patient?</p></li>
+<li><p>How do you know you are seeing a dog?</p></li>
+<li><p>What is a <em>neural network</em>?</p></li>
+<li><p>Is it easy to understand the internal workings of a trained neural network?</p></li>
+<li><p>Define <em>sensitivity</em> and <em>specificity</em>.</p></li>
+<li><p>How do <em>sensitivity</em> and <em>specificity</em> impact <em>false negatives</em> and <em>false
+positives</em>?</p></li>
+<li><p>What do you think about human/machine partnerships?</p></li>
+<li><p>How good was Dr. Snowden’s prediction of Alzheimener’s and what was the most
+telling signal in the dataset?</p></li>
+<li><p>What is the problem of over-diagnosis and over-treatment?</p></li>
+<li><p>What did a large dataset of biopsy slides and the associated patient outcomes
+discover?</p></li>
+<li><p>Why is algorithm medical diagnosis a hard problem?</p></li>
+<li><p>What are problems with medical data?</p></li>
+<li><p>How are your medical data and advertising data different?</p></li>
+<li><p>What was the outcome of the Google DeepMind and the Royal Free NHS Trust
+collaboration?</p></li>
+<li><p>Do you aggree or disagree with this sentiment:</p>
 <blockquote>
-<div><p>Using the “state_dates.tsv” data, answer the remaining questions. You will need to merge the two data sets together:</p>
+<div><p>“On the whole, people weren’t that worried about their data being hacked or
+stolen. They were concerned about having assumptions made about them as a group
+and then projected on to them as individuals.” – Hannah Fry. “Hello World:
+Being Human in the Age of Algorithms.”</p>
 </div></blockquote>
+</li>
+<li><p>Should non-smokers be prioritized for medical care?</p></li>
+<li><p>How is the balance between privacy and benefits of shared data made?</p></li>
+<li><p>What do you think about 23andMe and similar companies?</p>
 <blockquote>
-<div><ol class="simple">
-<li><p>Of the states that joined the United States before 1790, what is the most common state flower?</p></li>
-<li><p>Which has the larger population density, the most dense US Territory or the least dense state?</p></li>
-<li><p>Make a graph that plots the populations of the largest city in each entity in the order in which they joined the US. Make the bars black</p></li>
-<li><p>Make two additional graphs like the one above but one for land area (green bars) and one for water area (blue bars)</p></li>
-</ol>
+<div><p>“‘The long game here is not to make money selling kits, although the kits
+are essential to get the base level data.’ Something worth remembering whenever
+you send off for a commercial genetic report: you’re not using the product; you
+are the product.” – Hannah Fry. “Hello World: Being Human in the Age of Algorithms.”</p>
 </div></blockquote>
-<p>Hint: <code class="docutils literal notranslate"><span class="pre">pd.read_csv('../data/state_dates.tsv',delimiter=&quot;\t&quot;)</span></code></p>
-<p>Hint: You likely want to convert the Date column to datetime. You might have to correct errors in the data as well.</p>
-<p>Hint: <code class="docutils literal notranslate"><span class="pre">states['Date']&lt;pd.datetime(1790,1,1)</span></code></p>
-<p>Hint: <code class="docutils literal notranslate"><span class="pre">pd.merge(****,****,left_on='USPS_code',right_on='Abbreviation',how='outer')</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample code to help with the plots</span>
-
-<span class="c1">#import matplotlib as plt</span>
-<span class="c1">#%config InlineBackend.figure_format =&#39;retina&#39; #This makes your plot clearer</span>
-
-
-<span class="c1">#plot = *your df by date*[[*column*,&#39;Abbreviation&#39;]].plot(kind=&#39;bar&#39;,figsize=(10,4))</span>
-<span class="c1">#plot.set_xticklabels(*your df by date*[&#39;Abbreviation&#39;]);</span>
-</pre></div>
+</li>
+<li><p>Should genetics be used for determing life insurance?</p></li>
+<li><p>What is the greatest good?</p>
+<blockquote>
+<div><p>“If a diagnostic machine capable of recommending treatments can be built,
+who should it serve? The individual or the population? Because there will be
+times where it may have to choose.” – Hannah Fry. “Hello World: Being
+Human in the Age of Algorithms.”</p>
+</div></blockquote>
+</li>
+<li><p>Examples</p>
+<ul class="simple">
+<li><p>Pigeons</p></li>
+<li><p>15th century smallpox inoculations</p></li>
+<li><p>Ignaz Semmelweis and maternity wards</p></li>
+<li><p>Malignant cell identification</p></li>
+<li><p>Dog identification</p></li>
+<li><p>CAMELYON16</p></li>
+<li><p>Gorilla in the image</p></li>
+<li><p>David Snowden’s nun study</p></li>
+<li><p>Ribe County, Denmark study</p></li>
+<li><p>Google Brain</p></li>
+<li><p>IBM Deep Blue and Garry Kasparov</p></li>
+<li><p>IBM Watson and Ken Jennings</p></li>
+<li><p>IBM Watson and medicine</p></li>
+<li><p>Tamara Mills</p></li>
+<li><p>Google DeepMind and the Royal Free NHS Trust</p></li>
+<li><p>Francis Galton and the “Anthropometric Laboratory”</p></li>
+<li><p>23andMe</p></li>
+</ul>
+</li>
+</ul>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </div>
 
@@ -294,7 +406,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./code"
+            path: "./book"
         },
         predefinedOutput: true
     }
@@ -306,6 +418,7 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="../code/04_workbook.html" title="previous page">Exploring and Cleaning a Data Set</a>
 
         </div>
         
