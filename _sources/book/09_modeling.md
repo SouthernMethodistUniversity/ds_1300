@@ -4,6 +4,8 @@
 
 ### Justice
 
+- Would you rather have multiple choice questions (objective grades) or essay
+  questions (subjective grades)?
 - Do you think the US justice system has been historically fair or unfair accross all citizens?
 - How would you judge the fictious case:
   > "An 18-year-old female defendant was apprehended for possession of
