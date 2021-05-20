@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dask Delayed &#8212; DS 1300</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dask Arrays" href="06_workbook.html" />
+    <link rel="prev" title="Getting Started" href="../book/11_dask_initial_setup.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">DS 1300</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/00_introduction.html">
+   DS1300: A Practical Introduction to Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Practice of Data Science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/01_data_science.html">
+   Data Science Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/02_hpc.html">
+   Introduction to High-Performance Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/03_using_m2.html">
+   Using ManeFrame II for Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
+   Introduction to GitHub and Getting Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_workbook.html">
+   Introduction to Python Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/08_project.html">
+   Semester Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/06_data_ethics_bias.html">
+   Data Ethics and Bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_workbook.html">
+   Working with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_workbook.html">
+   Exploring and Cleaning a Data Set
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Modeling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/09_modeling.html">
+   Building Models with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/10_pudding.html">
+   The Pudding: Data Story Telling and Visualization
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Bigger Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/11_dask_initial_setup.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dask Delayed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_workbook.html">
+   Dask Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_workbook.html">
+   Dask DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_workbook.html">
+   Data Storage
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/code/05_workbook.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basics">
+   Basics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parallelize-with-the-dask-delayed-decorator">
+     Parallelize with the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dask.delayed
+      </span>
+     </code>
+     decorator
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-just-happened">
+   What just happened?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-questions-to-consider">
+     Some questions to consider:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-parallelize-a-for-loop">
+   Exercise: Parallelize a for loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-parallelizing-a-for-loop-code-with-control-flow">
+   Exercise: Parallelizing a for-loop code with control flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Some questions to consider:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-parallelizing-a-pandas-groupby-reduction">
+   Exercise: Parallelizing a Pandas Groupby Reduction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inspect-data">
+     Inspect data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay">
+     Read one file with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pandas.read_csv
+      </span>
+     </code>
+     and compute mean departure delay
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sequential-code-mean-departure-delay-per-airport">
+     Sequential code: Mean Departure Delay Per Airport
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parallelize-the-code-above">
+     Parallelize the code above
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Some questions to consider:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learn-more">
+     Learn More
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#close-the-client">
+   Close the Client
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dask-delayed">
+<h1>Dask Delayed<a class="headerlink" href="#dask-delayed" title="Permalink to this headline">¶</a></h1>
+<p>In this section we parallelize simple for-loop style code with Dask and <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>. Often, this is the only function that you will need to convert functions for use with Dask.</p>
+<p>This is a simple way to use <code class="docutils literal notranslate"><span class="pre">dask</span></code> to parallelize existing codebases or build <a class="reference external" href="https://blog.dask.org/2018/02/09/credit-models-with-dask">complex systems</a>.  This will also help us to develop an understanding for later sections.</p>
+<p><strong>Related Documentation</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/delayed.html">Delayed documentation</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=SHqFmynRxVU">Delayed screencast</a></p></li>
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/delayed-api.html">Delayed API</a></p></li>
+<li><p><a class="reference external" href="https://examples.dask.org/delayed.html">Delayed examples</a></p></li>
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/delayed-best-practices.html">Delayed best practices</a></p></li>
+</ul>
+<p>As we’ll see in the <span class="xref myst">distributed scheduler notebook</span>, Dask has several ways of executing code in parallel. We’ll use the distributed scheduler by creating a <code class="docutils literal notranslate"><span class="pre">dask.distributed.Client</span></code>. For now, this will provide us with some nice diagnostics. We’ll talk about schedulers in depth later.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">n_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
+<p>First let’s make some toy functions, <code class="docutils literal notranslate"><span class="pre">inc</span></code> and <code class="docutils literal notranslate"><span class="pre">add</span></code>, that sleep for a while to simulate work. We’ll then time running these functions normally.</p>
+<p>In the next section we’ll parallelize this code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>We time the execution of this normal code using the <code class="docutils literal notranslate"><span class="pre">%%time</span></code> magic, which is a special function of the Jupyter Notebook.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="c1"># This takes three seconds to run because we call each</span>
+<span class="c1"># function sequentially, one after the other</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">inc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">inc</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="parallelize-with-the-dask-delayed-decorator">
+<h3>Parallelize with the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> decorator<a class="headerlink" href="#parallelize-with-the-dask-delayed-decorator" title="Permalink to this headline">¶</a></h3>
+<p>Those two increment calls <em>could</em> be called in parallel, because they are totally independent of one-another.</p>
+<p>We’ll transform the <code class="docutils literal notranslate"><span class="pre">inc</span></code> and <code class="docutils literal notranslate"><span class="pre">add</span></code> functions using the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> function. When we call the delayed version by passing the arguments, exactly as before, the original function isn’t actually called yet - which is why the cell execution finishes very quickly.
+Instead, a <em>delayed object</em> is made, which keeps track of the function to call and the arguments to pass to it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask</span> <span class="kn">import</span> <span class="n">delayed</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="c1"># This runs immediately, all it does is build a graph</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">add</span><span class="p">)(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This ran immediately, since nothing has really happened yet.</p>
+<p>To get the result, call <code class="docutils literal notranslate"><span class="pre">compute</span></code>. Notice that this runs faster than the original code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="c1"># This actually runs our computation using a local thread pool</span>
+
+<span class="n">z</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="what-just-happened">
+<h2>What just happened?<a class="headerlink" href="#what-just-happened" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">z</span></code> object is a lazy <code class="docutils literal notranslate"><span class="pre">Delayed</span></code> object.  This object holds everything we need to compute the final result, including references to all of the functions that are required and their inputs and relationship to one-another.  We can evaluate the result with <code class="docutils literal notranslate"><span class="pre">.compute()</span></code> as above or we can visualize the task graph for this value with <code class="docutils literal notranslate"><span class="pre">.visualize()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at the task graph for `z`</span>
+<span class="n">z</span><span class="o">.</span><span class="n">visualize</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Notice that this includes the names of the functions from before, and the logical flow of the outputs of the <code class="docutils literal notranslate"><span class="pre">inc</span></code> functions to the inputs of <code class="docutils literal notranslate"><span class="pre">add</span></code>.</p>
+<div class="section" id="some-questions-to-consider">
+<h3>Some questions to consider:<a class="headerlink" href="#some-questions-to-consider" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Why did we go from 3s to 2s?  Why weren’t we able to parallelize down to 1s?</p></li>
+<li><p>What would have happened if the inc and add functions didn’t include the <code class="docutils literal notranslate"><span class="pre">sleep(1)</span></code>?  Would Dask still be able to speed up this code?</p></li>
+<li><p>What if we have multiple outputs or also want to get access to x or y?</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="exercise-parallelize-a-for-loop">
+<h2>Exercise: Parallelize a for loop<a class="headerlink" href="#exercise-parallelize-a-for-loop" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops are one of the most common things that we want to parallelize.  Use <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> on <code class="docutils literal notranslate"><span class="pre">inc</span></code> and <code class="docutils literal notranslate"><span class="pre">sum</span></code> to parallelize the computation below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="c1"># Sequential code</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">inc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    
+<span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="c1"># Your parallel code here...</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    
+<span class="n">total</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="nb">sum</span><span class="p">)(</span><span class="n">results</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before computing:&quot;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>  <span class="c1"># Let&#39;s see what type of thing total is</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">total</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After computing :&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>  <span class="c1"># After it&#39;s computed</span>
+</pre></div>
+</div>
+<!-- #region -->
+<p>How do the graph visualizations compare with the given solution, compared to a version with the <code class="docutils literal notranslate"><span class="pre">sum</span></code> function used directly rather than wrapped with <code class="docutils literal notranslate"><span class="pre">delayed</span></code>? Can you explain the latter version? You might find the result of the following expression illuminating</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- #endregion -->
+</div>
+<div class="section" id="exercise-parallelizing-a-for-loop-code-with-control-flow">
+<h2>Exercise: Parallelizing a for-loop code with control flow<a class="headerlink" href="#exercise-parallelizing-a-for-loop-code-with-control-flow" title="Permalink to this headline">¶</a></h2>
+<p>Often we want to delay only <em>some</em> functions, running a few of them immediately.  This is especially helpful when those functions are fast and help us to determine what other slower functions we should call.  This decision, to delay or not to delay, is usually where we need to be thoughtful when using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>.</p>
+<p>In the example below we iterate through a list of inputs.  If that input is even then we want to call <code class="docutils literal notranslate"><span class="pre">inc</span></code>.  If the input is odd then we want to call <code class="docutils literal notranslate"><span class="pre">double</span></code>.  This <code class="docutils literal notranslate"><span class="pre">is_even</span></code> decision to call <code class="docutils literal notranslate"><span class="pre">inc</span></code> or <code class="docutils literal notranslate"><span class="pre">double</span></code> has to be made immediately (not lazily) in order for our graph-building Python code to proceed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="c1"># Sequential code</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_even</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">double</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">inc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    
+<span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="c1"># Your parallel code here...</span>
+<span class="c1"># TODO: parallelize the sequential code above using dask.delayed</span>
+<span class="c1"># You will need to delay some functions, but not all</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_even</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>  <span class="c1"># even</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">double</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>          <span class="c1"># odd</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    
+<span class="n">total</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="nb">sum</span><span class="p">)(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">total</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span><span class="o">.</span><span class="n">visualize</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h3>Some questions to consider:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>What are other examples of control flow where we can’t use delayed?</p></li>
+<li><p>What would have happened if we had delayed the evaluation of <code class="docutils literal notranslate"><span class="pre">is_even(x)</span></code> in the example above?</p></li>
+<li><p>What are your thoughts on delaying <code class="docutils literal notranslate"><span class="pre">sum</span></code>?  This function is both computational but also fast to run.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="exercise-parallelizing-a-pandas-groupby-reduction">
+<h2>Exercise: Parallelizing a Pandas Groupby Reduction<a class="headerlink" href="#exercise-parallelizing-a-pandas-groupby-reduction" title="Permalink to this headline">¶</a></h2>
+<p>In this exercise we read several CSV files and perform a groupby operation in parallel.  We are given sequential code to do this and parallelize it with <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>.</p>
+<p>The computation we will parallelize is to compute the mean departure delay per airport from some historical flight data.  We will do this by using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> together with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.  In a future section we will do this same exercise with <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code>.</p>
+<div class="section" id="inspect-data">
+<h3>Inspect data<a class="headerlink" href="#inspect-data" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay">
+<h3>Read one file with <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> and compute mean departure delay<a class="headerlink" href="#read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;1990.csv&#39;</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># What is the schema?</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># What originating airports are in the data?</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Origin</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mean departure delay per-airport for one year</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Origin&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sequential-code-mean-departure-delay-per-airport">
+<h3>Sequential code: Mean Departure Delay Per Airport<a class="headerlink" href="#sequential-code-mean-departure-delay-per-airport" title="Permalink to this headline">¶</a></h3>
+<p>The above cell computes the mean departure delay per-airport for one year. Here we expand that to all years using a sequential for loop.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="n">filenames</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+
+<span class="n">sums</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="c1"># Read in file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    
+    <span class="c1"># Groupby origin airport</span>
+    <span class="n">by_origin</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Origin&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Sum of all departure delays by origin</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">by_origin</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    
+    <span class="c1"># Number of flights by origin</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">by_origin</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    
+    <span class="c1"># Save the intermediates</span>
+    <span class="n">sums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+    <span class="n">counts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+
+<span class="c1"># Combine intermediates to get total mean-delay-per-origin</span>
+<span class="n">total_delays</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
+<span class="n">n_flights</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">total_delays</span> <span class="o">/</span> <span class="n">n_flights</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parallelize-the-code-above">
+<h3>Parallelize the code above<a class="headerlink" href="#parallelize-the-code-above" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> to parallelize the code above.  Some extra things you will need to know.</p>
+<ol>
+<li><p>Methods and attribute access on delayed objects work automatically, so if you have a delayed object you can perform normal arithmetic, slicing, and method calls on it and it will produce the correct delayed calls.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">)(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)[::</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># everything here was delayed</span>
+</pre></div>
+</div>
+</li>
+<li><p>Calling the <code class="docutils literal notranslate"><span class="pre">.compute()</span></code> method works well when you have a single output.  When you have multiple outputs you might want to use the <code class="docutils literal notranslate"><span class="pre">dask.compute</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dask</span> <span class="kn">import</span> <span class="n">compute</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">)(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">min_</span><span class="p">,</span> <span class="n">max_</span> <span class="o">=</span> <span class="n">compute</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">min_</span><span class="p">,</span> <span class="n">max_</span>
+<span class="go">(0, 81)</span>
+</pre></div>
+</div>
+<p>This way Dask can share the intermediate values (like <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x**2</span></code>)</p>
+</li>
+</ol>
+<p>So your goal is to parallelize the code above (which has been copied below) using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>.  You may also want to visualize a bit of the computation to see if you’re doing it correctly.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask</span> <span class="kn">import</span> <span class="n">compute</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+
+<span class="c1"># copied sequential code</span>
+
+<span class="n">sums</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="c1"># Read in file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    
+    <span class="c1"># Groupby origin airport</span>
+    <span class="n">by_origin</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Origin&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Sum of all departure delays by origin</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">by_origin</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    
+    <span class="c1"># Number of flights by origin</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">by_origin</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    
+    <span class="c1"># Save the intermediates</span>
+    <span class="n">sums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+    <span class="n">counts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+
+<span class="c1"># Combine intermediates to get total mean-delay-per-origin</span>
+<span class="n">total_delays</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
+<span class="n">n_flights</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">total_delays</span> <span class="o">/</span> <span class="n">n_flights</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="c1"># your code here</span>
+</pre></div>
+</div>
+<p>If you load the solution, add <code class="docutils literal notranslate"><span class="pre">%%time</span></code> to the top of the cell to measure the running time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+
+<span class="c1"># This is just one possible solution, there are</span>
+<span class="c1"># several ways to do this using `delayed`</span>
+
+<span class="n">sums</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="c1"># Read in file</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">)(</span><span class="n">fn</span><span class="p">)</span>
+
+    <span class="c1"># Groupby origin airport</span>
+    <span class="n">by_origin</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Origin&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Sum of all departure delays by origin</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">by_origin</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="c1"># Number of flights by origin</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">by_origin</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+    <span class="c1"># Save the intermediates</span>
+    <span class="n">sums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+    <span class="n">counts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+
+<span class="c1"># Compute the intermediates</span>
+<span class="n">sums</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">compute</span><span class="p">(</span><span class="n">sums</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+
+<span class="c1"># Combine intermediates to get total mean-delay-per-origin</span>
+<span class="n">total_delays</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
+<span class="n">n_flights</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">total_delays</span> <span class="o">/</span> <span class="n">n_flights</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ensure the results still match</span>
+<span class="n">mean</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Some questions to consider:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>How much speedup did you get? Is this how much speedup you’d expect?</p></li>
+<li><p>Experiment with where to call <code class="docutils literal notranslate"><span class="pre">compute</span></code>. What happens when you call it on <code class="docutils literal notranslate"><span class="pre">sums</span></code> and <code class="docutils literal notranslate"><span class="pre">counts</span></code>? What happens if you wait and call it on <code class="docutils literal notranslate"><span class="pre">mean</span></code>?</p></li>
+<li><p>Experiment with delaying the call to <code class="docutils literal notranslate"><span class="pre">sum</span></code>. What does the graph look like if <code class="docutils literal notranslate"><span class="pre">sum</span></code> is delayed? What does the graph look like if it isn’t?</p></li>
+<li><p>Can you think of any reason why you’d want to do the reduction one way over the other?</p></li>
+</ul>
+</div>
+<div class="section" id="learn-more">
+<h3>Learn More<a class="headerlink" href="#learn-more" title="Permalink to this headline">¶</a></h3>
+<p>Visit the <a class="reference external" href="https://docs.dask.org/en/latest/delayed.html">Delayed documentation</a>. In particular, this <a class="reference external" href="https://www.youtube.com/watch?v=SHqFmynRxVU">delayed screencast</a> will reinforce the concepts you learned here and the <a class="reference external" href="https://docs.dask.org/en/latest/delayed-best-practices.html">delayed best practices</a> document collects advice on using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> well.</p>
+</div>
+</div>
+<div class="section" id="close-the-client">
+<h2>Close the Client<a class="headerlink" href="#close-the-client" title="Permalink to this headline">¶</a></h2>
+<p>Before moving on to the next exercise, make sure to close your client or stop this kernel.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./code"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../book/11_dask_initial_setup.html" title="previous page">Getting Started</a>
+    <a class='right-next' id="next-link" href="06_workbook.html" title="next page">Dask Arrays</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

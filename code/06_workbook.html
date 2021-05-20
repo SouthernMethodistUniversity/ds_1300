@@ -1,0 +1,830 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dask Arrays &#8212; DS 1300</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dask DataFrames" href="07_workbook.html" />
+    <link rel="prev" title="Dask Delayed" href="05_workbook.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">DS 1300</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/00_introduction.html">
+   DS1300: A Practical Introduction to Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Practice of Data Science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/01_data_science.html">
+   Data Science Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/02_hpc.html">
+   Introduction to High-Performance Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/03_using_m2.html">
+   Using ManeFrame II for Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
+   Introduction to GitHub and Getting Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_workbook.html">
+   Introduction to Python Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/08_project.html">
+   Semester Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/06_data_ethics_bias.html">
+   Data Ethics and Bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_workbook.html">
+   Working with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_workbook.html">
+   Exploring and Cleaning a Data Set
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Modeling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/09_modeling.html">
+   Building Models with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/10_pudding.html">
+   The Pudding: Data Story Telling and Visualization
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Bigger Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/11_dask_initial_setup.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_workbook.html">
+   Dask Delayed
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dask Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_workbook.html">
+   Dask DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_workbook.html">
+   Data Storage
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/code/06_workbook.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blocked-algorithms">
+   Blocked Algorithms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-compute-the-mean-using-a-blocked-algorithm">
+     Exercise:  Compute the mean using a blocked algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dask-array-contains-these-algorithms">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dask.array
+    </span>
+   </code>
+   contains these algorithms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-compute-the-mean">
+     Exercise:  Compute the mean
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performance-and-parallelism">
+   Performance and Parallelism
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performance-comparison">
+   Performance comparison
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-meteorological-data">
+     Exercise:  Meteorological data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-subsample-and-store">
+     Exercise:  Subsample and store
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-lennard-jones-potential">
+   Example: Lennard-Jones potential
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dask-version">
+     Dask version
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limitations">
+   Limitations
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dask-arrays">
+<h1>Dask Arrays<a class="headerlink" href="#dask-arrays" title="Permalink to this headline">¶</a></h1>
+<p>Dask array provides a parallel, larger-than-memory, n-dimensional array using blocked algorithms. Simply put: distributed Numpy.</p>
+<ul class="simple">
+<li><p><strong>Parallel</strong>: Uses all of the cores on your computer</p></li>
+<li><p><strong>Larger-than-memory</strong>:  Lets you work on datasets that are larger than your available memory by breaking up your array into many small pieces, operating on those pieces in an order that minimizes the memory footprint of your computation, and effectively streaming data from disk.</p></li>
+<li><p><strong>Blocked Algorithms</strong>:  Perform large computations by performing many smaller computations</p></li>
+</ul>
+<p>In this notebook, we’ll build some understanding by implementing some blocked algorithms from scratch.
+We’ll then use Dask Array to analyze large datasets, in parallel, using a familiar NumPy-like API.</p>
+<p><strong>Related Documentation</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/array.html">Array documentation</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/9h_61hXCDuI">Array screencast</a></p></li>
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/array-api.html">Array API</a></p></li>
+<li><p><a class="reference external" href="https://examples.dask.org/array.html">Array examples</a></p></li>
+</ul>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">n_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="blocked-algorithms">
+<h2>Blocked Algorithms<a class="headerlink" href="#blocked-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>A <em>blocked algorithm</em> executes on a large dataset by breaking it up into many small blocks.</p>
+<p>For example, consider taking the sum of a billion numbers.  We might instead break up the array into 1,000 chunks, each of size 1,000,000, take the sum of each chunk, and then take the sum of the intermediate sums.</p>
+<p>We achieve the intended result (one sum on one billion numbers) by performing many smaller results (one thousand sums on one million numbers each, followed by another sum of a thousand numbers.)</p>
+<p>We do exactly this with Python and NumPy in the following example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data with h5py</span>
+<span class="c1"># this creates a pointer to the data, but does not actually load</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;random.hdf5&#39;</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">dset</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;/x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Compute sum using blocked algorithm</strong></p>
+<p>Before using dask, let’s consider the concept of blocked algorithms. We can compute the sum of a large number of elements by loading them chunk-by-chunk, and keeping a running total.</p>
+<p>Here we compute the sum of this large array on disk by</p>
+<ol class="simple">
+<li><p>Computing the sum of each 1,000,000 sized chunk of the array</p></li>
+<li><p>Computing the sum of the 1,000 intermediate sums</p></li>
+</ol>
+<p>Note that this is a sequential process in the notebook kernel, both the loading and summing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute sum of large array, one million numbers at a time</span>
+<span class="n">sums</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1_000_000_000</span><span class="p">,</span> <span class="mi">1_000_000</span><span class="p">):</span>
+    <span class="n">chunk</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1_000_000</span><span class="p">]</span>  <span class="c1"># pull out numpy array</span>
+    <span class="n">sums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="exercise-compute-the-mean-using-a-blocked-algorithm">
+<h3>Exercise:  Compute the mean using a blocked algorithm<a class="headerlink" href="#exercise-compute-the-mean-using-a-blocked-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>Now that we’ve seen the simple example above, try doing a slightly more complicated problem. Compute the mean of the array, assuming for a moment that we don’t happen to already know how many elements are in the data.  You can do this by changing the code above with the following alterations:</p>
+<ol class="simple">
+<li><p>Compute the sum of each block</p></li>
+<li><p>Compute the length of each block</p></li>
+<li><p>Compute the sum of the 1,000 intermediate sums and the sum of the 1,000 intermediate lengths and divide one by the other</p></li>
+</ol>
+<p>This approach is overkill for our case but does nicely generalize if we don’t know the size of the array or individual blocks beforehand.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the mean of the array</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sums</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lengths</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1_000_000_000</span><span class="p">,</span> <span class="mi">1_000_000</span><span class="p">):</span>
+    <span class="n">chunk</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1_000_000</span><span class="p">]</span>  <span class="c1"># pull out numpy array</span>
+    <span class="n">sums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="n">lengths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">))</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
+<span class="n">length</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span> <span class="o">/</span> <span class="n">length</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dask-array-contains-these-algorithms">
+<h2><code class="docutils literal notranslate"><span class="pre">dask.array</span></code> contains these algorithms<a class="headerlink" href="#dask-array-contains-these-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>Dask.array is a NumPy-like library that does these kinds of tricks to operate on large datasets that don’t fit into memory.  It extends beyond the linear problems discussed above to full N-Dimensional algorithms and a decent subset of the NumPy interface.</p>
+<p><strong>Create <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> object</strong></p>
+<p>You can create a <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> <code class="docutils literal notranslate"><span class="pre">Array</span></code> object with the <code class="docutils literal notranslate"><span class="pre">da.from_array</span></code> function.  This function accepts</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: Any object that supports NumPy slicing, like <code class="docutils literal notranslate"><span class="pre">dset</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chunks</span></code>: A chunk size to tell us how to block up our array, like <code class="docutils literal notranslate"><span class="pre">(1_000_000,)</span></code></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">dset</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">,))</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+<p><strong>Manipulate <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> object as you would a numpy array</strong></p>
+<p>Now that we have an <code class="docutils literal notranslate"><span class="pre">Array</span></code> we perform standard numpy-style computations like arithmetic, mathematics, slicing, reductions, etc..</p>
+<p>The interface is familiar, but the actual work is different. <code class="docutils literal notranslate"><span class="pre">dask_array.sum()</span></code> does not do the same thing as <code class="docutils literal notranslate"><span class="pre">numpy_array.sum()</span></code>.</p>
+<p><strong>What’s the difference?</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">dask_array.sum()</span></code> builds an expression of the computation. It does not do the computation yet. <code class="docutils literal notranslate"><span class="pre">numpy_array.sum()</span></code> computes the sum immediately.</p>
+<p><em>Why the difference?</em></p>
+<p>Dask arrays are split into chunks. Each chunk must have computations run on that chunk explicitly. If the desired answer comes from a small slice of the entire dataset, running the computation over all data would be wasteful of CPU and memory.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+<p><strong>Compute result</strong></p>
+<p>Dask.array objects are lazily evaluated.  Operations like <code class="docutils literal notranslate"><span class="pre">.sum</span></code> build up a graph of blocked tasks to execute.</p>
+<p>We ask for the final result with a call to <code class="docutils literal notranslate"><span class="pre">.compute()</span></code>.  This triggers the actual computation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="exercise-compute-the-mean">
+<h3>Exercise:  Compute the mean<a class="headerlink" href="#exercise-compute-the-mean" title="Permalink to this headline">¶</a></h3>
+<p>And the variance, std, etc..  This should be a small change to the example above.</p>
+<p>Look at what other operations you can do with the Jupyter notebook’s tab-completion.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Does this match your result from before?</p>
+</div>
+</div>
+<div class="section" id="performance-and-parallelism">
+<h2>Performance and Parallelism<a class="headerlink" href="#performance-and-parallelism" title="Permalink to this headline">¶</a></h2>
+<img src="images/fail-case.gif" width="40%" align="right">
+<p>In our first examples we used <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to walk through the array one block at a time.  For simple operations like <code class="docutils literal notranslate"><span class="pre">sum</span></code> this is optimal.  However for complex operations we may want to traverse through the array differently.  In particular we may want the following:</p>
+<ol class="simple">
+<li><p>Use multiple cores in parallel</p></li>
+<li><p>Chain operations on a single blocks before moving on to the next one</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">Dask.array</span></code> translates your array operations into a graph of inter-related tasks with data dependencies between them.  Dask then executes this graph in parallel with multiple threads.  We’ll discuss more about this in the next section.</p>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Construct a 20000x20000 array of normally distributed random values broken up into 1000x1000 sized chunks</p></li>
+<li><p>Take the mean along one axis</p></li>
+<li><p>Take every 100th element</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">),</span>   <span class="c1"># 400 million element array </span>
+                              <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>   <span class="c1"># Cut into 1000x1000 sized chunks</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[::</span><span class="mi">100</span><span class="p">]</span>                            <span class="c1"># Perform NumPy-style operations</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">nbytes</span> <span class="o">/</span> <span class="mf">1e9</span>  <span class="c1"># Gigabytes of the input processed lazily</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">y</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>     <span class="c1"># Time to compute the result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="performance-comparison">
+<h2>Performance comparison<a class="headerlink" href="#performance-comparison" title="Permalink to this headline">¶</a></h2>
+<p>The following experiment was performed on a heavy personal laptop.  Your performance may vary.  If you attempt the NumPy version then please ensure that you have more than 4GB of main memory.</p>
+<p><strong>NumPy: 19s, Needs gigabytes of memory</strong></p>
+<!-- #region -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="o">%%</span><span class="n">time</span> 
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">))</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[::</span><span class="mi">100</span><span class="p">]</span> 
+<span class="n">y</span>
+
+<span class="n">CPU</span> <span class="n">times</span><span class="p">:</span> <span class="n">user</span> <span class="mf">19.6</span> <span class="n">s</span><span class="p">,</span> <span class="n">sys</span><span class="p">:</span> <span class="mi">160</span> <span class="n">ms</span><span class="p">,</span> <span class="n">total</span><span class="p">:</span> <span class="mf">19.8</span> <span class="n">s</span>
+<span class="n">Wall</span> <span class="n">time</span><span class="p">:</span> <span class="mf">19.7</span> <span class="n">s</span>
+</pre></div>
+</div>
+<!-- #endregion -->
+<p><strong>Dask Array: 4s, Needs megabytes of memory</strong></p>
+<!-- #region -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+
+<span class="o">%%</span><span class="n">time</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">),</span> <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[::</span><span class="mi">100</span><span class="p">]</span> 
+<span class="n">y</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span> 
+
+<span class="n">CPU</span> <span class="n">times</span><span class="p">:</span> <span class="n">user</span> <span class="mf">29.4</span> <span class="n">s</span><span class="p">,</span> <span class="n">sys</span><span class="p">:</span> <span class="mf">1.07</span> <span class="n">s</span><span class="p">,</span> <span class="n">total</span><span class="p">:</span> <span class="mf">30.5</span> <span class="n">s</span>
+<span class="n">Wall</span> <span class="n">time</span><span class="p">:</span> <span class="mf">4.01</span> <span class="n">s</span>
+</pre></div>
+</div>
+<!-- #endregion -->
+<p><strong>Discussion</strong></p>
+<p>Notice that the Dask array computation ran in 4 seconds, but used 29.4 seconds of user CPU time. The numpy computation ran in 19.7 seconds and used 19.6 seconds of user CPU time.</p>
+<p>Dask finished faster, but used more total CPU time because Dask was able to transparently parallelize the computation because of the chunk size.</p>
+<p><em>Questions</em></p>
+<ul class="simple">
+<li><p>What happens if the dask chunks=(20000,20000)?</p>
+<ul>
+<li><p>Will the computation run in 4 seconds?</p></li>
+<li><p>How much memory will be used?</p></li>
+</ul>
+</li>
+<li><p>What happens if the dask chunks=(25,25)?</p>
+<ul>
+<li><p>What happens to CPU and memory?</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="exercise-meteorological-data">
+<h3>Exercise:  Meteorological data<a class="headerlink" href="#exercise-meteorological-data" title="Permalink to this headline">¶</a></h3>
+<p>There is 2GB of somewhat artifical weather data in HDF5 files in <code class="docutils literal notranslate"><span class="pre">data/weather-big/*.hdf5</span></code>.  We’ll use the <code class="docutils literal notranslate"><span class="pre">h5py</span></code> library to interact with this data and <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> to compute on it.</p>
+<p>Our goal is to visualize the average temperature on the surface of the Earth for this month.  This will require a mean over all of this data.  We’ll do this in the following steps</p>
+<ol class="simple">
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">h5py.Dataset</span></code> objects for each of the days of data on disk (<code class="docutils literal notranslate"><span class="pre">dsets</span></code>)</p></li>
+<li><p>Wrap these with <code class="docutils literal notranslate"><span class="pre">da.from_array</span></code> calls</p></li>
+<li><p>Stack these datasets along time with a call to <code class="docutils literal notranslate"><span class="pre">da.stack</span></code></p></li>
+<li><p>Compute the mean along the newly stacked time axis with the <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> method</p></li>
+<li><p>Visualize the result with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow</span></code></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">filenames</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;weather-big&#39;</span><span class="p">,</span> <span class="s1">&#39;*.hdf5&#39;</span><span class="p">)))</span>
+<span class="n">dsets</span> <span class="o">=</span> <span class="p">[</span><span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)[</span><span class="s1">&#39;/t2m&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">]</span>
+<span class="n">dsets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsets</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># Slicing into h5py.Dataset object gives a numpy array</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dsets</span><span class="p">[</span><span class="mi">0</span><span class="p">][::</span><span class="mi">4</span><span class="p">,</span> <span class="p">::</span><span class="mi">4</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Integrate with <code class="docutils literal notranslate"><span class="pre">dask.array</span></code></strong></p>
+<p>Make a list of <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> objects out of your list of <code class="docutils literal notranslate"><span class="pre">h5py.Dataset</span></code> objects using the <code class="docutils literal notranslate"><span class="pre">da.from_array</span></code> function with a chunk size of <code class="docutils literal notranslate"><span class="pre">(500,</span> <span class="pre">500)</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">da</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">dset</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span> <span class="k">for</span> <span class="n">dset</span> <span class="ow">in</span> <span class="n">dsets</span><span class="p">]</span>
+<span class="n">arrays</span>
+</pre></div>
+</div>
+<p><strong>Stack this list of <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> objects into a single <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> object with <code class="docutils literal notranslate"><span class="pre">da.stack</span></code></strong></p>
+<p>Stack these along the first axis so that the shape of the resulting array is <code class="docutils literal notranslate"><span class="pre">(31,</span> <span class="pre">5760,</span> <span class="pre">11520)</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+<p><strong>Plot the mean of this array along the time (<code class="docutils literal notranslate"><span class="pre">0th</span></code>) axis</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Plot the difference of the first day from the mean</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-subsample-and-store">
+<h3>Exercise:  Subsample and store<a class="headerlink" href="#exercise-subsample-and-store" title="Permalink to this headline">¶</a></h3>
+<p>In the above exercise the result of our computation is small, so we can call <code class="docutils literal notranslate"><span class="pre">compute</span></code> safely.  Sometimes our result is still too large to fit into memory and we want to save it to disk.  In these cases you can use one of the following two functions</p>
+<ol>
+<li><p><code class="docutils literal notranslate"><span class="pre">da.store</span></code>: Store dask.array into any object that supports numpy setitem syntax, e.g.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>f = h5py.File(&#39;myfile.hdf5&#39;)
+output = f.create_dataset(shape=..., dtype=...)
+
+da.store(my_dask_array, output)
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">da.to_hdf5</span></code>: A specialized function that creates and stores a <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> object into an <code class="docutils literal notranslate"><span class="pre">HDF5</span></code> file.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>da.to_hdf5(&#39;data/myfile.hdf5&#39;, &#39;/output&#39;, my_dask_array)
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The task in this exercise is to <strong>use numpy step slicing to subsample the full dataset by a factor of two in both the latitude and longitude direction and then store this result to disk</strong> using one of the functions listed above.</p>
+<p>As a reminder, Python slicing takes three elements</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>start:stop:step
+
+&gt;&gt;&gt; L = [1, 2, 3, 4, 5, 6, 7]
+&gt;&gt;&gt; L[::3]
+[1, 4, 7]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+
+<span class="n">filenames</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;weather-big&#39;</span><span class="p">,</span> <span class="s1">&#39;*.hdf5&#39;</span><span class="p">)))</span>
+<span class="n">dsets</span> <span class="o">=</span> <span class="p">[</span><span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)[</span><span class="s1">&#39;/t2m&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">]</span>
+
+<span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">da</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">dset</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span> <span class="k">for</span> <span class="n">dset</span> <span class="ow">in</span> <span class="n">dsets</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">da</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../work&#39;</span><span class="p">,</span> <span class="s1">&#39;myfile.zarr&#39;</span><span class="p">),</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="example-lennard-jones-potential">
+<h2>Example: Lennard-Jones potential<a class="headerlink" href="#example-lennard-jones-potential" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Lennard-Jones_potential">Lennard-Jones potential</a> is used in particle simulations in physics, chemistry and engineering. It is highly parallelizable.</p>
+<p>First, we’ll run and profile the Numpy version on 7,000 particles.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># make a random collection of particles</span>
+<span class="k">def</span> <span class="nf">make_cluster</span><span class="p">(</span><span class="n">natoms</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1981</span><span class="p">):</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">cluster</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="p">(</span><span class="n">natoms</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span><span class="o">-</span><span class="mf">0.5</span>
+    <span class="k">return</span> <span class="n">cluster</span>
+
+<span class="k">def</span> <span class="nf">lj</span><span class="p">(</span><span class="n">r2</span><span class="p">):</span>
+    <span class="n">sr6</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="n">r2</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+    <span class="n">pot</span> <span class="o">=</span> <span class="mf">4.</span><span class="o">*</span><span class="p">(</span><span class="n">sr6</span><span class="o">*</span><span class="n">sr6</span> <span class="o">-</span> <span class="n">sr6</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pot</span>
+
+<span class="c1"># build the matrix of distances</span>
+<span class="k">def</span> <span class="nf">distances</span><span class="p">(</span><span class="n">cluster</span><span class="p">):</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">cluster</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">cluster</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+    <span class="n">mat</span> <span class="o">=</span> <span class="p">(</span><span class="n">diff</span><span class="o">*</span><span class="n">diff</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mat</span>
+
+<span class="c1"># the lj function is evaluated over the upper traingle</span>
+<span class="c1"># after removing distances near zero</span>
+<span class="k">def</span> <span class="nf">potential</span><span class="p">(</span><span class="n">cluster</span><span class="p">):</span>
+    <span class="n">d2</span> <span class="o">=</span> <span class="n">distances</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+    <span class="n">dtri</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+    <span class="n">energy</span> <span class="o">=</span> <span class="n">lj</span><span class="p">(</span><span class="n">dtri</span><span class="p">[</span><span class="n">dtri</span> <span class="o">&gt;</span> <span class="mf">1e-6</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">energy</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span> <span class="o">=</span> <span class="n">make_cluster</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">7e3</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">potential</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice that the most time consuming function is <code class="docutils literal notranslate"><span class="pre">distances</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">prun</span> <span class="o">-</span><span class="n">s</span> <span class="n">tottime</span> <span class="n">potential</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="dask-version">
+<h3>Dask version<a class="headerlink" href="#dask-version" title="Permalink to this headline">¶</a></h3>
+<p>Here’s the Dask version. Only the <code class="docutils literal notranslate"><span class="pre">potential</span></code> function needs to be rewritten to best utilize Dask.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">da.nansum</span></code> has been used over the full <span class="math notranslate nohighlight">\(NxN\)</span> distance matrix to improve parallel efficiency.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+
+<span class="c1"># compute the potential on the entire</span>
+<span class="c1"># matrix of distances and ignore division by zero</span>
+<span class="k">def</span> <span class="nf">potential_dask</span><span class="p">(</span><span class="n">cluster</span><span class="p">):</span>
+    <span class="n">d2</span> <span class="o">=</span> <span class="n">distances</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+    <span class="n">energy</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="n">lj</span><span class="p">(</span><span class="n">d2</span><span class="p">))</span><span class="o">/</span><span class="mf">2.</span>
+    <span class="k">return</span> <span class="n">energy</span>
+</pre></div>
+</div>
+<p>Let’s convert the NumPy array to a Dask array. Since the entire NumPy array fits in memory it is more computationally efficient to chunk the array by number of CPU cores.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">cpu_count</span>
+
+<span class="n">dcluster</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="n">cluster</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="n">cpu_count</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>This step should scale quite well with number of cores. The warnings are complaining about dividing by zero, which is why we used <code class="docutils literal notranslate"><span class="pre">da.nansum</span></code> in <code class="docutils literal notranslate"><span class="pre">potential_dask</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">potential_dask</span><span class="p">(</span><span class="n">dcluster</span><span class="p">)</span>
+<span class="o">%</span><span class="n">time</span> <span class="n">e</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<p>Dask Array does not implement the entire numpy interface.  Users expecting this
+will be disappointed.  Notably Dask Array has the following failings:</p>
+<ol class="simple">
+<li><p>Dask does not implement all of <code class="docutils literal notranslate"><span class="pre">np.linalg</span></code>.  This has been done by a
+number of excellent BLAS/LAPACK implementations and is the focus of
+numerous ongoing academic research projects.</p></li>
+<li><p>Dask Array does not support some operations where the resulting shape
+depends on the values of the array. For those that it does support
+(for example, masking one Dask Array with another boolean mask),
+the chunk sizes will be unknown, which may cause issues with other
+operations that need to know the chunk sizes.</p></li>
+<li><p>Dask Array does not attempt operations like <code class="docutils literal notranslate"><span class="pre">sort</span></code> which are notoriously
+difficult to do in parallel and are of somewhat diminished value on very
+large data (you rarely actually need a full sort).
+Often we include parallel-friendly alternatives like <code class="docutils literal notranslate"><span class="pre">topk</span></code>.</p></li>
+<li><p>Dask development is driven by immediate need, and so many lesser used
+functions, like <code class="docutils literal notranslate"><span class="pre">np.sometrue</span></code> have not been implemented purely out of
+laziness.  These would make excellent community contributions.</p></li>
+</ol>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/array.html">Array documentation</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/9h_61hXCDuI">Array screencast</a></p></li>
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/array-api.html">Array API</a></p></li>
+<li><p><a class="reference external" href="https://examples.dask.org/array.html">Array examples</a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./code"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="05_workbook.html" title="previous page">Dask Delayed</a>
+    <a class='right-next' id="next-link" href="07_workbook.html" title="next page">Dask DataFrames</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

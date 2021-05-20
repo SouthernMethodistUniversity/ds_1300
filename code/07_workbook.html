@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dask DataFrames &#8212; DS 1300</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Storage" href="08_workbook.html" />
+    <link rel="prev" title="Dask Arrays" href="06_workbook.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">DS 1300</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/00_introduction.html">
+   DS1300: A Practical Introduction to Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Practice of Data Science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/01_data_science.html">
+   Data Science Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/02_hpc.html">
+   Introduction to High-Performance Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/03_using_m2.html">
+   Using ManeFrame II for Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
+   Introduction to GitHub and Getting Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_workbook.html">
+   Introduction to Python Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/08_project.html">
+   Semester Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/06_data_ethics_bias.html">
+   Data Ethics and Bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_workbook.html">
+   Working with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_workbook.html">
+   Exploring and Cleaning a Data Set
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Modeling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/09_modeling.html">
+   Building Models with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/10_pudding.html">
+   The Pudding: Data Story Telling and Visualization
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Bigger Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/11_dask_initial_setup.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_workbook.html">
+   Dask Delayed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_workbook.html">
+   Dask Arrays
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dask DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_workbook.html">
+   Data Storage
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/code/07_workbook.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-to-use-dask-dataframe">
+   When to use
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dask.dataframe
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#real-data">
+     Real Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-just-happened">
+     What just happened?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computations-with-dask-dataframe">
+   Computations with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dask.dataframe
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-many-rows-are-in-our-dataset">
+     1.) How many rows are in our dataset?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-total-how-many-non-canceled-flights-were-taken">
+     2.) In total, how many non-canceled flights were taken?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-total-how-many-non-cancelled-flights-were-taken-from-each-airport">
+     3.) In total, how many non-cancelled flights were taken from each airport?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-was-the-average-departure-delay-from-each-airport">
+     4.) What was the average departure delay from each airport?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-day-of-the-week-has-the-worst-average-departure-delay">
+     5.) What day of the week has the worst average departure delay?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sharing-intermediate-results">
+   Sharing Intermediate Results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-does-this-compare-to-pandas">
+   How does this compare to Pandas?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dask-dataframe-data-model">
+   Dask DataFrame Data Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-crsdeptime-to-a-timestamp">
+   Converting
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     CRSDepTime
+    </span>
+   </code>
+   to a timestamp
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#custom-code-and-dask-dataframe">
+     Custom code and Dask Dataframe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-rewrite-above-to-use-a-single-call-to-map-partitions">
+     Exercise: Rewrite above to use a single call to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       map_partitions
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limitations">
+   Limitations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-doesn-t-work">
+     What doesn’t work?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learn-more">
+   Learn More
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dask-dataframes">
+<h1>Dask DataFrames<a class="headerlink" href="#dask-dataframes" title="Permalink to this headline">¶</a></h1>
+<p>We finished Chapter 1 by building a parallel dataframe computation over a directory of CSV files using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>.  In this section we use <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> to automatically build similiar computations, for the common case of tabular computations.  Dask dataframes look and feel like Pandas dataframes but they run on the same infrastructure that powers <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>.</p>
+<p>In this notebook we use the same airline data as before, but now rather than write for-loops we let <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> construct our computations for us.  The <code class="docutils literal notranslate"><span class="pre">dask.dataframe.read_csv</span></code> function can take a globstring like <code class="docutils literal notranslate"><span class="pre">&quot;data/nycflights/*.csv&quot;</span></code> and build parallel computations on all of our data at once.</p>
+<div class="section" id="when-to-use-dask-dataframe">
+<h2>When to use <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code><a class="headerlink" href="#when-to-use-dask-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Pandas is great for tabular datasets that fit in memory. Dask becomes useful when the dataset you want to analyze is larger than your machine’s RAM. The demo dataset we’re working with is only about 200MB, so that you can download it in a reasonable time, but <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> will scale to  datasets much larger than memory.</p>
+<!-- #endregion -->
+<p>The <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> module implements a blocked parallel <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object that mimics a large subset of the Pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> API. One Dask <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is comprised of many in-memory pandas <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> separated along the index. One operation on a Dask <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> triggers many pandas operations on the constituent pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s in a way that is mindful of potential parallelism and memory constraints.</p>
+<p><strong>Related Documentation</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/dataframe.html">DataFrame documentation</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/AT2XtFehFSQ">DataFrame screencast</a></p></li>
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/dataframe-api.html">DataFrame API</a></p></li>
+<li><p><a class="reference external" href="https://examples.dask.org/dataframe.html">DataFrame examples</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/">Pandas documentation</a></p></li>
+</ul>
+<p><strong>Main Take-aways</strong></p>
+<ol class="simple">
+<li><p>Dask DataFrame should be familiar to Pandas users</p></li>
+<li><p>The partitioning of dataframes is important for efficient execution</p></li>
+</ol>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">n_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We create artifical data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">dask</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;accounts.*.csv&#39;</span><span class="p">)</span>
+<span class="n">filename</span>
+</pre></div>
+</div>
+<p>Filename includes a glob pattern <code class="docutils literal notranslate"><span class="pre">*</span></code>, so all files in the path matching that pattern will be read into the same Dask DataFrame.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="nn">dd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># load and count number of rows</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What happened here?</p>
+<ul class="simple">
+<li><p>Dask investigated the input path and found that there are three matching files</p></li>
+<li><p>a set of jobs was intelligently created for each chunk - one per original CSV file in this case</p></li>
+<li><p>each file was loaded into a pandas dataframe, had <code class="docutils literal notranslate"><span class="pre">len()</span></code> applied to it</p></li>
+<li><p>the subtotals were combined to give you the final grand total.</p></li>
+</ul>
+<div class="section" id="real-data">
+<h3>Real Data<a class="headerlink" href="#real-data" title="Permalink to this headline">¶</a></h3>
+<p>Lets try this with an extract of flights in the USA across several years. This data is specific to flights out of the three airports in the New York City area.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">),</span>
+                 <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+</pre></div>
+</div>
+<p>Notice that the respresentation of the dataframe object contains no data - Dask has just done enough to read the start of the first file, and infer the column names and dtypes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+<p>We can view the start and end of the data</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>  <span class="c1"># this fails</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-just-happened">
+<h3>What just happened?<a class="headerlink" href="#what-just-happened" title="Permalink to this headline">¶</a></h3>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> which reads in the entire file before inferring datatypes, <code class="docutils literal notranslate"><span class="pre">dask.dataframe.read_csv</span></code> only reads in a sample from the beginning of the file (or first file if using a glob). These inferred datatypes are then enforced when reading all partitions.</p>
+<p>In this case, the datatypes inferred in the sample are incorrect. The first <code class="docutils literal notranslate"><span class="pre">n</span></code> rows have no value for <code class="docutils literal notranslate"><span class="pre">CRSElapsedTime</span></code> (which pandas infers as a <code class="docutils literal notranslate"><span class="pre">float</span></code>), and later on turn out to be strings (<code class="docutils literal notranslate"><span class="pre">object</span></code> dtype). Note that Dask gives an informative error message about the mismatch. When this happens you have a few options:</p>
+<ul class="simple">
+<li><p>Specify dtypes directly using the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> keyword. This is the recommended solution, as it’s the least error prone (better to be explicit than implicit) and also the most performant.</p></li>
+<li><p>Increase the size of the <code class="docutils literal notranslate"><span class="pre">sample</span></code> keyword (in bytes)</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">assume_missing</span></code> to make <code class="docutils literal notranslate"><span class="pre">dask</span></code> assume that columns inferred to be <code class="docutils literal notranslate"><span class="pre">int</span></code> (which don’t allow missing values) are actually floats (which do allow missing values). In our particular case this doesn’t apply.</p></li>
+</ul>
+<p>In our case we’ll use the first option and directly specify the <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> of the offending columns.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">),</span>
+                 <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]},</span>
+                 <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;TailNum&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                        <span class="s1">&#39;CRSElapsedTime&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                        <span class="s1">&#39;Cancelled&#39;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">})</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>  <span class="c1"># now works</span>
+</pre></div>
+</div>
+<!-- #region -->
+</div>
+</div>
+<div class="section" id="computations-with-dask-dataframe">
+<h2>Computations with <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code><a class="headerlink" href="#computations-with-dask-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>We compute the maximum of the <code class="docutils literal notranslate"><span class="pre">DepDelay</span></code> column. With just pandas, we would loop over each file to find the individual maximums, then find the final maximum over all the individual maximums</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">maxes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    <span class="n">maxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+    
+<span class="n">final_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We could wrap that <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> with <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> so that it runs in parallel. Regardless, we’re still having to think about loops, intermediate results (one per file) and the final reduction (<code class="docutils literal notranslate"><span class="pre">max</span></code> of the intermediate maxes). This is just noise around the real task, which pandas solves with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> lets us write pandas-like code, that operates on larger than memory datasets in parallel.</p>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">df</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This writes the delayed computation for us and then runs it.</p>
+<p>Some things to note:</p>
+<ol class="simple">
+<li><p>As with <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>, we need to call <code class="docutils literal notranslate"><span class="pre">.compute()</span></code> when we’re done.  Up until this point everything is lazy.</p></li>
+<li><p>Dask will delete intermediate results (like the full pandas dataframe for each file) as soon as possible.</p>
+<ul class="simple">
+<li><p>This lets us handle datasets that are larger than memory</p></li>
+<li><p>This means that repeated computations will have to load all of the data in each time (run the code above again, is it faster or slower than you would expect?)</p></li>
+</ul>
+</li>
+</ol>
+<p>As with <code class="docutils literal notranslate"><span class="pre">Delayed</span></code> objects, you can view the underlying task graph using the <code class="docutils literal notranslate"><span class="pre">.visualize</span></code> method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice the parallelism</span>
+<span class="n">df</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">visualize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>In this section we do a few <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> computations. If you are comfortable with Pandas then these should be familiar. You will have to think about when to call <code class="docutils literal notranslate"><span class="pre">compute</span></code>.</p>
+<div class="section" id="how-many-rows-are-in-our-dataset">
+<h3>1.) How many rows are in our dataset?<a class="headerlink" href="#how-many-rows-are-in-our-dataset" title="Permalink to this headline">¶</a></h3>
+<p>If you aren’t familiar with pandas, how would you check how many records are in a list of tuples?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="in-total-how-many-non-canceled-flights-were-taken">
+<h3>2.) In total, how many non-canceled flights were taken?<a class="headerlink" href="#in-total-how-many-non-canceled-flights-were-taken" title="Permalink to this headline">¶</a></h3>
+<p>With pandas, you would use <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/indexing.html#boolean-indexing">boolean indexing</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">Cancelled</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="in-total-how-many-non-cancelled-flights-were-taken-from-each-airport">
+<h3>3.) In total, how many non-cancelled flights were taken from each airport?<a class="headerlink" href="#in-total-how-many-non-cancelled-flights-were-taken-from-each-airport" title="Permalink to this headline">¶</a></h3>
+<p><em>Hint</em>: use <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/groupby.html"><code class="docutils literal notranslate"><span class="pre">df.groupby</span></code></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">Cancelled</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Origin&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Origin</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-was-the-average-departure-delay-from-each-airport">
+<h3>4.) What was the average departure delay from each airport?<a class="headerlink" href="#what-was-the-average-departure-delay-from-each-airport" title="Permalink to this headline">¶</a></h3>
+<p>Note, this is the same computation you did in the previous notebook (is this approach faster or slower?)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Origin&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-day-of-the-week-has-the-worst-average-departure-delay">
+<h3>5.) What day of the week has the worst average departure delay?<a class="headerlink" href="#what-day-of-the-week-has-the-worst-average-departure-delay" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;DayOfWeek&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sharing-intermediate-results">
+<h2>Sharing Intermediate Results<a class="headerlink" href="#sharing-intermediate-results" title="Permalink to this headline">¶</a></h2>
+<p>When computing all of the above, we sometimes did the same operation more than once. For most operations, <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> hashes the arguments, allowing duplicate computations to be shared, and only computed once.</p>
+<p>For example, lets compute the mean and standard deviation for departure delay of all non-canceled flights. Since dask operations are lazy, those values aren’t the final results yet. They’re just the recipe required to get the result.</p>
+<p>If we compute them with two calls to compute, there is no sharing of intermediate computations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">non_cancelled</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">Cancelled</span><span class="p">]</span>
+<span class="n">mean_delay</span> <span class="o">=</span> <span class="n">non_cancelled</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">std_delay</span> <span class="o">=</span> <span class="n">non_cancelled</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+
+<span class="n">mean_delay_res</span> <span class="o">=</span> <span class="n">mean_delay</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="n">std_delay_res</span> <span class="o">=</span> <span class="n">std_delay</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>But let’s try by passing both to a single <code class="docutils literal notranslate"><span class="pre">compute</span></code> call.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+
+<span class="n">mean_delay_res</span><span class="p">,</span> <span class="n">std_delay_res</span> <span class="o">=</span> <span class="n">dask</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">mean_delay</span><span class="p">,</span> <span class="n">std_delay</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">dask.compute</span></code> takes roughly 1/2 the time. This is because the task graphs for both results are merged when calling <code class="docutils literal notranslate"><span class="pre">dask.compute</span></code>, allowing shared operations to only be done once instead of twice. In particular, using <code class="docutils literal notranslate"><span class="pre">dask.compute</span></code> only does the following once:</p>
+<ul class="simple">
+<li><p>the calls to <code class="docutils literal notranslate"><span class="pre">read_csv</span></code></p></li>
+<li><p>the filter (<code class="docutils literal notranslate"><span class="pre">df[~df.Cancelled]</span></code>)</p></li>
+<li><p>some of the necessary reductions (<code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>)</p></li>
+</ul>
+<p>To see what the merged task graphs between multiple results look like (and what’s shared), you can use the <code class="docutils literal notranslate"><span class="pre">dask.visualize</span></code> function (we might want to use <code class="docutils literal notranslate"><span class="pre">filename='graph.pdf'</span></code> to save the graph to disk so that we can zoom in more easily):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dask</span><span class="o">.</span><span class="n">visualize</span><span class="p">(</span><span class="n">mean_delay</span><span class="p">,</span> <span class="n">std_delay</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-does-this-compare-to-pandas">
+<h2>How does this compare to Pandas?<a class="headerlink" href="#how-does-this-compare-to-pandas" title="Permalink to this headline">¶</a></h2>
+<p>Pandas is more mature and fully featured than <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code>.  If your data fits in memory then you should use Pandas.  The <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> module gives you a limited <code class="docutils literal notranslate"><span class="pre">pandas</span></code> experience when you operate on datasets that don’t fit comfortably in memory.</p>
+<p>During this tutorial we provide a small dataset consisting of a few CSV files.  This dataset is 45MB on disk that expands to about 400MB in memory. This dataset is small enough that you would normally use Pandas.</p>
+<p>We’ve chosen this size so that exercises finish quickly.  Dask.dataframe only really becomes meaningful for problems significantly larger than this, when Pandas breaks with the dreaded</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>MemoryError:  ...
+</pre></div>
+</div>
+<p>Furthermore, the distributed scheduler allows the same dataframe expressions to be executed across a cluster. To enable massive “big data” processing, one could execute data ingestion functions such as <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>, where the data is held on storage accessible to every worker node (e.g., amazon’s S3), and because most operations begin by selecting only some columns, transforming and filtering the data, only relatively small amounts of data need to be communicated between the machines.</p>
+<p>Dask.dataframe operations use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> operations internally.  Generally they run at about the same speed except in the following two cases:</p>
+<ol class="simple">
+<li><p>Dask introduces a bit of overhead, around 1ms per task.  This is usually negligible.</p></li>
+<li><p>When Pandas releases the GIL <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> can call several pandas operations in parallel within a process, increasing speed somewhat proportional to the number of cores. For operations which don’t release the GIL, multiple processes would be needed to get the same speedup.</p></li>
+</ol>
+</div>
+<div class="section" id="dask-dataframe-data-model">
+<h2>Dask DataFrame Data Model<a class="headerlink" href="#dask-dataframe-data-model" title="Permalink to this headline">¶</a></h2>
+<p>For the most part, a Dask DataFrame feels like a pandas DataFrame.
+So far, the biggest difference we’ve seen is that Dask operations are lazy; they build up a task graph instead of executing immediately (more details coming in <span class="xref myst">Schedulers</span>).
+This lets Dask do operations in parallel and out of core.</p>
+<p>In <span class="xref myst">Dask Arrays</span>, we saw that a <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> was composed of many NumPy arrays, chunked along one or more dimensions.
+It’s similar for <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code>: a Dask DataFrame is composed of many pandas DataFrames. For <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> the chunking happens only along the index.</p>
+<img src="http://dask.pydata.org/en/latest/_images/dask-dataframe.svg" width="30%">
+<p>We call each chunk a <em>partition</em>, and the upper / lower bounds are <em>divisions</em>.
+Dask <em>can</em> store information about the divisions. For now, partitions come up when you write custom functions to apply to Dask DataFrames</p>
+</div>
+<div class="section" id="converting-crsdeptime-to-a-timestamp">
+<h2>Converting <code class="docutils literal notranslate"><span class="pre">CRSDepTime</span></code> to a timestamp<a class="headerlink" href="#converting-crsdeptime-to-a-timestamp" title="Permalink to this headline">¶</a></h2>
+<p>This dataset stores timestamps as <code class="docutils literal notranslate"><span class="pre">HHMM</span></code>, which are read in as integers in <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">crs_dep_time</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">CRSDepTime</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">crs_dep_time</span>
+</pre></div>
+</div>
+<p>To convert these to timestamps of scheduled departure time, we need to convert these integers into <code class="docutils literal notranslate"><span class="pre">pd.Timedelta</span></code> objects, and then combine them with the <code class="docutils literal notranslate"><span class="pre">Date</span></code> column.</p>
+<p>In pandas we’d do this using the <code class="docutils literal notranslate"><span class="pre">pd.to_timedelta</span></code> function, and a bit of arithmetic:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Get the first 10 dates to complement our `crs_dep_time`</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Get hours as an integer, convert to a timedelta</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="n">crs_dep_time</span> <span class="o">//</span> <span class="mi">100</span>
+<span class="n">hours_timedelta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+
+<span class="c1"># Get minutes as an integer, convert to a timedelta</span>
+<span class="n">minutes</span> <span class="o">=</span> <span class="n">crs_dep_time</span> <span class="o">%</span> <span class="mi">100</span>
+<span class="n">minutes_timedelta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+
+<span class="c1"># Apply the timedeltas to offset the dates by the departure time</span>
+<span class="n">departure_timestamp</span> <span class="o">=</span> <span class="n">date</span> <span class="o">+</span> <span class="n">hours_timedelta</span> <span class="o">+</span> <span class="n">minutes_timedelta</span>
+<span class="n">departure_timestamp</span>
+</pre></div>
+</div>
+<div class="section" id="custom-code-and-dask-dataframe">
+<h3>Custom code and Dask Dataframe<a class="headerlink" href="#custom-code-and-dask-dataframe" title="Permalink to this headline">¶</a></h3>
+<p>We could swap out <code class="docutils literal notranslate"><span class="pre">pd.to_timedelta</span></code> for <code class="docutils literal notranslate"><span class="pre">dd.to_timedelta</span></code> and do the same operations on the entire dask DataFrame. But let’s say that Dask hadn’t implemented a <code class="docutils literal notranslate"><span class="pre">dd.to_timedelta</span></code> that works on Dask DataFrames. What would you do then?</p>
+<p><code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code> provides a few methods to make applying custom functions to Dask DataFrames easier:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://dask.pydata.org/en/latest/dataframe-api.html#dask.dataframe.DataFrame.map_partitions"><code class="docutils literal notranslate"><span class="pre">map_partitions</span></code></a></p></li>
+<li><p><a class="reference external" href="http://dask.pydata.org/en/latest/dataframe-api.html#dask.dataframe.DataFrame.map_overlap"><code class="docutils literal notranslate"><span class="pre">map_overlap</span></code></a></p></li>
+<li><p><a class="reference external" href="http://dask.pydata.org/en/latest/dataframe-api.html#dask.dataframe.DataFrame.reduction"><code class="docutils literal notranslate"><span class="pre">reduction</span></code></a></p></li>
+</ul>
+<p>Here we’ll just be discussing <code class="docutils literal notranslate"><span class="pre">map_partitions</span></code>, which we can use to implement <code class="docutils literal notranslate"><span class="pre">to_timedelta</span></code> on our own:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at the docs for `map_partitions`</span>
+
+<span class="n">help</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">CRSDepTime</span><span class="o">.</span><span class="n">map_partitions</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The basic idea is to apply a function that operates on a DataFrame to each partition.
+In this case, we’ll apply <code class="docutils literal notranslate"><span class="pre">pd.to_timedelta</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hours</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">CRSDepTime</span> <span class="o">//</span> <span class="mi">100</span>
+<span class="c1"># hours_timedelta = pd.to_timedelta(hours, unit=&#39;h&#39;)</span>
+<span class="n">hours_timedelta</span> <span class="o">=</span> <span class="n">hours</span><span class="o">.</span><span class="n">map_partitions</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+
+<span class="n">minutes</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">CRSDepTime</span> <span class="o">%</span> <span class="mi">100</span>
+<span class="c1"># minutes_timedelta = pd.to_timedelta(minutes, unit=&#39;m&#39;)</span>
+<span class="n">minutes_timedelta</span> <span class="o">=</span> <span class="n">minutes</span><span class="o">.</span><span class="n">map_partitions</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+
+<span class="n">departure_timestamp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span> <span class="o">+</span> <span class="n">hours_timedelta</span> <span class="o">+</span> <span class="n">minutes_timedelta</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">departure_timestamp</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">departure_timestamp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-rewrite-above-to-use-a-single-call-to-map-partitions">
+<h3>Exercise: Rewrite above to use a single call to <code class="docutils literal notranslate"><span class="pre">map_partitions</span></code><a class="headerlink" href="#exercise-rewrite-above-to-use-a-single-call-to-map-partitions" title="Permalink to this headline">¶</a></h3>
+<p>This will be slightly more efficient than two separate calls, as it reduces the number of tasks in the graph.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_departure_timestamp</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">hours</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">CRSDepTime</span> <span class="o">//</span> <span class="mi">100</span>
+    <span class="n">hours_timedelta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+
+    <span class="n">minutes</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">CRSDepTime</span> <span class="o">%</span> <span class="mi">100</span>
+    <span class="n">minutes_timedelta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">Date</span> <span class="o">+</span> <span class="n">hours_timedelta</span> <span class="o">+</span> <span class="n">minutes_timedelta</span>
+
+<span class="n">departure_timestamp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">map_partitions</span><span class="p">(</span><span class="n">compute_departure_timestamp</span><span class="p">)</span>
+<span class="n">departure_timestamp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-doesn-t-work">
+<h3>What doesn’t work?<a class="headerlink" href="#what-doesn-t-work" title="Permalink to this headline">¶</a></h3>
+<p>Dask.dataframe only covers a small but well-used portion of the Pandas API.
+This limitation is for two reasons:</p>
+<ol class="simple">
+<li><p>The Pandas API is <em>huge</em></p></li>
+<li><p>Some operations are genuinely hard to do in parallel (e.g. sort)</p></li>
+</ol>
+<p>Additionally, some important operations like <code class="docutils literal notranslate"><span class="pre">set_index</span></code> work, but are slower
+than in Pandas because they include substantial shuffling of data, and may write out to disk.</p>
+<!-- #region -->
+</div>
+</div>
+<div class="section" id="learn-more">
+<h2>Learn More<a class="headerlink" href="#learn-more" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/dataframe.html">DataFrame documentation</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/AT2XtFehFSQ">DataFrame screencast</a></p></li>
+<li><p><a class="reference external" href="https://docs.dask.org/en/latest/dataframe-api.html">DataFrame API</a></p></li>
+<li><p><a class="reference external" href="https://examples.dask.org/dataframe.html">DataFrame examples</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/">Pandas documentation</a></p></li>
+</ul>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./code"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="06_workbook.html" title="previous page">Dask Arrays</a>
+    <a class='right-next' id="next-link" href="08_workbook.html" title="next page">Data Storage</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

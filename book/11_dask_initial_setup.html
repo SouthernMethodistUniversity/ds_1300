@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Working with Data &#8212; DS 1300</title>
+    <title>Getting Started &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dask Delayed" href="../code/05_workbook.html" />
+    <link rel="prev" title="The Pudding: Data Story Telling and Visualization" href="10_pudding.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -80,7 +82,7 @@
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/00_introduction.html">
+  <a class="reference internal" href="00_introduction.html">
    DS1300: A Practical Introduction to Data Science
   </a>
  </li>
@@ -92,32 +94,32 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/01_data_science.html">
+  <a class="reference internal" href="01_data_science.html">
    Data Science Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/02_hpc.html">
+  <a class="reference internal" href="02_hpc.html">
    Introduction to High-Performance Computing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/03_using_m2.html">
+  <a class="reference internal" href="03_using_m2.html">
    Using ManeFrame II for Class
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
+  <a class="reference internal" href="04_github_and_initial_setup.html">
    Introduction to GitHub and Getting Setup
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01_workbook.html">
+  <a class="reference internal" href="../code/01_workbook.html">
    Introduction to Python Programming
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/08_project.html">
+  <a class="reference internal" href="08_project.html">
    Semester Project
   </a>
  </li>
@@ -129,17 +131,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/06_data_ethics_bias.html">
+  <a class="reference internal" href="06_data_ethics_bias.html">
    Data Ethics and Bias
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_workbook.html">
+  <a class="reference internal" href="../code/02_workbook.html">
    Working with Data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04_workbook.html">
+  <a class="reference internal" href="../code/04_workbook.html">
    Exploring and Cleaning a Data Set
   </a>
  </li>
@@ -151,12 +153,12 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/09_modeling.html">
+  <a class="reference internal" href="09_modeling.html">
    Building Models with Data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../book/10_pudding.html">
+  <a class="reference internal" href="10_pudding.html">
    The Pudding: Data Story Telling and Visualization
   </a>
  </li>
@@ -166,29 +168,29 @@
   Bigger Data
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/11_dask_initial_setup.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Getting Started
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="05_workbook.html">
+  <a class="reference internal" href="../code/05_workbook.html">
    Dask Delayed
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="06_workbook.html">
+  <a class="reference internal" href="../code/06_workbook.html">
    Dask Arrays
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="07_workbook.html">
+  <a class="reference internal" href="../code/07_workbook.html">
    Dask DataFrames
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="08_workbook.html">
+  <a class="reference internal" href="../code/08_workbook.html">
    Data Storage
   </a>
  </li>
@@ -233,7 +235,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/code/02_assignment.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/book/11_dask_initial_setup.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -258,6 +260,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#launch-multicore-dask-enabled-jupyterlab-environment">
+   Launch Multicore Dask Enabled JupyterLab Environment
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -266,55 +281,29 @@
         
               <div>
                 
-  <div class="section" id="working-with-data">
-<h1>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>Using the data below, answer the following questions:</p>
-</div></blockquote>
-<blockquote>
-<div><ol class="simple">
-<li><p>Which entities (top 5) had the largest population density in 2020?</p></li>
-<li><p>Which entities have more water area than land area?</p></li>
-<li><p>Which entities increased in population the most in the last 10 years?</p></li>
-<li><p>What state bird accounts for the largest population as of 2020? Land area?</p></li>
-<li><p>How many entities’ largest city is their capital city?</p></li>
-<li><p>Which city has the largest percent drop from their largest city to their 5th largest? 100*(1st largest - 5th largest)/(1st largest)</p></li>
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="launch-multicore-dask-enabled-jupyterlab-environment">
+<h2>Launch Multicore Dask Enabled JupyterLab Environment<a class="headerlink" href="#launch-multicore-dask-enabled-jupyterlab-environment" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Go to the <a class="reference external" href="https://hpc.smu.edu">HPC Portal</a> and log in.</p></li>
+<li><p>Select “Interactive Apps” and then “JupyterLab”.</p></li>
+<li><p>Set the fields to:</p>
+<ul class="simple">
+<li><p>“Additional environment modules to load”: <code class="docutils literal notranslate"><span class="pre">python/3</span></code></p></li>
+<li><p>“Custom module paths”: Clear the contents if any</p></li>
+<li><p>“Custom environment settings”: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">/hpc/classes/ds_1300</span></code></p></li>
+<li><p>“Partition”: Select any appropriate partition other than <code class="docutils literal notranslate"><span class="pre">htc</span></code>; recommend <code class="docutils literal notranslate"><span class="pre">development</span></code> or <code class="docutils literal notranslate"><span class="pre">standard-mem-s</span></code></p></li>
+<li><p>“Number of hours” <code class="docutils literal notranslate"><span class="pre">2</span></code></p></li>
+<li><p>“Number of nodes”: <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p>“Cores per node”: <code class="docutils literal notranslate"><span class="pre">4</span></code></p></li>
+<li><p>“GPUs per node”: <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p>“Memory”: <code class="docutils literal notranslate"><span class="pre">24</span></code></p></li>
+</ul>
+</li>
+<li><p>Select “Launch” and wait for the job and JupyterLab session to begin (this can take a few minutes).</p></li>
+<li><p>Select “Connect to JupyterLab”, which will appear when the JupyterLab session has started.</p></li>
 </ol>
-</div></blockquote>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">facts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/state_facts.tsv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">facts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>Using the “state_dates.tsv” data, answer the remaining questions. You will need to merge the two data sets together:</p>
-</div></blockquote>
-<blockquote>
-<div><ol class="simple">
-<li><p>Of the states that joined the United States before 1790, what is the most common state flower?</p></li>
-<li><p>Which has the larger population density, the most dense US Territory or the least dense state?</p></li>
-<li><p>Make a graph that plots the populations of the largest city in each entity in the order in which they joined the US. Make the bars black</p></li>
-<li><p>Make two additional graphs like the one above but one for land area (green bars) and one for water area (blue bars)</p></li>
-</ol>
-</div></blockquote>
-<p>Hint: <code class="docutils literal notranslate"><span class="pre">pd.read_csv('../data/state_dates.tsv',delimiter=&quot;\t&quot;)</span></code></p>
-<p>Hint: You likely want to convert the Date column to datetime. You might have to correct errors in the data as well.</p>
-<p>Hint: <code class="docutils literal notranslate"><span class="pre">states['Date']&lt;pd.datetime(1790,1,1)</span></code></p>
-<p>Hint: <code class="docutils literal notranslate"><span class="pre">pd.merge(****,****,left_on='USPS_code',right_on='Abbreviation',how='outer')</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample code to help with the plots</span>
-
-<span class="c1">#import matplotlib as plt</span>
-<span class="c1">#%config InlineBackend.figure_format =&#39;retina&#39; #This makes your plot clearer</span>
-
-
-<span class="c1">#plot = *your df by date*[[*column*,&#39;Abbreviation&#39;]].plot(kind=&#39;bar&#39;,figsize=(10,4))</span>
-<span class="c1">#plot.set_xticklabels(*your df by date*[&#39;Abbreviation&#39;]);</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </div>
 
@@ -331,7 +320,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./code"
+            path: "./book"
         },
         predefinedOutput: true
     }
@@ -343,6 +332,8 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="10_pudding.html" title="previous page">The Pudding: Data Story Telling and Visualization</a>
+    <a class='right-next' id="next-link" href="../code/05_workbook.html" title="next page">Dask Delayed</a>
 
         </div>
         

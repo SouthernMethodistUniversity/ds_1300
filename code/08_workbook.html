@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Storage &#8212; DS 1300</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Dask DataFrames" href="07_workbook.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">DS 1300</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/00_introduction.html">
+   DS1300: A Practical Introduction to Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Practice of Data Science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/01_data_science.html">
+   Data Science Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/02_hpc.html">
+   Introduction to High-Performance Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/03_using_m2.html">
+   Using ManeFrame II for Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
+   Introduction to GitHub and Getting Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_workbook.html">
+   Introduction to Python Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/08_project.html">
+   Semester Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/06_data_ethics_bias.html">
+   Data Ethics and Bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_workbook.html">
+   Working with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_workbook.html">
+   Exploring and Cleaning a Data Set
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Modeling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/09_modeling.html">
+   Building Models with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/10_pudding.html">
+   The Pudding: Data Story Telling and Visualization
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Bigger Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/11_dask_initial_setup.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_workbook.html">
+   Dask Delayed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_workbook.html">
+   Dask Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_workbook.html">
+   Dask DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data Storage
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/code/08_workbook.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-csv">
+   Read CSV
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#write-to-hdf5">
+     Write to HDF5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-csv-to-hdf5-speeds">
+     Compare CSV to HDF5 speeds
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#store-text-efficiently-with-categoricals">
+     1.  Store text efficiently with categoricals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remote-files">
+   Remote files
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-storage">
+<h1>Data Storage<a class="headerlink" href="#data-storage" title="Permalink to this headline">¶</a></h1>
+<p>Efficient storage can dramatically improve performance, particularly when operating repeatedly from disk.</p>
+<p>Decompressing text and parsing CSV files is expensive.  One of the most effective strategies with medium data is to use a binary storage format like HDF5.  Often the performance gains from doing this is sufficient so that you can switch back to using Pandas again instead of using <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code>.</p>
+<p>In this section we’ll learn how to efficiently arrange and store your datasets in on-disk binary formats.  We’ll use the following:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/io.html#io-hdf5">Pandas <code class="docutils literal notranslate"><span class="pre">HDFStore</span></code></a> format on top of <code class="docutils literal notranslate"><span class="pre">HDF5</span></code></p></li>
+<li><p>Categoricals for storing text data numerically</p></li>
+</ol>
+<p><strong>Main Take-aways</strong></p>
+<ol class="simple">
+<li><p>Storage formats affect performance by an order of magnitude</p></li>
+<li><p>Text data will keep even a fast format like HDF5 slow</p></li>
+<li><p>A combination of binary formats, column storage, and partitioned data turns one second wait times into 80ms wait times.</p></li>
+</ol>
+<div class="section" id="read-csv">
+<h2>Read CSV<a class="headerlink" href="#read-csv" title="Permalink to this headline">¶</a></h2>
+<p>First we read our csv data as before.</p>
+<p>CSV and other text-based file formats are the most common storage for data from many sources, because they require minimal pre-processing, can be written line-by-line and are human-readable. Since Pandas’ <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> is well-optimized, CSVs are a reasonable input, but far from optimized, since reading required extensive text parsing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;accounts.*.csv&#39;</span><span class="p">)</span>
+<span class="n">filename</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="nn">dd</span>
+<span class="n">df_csv</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">df_csv</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="write-to-hdf5">
+<h3>Write to HDF5<a class="headerlink" href="#write-to-hdf5" title="Permalink to this headline">¶</a></h3>
+<p>HDF5 and netCDF are binary array formats very commonly used in the scientific realm.</p>
+<p>Pandas contains a specialized HDF5 format, <code class="docutils literal notranslate"><span class="pre">HDFStore</span></code>.  The <code class="docutils literal notranslate"><span class="pre">dd.DataFrame.to_hdf</span></code> method works exactly like the <code class="docutils literal notranslate"><span class="pre">pd.DataFrame.to_hdf</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../work&#39;</span><span class="p">,</span> <span class="s1">&#39;accounts.h5&#39;</span><span class="p">)</span>
+<span class="n">target</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert to binary format, takes some time up-front</span>
+<span class="o">%</span><span class="n">time</span> <span class="n">df_csv</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s1">&#39;/data&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># same data as before</span>
+<span class="n">df_hdf</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s1">&#39;/data&#39;</span><span class="p">)</span>
+<span class="n">df_hdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compare-csv-to-hdf5-speeds">
+<h3>Compare CSV to HDF5 speeds<a class="headerlink" href="#compare-csv-to-hdf5-speeds" title="Permalink to this headline">¶</a></h3>
+<p>We do a simple computation that requires reading a column of our dataset and compare performance between CSV files and our newly created HDF5 file.  Which do you expect to be faster?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">df_csv</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">df_hdf</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Sadly they are about the same, or perhaps even slower.</p>
+<p>The culprit here is <code class="docutils literal notranslate"><span class="pre">names</span></code> column, which is of <code class="docutils literal notranslate"><span class="pre">object</span></code> dtype and thus hard to store efficiently.  There are two problems here:</p>
+<ol class="simple">
+<li><p>How do we store text data like <code class="docutils literal notranslate"><span class="pre">names</span></code> efficiently on disk?</p></li>
+<li><p>Why did we have to read the <code class="docutils literal notranslate"><span class="pre">names</span></code> column when all we wanted was <code class="docutils literal notranslate"><span class="pre">amount</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="store-text-efficiently-with-categoricals">
+<h3>1.  Store text efficiently with categoricals<a class="headerlink" href="#store-text-efficiently-with-categoricals" title="Permalink to this headline">¶</a></h3>
+<p>We can use Pandas categoricals to replace our object dtypes with a numerical representation.  This takes a bit more time up front, but results in better performance.</p>
+<p>More on categoricals at the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/categorical.html">pandas docs</a> and <a class="reference external" href="http://matthewrocklin.com/blog/work/2015/06/18/Categoricals">this blogpost</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Categorize data, then store in HDFStore</span>
+<span class="o">%</span><span class="n">time</span> <span class="n">df_hdf</span><span class="o">.</span><span class="n">categorize</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;names&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s1">&#39;/data2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># It looks the same</span>
+<span class="n">df_hdf</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s1">&#39;/data2&#39;</span><span class="p">)</span>
+<span class="n">df_hdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># But loads more quickly</span>
+<span class="o">%</span><span class="n">time</span> <span class="n">df_hdf</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This is now definitely faster than before.  This tells us that it’s not only the file type that we use but also how we represent our variables that influences storage performance.</p>
+<p>How does the performance of reading depend on the scheduler we use? You can try this with threaded, processes and distributed.</p>
+<p>However this can still be better.  We had to read all of the columns (<code class="docutils literal notranslate"><span class="pre">names</span></code> and <code class="docutils literal notranslate"><span class="pre">amount</span></code>) in order to compute the sum of one (<code class="docutils literal notranslate"><span class="pre">amount</span></code>).  We’ll improve further on this with <code class="docutils literal notranslate"><span class="pre">parquet</span></code>, an on-disk column-store.  First though we learn about how to set an index in a dask.dataframe.</p>
+</div>
+<div class="section" id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">fastparquet</span></code> is a library for interacting with parquet-format files, which are a very common format in the Big Data ecosystem, and used by tools such as Hadoop, Spark and Impala.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;accounts.parquet&#39;</span><span class="p">)</span>
+<span class="n">df_csv</span><span class="o">.</span><span class="n">categorize</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;names&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;has_nulls&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;fastparquet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Investigate the file structure in the resultant new directory - what do you suppose those files are for?</p>
+<p><code class="docutils literal notranslate"><span class="pre">to_parquet</span></code> comes with many options, such as compression, whether to explicitly write NULLs information (not necessary in this case), and how to encode strings. You can experiment with these, to see what effect they have on the file size and the processing times, below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="n">data</span><span class="o">/</span><span class="n">accounts</span><span class="o">.</span><span class="n">parquet</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_p</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+<span class="c1"># note that column names shows the type of the values - we could</span>
+<span class="c1"># choose to load as a categorical column or not.</span>
+<span class="n">df_p</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+<p>Rerun the sum computation above for this version of the data, and time how long it takes. You may want to try this more than once - it is common for many libraries to do various setup work when called for the first time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">df_p</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>When archiving data, it is common to sort and partition by a column with unique identifiers, to facilitate fast look-ups later. For this data, that column is <code class="docutils literal notranslate"><span class="pre">id</span></code>. Time how long it takes to retrieve the rows corresponding to <code class="docutils literal notranslate"><span class="pre">id==100</span></code> from the raw CSV, from HDF5 and parquet versions, and finally from a new parquet version written after applying <code class="docutils literal notranslate"><span class="pre">set_index('id')</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_p.set_index(&#39;id&#39;).to_parquet(...)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="remote-files">
+<h2>Remote files<a class="headerlink" href="#remote-files" title="Permalink to this headline">¶</a></h2>
+<p>Dask can access various cloud- and cluster-oriented data storage services such as Amazon S3 or HDFS</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>scalable, secure storage</p></li>
+</ul>
+<p>Disadvantages:</p>
+<ul class="simple">
+<li><p>network speed becomes bottleneck</p></li>
+</ul>
+<!-- #region -->
+<p>The way to set up dataframes (and other collections) remains very similar to before. Note that the data here is available anonymously, but in general an extra parameter <code class="docutils literal notranslate"><span class="pre">storage_options=</span></code> can be passed with further details about how to interact with the remote storage.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">taxi</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;s3://nyc-tlc/trip data/yellow_tripdata_2015-*.csv&#39;</span><span class="p">,</span>
+                   <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;anon&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+</pre></div>
+</div>
+<!-- #endregion -->
+<p><strong>Warning</strong>: operations over the Internet can take a long time to run. Such operations work really well in a cloud clustered set-up, e.g., amazon EC2 machines reading from S3 or Google compute machines reading from GCS.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./code"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="07_workbook.html" title="previous page">Dask DataFrames</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
