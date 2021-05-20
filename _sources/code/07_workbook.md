@@ -127,17 +127,6 @@ df.tail()  # now works
 
 ## Computations with `dask.dataframe`
 
-We compute the maximum of the `DepDelay` column. With just pandas, we would loop over each file to find the individual maximums, then find the final maximum over all the individual maximums
-
-```python
-maxes = []
-for fn in filenames:
-    df = pd.read_csv(fn)
-    maxes.append(df.DepDelay.max())
-    
-final_max = max(maxes)
-```
-
 We could wrap that `pd.read_csv` with `dask.delayed` so that it runs in parallel. Regardless, we're still having to think about loops, intermediate results (one per file) and the final reduction (`max` of the intermediate maxes). This is just noise around the real task, which pandas solves with
 
 ```python

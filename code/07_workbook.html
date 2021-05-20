@@ -501,15 +501,6 @@
 </div>
 <div class="section" id="computations-with-dask-dataframe">
 <h2>Computations with <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code><a class="headerlink" href="#computations-with-dask-dataframe" title="Permalink to this headline">¶</a></h2>
-<p>We compute the maximum of the <code class="docutils literal notranslate"><span class="pre">DepDelay</span></code> column. With just pandas, we would loop over each file to find the individual maximums, then find the final maximum over all the individual maximums</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">maxes</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-    <span class="n">maxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-    
-<span class="n">final_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxes</span><span class="p">)</span>
-</pre></div>
-</div>
 <p>We could wrap that <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> with <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> so that it runs in parallel. Regardless, we’re still having to think about loops, intermediate results (one per file) and the final reduction (<code class="docutils literal notranslate"><span class="pre">max</span></code> of the intermediate maxes). This is just noise around the real task, which pandas solves with</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>

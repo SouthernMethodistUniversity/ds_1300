@@ -201,13 +201,10 @@ x.nbytes / 1e9  # Gigabytes of the input processed lazily
 y.compute()     # Time to compute the result
 ```
 
-Performance comparison
----------------------------
-
-The following experiment was performed on a heavy personal laptop.  Your performance may vary.  If you attempt the NumPy version then please ensure that you have more than 4GB of main memory.
+### Performance comparison
 
 
-**NumPy: 19s, Needs gigabytes of memory**
+**NumPy: Needs gigabytes of memory**
 
 ```python
 import numpy as np
@@ -216,12 +213,9 @@ import numpy as np
 x = np.random.normal(10, 0.1, size=(20000, 20000)) 
 y = x.mean(axis=0)[::100] 
 y
-
-CPU times: user 19.6 s, sys: 160 ms, total: 19.8 s
-Wall time: 19.7 s
 ```
 
-**Dask Array: 4s, Needs megabytes of memory**
+**Dask Array: Needs megabytes of memory**
 
 ```python
 import dask.array as da
@@ -230,9 +224,6 @@ import dask.array as da
 x = da.random.normal(10, 0.1, size=(20000, 20000), chunks=(1000, 1000))
 y = x.mean(axis=0)[::100] 
 y.compute() 
-
-CPU times: user 29.4 s, sys: 1.07 s, total: 30.5 s
-Wall time: 4.01 s
 ```
 
 **Discussion**
