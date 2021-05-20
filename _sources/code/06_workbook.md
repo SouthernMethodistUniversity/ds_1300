@@ -518,3 +518,6 @@ will be disappointed.  Notably Dask Array has the following failings:
 ```python
 client.shutdown()
 ```
+
+Adapted from [Dask Tutorial](https://tutorial.dask.org).
+

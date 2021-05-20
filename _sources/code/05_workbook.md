@@ -443,3 +443,6 @@ Before moving on to the next exercise, make sure to close your client or stop th
 ```python
 client.close()
 ```
+
+Adapted from [Dask Tutorial](https://tutorial.dask.org).
+

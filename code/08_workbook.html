@@ -291,11 +291,6 @@
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#remote-files">
-   Remote files
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -417,27 +412,8 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_p.set_index(&#39;id&#39;).to_parquet(...)</span>
 </pre></div>
 </div>
+<p>Adapted from <a class="reference external" href="https://tutorial.dask.org">Dask Tutorial</a>.</p>
 </div>
-</div>
-<div class="section" id="remote-files">
-<h2>Remote files<a class="headerlink" href="#remote-files" title="Permalink to this headline">¶</a></h2>
-<p>Dask can access various cloud- and cluster-oriented data storage services such as Amazon S3 or HDFS</p>
-<p>Advantages:</p>
-<ul class="simple">
-<li><p>scalable, secure storage</p></li>
-</ul>
-<p>Disadvantages:</p>
-<ul class="simple">
-<li><p>network speed becomes bottleneck</p></li>
-</ul>
-<!-- #region -->
-<p>The way to set up dataframes (and other collections) remains very similar to before. Note that the data here is available anonymously, but in general an extra parameter <code class="docutils literal notranslate"><span class="pre">storage_options=</span></code> can be passed with further details about how to interact with the remote storage.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">taxi</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;s3://nyc-tlc/trip data/yellow_tripdata_2015-*.csv&#39;</span><span class="p">,</span>
-                   <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;anon&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
-</pre></div>
-</div>
-<!-- #endregion -->
-<p><strong>Warning</strong>: operations over the Internet can take a long time to run. Such operations work really well in a cloud clustered set-up, e.g., amazon EC2 machines reading from S3 or Google compute machines reading from GCS.</p>
 </div>
 </div>
 

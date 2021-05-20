@@ -161,25 +161,5 @@ When archiving data, it is common to sort and partition by a column with unique 
 # df_p.set_index('id').to_parquet(...)
 ```
 
-## Remote files
+Adapted from [Dask Tutorial](https://tutorial.dask.org).
 
-
-Dask can access various cloud- and cluster-oriented data storage services such as Amazon S3 or HDFS
-
-Advantages:
-* scalable, secure storage
-
-Disadvantages:
-* network speed becomes bottleneck
-
-
-<!-- #region -->
-The way to set up dataframes (and other collections) remains very similar to before. Note that the data here is available anonymously, but in general an extra parameter `storage_options=` can be passed with further details about how to interact with the remote storage.
-
-```python
-taxi = dd.read_csv('s3://nyc-tlc/trip data/yellow_tripdata_2015-*.csv',
-                   storage_options={'anon': True})
-```
-<!-- #endregion -->
-
-**Warning**: operations over the Internet can take a long time to run. Such operations work really well in a cloud clustered set-up, e.g., amazon EC2 machines reading from S3 or Google compute machines reading from GCS.

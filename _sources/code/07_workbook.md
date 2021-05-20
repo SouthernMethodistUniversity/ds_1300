@@ -407,3 +407,6 @@ than in Pandas because they include substantial shuffling of data, and may write
 ```python
 client.shutdown()
 ```
+
+Adapted from [Dask Tutorial](https://tutorial.dask.org).
+
