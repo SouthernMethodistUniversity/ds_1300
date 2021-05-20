@@ -130,7 +130,7 @@ However this can still be better.  We had to read all of the columns (`names` an
 `fastparquet` is a library for interacting with parquet-format files, which are a very common format in the Big Data ecosystem, and used by tools such as Hadoop, Spark and Impala.
 
 ```python
-target = os.path.join('data', 'accounts.parquet')
+target = os.path.join('../work', 'accounts.parquet')
 df_csv.categorize(columns=['names']).to_parquet(target, storage_options={"has_nulls": True}, engine="fastparquet")
 ```
 
@@ -139,7 +139,7 @@ Investigate the file structure in the resultant new directory - what do you supp
 `to_parquet` comes with many options, such as compression, whether to explicitly write NULLs information (not necessary in this case), and how to encode strings. You can experiment with these, to see what effect they have on the file size and the processing times, below.
 
 ```python
-ls -l data/accounts.parquet/
+ls -l ../work/accounts.parquet/
 ```
 
 ```python

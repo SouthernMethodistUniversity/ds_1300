@@ -147,10 +147,6 @@ total
 
 ```python
 %%time
-# Your parallel code here...
-```
-
-```python
 results = []
 
 for x in data:
@@ -163,12 +159,10 @@ result = total.compute()
 print("After computing :", result)  # After it's computed
 ```
 
-<!-- #region -->
 How do the graph visualizations compare with the given solution, compared to a version with the `sum` function used directly rather than wrapped with `delayed`? Can you explain the latter version? You might find the result of the following expression illuminating
 ```python
 delayed(inc)(1) + delayed(inc)(2)
 ```
-<!-- #endregion -->
 
 ## Exercise: Parallelizing a for-loop code with control flow
 
@@ -205,12 +199,6 @@ print(total)
 
 ```python
 %%time
-# Your parallel code here...
-# TODO: parallelize the sequential code above using dask.delayed
-# You will need to delay some functions, but not all
-```
-
-```python
 results = []
 for x in data:
     if is_even(x):  # even
@@ -317,79 +305,12 @@ mean
 
 ### Parallelize the code above
 
-Use `dask.delayed` to parallelize the code above.  Some extra things you will need to know.
-
-1.  Methods and attribute access on delayed objects work automatically, so if you have a delayed object you can perform normal arithmetic, slicing, and method calls on it and it will produce the correct delayed calls.
-
-    ```python
-    x = delayed(np.arange)(10)
-    y = (x + 1)[::2].sum()  # everything here was delayed
-    ```
-2.  Calling the `.compute()` method works well when you have a single output.  When you have multiple outputs you might want to use the `dask.compute` function:
-
-    ```python
-    >>> from dask import compute
-    >>> x = delayed(np.arange)(10)
-    >>> y = x ** 2
-    >>> min_, max_ = compute(y.min(), y.max())
-    >>> min_, max_
-    (0, 81)
-    ```
-    
-    This way Dask can share the intermediate values (like `y = x**2`)
-    
-So your goal is to parallelize the code above (which has been copied below) using `dask.delayed`.  You may also want to visualize a bit of the computation to see if you're doing it correctly.
-
 ```python
 from dask import compute
 ```
 
 ```python
 %%time
-
-# copied sequential code
-
-sums = []
-counts = []
-for fn in filenames:
-    # Read in file
-    df = pd.read_csv(fn)
-    
-    # Groupby origin airport
-    by_origin = df.groupby('Origin')
-    
-    # Sum of all departure delays by origin
-    total = by_origin.DepDelay.sum()
-    
-    # Number of flights by origin
-    count = by_origin.DepDelay.count()
-    
-    # Save the intermediates
-    sums.append(total)
-    counts.append(count)
-
-# Combine intermediates to get total mean-delay-per-origin
-total_delays = sum(sums)
-n_flights = sum(counts)
-mean = total_delays / n_flights
-```
-
-```python
-mean
-```
-
-```python
-%%time
-# your code here
-```
-
-If you load the solution, add `%%time` to the top of the cell to measure the running time.
-
-```python tags=[]
-%%time
-
-# This is just one possible solution, there are
-# several ways to do this using `delayed`
 
 sums = []
 counts = []

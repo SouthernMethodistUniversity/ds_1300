@@ -481,10 +481,7 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
-<span class="c1"># Your parallel code here...</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
@@ -496,12 +493,10 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After computing :&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>  <span class="c1"># After it&#39;s computed</span>
 </pre></div>
 </div>
-<!-- #region -->
 <p>How do the graph visualizations compare with the given solution, compared to a version with the <code class="docutils literal notranslate"><span class="pre">sum</span></code> function used directly rather than wrapped with <code class="docutils literal notranslate"><span class="pre">delayed</span></code>? Can you explain the latter version? You might find the result of the following expression illuminating</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<!-- #endregion -->
 </div>
 <div class="section" id="exercise-parallelizing-a-for-loop-code-with-control-flow">
 <h2>Exercise: Parallelizing a for-loop code with control flow<a class="headerlink" href="#exercise-parallelizing-a-for-loop-code-with-control-flow" title="Permalink to this headline">¶</a></h2>
@@ -533,12 +528,7 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
-<span class="c1"># Your parallel code here...</span>
-<span class="c1"># TODO: parallelize the sequential code above using dask.delayed</span>
-<span class="c1"># You will need to delay some functions, but not all</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">is_even</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>  <span class="c1"># even</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">double</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
@@ -635,71 +625,10 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </div>
 <div class="section" id="parallelize-the-code-above">
 <h3>Parallelize the code above<a class="headerlink" href="#parallelize-the-code-above" title="Permalink to this headline">¶</a></h3>
-<p>Use <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> to parallelize the code above.  Some extra things you will need to know.</p>
-<ol>
-<li><p>Methods and attribute access on delayed objects work automatically, so if you have a delayed object you can perform normal arithmetic, slicing, and method calls on it and it will produce the correct delayed calls.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">)(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)[::</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># everything here was delayed</span>
-</pre></div>
-</div>
-</li>
-<li><p>Calling the <code class="docutils literal notranslate"><span class="pre">.compute()</span></code> method works well when you have a single output.  When you have multiple outputs you might want to use the <code class="docutils literal notranslate"><span class="pre">dask.compute</span></code> function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dask</span> <span class="kn">import</span> <span class="n">compute</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">delayed</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">)(</span><span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">min_</span><span class="p">,</span> <span class="n">max_</span> <span class="o">=</span> <span class="n">compute</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">min_</span><span class="p">,</span> <span class="n">max_</span>
-<span class="go">(0, 81)</span>
-</pre></div>
-</div>
-<p>This way Dask can share the intermediate values (like <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x**2</span></code>)</p>
-</li>
-</ol>
-<p>So your goal is to parallelize the code above (which has been copied below) using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>.  You may also want to visualize a bit of the computation to see if you’re doing it correctly.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask</span> <span class="kn">import</span> <span class="n">compute</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
-
-<span class="c1"># copied sequential code</span>
-
-<span class="n">sums</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">counts</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
-    <span class="c1"># Read in file</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-    
-    <span class="c1"># Groupby origin airport</span>
-    <span class="n">by_origin</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Origin&#39;</span><span class="p">)</span>
-    
-    <span class="c1"># Sum of all departure delays by origin</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="n">by_origin</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    
-    <span class="c1"># Number of flights by origin</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="n">by_origin</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-    
-    <span class="c1"># Save the intermediates</span>
-    <span class="n">sums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
-    <span class="n">counts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-
-<span class="c1"># Combine intermediates to get total mean-delay-per-origin</span>
-<span class="n">total_delays</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
-<span class="n">n_flights</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
-<span class="n">mean</span> <span class="o">=</span> <span class="n">total_delays</span> <span class="o">/</span> <span class="n">n_flights</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
-<span class="c1"># your code here</span>
-</pre></div>
-</div>
-<p>If you load the solution, add <code class="docutils literal notranslate"><span class="pre">%%time</span></code> to the top of the cell to measure the running time.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
-
-<span class="c1"># This is just one possible solution, there are</span>
-<span class="c1"># several ways to do this using `delayed`</span>
 
 <span class="n">sums</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">counts</span> <span class="o">=</span> <span class="p">[]</span>

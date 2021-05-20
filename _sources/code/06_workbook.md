@@ -96,10 +96,6 @@ Now that we've seen the simple example above, try doing a slightly more complica
 This approach is overkill for our case but does nicely generalize if we don't know the size of the array or individual blocks beforehand.
 
 ```python
-# Compute the mean of the array
-```
-
-```python
 sums = []
 lengths = []
 for i in range(0, 1_000_000_000, 1_000_000):
@@ -167,24 +163,8 @@ We ask for the final result with a call to `.compute()`.  This triggers the actu
 result.compute()
 ```
 
-### Exercise:  Compute the mean
-
-
-And the variance, std, etc..  This should be a small change to the example above.
-
-Look at what other operations you can do with the Jupyter notebook's tab-completion.
-
-```python
-
-```
-
-Does this match your result from before?
-
-
 Performance and Parallelism
 -------------------------------
-
-<img src="images/fail-case.gif" width="40%" align="right">
 
 In our first examples we used `for` loops to walk through the array one block at a time.  For simple operations like `sum` this is optimal.  However for complex operations we may want to traverse through the array differently.  In particular we may want the following:
 
@@ -229,7 +209,6 @@ The following experiment was performed on a heavy personal laptop.  Your perform
 
 **NumPy: 19s, Needs gigabytes of memory**
 
-<!-- #region -->
 ```python
 import numpy as np
 
@@ -241,11 +220,9 @@ y
 CPU times: user 19.6 s, sys: 160 ms, total: 19.8 s
 Wall time: 19.7 s
 ```
-<!-- #endregion -->
 
 **Dask Array: 4s, Needs megabytes of memory**
 
-<!-- #region -->
 ```python
 import dask.array as da
 
@@ -257,7 +234,6 @@ y.compute()
 CPU times: user 29.4 s, sys: 1.07 s, total: 30.5 s
 Wall time: 4.01 s
 ```
-<!-- #endregion -->
 
 **Discussion**
 
@@ -318,10 +294,6 @@ plt.imshow(dsets[0][::4, ::4], cmap='RdBu_r');
 Make a list of `dask.array` objects out of your list of `h5py.Dataset` objects using the `da.from_array` function with a chunk size of `(500, 500)`.
 
 ```python
-
-```
-
-```python
 arrays = [da.from_array(dset, chunks=(500, 500)) for dset in dsets]
 arrays
 ```
@@ -332,17 +304,13 @@ arrays
 Stack these along the first axis so that the shape of the resulting array is `(31, 5760, 11520)`.
 
 ```python
-
-```
-
-```python tags=[]
 x = da.stack(arrays, axis=0)
 x
 ```
 
 **Plot the mean of this array along the time (`0th`) axis**
 
-```python tags=[]
+```python
 result = x.mean(axis=0)
 fig = plt.figure(figsize=(16, 8))
 plt.imshow(result, cmap='RdBu_r');
@@ -351,10 +319,6 @@ plt.imshow(result, cmap='RdBu_r');
 **Plot the difference of the first day from the mean**
 
 ```python
-
-```
-
-```python tags=[]
 result = x[0] - x.mean(axis=0)
 fig = plt.figure(figsize=(16, 8))
 plt.imshow(result, cmap='RdBu_r');
@@ -386,7 +350,7 @@ As a reminder, Python slicing takes three elements
     >>> L[::3]
     [1, 4, 7]
 
-```python tags=[]
+```python
 import h5py
 from glob import glob
 import os

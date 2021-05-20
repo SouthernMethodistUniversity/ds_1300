@@ -22,7 +22,6 @@ In this notebook we use the same airline data as before, but now rather than wri
 ## When to use `dask.dataframe`
 
 Pandas is great for tabular datasets that fit in memory. Dask becomes useful when the dataset you want to analyze is larger than your machine's RAM. The demo dataset we're working with is only about 200MB, so that you can download it in a reasonable time, but `dask.dataframe` will scale to  datasets much larger than memory.
-<!-- #endregion -->
 
 The `dask.dataframe` module implements a blocked parallel `DataFrame` object that mimics a large subset of the Pandas `DataFrame` API. One Dask `DataFrame` is comprised of many in-memory pandas `DataFrames` separated along the index. One operation on a Dask `DataFrame` triggers many pandas operations on the constituent pandas `DataFrame`s in a way that is mindful of potential parallelism and memory constraints.
 
@@ -126,7 +125,6 @@ df = dd.read_csv(os.path.join('/hpc/classes/ds_1300_data', 'nycflights', '*.csv'
 df.tail()  # now works
 ```
 
-<!-- #region -->
 ## Computations with `dask.dataframe`
 
 We compute the maximum of the `DepDelay` column. With just pandas, we would loop over each file to find the individual maximums, then find the final maximum over all the individual maximums
@@ -148,7 +146,6 @@ df.DepDelay.max()
 ```
 
 `dask.dataframe` lets us write pandas-like code, that operates on larger than memory datasets in parallel.
-<!-- #endregion -->
 
 ```python
 %time df.DepDelay.max().compute()
@@ -275,10 +272,10 @@ Dask.dataframe operations use `pandas` operations internally.  Generally they ru
 ## Dask DataFrame Data Model
 
 For the most part, a Dask DataFrame feels like a pandas DataFrame.
-So far, the biggest difference we've seen is that Dask operations are lazy; they build up a task graph instead of executing immediately (more details coming in [Schedulers](05_distributed.ipynb)).
+So far, the biggest difference we've seen is that Dask operations are lazy; they build up a task graph instead of executing immediately.
 This lets Dask do operations in parallel and out of core.
 
-In [Dask Arrays](03_array.ipynb), we saw that a `dask.array` was composed of many NumPy arrays, chunked along one or more dimensions.
+In Dask Arrays, we saw that a `dask.array` was composed of many NumPy arrays, chunked along one or more dimensions.
 It's similar for `dask.dataframe`: a Dask DataFrame is composed of many pandas DataFrames. For `dask.dataframe` the chunking happens only along the index.
 
 <img src="http://dask.pydata.org/en/latest/_images/dask-dataframe.svg" width="30%">

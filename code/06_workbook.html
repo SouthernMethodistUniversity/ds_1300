@@ -293,13 +293,6 @@
    </code>
    contains these algorithms
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-compute-the-mean">
-     Exercise:  Compute the mean
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#performance-and-parallelism">
@@ -424,9 +417,6 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <li><p>Compute the sum of the 1,000 intermediate sums and the sum of the 1,000 intermediate lengths and divide one by the other</p></li>
 </ol>
 <p>This approach is overkill for our case but does nicely generalize if we don’t know the size of the array or individual blocks beforehand.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the mean of the array</span>
-</pre></div>
-</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sums</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">lengths</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1_000_000_000</span><span class="p">,</span> <span class="mi">1_000_000</span><span class="p">):</span>
@@ -472,19 +462,9 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="section" id="exercise-compute-the-mean">
-<h3>Exercise:  Compute the mean<a class="headerlink" href="#exercise-compute-the-mean" title="Permalink to this headline">¶</a></h3>
-<p>And the variance, std, etc..  This should be a small change to the example above.</p>
-<p>Look at what other operations you can do with the Jupyter notebook’s tab-completion.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Does this match your result from before?</p>
-</div>
 </div>
 <div class="section" id="performance-and-parallelism">
 <h2>Performance and Parallelism<a class="headerlink" href="#performance-and-parallelism" title="Permalink to this headline">¶</a></h2>
-<img src="images/fail-case.gif" width="40%" align="right">
 <p>In our first examples we used <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to walk through the array one block at a time.  For simple operations like <code class="docutils literal notranslate"><span class="pre">sum</span></code> this is optimal.  However for complex operations we may want to traverse through the array differently.  In particular we may want the following:</p>
 <ol class="simple">
 <li><p>Use multiple cores in parallel</p></li>
@@ -519,7 +499,6 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <h2>Performance comparison<a class="headerlink" href="#performance-comparison" title="Permalink to this headline">¶</a></h2>
 <p>The following experiment was performed on a heavy personal laptop.  Your performance may vary.  If you attempt the NumPy version then please ensure that you have more than 4GB of main memory.</p>
 <p><strong>NumPy: 19s, Needs gigabytes of memory</strong></p>
-<!-- #region -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="o">%%</span><span class="n">time</span> 
@@ -531,9 +510,7 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <span class="n">Wall</span> <span class="n">time</span><span class="p">:</span> <span class="mf">19.7</span> <span class="n">s</span>
 </pre></div>
 </div>
-<!-- #endregion -->
 <p><strong>Dask Array: 4s, Needs megabytes of memory</strong></p>
-<!-- #region -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
 
 <span class="o">%%</span><span class="n">time</span>
@@ -545,7 +522,6 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <span class="n">Wall</span> <span class="n">time</span><span class="p">:</span> <span class="mf">4.01</span> <span class="n">s</span>
 </pre></div>
 </div>
-<!-- #endregion -->
 <p><strong>Discussion</strong></p>
 <p>Notice that the Dask array computation ran in 4 seconds, but used 29.4 seconds of user CPU time. The numpy computation ran in 19.7 seconds and used 19.6 seconds of user CPU time.</p>
 <p>Dask finished faster, but used more total CPU time because Dask was able to transparently parallelize the computation because of the chunk size.</p>
@@ -595,18 +571,12 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </div>
 <p><strong>Integrate with <code class="docutils literal notranslate"><span class="pre">dask.array</span></code></strong></p>
 <p>Make a list of <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> objects out of your list of <code class="docutils literal notranslate"><span class="pre">h5py.Dataset</span></code> objects using the <code class="docutils literal notranslate"><span class="pre">da.from_array</span></code> function with a chunk size of <code class="docutils literal notranslate"><span class="pre">(500,</span> <span class="pre">500)</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">da</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">dset</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span> <span class="k">for</span> <span class="n">dset</span> <span class="ow">in</span> <span class="n">dsets</span><span class="p">]</span>
 <span class="n">arrays</span>
 </pre></div>
 </div>
 <p><strong>Stack this list of <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> objects into a single <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> object with <code class="docutils literal notranslate"><span class="pre">da.stack</span></code></strong></p>
 <p>Stack these along the first axis so that the shape of the resulting array is <code class="docutils literal notranslate"><span class="pre">(31,</span> <span class="pre">5760,</span> <span class="pre">11520)</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">x</span>
 </pre></div>
@@ -618,9 +588,6 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </pre></div>
 </div>
 <p><strong>Plot the difference of the first day from the mean</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">);</span>
