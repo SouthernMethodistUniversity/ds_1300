@@ -40,7 +40,7 @@
   - Lisanne Bainbridge
   - Toddler with dishes
   
-### Medicine
+### Crime
 
 - What did Kim Rossmo and André-Michel Guerry discover about crime?
 - What what Operation Lynx?
