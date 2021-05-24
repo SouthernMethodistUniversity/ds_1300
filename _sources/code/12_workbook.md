@@ -420,6 +420,7 @@ plt.show()
 
 Here are some links to really cool seaborn examples:
 
+- [Seaborn tutorial](https://seaborn.pydata.org/tutorial.html)
 - [Seaborn gallery](https://seaborn.pydata.org/examples/index.html)
 - [Seaborn Guide](https://jakevdp.github.io/PythonDataScienceHandbook/04.14-visualization-with-seaborn.html)
 
