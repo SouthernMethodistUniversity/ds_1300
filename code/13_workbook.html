@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optimization Introduction &#8212; DS 1300</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Data Visualization" href="12_workbook.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">DS 1300</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/00_introduction.html">
+   DS1300: A Practical Introduction to Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Practice of Data Science
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/01_data_science.html">
+   Data Science Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/02_hpc.html">
+   Introduction to High-Performance Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/03_using_m2.html">
+   Using ManeFrame II for Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
+   Introduction to GitHub and Getting Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_workbook.html">
+   Introduction to Python Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/08_project.html">
+   Semester Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/06_data_ethics_bias.html">
+   Data Ethics and Bias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_workbook.html">
+   Working with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_workbook.html">
+   Exploring and Cleaning a Data Set
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Modeling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/09_modeling.html">
+   Building Models with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/10_pudding.html">
+   The Pudding: Data Story Telling and Visualization
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Bigger Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/11_dask_initial_setup.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_workbook.html">
+   Dask Delayed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_workbook.html">
+   Dask Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_workbook.html">
+   Dask DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_workbook.html">
+   Data Storage
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Inference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/12_inference.html">
+   Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_workbook.html">
+   Ordinary Least Squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10_workbook.html">
+   Prediction (out of sample)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_workbook.html">
+   Quantile regression
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Art
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/13_art.html">
+   Art
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_workbook.html">
+   Data Visualization
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Optimization
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Optimization Introduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/code/13_workbook.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knapsack-problems">
+   Knapsack Problems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#greedy-algorithms">
+     Greedy Algorithms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optimal-solution">
+     Optimal Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamic-programming">
+   Dynamic Programming
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fibonacci-sequences">
+     Fibonacci Sequences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-the-0-1-knapsack-problem-using-dynamic-programming">
+     Solving the 0/1 Knapsack Problem Using Dynamic Programming
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="optimization-introduction">
+<h1>Optimization Introduction<a class="headerlink" href="#optimization-introduction" title="Permalink to this headline">¶</a></h1>
+<p>Optimization problems attempt to solve for the optimal solution to a given problem that in general have:</p>
+<ol class="simple">
+<li><p>An <strong>objective</strong> function that should be taken to its maximum or minimum.</p></li>
+<li><p>A <strong>set of constraints</strong> that set boundaries for the problem.</p></li>
+</ol>
+<div class="section" id="knapsack-problems">
+<h2>Knapsack Problems<a class="headerlink" href="#knapsack-problems" title="Permalink to this headline">¶</a></h2>
+<p>A very common class of optimiztion problems are know generally known as <strong>knapsack problems</strong>. At their most basic these problems have datasets composed items with values and weights (costs). Examples could include a grocery shopping list maximizing what you can get for a certain amount of money or diversifying a stock portfolio to maximize the total value, or even what burglar should choose to carry out a house.</p>
+<div class="section" id="greedy-algorithms">
+<h3>Greedy Algorithms<a class="headerlink" href="#greedy-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>Greedy algorithms find approximate solutions, but are generaly fast at providing <em>a</em> solution. However, the solution provided may not be the optimal solution.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">locale</span>
+<span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s1">&#39;en_US&#39;</span><span class="p">)</span>
+<span class="n">datasets</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;small&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;small&quot;</span><span class="p">),</span> <span class="s1">&#39;large&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;large&quot;</span><span class="p">),</span> <span class="s1">&#39;very_large&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">190</span><span class="p">,</span> <span class="s2">&quot;very_large&quot;</span><span class="p">)}</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="s2">&quot;small&quot;</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">[</span><span class="n">dataset</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/</span><span class="si">{}</span><span class="s2">.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">datasets</span><span class="p">[</span><span class="n">dataset</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="s2">&quot;Weight&quot;</span><span class="p">])</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">]]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Value</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Weight</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Item</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_weight</span> <span class="o">=</span> <span class="n">w</span>
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
+    <span class="k">def</span> <span class="nf">get_weight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_weight</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_value</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_weight</span><span class="si">}</span><span class="s1">&gt;&#39;</span>
+
+<span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">weight_inverse</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">item</span><span class="o">.</span><span class="n">get_weight</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">density</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span><span class="o">/</span><span class="n">item</span><span class="o">.</span><span class="n">get_weight</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">pretty_print</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">total_value</span><span class="p">):</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get_name</span><span class="p">())</span>
+        <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get_value</span><span class="p">())</span>
+        <span class="n">weights</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get_weight</span><span class="p">())</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="n">names</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">values</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">:</span> <span class="n">weights</span><span class="p">}</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total Value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">currency</span><span class="p">(</span><span class="n">total_value</span><span class="p">,</span> <span class="n">grouping</span><span class="o">=</span><span class="kc">True</span><span class="p">)))</span>
+
+<span class="k">def</span> <span class="nf">build_items</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+    <span class="n">Items</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)):</span>
+        <span class="n">Items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Item</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">Items</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="n">build_items</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greedy</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">,</span> <span class="n">key_function</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Assumes items a list, max_weight &gt;= 0,</span>
+<span class="sd">       key_function maps elements of items to numbers&quot;&quot;&quot;</span>
+    <span class="n">items_copy</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">key_function</span><span class="p">,</span> <span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">total_value</span><span class="p">,</span> <span class="n">total_weight</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items_copy</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">total_weight</span> <span class="o">+</span> <span class="n">items_copy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_weight</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="n">max_weight</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">items_copy</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">total_weight</span> <span class="o">+=</span> <span class="n">items_copy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_weight</span><span class="p">()</span>
+            <span class="n">total_value</span> <span class="o">+=</span> <span class="n">items_copy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+    <span class="n">pretty_print</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">total_value</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">greedy</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">greedy</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">weight_inverse</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">greedy</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">density</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="optimal-solution">
+<h3>Optimal Solution<a class="headerlink" href="#optimal-solution" title="Permalink to this headline">¶</a></h3>
+<p>The optimization case above is specifically called a <strong>0/1 knapsack problem</strong> and is defined by:</p>
+<ol class="simple">
+<li><p>Each item has a value and a weight.</p></li>
+<li><p>The solution can only be found for a finite weight.</p></li>
+<li><p>A list (I) of finite length contains all the items.</p></li>
+<li><p>A list (V) of finite length contains all the selected items.</p></li>
+<li><p>Maximize:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=0}^{n-1}V_{i}I_{i}^{value}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=0}^{n-1}V_{i}I_{i}^{weight} \leq w
+\]</div>
+<p>To do this:</p>
+<ol class="simple">
+<li><p>Get all possible combinations of items.</p></li>
+<li><p>Remove all sets that violate the constraints.</p></li>
+<li><p>Sort and chose the set with the maximal value.</p></li>
+</ol>
+<p>Note that this method quickly becomes intractable for large numbers of items.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_binary_rep</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">num_digits</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">result</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_digits</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;not enough digits&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_digits</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">gen_powerset</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="n">powerset</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+        <span class="n">bin_str</span> <span class="o">=</span> <span class="n">get_binary_rep</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
+        <span class="n">subset</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">bin_str</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
+                <span class="n">subset</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">powerset</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">powerset</span>
+
+<span class="k">def</span> <span class="nf">choose_best</span><span class="p">(</span><span class="n">pset</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">,</span> <span class="n">get_val</span><span class="p">,</span> <span class="n">get_weight</span><span class="p">):</span>
+    <span class="n">best_val</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">best_set</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">pset</span><span class="p">:</span>
+        <span class="n">items_val</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">items_weight</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+            <span class="n">items_val</span> <span class="o">+=</span> <span class="n">get_val</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="n">items_weight</span> <span class="o">+=</span> <span class="n">get_weight</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">items_weight</span> <span class="o">&lt;=</span> <span class="n">max_weight</span> <span class="ow">and</span> <span class="n">items_val</span> <span class="o">&gt;</span> <span class="n">best_val</span><span class="p">:</span>
+            <span class="n">best_val</span> <span class="o">=</span> <span class="n">items_val</span>
+            <span class="n">best_set</span> <span class="o">=</span> <span class="n">items</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">best_set</span><span class="p">,</span> <span class="n">best_val</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_best</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">max_weight</span> <span class="o">=</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="n">pset</span> <span class="o">=</span> <span class="n">gen_powerset</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+    <span class="n">taken</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">choose_best</span><span class="p">(</span><span class="n">pset</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">,</span> <span class="n">Item</span><span class="o">.</span><span class="n">get_value</span><span class="p">,</span> <span class="n">Item</span><span class="o">.</span><span class="n">get_weight</span><span class="p">)</span>
+    <span class="n">pretty_print</span><span class="p">(</span><span class="n">taken</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">test_best</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dynamic-programming">
+<h2>Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="Permalink to this headline">¶</a></h2>
+<p>Broadly, dynamic programming is a set of programming methods for solving problems where the problem has the characteristics of <strong>optimal substructure</strong> and <strong>overlapping subproblems</strong>. The former means that the problem can be decomposed into smaller problems and that the finding the optimal solutions to the smaller problems will lead to a global optimal solution for the problem. The latter means that the smaller problems are all formulated in the same way, i.e. they are are all the same.</p>
+<div class="section" id="fibonacci-sequences">
+<h3>Fibonacci Sequences<a class="headerlink" href="#fibonacci-sequences" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Assumes n is an int &gt;= 0</span>
+<span class="sd">       Returns Fibonacci of n&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above version of the algorithm contantly reevaluates <code class="docutils literal notranslate"><span class="pre">fib</span></code> rather than reuse values it has already calculated. This is simple implementation, but doing just <code class="docutils literal notranslate"><span class="pre">fib(120)</span></code> would end up calling <code class="docutils literal notranslate"><span class="pre">fib</span></code> 8,670,007,398,507,948,658,051,921 times. If each call only took one nanosecond we’d get our solution in about 250,000 years.</p>
+<p>Below we employ <strong>memoziation</strong>, which is basically just remembering work that has come before.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_memo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">memo</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Assumes n is an int &gt;= 0, memo used only by recursive calls</span>
+<span class="sd">       Returns Fibonacci of n&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">memo</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">memo</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">fib_memo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib_memo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+        <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+        <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">fib_memo</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="solving-the-0-1-knapsack-problem-using-dynamic-programming">
+<h3>Solving the 0/1 Knapsack Problem Using Dynamic Programming<a class="headerlink" href="#solving-the-0-1-knapsack-problem-using-dynamic-programming" title="Permalink to this headline">¶</a></h3>
+<p>Thinking back on our previous attempts to solve our knapsack problem, the greedy algorithm finds a solution in <span class="math notranslate nohighlight">\(log\ n\)</span> time, but that solution may not be optimal, and the brute-force, exhaustive alogirhtm would give use an optimal solution, but in <span class="math notranslate nohighlight">\(O(n2^{n})\)</span>, i.e. exponetial time. Is there a better way?</p>
+<p>Using dynamic programming methods we can optimally search through the space of possible solutions as if it were a tree. In the case of the 0/1 knapsack problem, the tree is what is called a <strong>rooted binary tree</strong>, which is an acyclic directed graph with the following properties:</p>
+<ol class="simple">
+<li><p>The graph as one root node that has no parent nodes.</p></li>
+<li><p>Other thant the root node, all nodes have exactly on parent.</p></li>
+<li><p>Each node only has two children at most.</p></li>
+</ol>
+<p>For the problem specifically we have:</p>
+<ol class="simple">
+<li><p>A list that contains all the items.</p></li>
+<li><p>A list that contains all the not yet selected items.</p></li>
+<li><p>The total value of the selected items.</p></li>
+<li><p>The remaining value within which items can be selected.</p></li>
+</ol>
+<p>As each edge connecting the nodes represents whether or not an item is taken these trees are also called <strong>decision trees</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_val</span><span class="p">(</span><span class="n">to_consider</span><span class="p">,</span> <span class="n">avail</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Assumes to_consider a list of items, avail a weight</span>
+<span class="sd">       Returns a tuple of the total value of a solution to the</span>
+<span class="sd">         0/1 knapsack problem and the items of that solution&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">to_consider</span> <span class="o">==</span> <span class="p">[]</span> <span class="ow">or</span> <span class="n">avail</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">())</span>
+    <span class="k">elif</span> <span class="n">to_consider</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_weight</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">avail</span><span class="p">:</span>
+        <span class="c1">#Explore right branch only</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">max_val</span><span class="p">(</span><span class="n">to_consider</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">avail</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">next_item</span> <span class="o">=</span> <span class="n">to_consider</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1">#Explore left branch</span>
+        <span class="n">with_val</span><span class="p">,</span> <span class="n">with_to_take</span> <span class="o">=</span> <span class="n">max_val</span><span class="p">(</span><span class="n">to_consider</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+                                     <span class="n">avail</span> <span class="o">-</span> <span class="n">next_item</span><span class="o">.</span><span class="n">get_weight</span><span class="p">())</span>
+        <span class="n">with_val</span> <span class="o">+=</span> <span class="n">next_item</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+        <span class="c1">#Explore right branch</span>
+        <span class="n">without_val</span><span class="p">,</span> <span class="n">without_to_take</span> <span class="o">=</span> <span class="n">max_val</span><span class="p">(</span><span class="n">to_consider</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">avail</span><span class="p">)</span>
+        <span class="c1">#Choose better branch</span>
+        <span class="k">if</span> <span class="n">with_val</span> <span class="o">&gt;</span> <span class="n">without_val</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">with_val</span><span class="p">,</span> <span class="n">with_to_take</span> <span class="o">+</span> <span class="p">(</span><span class="n">next_item</span><span class="p">,))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">without_val</span><span class="p">,</span> <span class="n">without_to_take</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">dynamic</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">max_val</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">)</span>
+    <span class="n">pretty_print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">dynamic</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above implementation used recursion directly just as with our <code class="docutils literal notranslate"><span class="pre">fib</span></code> implementation. Likewise, memoziation can also be used to improve performance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fast_max_val</span><span class="p">(</span><span class="n">to_consider</span><span class="p">,</span> <span class="n">avail</span><span class="p">,</span> <span class="n">memo</span> <span class="o">=</span> <span class="p">{}):</span>
+    <span class="sd">&quot;&quot;&quot;Assumes to_consider a list of items, avail a weight</span>
+<span class="sd">         memo supplied by recursive calls</span>
+<span class="sd">       Returns a tuple of the total value of a solution to the</span>
+<span class="sd">         0/1 knapsack problem and the items of that solution&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">to_consider</span><span class="p">),</span> <span class="n">avail</span><span class="p">)</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">memo</span><span class="p">[(</span><span class="nb">len</span><span class="p">(</span><span class="n">to_consider</span><span class="p">),</span> <span class="n">avail</span><span class="p">)]</span>
+    <span class="k">elif</span> <span class="n">to_consider</span> <span class="o">==</span> <span class="p">[]</span> <span class="ow">or</span> <span class="n">avail</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">())</span>
+    <span class="k">elif</span> <span class="n">to_consider</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_weight</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">avail</span><span class="p">:</span>
+        <span class="c1">#Explore right branch only</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">fast_max_val</span><span class="p">(</span><span class="n">to_consider</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">avail</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">next_item</span> <span class="o">=</span> <span class="n">to_consider</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1">#Explore left branch</span>
+        <span class="n">with_val</span><span class="p">,</span> <span class="n">with_to_take</span> <span class="o">=</span>\
+                 <span class="n">fast_max_val</span><span class="p">(</span><span class="n">to_consider</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+                            <span class="n">avail</span> <span class="o">-</span> <span class="n">next_item</span><span class="o">.</span><span class="n">get_weight</span><span class="p">(),</span> <span class="n">memo</span><span class="p">)</span>
+        <span class="n">with_val</span> <span class="o">+=</span> <span class="n">next_item</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+        <span class="c1">#Explore right branch</span>
+        <span class="n">without_val</span><span class="p">,</span> <span class="n">without_to_take</span> <span class="o">=</span> <span class="n">fast_max_val</span><span class="p">(</span><span class="n">to_consider</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+                                                <span class="n">avail</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+        <span class="c1">#Choose better branch</span>
+        <span class="k">if</span> <span class="n">with_val</span> <span class="o">&gt;</span> <span class="n">without_val</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">with_val</span><span class="p">,</span> <span class="n">with_to_take</span> <span class="o">+</span> <span class="p">(</span><span class="n">next_item</span><span class="p">,))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">without_val</span><span class="p">,</span> <span class="n">without_to_take</span><span class="p">)</span>
+    <span class="n">memo</span><span class="p">[(</span><span class="nb">len</span><span class="p">(</span><span class="n">to_consider</span><span class="p">),</span> <span class="n">avail</span><span class="p">)]</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">dynamic_memo</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">fast_max_val</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">)</span>
+    <span class="n">pretty_print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<span class="n">dynamic_memo</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Example code derived from <a class="reference external" href="https://github.com/guttag/Intro-to-Computation-and-Programming">Introduction to Computation and Programming Using Python</a>.</p></li>
+<li><p>Example data derived from <a class="reference external" href="https://github.com/dwave-examples/knapsack">D-Wave Examples</a>.</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./code"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="12_workbook.html" title="previous page">Data Visualization</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
