@@ -29,6 +29,8 @@ Generate a plot that you feel visualizes the data is an interesting way. Your pl
 
 You may use pandas, matplotlib, or seaborn.
 
+Upload a pdf of the plot to Canvas.
+
 ```python
 
 ```

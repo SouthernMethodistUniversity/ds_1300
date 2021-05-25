@@ -196,7 +196,7 @@ There are a lot of elements that go into a plot. Let's start simpler
 Pandas makes plotting really easy. All we need to do is call the plot function. Done!
 
 ```python
-data.plot()
+data.plot(figsize=(10,10))
 ```
 
 ```python
@@ -218,7 +218,7 @@ p1 = data[['USPS_code','Pop_2020','Capital_pop','city_1_pop']]
 First let's just slice our data down to what we are interested in - populations by state
 
 ```python
-p1.plot()
+p1.plot(figsize=(10,10))
 ```
 
 This is a little better than our last attempt. At least now we can see all the lines, but this still doesn't help us answer our question.
@@ -229,13 +229,18 @@ Line graphs like this make a lot more sense if we are looking at trends in our d
 We could try a different type of plot. Maybe a bar graph would work?
 
 ```python
-p1.plot(kind='bar')
+p1.plot(kind='bar',figsize=(10,10))
+```
+
+```python
+plot = data[['State_bird','Pop_2020']].plot(kind='bar',figsize=(10,10)) # we are setting the type of plot to a bar graph
+plot.set_xticklabels(data['State_bird']);
 ```
 
 Not much better at answering our question. Bar graphs are good for showing counts of things that are related but get hard to use when you have too many bars or the bars are vastly different in size.
 
 ```python
-p1.plot.bar(stacked=True);
+p1.plot.bar(stacked=True,figsize=(10,10));
 ```
 
 We could try stacking our bars. This is great if we are trying to show components of a total but not great for answering our question.
@@ -244,19 +249,19 @@ We could try stacking our bars. This is great if we are trying to show component
 A cool use of a stacked bar would be to see which states have the most population in their top 5 cities.
 
 ```python
-data[['USPS_code','city_1_pop','city_2_pop','city_3_pop','city_4_pop','city_5_pop']].plot.bar(stacked=True)
+data[['USPS_code','city_1_pop','city_2_pop','city_3_pop','city_4_pop','city_5_pop']].plot.bar(stacked=True,figsize=(10,10))
 ```
 
 We could also make a pie chart. This would be good at telling us what fraction of a total we have but are't great at correlations.
 
 ```python
-p1['Pop_2020'].plot.pie()
+p1['Pop_2020'].plot.pie(figsize=(10,10))
 ```
 
 We could try a scatter plot. Why would make sense?
 
 ```python
-p1.plot.scatter(x='Pop_2020', y='Capital_pop')
+p1.plot.scatter(x='Pop_2020', y='Capital_pop',figsize=(10,10))
 ```
 
 ### Adding Features
@@ -265,19 +270,19 @@ p1.plot.scatter(x='Pop_2020', y='Capital_pop')
 Now that we have a plot that we like, let's improve it to better describe our results.
 
 ```python
-p1.plot.scatter(x='Pop_2020', y='Capital_pop')
+p1.plot.scatter(x='Pop_2020', y='Capital_pop',figsize=(10,10))
 ```
 
 #### Labels and Legends
 
 ```python
-p1.plot.scatter(x='Pop_2020', y='Capital_pop', label='Capitals')
+p1.plot.scatter(x='Pop_2020', y='Capital_pop', label='Capitals',figsize=(10,10))
 ```
 
 We can add labels to our plots using the label flag. We can also show/hide the legend using the legend flag. If you do this, you have to be careful that your data is well described elsewhere.
 
 ```python
-data[['USPS_code','city_1_pop','city_2_pop','city_3_pop','city_4_pop','city_5_pop']].plot.bar(stacked=True, legend=False)
+data[['USPS_code','city_1_pop','city_2_pop','city_3_pop','city_4_pop','city_5_pop']].plot.bar(stacked=True, legend=False,figsize=(10,10))
 ```
 
 #### Additional Data
@@ -287,7 +292,7 @@ Sometimes we'll want to plot multiple things on a single axis. To do that we hav
 
 ```python
 ax = data.plot.scatter(x='Pop_2020', y="city_1_pop", label="Largest Cities")
-data.plot.scatter(x='Pop_2020', y='Capital_pop', label="Capital Cities", ax=ax)
+data.plot.scatter(x='Pop_2020', y='Capital_pop', label="Capital Cities", ax=ax,figsize=(10,10))
 ```
 
 What is wrong with this plot?
@@ -300,7 +305,7 @@ You can specify colors by name ('red') or by letter ('b'). A full table of named
 
 ```python
 ax = data.plot.scatter(x='Pop_2020', y="city_1_pop", color='Red',label="Largest Cities", marker='^')
-data.plot.scatter(x='Pop_2020', y='Capital_pop', color='b', label="Capital Cities", ax=ax)
+data.plot.scatter(x='Pop_2020', y='Capital_pop', color='g', label="Capital Cities", ax=ax,figsize=(10,10))
 ```
 
 Color is a powerful tool but doesn't work for everyone. Markers are a great tool you can use to supplement color.
@@ -311,11 +316,11 @@ You can also use something called a [colormap](https://matplotlib.org/stable/gal
 Be careful when working with colormaps, they have a tendancy to overwhelm the goal of your plot.
 
 ```python
-data[['USPS_code','city_1_pop','city_2_pop','city_3_pop','city_4_pop','city_5_pop']].plot.bar(stacked=True, legend=False, colormap="Dark2")
+data[['USPS_code','city_1_pop','city_2_pop','city_3_pop','city_4_pop','city_5_pop']].plot.bar(stacked=True, legend=False,figsize=(10,10), colormap="nipy_spectral")
 ```
 
 ```python
-p1['Pop_2020'].plot.pie(colormap='flag')
+p1['Pop_2020'].plot.pie(colormap='flag',figsize=(10,10))
 ```
 
 #### Titles
@@ -325,7 +330,7 @@ You can add titles to both your axes and your overall graph.
 
 ```python
 ax = data.plot.scatter(x='Pop_2020', y="city_1_pop", color='Red',label="Largest Cities", marker='^')
-data.plot.scatter(x='Pop_2020', y='Capital_pop', label="Capital Cities", ax=ax, xlabel="2020 State Population", ylabel="Population of Select Cities", title='State and City Populations - 2020')
+data.plot.scatter(x='Pop_2020', y='Capital_pop', label="Capital Cities", ax=ax, xlabel="2020 State Population", ylabel="Population of Select Cities", title='State and City Populations - 2020',figsize=(10,10));
 ```
 
 #### Grid
@@ -335,7 +340,7 @@ Sometimes (certainly not always) you'll want to add a grid to your graph for add
 
 ```python
 ax = data.plot.scatter(x='Pop_2020', y="city_1_pop", color='Red',label="Largest Cities", marker='^')
-data.plot.scatter(x='Pop_2020', y='Capital_pop', label="Capital Cities", ax=ax, xlabel="2020 State Population", ylabel="Population of Select Cities", title='State and City Populations - 2020',grid=True)
+data.plot.scatter(x='Pop_2020', y='Capital_pop', label="Capital Cities", ax=ax, xlabel="2020 State Population", ylabel="Population of Select Cities", title='State and City Populations - 2020',grid=True,figsize=(10,10))
 ```
 
 #### Saving your plot
@@ -345,7 +350,7 @@ Once you have your plot the way you like it, you'll want to export it. There are
 
 ```python
 ax = data.plot.scatter(x='Pop_2020', y="city_1_pop", color='red',label="Largest Cities", marker='^')
-plt = data.plot.scatter(x='Pop_2020', y='Capital_pop', color='blue',label="Capital Cities", ax=ax, xlabel="2020 State Population", ylabel="Population of Select Cities", title='State and City Populations - 2020',grid=True)
+plt = data.plot.scatter(x='Pop_2020', y='Capital_pop', color='blue',label="Capital Cities", ax=ax, xlabel="2020 State Population", ylabel="Population of Select Cities", title='State and City Populations - 2020',grid=True,figsize=(10,10))
 ```
 
 ```python
