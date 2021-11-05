@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +33,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -72,6 +72,7 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">DS 1300</h1>
       
     </a>
@@ -87,7 +88,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   The Practice of Data Science
  </span>
@@ -124,7 +125,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Data
  </span>
@@ -146,7 +147,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Modeling
  </span>
@@ -163,7 +164,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Bigger Data
  </span>
@@ -195,7 +196,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Inference
  </span>
@@ -222,7 +223,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Art
  </span>
@@ -239,7 +240,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Optimization
  </span>
@@ -251,7 +252,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Metrics and Advanced Text Mining
  </span>
@@ -446,11 +447,11 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-python-programming">
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-python-programming">
 <h1><span class="section-number">5. </span>Introduction to Python Programming<a class="headerlink" href="#introduction-to-python-programming" title="Permalink to this headline">¶</a></h1>
 <p>By: Dr. Eric Godat and Dr. Rob Kalescky</p>
 </div>
-<div class="section" id="intro-to-python-basics">
+<div class="tex2jax_ignore mathjax_ignore section" id="intro-to-python-basics">
 <h1><span class="section-number">6. </span>Intro to Python Basics<a class="headerlink" href="#intro-to-python-basics" title="Permalink to this headline">¶</a></h1>
 <p><em>This section is designed to guide you from having never used Python before to feeling comfortable with basic operations.</em></p>
 <p>Python is a programming language capable of just about anything you could want to do. It is designed to be human readable and robust. This particular document is called a Jupyter Notebook. Notebooks are tools for developing Python code and running that code in small steps and see the intermediate results in line.</p>
@@ -598,7 +599,7 @@ Is that task something you could use a <em>loop</em> for or a <em>function</em> 
 </div>
 </div>
 </div>
-<div class="section" id="libraries">
+<div class="tex2jax_ignore mathjax_ignore section" id="libraries">
 <h1><span class="section-number">7. </span>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h1>
 <p>Libraries are pre-written chunks of code designed to be integrated into projects for a specific purpose.  The idea is to keep people from having to reinvent the wheel every time they want to write a program.  When we encounter situations where a libary might be useful, we use the keyword <em>import</em> to tell the program that we want to use this pre-existing code.  As an example, in the next section you will use a library called Pandas which helps visualize data and make it easier to digest, which is very useful for us.  Because of this, we will import that code into this program simply by running the cell with the import that goes with that code.  Here is what you will see, only in commented code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#import pandas as pd</span>
@@ -609,7 +610,7 @@ Is that task something you could use a <em>loop</em> for or a <em>function</em> 
 </div>
 <p>Most programming languages have libraries that allow you to import code this way, and it will save you a lot of time and allow you to quickly use many new functions that are highly polished.</p>
 </div>
-<div class="section" id="dataframes-and-pandas">
+<div class="tex2jax_ignore mathjax_ignore section" id="dataframes-and-pandas">
 <h1><span class="section-number">8. </span>DataFrames and Pandas<a class="headerlink" href="#dataframes-and-pandas" title="Permalink to this headline">¶</a></h1>
 <p>Now it is time to use what we have learned to start doing some data science.</p>
 <p>Pandas is the name of a library in which there are functions and tools for doing operations common in data analysis and data science. One particularly great feature is the DataFrame structure which allows us to work with an object similar to an Excel spreadsheet but with the flexibility and power of Python behind it.</p>
@@ -813,7 +814,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </div>
 </div>
 </div>
-<div class="section" id="plotting">
+<div class="tex2jax_ignore mathjax_ignore section" id="plotting">
 <h1><span class="section-number">9. </span>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
 <p>Visualizing data is incredibly important when trying to convey findings. There are several libraries available for doing data visualization. Pandas has some built in plotting functionality, but we have provided access to MatPlotLib as well.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is only needed in this case because we wanted to show the names of the books. You could make a similar plot in Pandas.</span>
@@ -853,7 +854,7 @@ Where the variable represents the value in each row and the opertaion of functio
 <p>Notice that the prologue materials in <em>The Fellowship of the Ring</em> cause it to overlap with the <em>Hobbit</em>. If we wanted to resolve this, we would need to revisit our conventions in our data.</p>
 </div>
 </div>
-<div class="section" id="wrapping-up">
+<div class="tex2jax_ignore mathjax_ignore section" id="wrapping-up">
 <h1><span class="section-number">10. </span>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this headline">¶</a></h1>
 <p>We covered:</p>
 <ul class="simple">
@@ -918,7 +919,7 @@ Where the variable represents the value in each row and the opertaion of functio
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
