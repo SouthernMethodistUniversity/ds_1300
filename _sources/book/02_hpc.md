@@ -574,9 +574,9 @@ wish, and you can have accountants do different tasks.
 
 ## ManeFrame II (M2)
 
-* [Hardware](http://faculty.smu.edu/csc/documentation/about.html)
+* [Hardware](https://s2.smu.edu/hpc/documentation/about.html)
 * Software
-  * [Introduction to UNIX](http://faculty.smu.edu/csc/documentation/unix.html)
-  * [Lmod Environment Module System](http://faculty.smu.edu/csc/documentation/modules.html)
-  * [Slurm Resource Management and Job Scheduling System](http://faculty.smu.edu/csc/documentation/slurm.html)
+  * [Introduction to UNIX](https://s2.smu.edu/hpc/documentation/unix.html)
+  * [Lmod Environment Module System](https://s2.smu.edu/hpc/documentation/modules.html)
+  * [Slurm Resource Management and Job Scheduling System](https://s2.smu.edu/hpc/documentation/slurm.html)
 

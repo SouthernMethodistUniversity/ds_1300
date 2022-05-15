@@ -2,7 +2,7 @@
 
 ## Getting Started with GitHub
 
-* [Version Control with Git](http://faculty.smu.edu/csc/workshops/2020/summer/git/)
+* [Version Control with Git](https://s2.smu.edu/hpc/workshops/2020/summer/git/)
 * [Getting Started with GitHub](https://docs.github.com/en/github/getting-started-with-github)
 
 ## Initial Setup of Your Repository and Python Environment
@@ -12,6 +12,8 @@
 3. Select "Code" and copy the HTTPS URL for the forked repository.
 4. Go to the [HPC Portal](https://hpc.smu.edu) and log in.
 5. Select "Interactive Apps" and then "JupyterLab".
+6. Set the "Partition" drop-down to `htc`.
+7. Set the "Select Python Environment" to `python/3`.
 6. Set the fields to:
   * "Additional environment modules to load": `python/3`
   * "Custom module paths": Clear the contents if any

@@ -25,10 +25,10 @@
 
 Read the following chapters prior to the listed day (and complete the quiz in Canvas) so that you can participate in the class discussions.
     
-| Chapters                  | Date   |
-|:--------------------------|:-------|
-| Introduction, Power, Data | May 17 |
-| Justice, Medicine         | May 19 |
-| Cars, Crime               | May 21 |
-| Art, Conclusion           | May 24 |
+| Chapters                  | Date  |
+|:--------------------------|:------|
+| Introduction, Power, Data | Day 3 |
+| Justice, Medicine         | Day 5 |
+| Cars, Crime               | Day 7 |
+| Art, Conclusion           | Day 9 |
 
