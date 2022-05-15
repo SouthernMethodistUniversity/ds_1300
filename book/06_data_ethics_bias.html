@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12. Data Ethics and Bias &#8212; DS 1300</title>
+    <title>Data Ethics and Bias &#8212; DS 1300</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,30 +31,33 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="13. Working with Data" href="../code/02_workbook.html" />
-    <link rel="prev" title="11. Semester Project" href="08_project.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -88,9 +91,9 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  The Practice of Data Science
+  Day 1
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,165 +105,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="02_hpc.html">
    2. Introduction to High-Performance Computing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_using_m2.html">
-   3. Using ManeFrame II for Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04_github_and_initial_setup.html">
-   4. Introduction to GitHub and Getting Setup
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/01_workbook.html">
-   5. Introduction to Python Programming
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08_project.html">
-   11. Semester Project
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Data
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   12. Data Ethics and Bias
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/02_workbook.html">
-   13. Working with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/04_workbook.html">
-   14. Exploring and Cleaning a Data Set
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Modeling
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="09_modeling.html">
-   17. Building Models with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10_pudding.html">
-   18. The Pudding: Data Story Telling and Visualization
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Bigger Data
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="11_dask_initial_setup.html">
-   20. Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/05_workbook.html">
-   21. Dask Delayed
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/06_workbook.html">
-   22. Dask Arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/07_workbook.html">
-   23. Dask DataFrames
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/08_workbook.html">
-   24. Data Storage
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Inference
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="12_inference.html">
-   25. Inference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/09_workbook.html">
-   26. Ordinary Least Squares
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/10_workbook.html">
-   27. Prediction (out of sample)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/11_workbook.html">
-   28. Quantile regression
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Art
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="13_art.html">
-   29. Art
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/12_workbook.html">
-   30. Data Visualization
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Optimization
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/13_workbook.html">
-   31. Optimization Introduction
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Metrics and Advanced Text Mining
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/14_workbook.html">
-   32. Intermediate TextMining with Python
   </a>
  </li>
 </ul>
@@ -309,7 +153,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -327,7 +171,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -336,7 +180,6 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hello-world-discussion">
-   12.1.
    <em>
     Hello World
    </em>
@@ -345,19 +188,19 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#power">
-     12.1.1. Power
+     Power
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#data">
-     12.1.2. Data
+     Data
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lies-damned-lies-and-statistics">
-   12.2. Lies, Damned Lies, and Statistics
+   Lies, Damned Lies, and Statistics
   </a>
  </li>
 </ul>
@@ -368,15 +211,58 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data Ethics and Bias</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hello-world-discussion">
+   <em>
+    Hello World
+   </em>
+   Discussion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power">
+     Power
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lies-damned-lies-and-statistics">
+   Lies, Damned Lies, and Statistics
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="data-ethics-and-bias">
-<h1><span class="section-number">12. </span>Data Ethics and Bias<a class="headerlink" href="#data-ethics-and-bias" title="Permalink to this headline">¶</a></h1>
+<h1>Data Ethics and Bias<a class="headerlink" href="#data-ethics-and-bias" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="hello-world-discussion">
-<h2><span class="section-number">12.1. </span><em>Hello World</em> Discussion<a class="headerlink" href="#hello-world-discussion" title="Permalink to this headline">¶</a></h2>
+<h2><em>Hello World</em> Discussion<a class="headerlink" href="#hello-world-discussion" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="power">
-<h3><span class="section-number">12.1.1. </span>Power<a class="headerlink" href="#power" title="Permalink to this headline">¶</a></h3>
+<h3>Power<a class="headerlink" href="#power" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>What is an algorithm?</p></li>
 <li><p>Are algorithms given authority?</p></li>
@@ -394,7 +280,7 @@
 </ul>
 </div>
 <div class="section" id="data">
-<h3><span class="section-number">12.1.2. </span>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>What are some long-term impacts of collecting personal data?</p></li>
 <li><p>Where is Eric Schmidt’s “imaginary creepy line”?</p></li>
@@ -417,7 +303,7 @@
 </div>
 </div>
 <div class="section" id="lies-damned-lies-and-statistics">
-<h2><span class="section-number">12.2. </span>Lies, Damned Lies, and Statistics<a class="headerlink" href="#lies-damned-lies-and-statistics" title="Permalink to this headline">¶</a></h2>
+<h2>Lies, Damned Lies, and Statistics<a class="headerlink" href="#lies-damned-lies-and-statistics" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>“If you can’t prove what you want to prove, demonstrate something else and
 pretend they are the same thing. In the daze that follows the collision of
@@ -504,54 +390,28 @@ when working with datasets.</p>
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="08_project.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">11. </span>Semester Project</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="../code/02_workbook.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">13. </span>Working with Data</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By The Jupyter Book community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By The Jupyter Book community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13. Working with Data &#8212; DS 1300</title>
+    <title>Working with Data &#8212; DS 1300</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,30 +31,33 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14. Exploring and Cleaning a Data Set" href="04_workbook.html" />
-    <link rel="prev" title="12. Data Ethics and Bias" href="../book/06_data_ethics_bias.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -88,9 +91,9 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  The Practice of Data Science
+  Day 1
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,165 +105,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../book/02_hpc.html">
    2. Introduction to High-Performance Computing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/03_using_m2.html">
-   3. Using ManeFrame II for Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
-   4. Introduction to GitHub and Getting Setup
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_workbook.html">
-   5. Introduction to Python Programming
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/08_project.html">
-   11. Semester Project
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Data
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/06_data_ethics_bias.html">
-   12. Data Ethics and Bias
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   13. Working with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04_workbook.html">
-   14. Exploring and Cleaning a Data Set
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Modeling
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/09_modeling.html">
-   17. Building Models with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/10_pudding.html">
-   18. The Pudding: Data Story Telling and Visualization
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Bigger Data
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/11_dask_initial_setup.html">
-   20. Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05_workbook.html">
-   21. Dask Delayed
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06_workbook.html">
-   22. Dask Arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07_workbook.html">
-   23. Dask DataFrames
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08_workbook.html">
-   24. Data Storage
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Inference
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/12_inference.html">
-   25. Inference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09_workbook.html">
-   26. Ordinary Least Squares
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10_workbook.html">
-   27. Prediction (out of sample)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11_workbook.html">
-   28. Quantile regression
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Art
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/13_art.html">
-   29. Art
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12_workbook.html">
-   30. Data Visualization
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Optimization
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="13_workbook.html">
-   31. Optimization Introduction
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Metrics and Advanced Text Mining
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="14_workbook.html">
-   32. Intermediate TextMining with Python
   </a>
  </li>
 </ul>
@@ -309,7 +153,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -327,7 +171,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -336,98 +180,98 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#loading-data-into-python">
-   13.1. Loading Data into Python
+   Loading Data into Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#from-csv">
-     13.1.1. From csv
+     From csv
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numbers-as-data">
-   13.2. Numbers as Data
+   Numbers as Data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3">
-     13.2.1. Question 1) Which property increased in value the most from price 1 to price 3?
+     Question 1) Which property increased in value the most from price 1 to price 3?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft">
-     13.2.2. Question 2) Which property is the best price (year_3) per square foot (sqft)?
+     Question 2) Which property is the best price (year_3) per square foot (sqft)?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options">
-     13.2.3. Question 3) I’m in the market for a house that has more than 3 bedrooms and more than 2 bathrooms, what are my options?
+     Question 3) I’m in the market for a house that has more than 3 bedrooms and more than 2 bathrooms, what are my options?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination">
-     13.2.4. Question 4) I’m a relator and trying to write a formula for the best house to show my clients. I want to show them the place with high bed/bath/sqft with a low price but consistent growth. How could I make that determination?
+     Question 4) I’m a relator and trying to write a formula for the best house to show my clients. I want to show them the place with high bed/bath/sqft with a low price but consistent growth. How could I make that determination?
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#text-as-data">
-   13.3. Text as Data
+   Text as Data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#question-1-what-countries-do-we-have-stories-from">
-     13.3.1. Question 1) What countries do we have stories from?
+     Question 1) What countries do we have stories from?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm">
-     13.3.2. Question 2) What fraction of my stories were written by the Brothers Grimm?
+     Question 2) What fraction of my stories were written by the Brothers Grimm?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#question-3-how-many-titles-contain-animals">
-     13.3.3. Question 3) How many titles contain animals?
+     Question 3) How many titles contain animals?
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#people-as-data">
-   13.4. People as Data
+   People as Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tricks-for-messy-data">
-   13.5. Tricks for messy data
+   Tricks for messy data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#names">
-     13.5.1. Names
+     Names
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dates">
-     13.5.2. Dates
+     Dates
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#missing-values">
-     13.5.3. Missing Values
+     Missing Values
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#case-sensitivity">
-     13.5.4. Case Sensitivity
+     Case Sensitivity
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#wrap-up">
-     13.5.5. Wrap Up
+     Wrap Up
     </a>
    </li>
   </ul>
@@ -440,11 +284,127 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Working with Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-data-into-python">
+   Loading Data into Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-csv">
+     From csv
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numbers-as-data">
+   Numbers as Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3">
+     Question 1) Which property increased in value the most from price 1 to price 3?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft">
+     Question 2) Which property is the best price (year_3) per square foot (sqft)?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options">
+     Question 3) I’m in the market for a house that has more than 3 bedrooms and more than 2 bathrooms, what are my options?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination">
+     Question 4) I’m a relator and trying to write a formula for the best house to show my clients. I want to show them the place with high bed/bath/sqft with a low price but consistent growth. How could I make that determination?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-as-data">
+   Text as Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1-what-countries-do-we-have-stories-from">
+     Question 1) What countries do we have stories from?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm">
+     Question 2) What fraction of my stories were written by the Brothers Grimm?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-3-how-many-titles-contain-animals">
+     Question 3) How many titles contain animals?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#people-as-data">
+   People as Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tricks-for-messy-data">
+   Tricks for messy data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#names">
+     Names
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dates">
+     Dates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#missing-values">
+     Missing Values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-sensitivity">
+     Case Sensitivity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wrap-up">
+     Wrap Up
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="working-with-data">
-<h1><span class="section-number">13. </span>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h1>
+<h1>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h1>
 <p>By: Dr. Eric Godat and Dr. Rob Kalescky</p>
 <p>As implied by the name, a Data Scientist needs to be able to work with data. However, what consitutes data can vary wildly depending on the project you’re working on.</p>
 <p>In this notebook, we will dive into a few common types of data and some of the common pitfalls you’ll encounter.</p>
@@ -452,10 +412,10 @@
 </pre></div>
 </div>
 <div class="section" id="loading-data-into-python">
-<h2><span class="section-number">13.1. </span>Loading Data into Python<a class="headerlink" href="#loading-data-into-python" title="Permalink to this headline">¶</a></h2>
+<h2>Loading Data into Python<a class="headerlink" href="#loading-data-into-python" title="Permalink to this headline">¶</a></h2>
 <p>The first step is getting data into python. While you could type the data into a dictionary, list, or other data format, that quickly becomes unsustainable. Fortunately there are several ways to load our data directly.</p>
 <div class="section" id="from-csv">
-<h3><span class="section-number">13.1.1. </span>From csv<a class="headerlink" href="#from-csv" title="Permalink to this headline">¶</a></h3>
+<h3>From csv<a class="headerlink" href="#from-csv" title="Permalink to this headline">¶</a></h3>
 <p>The easiest way to load data is to use pandas to <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read a csv</a> (comma separated values) file into a data frame. This also works with other deliminators (things that split your data fields) too.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/sample_data.csv&quot;</span><span class="p">)</span> <span class="c1"># This means that our data lives one level up (..) and in a directory named data</span>
 <span class="n">df</span>
@@ -464,7 +424,7 @@
 </div>
 </div>
 <div class="section" id="numbers-as-data">
-<h2><span class="section-number">13.2. </span>Numbers as Data<a class="headerlink" href="#numbers-as-data" title="Permalink to this headline">¶</a></h2>
+<h2>Numbers as Data<a class="headerlink" href="#numbers-as-data" title="Permalink to this headline">¶</a></h2>
 <p>The most classic example of data (and the one most people think of when you say data) is numerical data.</p>
 <p>Using the data we just loaded. Let’s ask a question and work towards a solution.</p>
 <p>Before we start, let’s look at two neat tricks that will come in handy as we explore our data.</p>
@@ -484,7 +444,7 @@
 </pre></div>
 </div>
 <div class="section" id="question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3">
-<h3><span class="section-number">13.2.1. </span>Question 1) Which property increased in value the most from price 1 to price 3?<a class="headerlink" href="#question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3" title="Permalink to this headline">¶</a></h3>
+<h3>Question 1) Which property increased in value the most from price 1 to price 3?<a class="headerlink" href="#question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3" title="Permalink to this headline">¶</a></h3>
 <p>Let’s assume that our data means price in year 1, year 2, year 3. This is a guess we have to make because we don’t know much about where this data comes from.</p>
 <p>Now that we have a little less to look at, we want to make a column with the increase in price.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;increase&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_3&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_1&#39;</span><span class="p">]</span> <span class="c1">#operation on 2 columns, saving to a new column</span>
@@ -499,7 +459,7 @@
 <p>Answer 1) Property F has increased the most in value</p>
 </div>
 <div class="section" id="question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft">
-<h3><span class="section-number">13.2.2. </span>Question 2) Which property is the best price (year_3) per square foot (sqft)?<a class="headerlink" href="#question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft" title="Permalink to this headline">¶</a></h3>
+<h3>Question 2) Which property is the best price (year_3) per square foot (sqft)?<a class="headerlink" href="#question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;p/sqft&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_3&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sqft&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -509,14 +469,14 @@
 <p>Answer 2) Property C has the best price per square foot</p>
 </div>
 <div class="section" id="question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options">
-<h3><span class="section-number">13.2.3. </span>Question 3) I’m in the market for a house that has more than 3 bedrooms and more than 2 bathrooms, what are my options?<a class="headerlink" href="#question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options" title="Permalink to this headline">¶</a></h3>
+<h3>Question 3) I’m in the market for a house that has more than 3 bedrooms and more than 2 bathrooms, what are my options?<a class="headerlink" href="#question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bathrooms&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)]</span>
 </pre></div>
 </div>
 <p>Answer 3) B or C are good options for what I’m looking for</p>
 </div>
 <div class="section" id="question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination">
-<h3><span class="section-number">13.2.4. </span>Question 4) I’m a relator and trying to write a formula for the best house to show my clients. I want to show them the place with high bed/bath/sqft with a low price but consistent growth. How could I make that determination?<a class="headerlink" href="#question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination" title="Permalink to this headline">¶</a></h3>
+<h3>Question 4) I’m a relator and trying to write a formula for the best house to show my clients. I want to show them the place with high bed/bath/sqft with a low price but consistent growth. How could I make that determination?<a class="headerlink" href="#question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination" title="Permalink to this headline">¶</a></h3>
 <p>Let’s break this one down into smaller pieces. I need to:</p>
 <ul class="simple">
 <li><p>Combine bedrooms, bathrooms, and sqft into a single number (larger is better)</p></li>
@@ -563,7 +523,7 @@
 </div>
 </div>
 <div class="section" id="text-as-data">
-<h2><span class="section-number">13.3. </span>Text as Data<a class="headerlink" href="#text-as-data" title="Permalink to this headline">¶</a></h2>
+<h2>Text as Data<a class="headerlink" href="#text-as-data" title="Permalink to this headline">¶</a></h2>
 <p>A type of data that has become especially popular and powerful to investigate is text. Turns out there is a lot that we can learn by looking at what we write down. We’ll spend more time working with text later in the class but for now, we’ll just load the data and do some basic parsing.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/folktales.csv&quot;</span><span class="p">)</span>
 </pre></div>
@@ -572,7 +532,7 @@
 </pre></div>
 </div>
 <div class="section" id="question-1-what-countries-do-we-have-stories-from">
-<h3><span class="section-number">13.3.1. </span>Question 1) What countries do we have stories from?<a class="headerlink" href="#question-1-what-countries-do-we-have-stories-from" title="Permalink to this headline">¶</a></h3>
+<h3>Question 1) What countries do we have stories from?<a class="headerlink" href="#question-1-what-countries-do-we-have-stories-from" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country of Origin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
@@ -582,7 +542,7 @@
 </div>
 </div>
 <div class="section" id="question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm">
-<h3><span class="section-number">13.3.2. </span>Question 2) What fraction of my stories were written by the Brothers Grimm?<a class="headerlink" href="#question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm" title="Permalink to this headline">¶</a></h3>
+<h3>Question 2) What fraction of my stories were written by the Brothers Grimm?<a class="headerlink" href="#question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_stories</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">total_stories</span>
 </pre></div>
@@ -596,7 +556,7 @@
 </div>
 </div>
 <div class="section" id="question-3-how-many-titles-contain-animals">
-<h3><span class="section-number">13.3.3. </span>Question 3) How many titles contain animals?<a class="headerlink" href="#question-3-how-many-titles-contain-animals" title="Permalink to this headline">¶</a></h3>
+<h3>Question 3) How many titles contain animals?<a class="headerlink" href="#question-3-how-many-titles-contain-animals" title="Permalink to this headline">¶</a></h3>
 <p>How would I even do this?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;animals&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
@@ -605,7 +565,7 @@
 </div>
 </div>
 <div class="section" id="people-as-data">
-<h2><span class="section-number">13.4. </span>People as Data<a class="headerlink" href="#people-as-data" title="Permalink to this headline">¶</a></h2>
+<h2>People as Data<a class="headerlink" href="#people-as-data" title="Permalink to this headline">¶</a></h2>
 <p>Another common type of data set is personal information. Just think of every sign up sheet, grade book, or class roster. One major problem with personal data is that people generally don’t fit into clean data “boxes”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/messy_data.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 <span class="n">messy</span>
@@ -614,9 +574,9 @@
 <p>Let’s just look at this data. How many data issues can you find that would hinder an analysis? How would you handle it?</p>
 </div>
 <div class="section" id="tricks-for-messy-data">
-<h2><span class="section-number">13.5. </span>Tricks for messy data<a class="headerlink" href="#tricks-for-messy-data" title="Permalink to this headline">¶</a></h2>
+<h2>Tricks for messy data<a class="headerlink" href="#tricks-for-messy-data" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="names">
-<h3><span class="section-number">13.5.1. </span>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h3>
+<h3>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h3>
 <p>One common problem is that names tend to be really bad ways to identify people. Why is that?</p>
 <p>A solution to this is to use something called a unique identifier (think your SMU ID number). A unique identifier can be used instead of a name because it will have a standard format and generally can be used to link an individual across multiple data sets. If used properly it can also be a good way to de-identify individuals.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -649,7 +609,7 @@
 </div>
 </div>
 <div class="section" id="dates">
-<h3><span class="section-number">13.5.2. </span>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">¶</a></h3>
+<h3>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">¶</a></h3>
 <p>Another common issue is that there are lots of formats for dates and times. This isn’t just an issue with personal data but is one that can cause huge headaches when working with data sets. Even asking simple questions can become complicated when working with dates if you aren’t sure of the formatting.</p>
 <p>Think about all the steps your brain makes if I ask you what the date was 3 weeks ago?</p>
 <p>Somewhat incredibly, pandas can actually recognize several forms of dates and guess what the date formats are and convert them to a standardize format using the function <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html?highlight=to_datetime#pandas.to_datetime">to_datetime</a>.</p>
@@ -659,7 +619,7 @@
 </div>
 </div>
 <div class="section" id="missing-values">
-<h3><span class="section-number">13.5.3. </span>Missing Values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h3>
+<h3>Missing Values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h3>
 <p>Another problem we can encounter is missing data. This happens all the time with “wild data” and can happen for numerous reasons, for example:</p>
 <ul class="simple">
 <li><p>no data should exist for a reason</p></li>
@@ -673,7 +633,7 @@
 </div>
 </div>
 <div class="section" id="case-sensitivity">
-<h3><span class="section-number">13.5.4. </span>Case Sensitivity<a class="headerlink" href="#case-sensitivity" title="Permalink to this headline">¶</a></h3>
+<h3>Case Sensitivity<a class="headerlink" href="#case-sensitivity" title="Permalink to this headline">¶</a></h3>
 <p>Another common issue with dealing with messy data is case sensitivity. Since python sees ‘A’ and ‘a’ as two different characters, it is important to be aware of case sensitivity. The easiest way to do this is to send all the characters in a particular column to a single case pattern. Fortunately, pandas has a family of functions to do that for us. <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.lower.html?highlight=lower#pandas.Series.str.lower">lower</a> is a good example.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span><span class="p">[</span><span class="s1">&#39;Ship&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">messy</span><span class="p">[</span><span class="s1">&#39;Ship&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 <span class="n">messy</span>
@@ -685,7 +645,7 @@
 </div>
 </div>
 <div class="section" id="wrap-up">
-<h3><span class="section-number">13.5.5. </span>Wrap Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h3>
+<h3>Wrap Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h3>
 <p>Let’s look at our messy data before:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">before</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/messy_data.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 <span class="n">before</span>
@@ -725,54 +685,28 @@
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="../book/06_data_ethics_bias.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">12. </span>Data Ethics and Bias</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="04_workbook.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">14. </span>Exploring and Cleaning a Data Set</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By The Jupyter Book community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By The Jupyter Book community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

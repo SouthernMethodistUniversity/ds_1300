@@ -2,10 +2,10 @@
 
 ## Contact Information
 
-| Instructor          | Email             | Phone  | Office         | Office Hours |
-|:--------------------|:------------------|:-------|:---------------|:-------------|
-| Dr. Robert Kalescky | rkalescky@smu.edu | 8-3070 | Heroy Hall 303 | TBD          |
-| Dr. Eric Godat      | egodat@smu.edu    | 8-4599 | Ford Hall 119  | TBD          |
+| Instructor          | Email             | Phone  | Office         | Office Hours   |
+|:--------------------|:------------------|:-------|:---------------|:-------------- |
+| Dr. Robert Kalescky | rkalescky@smu.edu | 8-3070 | Ford Hall 119  | By Appointment |
+| Dr. Eric Godat      | egodat@smu.edu    | 8-4599 | Ford Hall 119  | By Appointment |
 
 Students will be encouraged to use the course Teams channel for
 communication with instructors and their fellow classmates. This will be
@@ -16,8 +16,8 @@ Class information and assignments will be posted in Canvas.
 
 ## Dates and Times
 
-May Term, May 13 through 27  
-9:30 AM - 12:00 PM, 1:00 PM - 3:00 PM
+May Term, May 16 through 31
+10:00 AM - 12:00 PM, 1:00 PM - 3:00 PM
 
 ## Course Overview
 
@@ -129,40 +129,43 @@ engagement in other student presentations.
 Each calendar date on the syllabus corresponds to 4 lecture hours, in
 line with the structure of a May Term semester.
 
-* **May 13** The Practice of Data Science
+* **Day 1**
   * Data Science Overview
-  * High-performance Computing and Using ManeFrame II
-  * GitHub, Jupyter, and Python Overview
-* **May 14** Data Generation: What is data?
-  * Numbers as Data
-  * Text as Data
-  * People as Data
+  * High-performance Computing
+* **Day 2**
+  * Using ManeFrame II
+  * Using GitHub
+  * Using Jupyter
+  * Python Programming I
+* **Day 3**
   * Ethics and Bias in Data
-* **May 17** Data Collection, Management, and Storage
-  * Methods for Data Collection
-  * Managing and Storing Data of Various Sizes
-  * Scoping and Scaling Data Projects
-* **May 18** Data Processing: Cleaning and Structuring
-  * Exploring Data Sets
-  * Structured Data
-  * Cleaning Data
-* **May 19** Midway Project Checkpoint and Work Day
-* **May 20** Data Analysis 1
-  * Performing Operations on Data
-  * Counting, Aggregations, and Metadata
-* **May 21** Data Visualization
-  * Types of Visualizations
+  * Python Programming II
+  * Working with Data
+* **Day 4**
+  * Exploring and Working with Data
+  * Story Telling with Data
+* **Day 5**
+  * Data and Justice and Medicine
+  * Project Work Day
+* **Day 6**
+  * Intermediate Project Presentations 
+  * Using Dask
+* **Day 7**
+  * Data and Cars and Crime
+  * Data Storage
+  * Building Models and Making Predictions
+* **Day 8**
   * Visualizing Various Types of Data
-* **May 24** Data Modeling
-  * Building Models and Making Predictions with Data
-  * Understanding the Limits of Models and Predictions
-* **May 25** Data Analysis 2
+  * Using Geopandas
+* **Day 9**
+  * Dat and Art
+  * Text Mining
   * Customizing Analysis Functions
   * Metric Building
-* **May 26** Data Interpretation
-  * Story Telling with Data
-  * Communicating Data Analysis, Models, and Predictions
-* **May 27** Project Presentations
+* **Day 10**
+  * Project Work Day
+* **Day 11**
+  * Project Presentations
 
 ### Semester-Long Project
 

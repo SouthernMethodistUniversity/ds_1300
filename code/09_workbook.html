@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>26. Ordinary Least Squares &#8212; DS 1300</title>
+    <title>Ordinary Least Squares &#8212; DS 1300</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,32 +31,35 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="27. Prediction (out of sample)" href="10_workbook.html" />
-    <link rel="prev" title="25. Inference" href="../book/12_inference.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -90,9 +93,9 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  The Practice of Data Science
+  Day 1
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -104,165 +107,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../book/02_hpc.html">
    2. Introduction to High-Performance Computing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/03_using_m2.html">
-   3. Using ManeFrame II for Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
-   4. Introduction to GitHub and Getting Setup
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_workbook.html">
-   5. Introduction to Python Programming
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/08_project.html">
-   11. Semester Project
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Data
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/06_data_ethics_bias.html">
-   12. Data Ethics and Bias
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_workbook.html">
-   13. Working with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04_workbook.html">
-   14. Exploring and Cleaning a Data Set
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Modeling
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/09_modeling.html">
-   17. Building Models with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/10_pudding.html">
-   18. The Pudding: Data Story Telling and Visualization
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Bigger Data
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/11_dask_initial_setup.html">
-   20. Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05_workbook.html">
-   21. Dask Delayed
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06_workbook.html">
-   22. Dask Arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07_workbook.html">
-   23. Dask DataFrames
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08_workbook.html">
-   24. Data Storage
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Inference
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/12_inference.html">
-   25. Inference
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   26. Ordinary Least Squares
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10_workbook.html">
-   27. Prediction (out of sample)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11_workbook.html">
-   28. Quantile regression
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Art
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/13_art.html">
-   29. Art
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12_workbook.html">
-   30. Data Visualization
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Optimization
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="13_workbook.html">
-   31. Optimization Introduction
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Metrics and Advanced Text Mining
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="14_workbook.html">
-   32. Intermediate TextMining with Python
   </a>
  </li>
 </ul>
@@ -311,7 +155,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -329,7 +173,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -338,47 +182,47 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ols-estimation">
-   26.1. OLS estimation
+   OLS estimation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ols-non-linear-curve-but-linear-in-parameters">
-   26.2. OLS non-linear curve but linear in parameters
+   OLS non-linear curve but linear in parameters
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ols-with-dummy-variables">
-   26.3. OLS with dummy variables
+   OLS with dummy variables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#joint-hypothesis-test">
-   26.4. Joint hypothesis test
+   Joint hypothesis test
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#f-test">
-     26.4.1. F test
+     F test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#small-group-effects">
-     26.4.2. Small group effects
+     Small group effects
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#multicollinearity">
-     26.4.3. Multicollinearity
+     Multicollinearity
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#condition-number">
-       26.4.3.1. Condition number
+       Condition number
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#dropping-an-observation">
-       26.4.3.2. Dropping an observation
+       Dropping an observation
       </a>
      </li>
     </ul>
@@ -393,11 +237,78 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Ordinary Least Squares</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ols-estimation">
+   OLS estimation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ols-non-linear-curve-but-linear-in-parameters">
+   OLS non-linear curve but linear in parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ols-with-dummy-variables">
+   OLS with dummy variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#joint-hypothesis-test">
+   Joint hypothesis test
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f-test">
+     F test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#small-group-effects">
+     Small group effects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multicollinearity">
+     Multicollinearity
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#condition-number">
+       Condition number
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dropping-an-observation">
+       Dropping an observation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ordinary-least-squares">
-<h1><span class="section-number">26. </span>Ordinary Least Squares<a class="headerlink" href="#ordinary-least-squares" title="Permalink to this headline">¶</a></h1>
+<h1>Ordinary Least Squares<a class="headerlink" href="#ordinary-least-squares" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </pre></div>
 </div>
@@ -412,7 +323,7 @@
 </pre></div>
 </div>
 <div class="section" id="ols-estimation">
-<h2><span class="section-number">26.1. </span>OLS estimation<a class="headerlink" href="#ols-estimation" title="Permalink to this headline">¶</a></h2>
+<h2>OLS estimation<a class="headerlink" href="#ols-estimation" title="Permalink to this headline">¶</a></h2>
 <p>Artificial data:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nsample</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -439,7 +350,7 @@
 </div>
 </div>
 <div class="section" id="ols-non-linear-curve-but-linear-in-parameters">
-<h2><span class="section-number">26.2. </span>OLS non-linear curve but linear in parameters<a class="headerlink" href="#ols-non-linear-curve-but-linear-in-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>OLS non-linear curve but linear in parameters<a class="headerlink" href="#ols-non-linear-curve-but-linear-in-parameters" title="Permalink to this headline">¶</a></h2>
 <p>We simulate artificial data with a non-linear relationship between x and y:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nsample</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -477,7 +388,7 @@
 </div>
 </div>
 <div class="section" id="ols-with-dummy-variables">
-<h2><span class="section-number">26.3. </span>OLS with dummy variables<a class="headerlink" href="#ols-with-dummy-variables" title="Permalink to this headline">¶</a></h2>
+<h2>OLS with dummy variables<a class="headerlink" href="#ols-with-dummy-variables" title="Permalink to this headline">¶</a></h2>
 <p>We generate some artificial data. There are 3 groups which will be modelled using dummy variables. Group 0 is the omitted/benchmark category.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nsample</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">groups</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsample</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
@@ -524,9 +435,9 @@
 </div>
 </div>
 <div class="section" id="joint-hypothesis-test">
-<h2><span class="section-number">26.4. </span>Joint hypothesis test<a class="headerlink" href="#joint-hypothesis-test" title="Permalink to this headline">¶</a></h2>
+<h2>Joint hypothesis test<a class="headerlink" href="#joint-hypothesis-test" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="f-test">
-<h3><span class="section-number">26.4.1. </span>F test<a class="headerlink" href="#f-test" title="Permalink to this headline">¶</a></h3>
+<h3>F test<a class="headerlink" href="#f-test" title="Permalink to this headline">¶</a></h3>
 <p>We want to test the hypothesis that both coefficients on the dummy variables are equal to zero, that is, <span class="math notranslate nohighlight">\(R \times \beta = 0\)</span>. An F test leads us to strongly reject the null hypothesis of identical constant in the 3 groups:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">R</span><span class="p">))</span>
@@ -539,7 +450,7 @@
 </div>
 </div>
 <div class="section" id="small-group-effects">
-<h3><span class="section-number">26.4.2. </span>Small group effects<a class="headerlink" href="#small-group-effects" title="Permalink to this headline">¶</a></h3>
+<h3>Small group effects<a class="headerlink" href="#small-group-effects" title="Permalink to this headline">¶</a></h3>
 <p>If we generate artificial data with smaller group effects, the T test can no longer reject the Null hypothesis:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="n">y_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
@@ -556,7 +467,7 @@
 </div>
 </div>
 <div class="section" id="multicollinearity">
-<h3><span class="section-number">26.4.3. </span>Multicollinearity<a class="headerlink" href="#multicollinearity" title="Permalink to this headline">¶</a></h3>
+<h3>Multicollinearity<a class="headerlink" href="#multicollinearity" title="Permalink to this headline">¶</a></h3>
 <p>The Longley dataset is well known to have high multicollinearity. That is, the exogenous predictors are highly correlated. This is problematic because it can affect the stability of our coefficient estimates as we make minor changes to model specification.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.datasets.longley</span> <span class="kn">import</span> <span class="n">load_pandas</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">load_pandas</span><span class="p">()</span><span class="o">.</span><span class="n">endog</span>
@@ -571,7 +482,7 @@
 </pre></div>
 </div>
 <div class="section" id="condition-number">
-<h4><span class="section-number">26.4.3.1. </span>Condition number<a class="headerlink" href="#condition-number" title="Permalink to this headline">¶</a></h4>
+<h4>Condition number<a class="headerlink" href="#condition-number" title="Permalink to this headline">¶</a></h4>
 <p>One way to assess multicollinearity is to compute the condition number. Values over 20 are worrisome (see Greene 4.9). The first step is to normalize the independent variables to have unit length:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">norm_x</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">values</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -589,7 +500,7 @@
 </div>
 </div>
 <div class="section" id="dropping-an-observation">
-<h4><span class="section-number">26.4.3.2. </span>Dropping an observation<a class="headerlink" href="#dropping-an-observation" title="Permalink to this headline">¶</a></h4>
+<h4>Dropping an observation<a class="headerlink" href="#dropping-an-observation" title="Permalink to this headline">¶</a></h4>
 <p>Greene also points out that dropping a single observation can have a dramatic effect on the coefficient estimates:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ols_results2</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">14</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">14</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Percentage change </span><span class="si">%4.2f%%</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">*</span><span class="mi">7</span> <span class="o">%</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="n">ols_results2</span><span class="o">.</span><span class="n">params</span> <span class="o">-</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">params</span><span class="p">)</span><span class="o">/</span><span class="n">ols_results</span><span class="o">.</span><span class="n">params</span><span class="o">*</span><span class="mi">100</span><span class="p">]))</span>
@@ -633,54 +544,28 @@
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="../book/12_inference.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">25. </span>Inference</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="10_workbook.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">27. </span>Prediction (out of sample)</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By The Jupyter Book community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By The Jupyter Book community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

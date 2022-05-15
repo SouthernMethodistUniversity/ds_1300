@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Introduction to GitHub and Getting Setup &#8212; DS 1300</title>
+    <title>Introduction to GitHub and Getting Setup &#8212; DS 1300</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,30 +31,33 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Introduction to Python Programming" href="../code/01_workbook.html" />
-    <link rel="prev" title="3. Using ManeFrame II for Class" href="03_using_m2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -88,12 +91,12 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  The Practice of Data Science
+  Day 1
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01_data_science.html">
    1. Data Science Overview
@@ -102,165 +105,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="02_hpc.html">
    2. Introduction to High-Performance Computing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_using_m2.html">
-   3. Using ManeFrame II for Class
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   4. Introduction to GitHub and Getting Setup
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/01_workbook.html">
-   5. Introduction to Python Programming
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08_project.html">
-   11. Semester Project
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Data
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="06_data_ethics_bias.html">
-   12. Data Ethics and Bias
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/02_workbook.html">
-   13. Working with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/04_workbook.html">
-   14. Exploring and Cleaning a Data Set
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Modeling
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="09_modeling.html">
-   17. Building Models with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10_pudding.html">
-   18. The Pudding: Data Story Telling and Visualization
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Bigger Data
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="11_dask_initial_setup.html">
-   20. Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/05_workbook.html">
-   21. Dask Delayed
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/06_workbook.html">
-   22. Dask Arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/07_workbook.html">
-   23. Dask DataFrames
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/08_workbook.html">
-   24. Data Storage
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Inference
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="12_inference.html">
-   25. Inference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/09_workbook.html">
-   26. Ordinary Least Squares
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/10_workbook.html">
-   27. Prediction (out of sample)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/11_workbook.html">
-   28. Quantile regression
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Art
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="13_art.html">
-   29. Art
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/12_workbook.html">
-   30. Data Visualization
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Optimization
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/13_workbook.html">
-   31. Optimization Introduction
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Metrics and Advanced Text Mining
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../code/14_workbook.html">
-   32. Intermediate TextMining with Python
   </a>
  </li>
 </ul>
@@ -309,7 +153,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -327,7 +171,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -336,37 +180,37 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#getting-started-with-github">
-   4.1. Getting Started with GitHub
+   Getting Started with GitHub
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#initial-setup-of-your-repository-and-python-environment">
-   4.2. Initial Setup of Your Repository and Python Environment
+   Initial Setup of Your Repository and Python Environment
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#launching-a-jupyterlab-session-and-accessing-your-notebooks">
-   4.3. Launching a JupyterLab Session and Accessing Your Notebooks
+   Launching a JupyterLab Session and Accessing Your Notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#working-on-notebooks">
-   4.4. Working on Notebooks
+   Working on Notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pulling-new-notebooks">
-   4.5. Pulling New Notebooks
+   Pulling New Notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installing-new-packages">
-   4.6. Installing New Packages
+   Installing New Packages
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#new-packages-via-pip">
-     4.6.1. New Packages via
+     New Packages via
      <code class="docutils literal notranslate">
       <span class="pre">
        pip
@@ -376,7 +220,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#new-packages-via-requirements-txt">
-     4.6.2. New Packages via
+     New Packages via
      <code class="docutils literal notranslate">
       <span class="pre">
        requirements.txt
@@ -388,12 +232,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#submitting-completed-assignments-via-github">
-   4.7. Submitting Completed Assignments via GitHub
+   Submitting Completed Assignments via GitHub
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-dr-godat-and-dr-kalescky-to-your-forked-github-repository">
-   4.8. Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository
+   Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository
   </a>
  </li>
 </ul>
@@ -404,20 +248,100 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to GitHub and Getting Setup</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started-with-github">
+   Getting Started with GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-setup-of-your-repository-and-python-environment">
+   Initial Setup of Your Repository and Python Environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#launching-a-jupyterlab-session-and-accessing-your-notebooks">
+   Launching a JupyterLab Session and Accessing Your Notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-on-notebooks">
+   Working on Notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pulling-new-notebooks">
+   Pulling New Notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-new-packages">
+   Installing New Packages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#new-packages-via-pip">
+     New Packages via
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pip
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#new-packages-via-requirements-txt">
+     New Packages via
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requirements.txt
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submitting-completed-assignments-via-github">
+   Submitting Completed Assignments via GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-dr-godat-and-dr-kalescky-to-your-forked-github-repository">
+   Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-github-and-getting-setup">
-<h1><span class="section-number">4. </span>Introduction to GitHub and Getting Setup<a class="headerlink" href="#introduction-to-github-and-getting-setup" title="Permalink to this headline">¶</a></h1>
+<h1>Introduction to GitHub and Getting Setup<a class="headerlink" href="#introduction-to-github-and-getting-setup" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="getting-started-with-github">
-<h2><span class="section-number">4.1. </span>Getting Started with GitHub<a class="headerlink" href="#getting-started-with-github" title="Permalink to this headline">¶</a></h2>
+<h2>Getting Started with GitHub<a class="headerlink" href="#getting-started-with-github" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://faculty.smu.edu/csc/workshops/2020/summer/git/">Version Control with Git</a></p></li>
 <li><p><a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github">Getting Started with GitHub</a></p></li>
 </ul>
 </div>
 <div class="section" id="initial-setup-of-your-repository-and-python-environment">
-<h2><span class="section-number">4.2. </span>Initial Setup of Your Repository and Python Environment<a class="headerlink" href="#initial-setup-of-your-repository-and-python-environment" title="Permalink to this headline">¶</a></h2>
+<h2>Initial Setup of Your Repository and Python Environment<a class="headerlink" href="#initial-setup-of-your-repository-and-python-environment" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Go to the <a class="reference external" href="https://github.com/SouthernMethodistUniversity/ds_1300_notebooks">GitHub repository for our class Jupyter notebooks</a>.</p></li>
 <li><p>Select “Fork”. This will create a personal copy of the repository.</p></li>
@@ -453,7 +377,7 @@
 </div>
 </div>
 <div class="section" id="launching-a-jupyterlab-session-and-accessing-your-notebooks">
-<h2><span class="section-number">4.3. </span>Launching a JupyterLab Session and Accessing Your Notebooks<a class="headerlink" href="#launching-a-jupyterlab-session-and-accessing-your-notebooks" title="Permalink to this headline">¶</a></h2>
+<h2>Launching a JupyterLab Session and Accessing Your Notebooks<a class="headerlink" href="#launching-a-jupyterlab-session-and-accessing-your-notebooks" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Go to the <a class="reference external" href="https://hpc.smu.edu">HPC Portal</a> and log in.</p></li>
 <li><p>Select “Interactive Apps” and then “JupyterLab”.</p></li>
@@ -477,7 +401,7 @@
 </ol>
 </div>
 <div class="section" id="working-on-notebooks">
-<h2><span class="section-number">4.4. </span>Working on Notebooks<a class="headerlink" href="#working-on-notebooks" title="Permalink to this headline">¶</a></h2>
+<h2>Working on Notebooks<a class="headerlink" href="#working-on-notebooks" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Browser into “code” directory.</p></li>
 <li><p>Right-click on a notebook and select “Copy”.</p></li>
@@ -487,7 +411,7 @@
 </ol>
 </div>
 <div class="section" id="pulling-new-notebooks">
-<h2><span class="section-number">4.5. </span>Pulling New Notebooks<a class="headerlink" href="#pulling-new-notebooks" title="Permalink to this headline">¶</a></h2>
+<h2>Pulling New Notebooks<a class="headerlink" href="#pulling-new-notebooks" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Save the notebook.</p></li>
 <li><p>Open a terminal session via “File”, “New”, “Terminal”.</p></li>
@@ -510,7 +434,7 @@ proceed with the fetch and merge steps.</p></li>
 </div>
 </div>
 <div class="section" id="installing-new-packages">
-<h2><span class="section-number">4.6. </span>Installing New Packages<a class="headerlink" href="#installing-new-packages" title="Permalink to this headline">¶</a></h2>
+<h2>Installing New Packages<a class="headerlink" href="#installing-new-packages" title="Permalink to this headline">¶</a></h2>
 <p>New Python packages can be installed allowing you to build upon the work of
 others. Both methods should be run from the Terminal from within the Jupyter
 Lab session. Installing packages directly via <code class="docutils literal notranslate"><span class="pre">pip</span></code> is the suggested procedure
@@ -522,14 +446,14 @@ from upstream.</p>
 <li><p>In the terminal session, type each command and press Enter after each line:</p></li>
 </ol>
 <div class="section" id="new-packages-via-pip">
-<h3><span class="section-number">4.6.1. </span>New Packages via <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#new-packages-via-pip" title="Permalink to this headline">¶</a></h3>
+<h3>New Packages via <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#new-packages-via-pip" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ds_1300_notebooks</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">package_name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="new-packages-via-requirements-txt">
-<h3><span class="section-number">4.6.2. </span>New Packages via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#new-packages-via-requirements-txt" title="Permalink to this headline">¶</a></h3>
+<h3>New Packages via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#new-packages-via-requirements-txt" title="Permalink to this headline">¶</a></h3>
 <p>Before executing the following commands do the “Pulling New Notebooks” commands
 above first. This will make sure that you have the most recent version of the
 <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file available to you.</p>
@@ -540,7 +464,7 @@ above first. This will make sure that you have the most recent version of the
 </div>
 </div>
 <div class="section" id="submitting-completed-assignments-via-github">
-<h2><span class="section-number">4.7. </span>Submitting Completed Assignments via GitHub<a class="headerlink" href="#submitting-completed-assignments-via-github" title="Permalink to this headline">¶</a></h2>
+<h2>Submitting Completed Assignments via GitHub<a class="headerlink" href="#submitting-completed-assignments-via-github" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Save the notebook.</p></li>
 <li><p>Open a terminal session via “File”, “New”, “Terminal”.</p></li>
@@ -556,7 +480,7 @@ above first. This will make sure that you have the most recent version of the
 </div>
 </div>
 <div class="section" id="add-dr-godat-and-dr-kalescky-to-your-forked-github-repository">
-<h2><span class="section-number">4.8. </span>Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository<a class="headerlink" href="#add-dr-godat-and-dr-kalescky-to-your-forked-github-repository" title="Permalink to this headline">¶</a></h2>
+<h2>Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository<a class="headerlink" href="#add-dr-godat-and-dr-kalescky-to-your-forked-github-repository" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Log into GitHub</p></li>
 <li><p>Go to your ds_1300_notebooks repository</p></li>
@@ -594,54 +518,28 @@ above first. This will make sure that you have the most recent version of the
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="03_using_m2.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">3. </span>Using ManeFrame II for Class</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="../code/01_workbook.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">5. </span>Introduction to Python Programming</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By The Jupyter Book community<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By The Jupyter Book community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
