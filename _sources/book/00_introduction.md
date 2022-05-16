@@ -158,7 +158,7 @@ line with the structure of a May Term semester.
   * Visualizing Various Types of Data
   * Using Geopandas
 * **Day 9**
-  * Dat and Art
+  * Data and Art
   * Text Mining
   * Customizing Analysis Functions
   * Metric Building
