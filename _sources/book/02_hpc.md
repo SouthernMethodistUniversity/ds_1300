@@ -445,7 +445,7 @@ where particles with a greater speed require increased processing.
 
 #### Manager-worker
 
-This approach goes by many names: *master-slave*, *professor-student*,
+This approach goes by many names: *controller-agent*, *professor-student*,
 *Wonka-Loompa*.
 
 ![image](images/manager_worker.png)
