@@ -12,8 +12,6 @@
 3. Select "Code" and copy the HTTPS URL for the forked repository.
 4. Go to the [HPC Portal](https://hpc.smu.edu) and log in.
 5. Select "Interactive Apps" and then "JupyterLab".
-6. Set the "Partition" drop-down to `htc`.
-7. Set the "Select Python Environment" to `python/3`.
 6. Set the fields to:
   * "Additional environment modules to load": `python/3`
   * "Custom module paths": Clear the contents if any
