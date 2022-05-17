@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to Python Programming &#8212; DS 1300</title>
+    <title>5. Introduction to Python Programming &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11. Semester Project" href="../book/08_project.html" />
+    <link rel="prev" title="4. Introduction to GitHub and Getting Setup" href="../book/04_github_and_initial_setup.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -105,6 +107,33 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../book/02_hpc.html">
    2. Introduction to High-Performance Computing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 2
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/03_using_m2.html">
+   3. Using ManeFrame II for Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
+   4. Introduction to GitHub and Getting Setup
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Introduction to Python Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/08_project.html">
+   11. Semester Project
   </a>
  </li>
 </ul>
@@ -180,51 +209,51 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Introduction to Python Programming
+   5. Introduction to Python Programming
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#intro-to-python-basics">
-   Intro to Python Basics
+   6. Intro to Python Basics
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operating-this-notebook">
-     Operating this notebook
+     6.1. Operating this notebook
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#basic-math">
-       Basic Math
+       6.1.1. Basic Math
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#variables-and-objects">
-     Variables and Objects
+     6.2. Variables and Objects
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#dictionaries">
-       Dictionaries
+       6.2.1. Dictionaries
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#loops-and-functions">
-     Loops and Functions
+     6.3. Loops and Functions
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loops">
-       Loops
+       6.3.1. Loops
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#functions">
-       Functions
+       6.3.2. Functions
       </a>
      </li>
     </ul>
@@ -233,51 +262,51 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#libraries">
-   Libraries
+   7. Libraries
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dataframes-and-pandas">
-   DataFrames and Pandas
+   8. DataFrames and Pandas
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#more-complex-data">
-     More Complex Data
+     8.1. More Complex Data
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#groupby">
-     GroupBy
+     8.2. GroupBy
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#selecting-advanced-slicing">
-     Selecting (Advanced Slicing)
+     8.3. Selecting (Advanced Slicing)
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#joining">
-     Joining
+     8.4. Joining
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting">
-   Plotting
+   9. Plotting
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#more-complex-plotting">
-     More Complex Plotting
+     9.1. More Complex Plotting
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#wrapping-up">
-   Wrapping up
+   10. Wrapping up
   </a>
  </li>
 </ul>
@@ -302,51 +331,51 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Introduction to Python Programming
+   5. Introduction to Python Programming
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#intro-to-python-basics">
-   Intro to Python Basics
+   6. Intro to Python Basics
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operating-this-notebook">
-     Operating this notebook
+     6.1. Operating this notebook
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#basic-math">
-       Basic Math
+       6.1.1. Basic Math
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#variables-and-objects">
-     Variables and Objects
+     6.2. Variables and Objects
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#dictionaries">
-       Dictionaries
+       6.2.1. Dictionaries
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#loops-and-functions">
-     Loops and Functions
+     6.3. Loops and Functions
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#loops">
-       Loops
+       6.3.1. Loops
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#functions">
-       Functions
+       6.3.2. Functions
       </a>
      </li>
     </ul>
@@ -355,51 +384,51 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#libraries">
-   Libraries
+   7. Libraries
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dataframes-and-pandas">
-   DataFrames and Pandas
+   8. DataFrames and Pandas
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#more-complex-data">
-     More Complex Data
+     8.1. More Complex Data
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#groupby">
-     GroupBy
+     8.2. GroupBy
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#selecting-advanced-slicing">
-     Selecting (Advanced Slicing)
+     8.3. Selecting (Advanced Slicing)
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#joining">
-     Joining
+     8.4. Joining
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting">
-   Plotting
+   9. Plotting
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#more-complex-plotting">
-     More Complex Plotting
+     9.1. More Complex Plotting
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#wrapping-up">
-   Wrapping up
+   10. Wrapping up
   </a>
  </li>
 </ul>
@@ -412,15 +441,15 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-python-programming">
-<h1>Introduction to Python Programming<a class="headerlink" href="#introduction-to-python-programming" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Introduction to Python Programming<a class="headerlink" href="#introduction-to-python-programming" title="Permalink to this headline">¶</a></h1>
 <p>By: Dr. Eric Godat and Dr. Rob Kalescky</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-python-basics">
-<h1>Intro to Python Basics<a class="headerlink" href="#intro-to-python-basics" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6. </span>Intro to Python Basics<a class="headerlink" href="#intro-to-python-basics" title="Permalink to this headline">¶</a></h1>
 <p><em>This section is designed to guide you from having never used Python before to feeling comfortable with basic operations.</em></p>
 <p>Python is a programming language capable of just about anything you could want to do. It is designed to be human readable and robust. This particular document is called a Jupyter Notebook. Notebooks are tools for developing Python code and running that code in small steps and see the intermediate results in line.</p>
 <div class="section" id="operating-this-notebook">
-<h2>Operating this notebook<a class="headerlink" href="#operating-this-notebook" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1. </span>Operating this notebook<a class="headerlink" href="#operating-this-notebook" title="Permalink to this headline">¶</a></h2>
 <p>To operate this notebook, you will need to execute boxes of code, called cells. To do this you can either click the <em>Run</em> button on the toolbar or use [Shift]+[Enter].</p>
 <p>Throughout this notebook you will see cells that are not code (like this one). These cells contain text in a language called Markdown. You can execute these cells to render formatted text. A cheatsheet for Markdown can be found by clicking <code class="docutils literal notranslate"><span class="pre">Help</span> <span class="pre">-&gt;</span> <span class="pre">Markdown</span> <span class="pre">Reference</span></code> or articles <a class="reference external" href="https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd">like this</a>. There will also be comments with in the code itself that give additional information about the operation of the code, describe functions or show you places where you might want to make changes. These comments are always preceded by an octothorp (#) and in most cases be a different color from the surrounding text.</p>
 <p>Notebooks save automatically, however if you have made big changes your code, you can checkpoint it. This allows you to roll back changes to this point (or any previous checkpoints) should something break in the future.</p>
@@ -430,7 +459,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>-<strong>D</strong>elete the current cell   [D,D]</p>
 <p><strong>Let’s try it out!</strong></p>
 <div class="section" id="basic-math">
-<h3>Basic Math<a class="headerlink" href="#basic-math" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.1. </span>Basic Math<a class="headerlink" href="#basic-math" title="Permalink to this headline">¶</a></h3>
 <p>Python can do simple mathematical operations just like a calculator. Try executing the following cells.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
 </pre></div>
@@ -441,7 +470,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="variables-and-objects">
-<h2>Variables and Objects<a class="headerlink" href="#variables-and-objects" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2. </span>Variables and Objects<a class="headerlink" href="#variables-and-objects" title="Permalink to this headline">¶</a></h2>
 <p>Calculations are nice but we really want to be able to store our calculations in memory so that we can access them later. We do that by assigning variables.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">2</span>
 <span class="n">b</span><span class="o">=</span><span class="mi">3</span>
@@ -497,7 +526,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="section" id="dictionaries">
-<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.1. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
 <p>Dictionaries are a different way of storing data than lists. They rely on a key and value system as opposed to the order of the entries.</p>
 <p>Dictionaries are enclosed in curly braces {}, the key and value are separated by a colon : and entries are separated by commas ,</p>
 <p>Values can then be accessed by referencing the key.</p>
@@ -513,10 +542,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="loops-and-functions">
-<h2>Loops and Functions<a class="headerlink" href="#loops-and-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Loops and Functions<a class="headerlink" href="#loops-and-functions" title="Permalink to this headline">¶</a></h2>
 <p>Computers are much better at doing simple repeatable tasks than humans are so to leverage this advantage, we will cover two different ways of writing these kind of repeatable instructions.</p>
 <div class="section" id="loops">
-<h3>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.1. </span>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h3>
 <p>Loops are a way of having Python complete a task over and over.</p>
 <p>The most common form if a <strong>for</strong> loop. A <strong>for</strong> loop completes a task a fixed number of times by iterating a variable over the members of a sequence in order.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example for loop</span>
@@ -527,7 +556,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p><em><strong>Note</strong>: The indention is important, it tells Python that the line <em>print(i)</em> belongs inside the loop.</em></p>
 </div>
 <div class="section" id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes it would be nice to be able to save a group of instructions in a single block, that way we won’t need to rewrite several lines of code each time we want to do that set of operations.</p>
 <p>To do this we define a <strong>function</strong>.</p>
 <p>Functions allow us to define a more complicated set of instructions as a single entity and call that entire block of code directly.</p>
@@ -564,7 +593,7 @@ Is that task something you could use a <em>loop</em> for or a <em>function</em> 
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="libraries">
-<h1>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7. </span>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h1>
 <p>Libraries are pre-written chunks of code designed to be integrated into projects for a specific purpose.  The idea is to keep people from having to reinvent the wheel every time they want to write a program.  When we encounter situations where a libary might be useful, we use the keyword <em>import</em> to tell the program that we want to use this pre-existing code.  As an example, in the next section you will use a library called Pandas which helps visualize data and make it easier to digest, which is very useful for us.  Because of this, we will import that code into this program simply by running the cell with the import that goes with that code.  Here is what you will see, only in commented code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#import pandas as pd</span>
 
@@ -575,7 +604,7 @@ Is that task something you could use a <em>loop</em> for or a <em>function</em> 
 <p>Most programming languages have libraries that allow you to import code this way, and it will save you a lot of time and allow you to quickly use many new functions that are highly polished.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="dataframes-and-pandas">
-<h1>DataFrames and Pandas<a class="headerlink" href="#dataframes-and-pandas" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">8. </span>DataFrames and Pandas<a class="headerlink" href="#dataframes-and-pandas" title="Permalink to this headline">¶</a></h1>
 <p>Now it is time to use what we have learned to start doing some data science.</p>
 <p>Pandas is the name of a library in which there are functions and tools for doing operations common in data analysis and data science. One particularly great feature is the DataFrame structure which allows us to work with an object similar to an Excel spreadsheet but with the flexibility and power of Python behind it.</p>
 <p>First we will need to import the Pandas library and create a DataFrame. DataFrames are can also be created when you import files (like CSV’s) or tables from a database (like SQL).</p>
@@ -611,7 +640,7 @@ Is that task something you could use a <em>loop</em> for or a <em>function</em> 
 </pre></div>
 </div>
 <div class="section" id="more-complex-data">
-<h2>More Complex Data<a class="headerlink" href="#more-complex-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.1. </span>More Complex Data<a class="headerlink" href="#more-complex-data" title="Permalink to this headline">¶</a></h2>
 <p>To look at slightly more complex data operations, we need more complex data.</p>
 <p>Below we have all the chapters from the Hobbit and Lord of the Rings books along with their word counts. Notice that each chapter is a list of information and then each of those list is an element in a larger list.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chapters</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;An Unexpected Party&#39;</span><span class="p">,</span><span class="mi">8638</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
@@ -719,7 +748,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </div>
 </div>
 <div class="section" id="groupby">
-<h2><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">GroupBy</a><a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2. </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">GroupBy</a><a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have data for each of the chapters, we can group them using groupby. This lets us do aggregate operations like “add all the wordcounts for each book” or “count how many chapters there are in each book”.</p>
 <p>Groupby is a powerful tool but if you don’t understand your data, it can quickly introduce errors.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;CollectionName&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -730,7 +759,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </div>
 </div>
 <div class="section" id="selecting-advanced-slicing">
-<h2>Selecting (Advanced Slicing)<a class="headerlink" href="#selecting-advanced-slicing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.3. </span>Selecting (Advanced Slicing)<a class="headerlink" href="#selecting-advanced-slicing" title="Permalink to this headline">¶</a></h2>
 <p>You can select slices of your dataframe using conditional logic as well. Conditional logic means determining if a condition is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> and often relies on operations like: equals <code class="docutils literal notranslate"><span class="pre">==</span></code>, not <code class="docutils literal notranslate"><span class="pre">!</span></code>, and <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, or <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
 </pre></div>
@@ -753,7 +782,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </div>
 </div>
 <div class="section" id="joining">
-<h2>Joining<a class="headerlink" href="#joining" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.4. </span>Joining<a class="headerlink" href="#joining" title="Permalink to this headline">¶</a></h2>
 <p>You can also merge 2 dataframes if you want. Merging allows you to combine datasets in new ways and is a great tool to have when working with complex datasets.</p>
 <p>First we need a second dataframe to work with. Here, we have made a dataframe with the publication year of each of of our Tolkien books.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
@@ -779,7 +808,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="plotting">
-<h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
 <p>Visualizing data is incredibly important when trying to convey findings. There are several libraries available for doing data visualization. Pandas has some built in plotting functionality, but we have provided access to MatPlotLib as well.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is only needed in this case because we wanted to show the names of the books. You could make a similar plot in Pandas.</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -792,7 +821,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </pre></div>
 </div>
 <div class="section" id="more-complex-plotting">
-<h2>More Complex Plotting<a class="headerlink" href="#more-complex-plotting" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>More Complex Plotting<a class="headerlink" href="#more-complex-plotting" title="Permalink to this headline">¶</a></h2>
 <p>Lastly, we can combine several of the things we have learned into a single plot. Here we can group each book together and then look at the word counts by chapter throughout the story.</p>
 <p>First, we want to come up with a way to step through the books in a linear way. We have provided a few ways to do this in increasing complexity.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple - add the collection number to the chapter number divided by 10</span>
@@ -819,7 +848,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="wrapping-up">
-<h1>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">10. </span>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this headline">¶</a></h1>
 <p>We covered:</p>
 <ul class="simple">
 <li><p>Basic Math</p></li>
@@ -855,7 +884,21 @@ Where the variable represents the value in each row and the opertaion of functio
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../book/04_github_and_initial_setup.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Introduction to GitHub and Getting Setup</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../book/08_project.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Semester Project</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
