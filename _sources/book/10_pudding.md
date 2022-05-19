@@ -1,6 +1,6 @@
 # The Pudding: Data Story Telling and Visualization
 
-We'd like each of you to go to [The Pudding](https://pudding.cool/) and read one of their data journalism pieces. We'll discuss each piece as a group afterwards.
+We'd like each of you to go to [The Pudding](https://pudding.cool/) and read one of their data journalism pieces. We'll discuss each piece as a group afterwards. More articles to check out - [The Pudding Cup](https://pudding.cool/process/pudding-cup-2021/)
 
 Pay special attention to:
 - Their Data
