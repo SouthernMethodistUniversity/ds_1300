@@ -7,7 +7,7 @@
 3. Set the fields to:
    * "Additional environment modules to load": `python/3`
    * "Custom module paths": Clear the contents if any
-   * "Custom environment settings": `source activate /hpc/classes/ds_1300`
+   * "Custom environment settings": `source activate ~/.conda/envs/ds_1300`
    * "Partition": Select any appropriate partition other than `htc`; recommend `development` or `standard-mem-s`
    * "Number of hours" `2`
    * "Number of nodes": `1`

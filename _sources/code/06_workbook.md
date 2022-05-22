@@ -6,9 +6,9 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.11.2
+      jupytext_version: 1.13.8
   kernelspec:
-    display_name: Python 3
+    display_name: Python 3 (ipykernel)
     language: python
     name: python3
 ---
@@ -208,7 +208,9 @@ y.compute()     # Time to compute the result
 
 ```python
 import numpy as np
+```
 
+```python
 %%time 
 x = np.random.normal(10, 0.1, size=(20000, 20000)) 
 y = x.mean(axis=0)[::100] 
@@ -219,7 +221,9 @@ y
 
 ```python
 import dask.array as da
+```
 
+```python
 %%time
 x = da.random.normal(10, 0.1, size=(20000, 20000), chunks=(1000, 1000))
 y = x.mean(axis=0)[::100] 

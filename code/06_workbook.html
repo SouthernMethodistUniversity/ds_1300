@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dask Arrays &#8212; DS 1300</title>
+    <title>29. Dask Arrays &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="30. Dask DataFrames" href="07_workbook.html" />
+    <link rel="prev" title="28. Dask Delayed" href="05_workbook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -193,6 +195,33 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 6
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/11_dask_initial_setup.html">
+   27. Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_workbook.html">
+   28. Dask Delayed
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   29. Dask Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_workbook.html">
+   30. Dask DataFrames
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -265,23 +294,24 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
-   Setup
+   29.1. Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#blocked-algorithms">
-   Blocked Algorithms
+   29.2. Blocked Algorithms
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-compute-the-mean-using-a-blocked-algorithm">
-     Exercise:  Compute the mean using a blocked algorithm
+     29.2.1. Exercise:  Compute the mean using a blocked algorithm
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dask-array-contains-these-algorithms">
+   29.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      dask.array
@@ -292,46 +322,46 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#performance-and-parallelism">
-   Performance and Parallelism
+   29.4. Performance and Parallelism
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example">
-     Example
+     29.4.1. Example
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#performance-comparison">
-     Performance comparison
+     29.4.2. Performance comparison
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-meteorological-data">
-     Exercise:  Meteorological data
+     29.4.3. Exercise:  Meteorological data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-subsample-and-store">
-     Exercise:  Subsample and store
+     29.4.4. Exercise:  Subsample and store
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-lennard-jones-potential">
-   Example: Lennard-Jones potential
+   29.5. Example: Lennard-Jones potential
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dask-version">
-     Dask version
+     29.5.1. Dask version
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#limitations">
-   Limitations
+   29.6. Limitations
   </a>
  </li>
 </ul>
@@ -356,23 +386,24 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
-   Setup
+   29.1. Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#blocked-algorithms">
-   Blocked Algorithms
+   29.2. Blocked Algorithms
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-compute-the-mean-using-a-blocked-algorithm">
-     Exercise:  Compute the mean using a blocked algorithm
+     29.2.1. Exercise:  Compute the mean using a blocked algorithm
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dask-array-contains-these-algorithms">
+   29.3.
    <code class="docutils literal notranslate">
     <span class="pre">
      dask.array
@@ -383,46 +414,46 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#performance-and-parallelism">
-   Performance and Parallelism
+   29.4. Performance and Parallelism
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example">
-     Example
+     29.4.1. Example
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#performance-comparison">
-     Performance comparison
+     29.4.2. Performance comparison
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-meteorological-data">
-     Exercise:  Meteorological data
+     29.4.3. Exercise:  Meteorological data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-subsample-and-store">
-     Exercise:  Subsample and store
+     29.4.4. Exercise:  Subsample and store
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-lennard-jones-potential">
-   Example: Lennard-Jones potential
+   29.5. Example: Lennard-Jones potential
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dask-version">
-     Dask version
+     29.5.1. Dask version
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#limitations">
-   Limitations
+   29.6. Limitations
   </a>
  </li>
 </ul>
@@ -435,7 +466,7 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="dask-arrays">
-<h1>Dask Arrays<a class="headerlink" href="#dask-arrays" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">29. </span>Dask Arrays<a class="headerlink" href="#dask-arrays" title="Permalink to this headline">¶</a></h1>
 <p>Dask array provides a parallel, larger-than-memory, n-dimensional array using blocked algorithms. Simply put: distributed Numpy.</p>
 <ul class="simple">
 <li><p><strong>Parallel</strong>: Uses all of the cores on your computer</p></li>
@@ -452,7 +483,7 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <li><p><a class="reference external" href="https://examples.dask.org/array.html">Array examples</a></p></li>
 </ul>
 <div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">29.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">n_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -460,7 +491,7 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </div>
 </div>
 <div class="section" id="blocked-algorithms">
-<h2>Blocked Algorithms<a class="headerlink" href="#blocked-algorithms" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">29.2. </span>Blocked Algorithms<a class="headerlink" href="#blocked-algorithms" title="Permalink to this headline">¶</a></h2>
 <p>A <em>blocked algorithm</em> executes on a large dataset by breaking it up into many small blocks.</p>
 <p>For example, consider taking the sum of a billion numbers.  We might instead break up the array into 1,000 chunks, each of size 1,000,000, take the sum of each chunk, and then take the sum of the intermediate sums.</p>
 <p>We achieve the intended result (one sum on one billion numbers) by performing many smaller results (one thousand sums on one million numbers each, followed by another sum of a thousand numbers.)</p>
@@ -492,7 +523,7 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </pre></div>
 </div>
 <div class="section" id="exercise-compute-the-mean-using-a-blocked-algorithm">
-<h3>Exercise:  Compute the mean using a blocked algorithm<a class="headerlink" href="#exercise-compute-the-mean-using-a-blocked-algorithm" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">29.2.1. </span>Exercise:  Compute the mean using a blocked algorithm<a class="headerlink" href="#exercise-compute-the-mean-using-a-blocked-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>Now that we’ve seen the simple example above, try doing a slightly more complicated problem. Compute the mean of the array, assuming for a moment that we don’t happen to already know how many elements are in the data.  You can do this by changing the code above with the following alterations:</p>
 <ol class="simple">
 <li><p>Compute the sum of each block</p></li>
@@ -515,7 +546,7 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </div>
 </div>
 <div class="section" id="dask-array-contains-these-algorithms">
-<h2><code class="docutils literal notranslate"><span class="pre">dask.array</span></code> contains these algorithms<a class="headerlink" href="#dask-array-contains-these-algorithms" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">29.3. </span><code class="docutils literal notranslate"><span class="pre">dask.array</span></code> contains these algorithms<a class="headerlink" href="#dask-array-contains-these-algorithms" title="Permalink to this headline">¶</a></h2>
 <p>Dask.array is a NumPy-like library that does these kinds of tricks to operate on large datasets that don’t fit into memory.  It extends beyond the linear problems discussed above to full N-Dimensional algorithms and a decent subset of the NumPy interface.</p>
 <p><strong>Create <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> object</strong></p>
 <p>You can create a <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> <code class="docutils literal notranslate"><span class="pre">Array</span></code> object with the <code class="docutils literal notranslate"><span class="pre">da.from_array</span></code> function.  This function accepts</p>
@@ -547,7 +578,7 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </div>
 </div>
 <div class="section" id="performance-and-parallelism">
-<h2>Performance and Parallelism<a class="headerlink" href="#performance-and-parallelism" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">29.4. </span>Performance and Parallelism<a class="headerlink" href="#performance-and-parallelism" title="Permalink to this headline">¶</a></h2>
 <p>In our first examples we used <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to walk through the array one block at a time.  For simple operations like <code class="docutils literal notranslate"><span class="pre">sum</span></code> this is optimal.  However for complex operations we may want to traverse through the array differently.  In particular we may want the following:</p>
 <ol class="simple">
 <li><p>Use multiple cores in parallel</p></li>
@@ -555,7 +586,7 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">Dask.array</span></code> translates your array operations into a graph of inter-related tasks with data dependencies between them.  Dask then executes this graph in parallel with multiple threads.  We’ll discuss more about this in the next section.</p>
 <div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">29.4.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Construct a 20000x20000 array of normally distributed random values broken up into 1000x1000 sized chunks</p></li>
 <li><p>Take the mean along one axis</p></li>
@@ -578,11 +609,12 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </div>
 </div>
 <div class="section" id="performance-comparison">
-<h3>Performance comparison<a class="headerlink" href="#performance-comparison" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">29.4.2. </span>Performance comparison<a class="headerlink" href="#performance-comparison" title="Permalink to this headline">¶</a></h3>
 <p><strong>NumPy: Needs gigabytes of memory</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="o">%%</span><span class="n">time</span> 
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span> 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">))</span> 
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[::</span><span class="mi">100</span><span class="p">]</span> 
 <span class="n">y</span>
@@ -590,8 +622,9 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </div>
 <p><strong>Dask Array: Needs megabytes of memory</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
-
-<span class="o">%%</span><span class="n">time</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">),</span> <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[::</span><span class="mi">100</span><span class="p">]</span> 
 <span class="n">y</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span> 
@@ -616,7 +649,7 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </ul>
 </div>
 <div class="section" id="exercise-meteorological-data">
-<h3>Exercise:  Meteorological data<a class="headerlink" href="#exercise-meteorological-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">29.4.3. </span>Exercise:  Meteorological data<a class="headerlink" href="#exercise-meteorological-data" title="Permalink to this headline">¶</a></h3>
 <p>There is 2GB of somewhat artifical weather data in HDF5 files in <code class="docutils literal notranslate"><span class="pre">data/weather-big/*.hdf5</span></code>.  We’ll use the <code class="docutils literal notranslate"><span class="pre">h5py</span></code> library to interact with this data and <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> to compute on it.</p>
 <p>Our goal is to visualize the average temperature on the surface of the Earth for this month.  This will require a mean over all of this data.  We’ll do this in the following steps</p>
 <ol class="simple">
@@ -671,7 +704,7 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </div>
 </div>
 <div class="section" id="exercise-subsample-and-store">
-<h3>Exercise:  Subsample and store<a class="headerlink" href="#exercise-subsample-and-store" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">29.4.4. </span>Exercise:  Subsample and store<a class="headerlink" href="#exercise-subsample-and-store" title="Permalink to this headline">¶</a></h3>
 <p>In the above exercise the result of our computation is small, so we can call <code class="docutils literal notranslate"><span class="pre">compute</span></code> safely.  Sometimes our result is still too large to fit into memory and we want to save it to disk.  In these cases you can use one of the following two functions</p>
 <ol>
 <li><p><code class="docutils literal notranslate"><span class="pre">da.store</span></code>: Store dask.array into any object that supports numpy setitem syntax, e.g.</p>
@@ -717,7 +750,7 @@ da.store(my_dask_array, output)
 </div>
 </div>
 <div class="section" id="example-lennard-jones-potential">
-<h2>Example: Lennard-Jones potential<a class="headerlink" href="#example-lennard-jones-potential" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">29.5. </span>Example: Lennard-Jones potential<a class="headerlink" href="#example-lennard-jones-potential" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Lennard-Jones_potential">Lennard-Jones potential</a> is used in particle simulations in physics, chemistry and engineering. It is highly parallelizable.</p>
 <p>First, we’ll run and profile the Numpy version on 7,000 particles.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -759,7 +792,7 @@ da.store(my_dask_array, output)
 </pre></div>
 </div>
 <div class="section" id="dask-version">
-<h3>Dask version<a class="headerlink" href="#dask-version" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">29.5.1. </span>Dask version<a class="headerlink" href="#dask-version" title="Permalink to this headline">¶</a></h3>
 <p>Here’s the Dask version. Only the <code class="docutils literal notranslate"><span class="pre">potential</span></code> function needs to be rewritten to best utilize Dask.</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">da.nansum</span></code> has been used over the full <span class="math notranslate nohighlight">\(NxN\)</span> distance matrix to improve parallel efficiency.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
@@ -786,7 +819,7 @@ da.store(my_dask_array, output)
 </div>
 </div>
 <div class="section" id="limitations">
-<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">29.6. </span>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
 <p>Dask Array does not implement the entire numpy interface.  Users expecting this
 will be disappointed.  Notably Dask Array has the following failings:</p>
 <ol class="simple">
@@ -843,7 +876,21 @@ laziness.  These would make excellent community contributions.</p></li>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="05_workbook.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">28. </span>Dask Delayed</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="07_workbook.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">30. </span>Dask DataFrames</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
