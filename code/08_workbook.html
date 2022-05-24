@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Storage &#8212; DS 1300</title>
+    <title>32. Data Storage &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="33. Ordinary Least Squares" href="09_workbook.html" />
+    <link rel="prev" title="31. Inference" href="../book/12_inference.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -218,6 +220,72 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 7
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/12_inference.html">
+   31. Inference
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   32. Data Storage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_workbook.html">
+   33. Ordinary Least Squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10_workbook.html">
+   34. Prediction (out of sample)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_workbook.html">
+   35. Quantile regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_workbook.html">
+   36. Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13_workbook.html">
+   37. Optimization Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/13_art.html">
+   38. Art
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14_workbook.html">
+   39. Intermediate TextMining with Python
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -290,27 +358,22 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#read-csv">
-   Read CSV
+   32.1. Read CSV
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#write-to-hdf5">
-     Write to HDF5
+     32.1.1. Write to HDF5
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#compare-csv-to-hdf5-speeds">
-     Compare CSV to HDF5 speeds
+     32.1.2. Compare CSV to HDF5 speeds
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#store-text-efficiently-with-categoricals">
-     1.  Store text efficiently with categoricals
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
+     32.1.3. 1.  Store text efficiently with categoricals
     </a>
    </li>
   </ul>
@@ -337,27 +400,22 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#read-csv">
-   Read CSV
+   32.1. Read CSV
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#write-to-hdf5">
-     Write to HDF5
+     32.1.1. Write to HDF5
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#compare-csv-to-hdf5-speeds">
-     Compare CSV to HDF5 speeds
+     32.1.2. Compare CSV to HDF5 speeds
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#store-text-efficiently-with-categoricals">
-     1.  Store text efficiently with categoricals
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
+     32.1.3. 1.  Store text efficiently with categoricals
     </a>
    </li>
   </ul>
@@ -372,7 +430,7 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="data-storage">
-<h1>Data Storage<a class="headerlink" href="#data-storage" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">32. </span>Data Storage<a class="headerlink" href="#data-storage" title="Permalink to this headline">¶</a></h1>
 <p>Efficient storage can dramatically improve performance, particularly when operating repeatedly from disk.</p>
 <p>Decompressing text and parsing CSV files is expensive.  One of the most effective strategies with medium data is to use a binary storage format like HDF5.  Often the performance gains from doing this is sufficient so that you can switch back to using Pandas again instead of using <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code>.</p>
 <p>In this section we’ll learn how to efficiently arrange and store your datasets in on-disk binary formats.  We’ll use the following:</p>
@@ -387,7 +445,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>A combination of binary formats, column storage, and partitioned data turns one second wait times into 80ms wait times.</p></li>
 </ol>
 <div class="section" id="read-csv">
-<h2>Read CSV<a class="headerlink" href="#read-csv" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">32.1. </span>Read CSV<a class="headerlink" href="#read-csv" title="Permalink to this headline">¶</a></h2>
 <p>First we read our csv data as before.</p>
 <p>CSV and other text-based file formats are the most common storage for data from many sources, because they require minimal pre-processing, can be written line-by-line and are human-readable. Since Pandas’ <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> is well-optimized, CSVs are a reasonable input, but far from optimized, since reading required extensive text parsing.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -401,7 +459,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="section" id="write-to-hdf5">
-<h3>Write to HDF5<a class="headerlink" href="#write-to-hdf5" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">32.1.1. </span>Write to HDF5<a class="headerlink" href="#write-to-hdf5" title="Permalink to this headline">¶</a></h3>
 <p>HDF5 and netCDF are binary array formats very commonly used in the scientific realm.</p>
 <p>Pandas contains a specialized HDF5 format, <code class="docutils literal notranslate"><span class="pre">HDFStore</span></code>.  The <code class="docutils literal notranslate"><span class="pre">dd.DataFrame.to_hdf</span></code> method works exactly like the <code class="docutils literal notranslate"><span class="pre">pd.DataFrame.to_hdf</span></code> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../work&#39;</span><span class="p">,</span> <span class="s1">&#39;accounts.h5&#39;</span><span class="p">)</span>
@@ -419,7 +477,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="compare-csv-to-hdf5-speeds">
-<h3>Compare CSV to HDF5 speeds<a class="headerlink" href="#compare-csv-to-hdf5-speeds" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">32.1.2. </span>Compare CSV to HDF5 speeds<a class="headerlink" href="#compare-csv-to-hdf5-speeds" title="Permalink to this headline">¶</a></h3>
 <p>We do a simple computation that requires reading a column of our dataset and compare performance between CSV files and our newly created HDF5 file.  Which do you expect to be faster?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">df_csv</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 </pre></div>
@@ -435,7 +493,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 </div>
 <div class="section" id="store-text-efficiently-with-categoricals">
-<h3>1.  Store text efficiently with categoricals<a class="headerlink" href="#store-text-efficiently-with-categoricals" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">32.1.3. </span>1.  Store text efficiently with categoricals<a class="headerlink" href="#store-text-efficiently-with-categoricals" title="Permalink to this headline">¶</a></h3>
 <p>We can use Pandas categoricals to replace our object dtypes with a numerical representation.  This takes a bit more time up front, but results in better performance.</p>
 <p>More on categoricals at the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/categorical.html">pandas docs</a> and <a class="reference external" href="http://matthewrocklin.com/blog/work/2015/06/18/Categoricals">this blogpost</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Categorize data, then store in HDFStore</span>
@@ -453,35 +511,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>This is now definitely faster than before.  This tells us that it’s not only the file type that we use but also how we represent our variables that influences storage performance.</p>
 <p>How does the performance of reading depend on the scheduler we use? You can try this with threaded, processes and distributed.</p>
-<p>However this can still be better.  We had to read all of the columns (<code class="docutils literal notranslate"><span class="pre">names</span></code> and <code class="docutils literal notranslate"><span class="pre">amount</span></code>) in order to compute the sum of one (<code class="docutils literal notranslate"><span class="pre">amount</span></code>).  We’ll improve further on this with <code class="docutils literal notranslate"><span class="pre">parquet</span></code>, an on-disk column-store.  First though we learn about how to set an index in a dask.dataframe.</p>
-</div>
-<div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">fastparquet</span></code> is a library for interacting with parquet-format files, which are a very common format in the Big Data ecosystem, and used by tools such as Hadoop, Spark and Impala.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../work&#39;</span><span class="p">,</span> <span class="s1">&#39;accounts.parquet&#39;</span><span class="p">)</span>
-<span class="n">df_csv</span><span class="o">.</span><span class="n">categorize</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;names&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;has_nulls&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;fastparquet&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Investigate the file structure in the resultant new directory - what do you suppose those files are for?</p>
-<p><code class="docutils literal notranslate"><span class="pre">to_parquet</span></code> comes with many options, such as compression, whether to explicitly write NULLs information (not necessary in this case), and how to encode strings. You can experiment with these, to see what effect they have on the file size and the processing times, below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">../</span><span class="n">work</span><span class="o">/</span><span class="n">accounts</span><span class="o">.</span><span class="n">parquet</span><span class="o">/</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_p</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
-<span class="c1"># note that column names shows the type of the values - we could</span>
-<span class="c1"># choose to load as a categorical column or not.</span>
-<span class="n">df_p</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-</div>
-<p>Rerun the sum computation above for this version of the data, and time how long it takes. You may want to try this more than once - it is common for many libraries to do various setup work when called for the first time.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">df_p</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>When archiving data, it is common to sort and partition by a column with unique identifiers, to facilitate fast look-ups later. For this data, that column is <code class="docutils literal notranslate"><span class="pre">id</span></code>. Time how long it takes to retrieve the rows corresponding to <code class="docutils literal notranslate"><span class="pre">id==100</span></code> from the raw CSV, from HDF5 and parquet versions, and finally from a new parquet version written after applying <code class="docutils literal notranslate"><span class="pre">set_index('id')</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_p.set_index(&#39;id&#39;).to_parquet(...)</span>
-</pre></div>
-</div>
-<p>Adapted from <a class="reference external" href="https://tutorial.dask.org">Dask Tutorial</a>.</p>
 </div>
 </div>
 </div>
@@ -510,7 +539,21 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../book/12_inference.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">31. </span>Inference</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="09_workbook.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">33. </span>Ordinary Least Squares</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

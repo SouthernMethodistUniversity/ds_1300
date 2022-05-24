@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inference &#8212; DS 1300</title>
+    <title>31. Inference &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="32. Data Storage" href="../code/08_workbook.html" />
+    <link rel="prev" title="30. Dask DataFrames" href="../code/07_workbook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -218,6 +220,72 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 7
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   31. Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../code/08_workbook.html">
+   32. Data Storage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../code/09_workbook.html">
+   33. Ordinary Least Squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../code/10_workbook.html">
+   34. Prediction (out of sample)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../code/11_workbook.html">
+   35. Quantile regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../code/12_workbook.html">
+   36. Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../code/13_workbook.html">
+   37. Optimization Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="13_art.html">
+   38. Art
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../code/14_workbook.html">
+   39. Intermediate TextMining with Python
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -290,6 +358,7 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hello-world-discussion">
+   31.1.
    <em>
     Hello World
    </em>
@@ -298,12 +367,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cars">
-     Cars
+     31.1.1. Cars
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#crime">
-     Crime
+     31.1.2. Crime
     </a>
    </li>
   </ul>
@@ -330,6 +399,7 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hello-world-discussion">
+   31.1.
    <em>
     Hello World
    </em>
@@ -338,12 +408,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cars">
-     Cars
+     31.1.1. Cars
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#crime">
-     Crime
+     31.1.2. Crime
     </a>
    </li>
   </ul>
@@ -358,11 +428,11 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="inference">
-<h1>Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">31. </span>Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="hello-world-discussion">
-<h2><em>Hello World</em> Discussion<a class="headerlink" href="#hello-world-discussion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">31.1. </span><em>Hello World</em> Discussion<a class="headerlink" href="#hello-world-discussion" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cars">
-<h3>Cars<a class="headerlink" href="#cars" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.1.1. </span>Cars<a class="headerlink" href="#cars" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>What happened at the first DARPA autonomous vehicle competition?</p></li>
 <li><p>What types are information sources are used by autonomous vehicles today?</p></li>
@@ -408,7 +478,7 @@ the world is constrained to make them look autonomous.” – Jack Stilgoe</p>
 </ul>
 </div>
 <div class="section" id="crime">
-<h3>Crime<a class="headerlink" href="#crime" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.1.2. </span>Crime<a class="headerlink" href="#crime" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>What did Kim Rossmo and André-Michel Guerry discover about crime?</p></li>
 <li><p>What what Operation Lynx?</p></li>
@@ -502,7 +572,21 @@ price?” – Gary Marx, MIT Professor of Sociology</p>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../code/07_workbook.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">30. </span>Dask DataFrames</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../code/08_workbook.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">32. </span>Data Storage</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

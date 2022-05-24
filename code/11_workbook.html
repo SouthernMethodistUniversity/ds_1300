@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quantile regression &#8212; DS 1300</title>
+    <title>35. Quantile regression &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="36. Data Visualization" href="12_workbook.html" />
+    <link rel="prev" title="34. Prediction (out of sample)" href="10_workbook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -218,6 +220,72 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 7
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/12_inference.html">
+   31. Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_workbook.html">
+   32. Data Storage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_workbook.html">
+   33. Ordinary Least Squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10_workbook.html">
+   34. Prediction (out of sample)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   35. Quantile regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_workbook.html">
+   36. Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13_workbook.html">
+   37. Optimization Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/13_art.html">
+   38. Art
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14_workbook.html">
+   39. Intermediate TextMining with Python
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -290,32 +358,32 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
-   Setup
+   35.1. Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#least-absolute-deviation">
-   Least Absolute Deviation
+   35.2. Least Absolute Deviation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizing-the-results">
-   Visualizing the results
+   35.3. Visualizing the results
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#prepare-data-for-plotting">
-     Prepare data for plotting
+     35.3.1. Prepare data for plotting
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#first-plot">
-     First plot
+     35.3.2. First plot
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#second-plot">
-     Second plot
+     35.3.3. Second plot
     </a>
    </li>
   </ul>
@@ -342,32 +410,32 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
-   Setup
+   35.1. Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#least-absolute-deviation">
-   Least Absolute Deviation
+   35.2. Least Absolute Deviation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualizing-the-results">
-   Visualizing the results
+   35.3. Visualizing the results
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#prepare-data-for-plotting">
-     Prepare data for plotting
+     35.3.1. Prepare data for plotting
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#first-plot">
-     First plot
+     35.3.2. First plot
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#second-plot">
-     Second plot
+     35.3.3. Second plot
     </a>
    </li>
   </ul>
@@ -382,14 +450,14 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="quantile-regression">
-<h1>Quantile regression<a class="headerlink" href="#quantile-regression" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">35. </span>Quantile regression<a class="headerlink" href="#quantile-regression" title="Permalink to this headline">¶</a></h1>
 <p>This example page shows how to use <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>’ <code class="docutils literal notranslate"><span class="pre">QuantReg</span></code> class to replicate parts of the analysis published in</p>
 <ul class="simple">
 <li><p>Koenker, Roger and Kevin F. Hallock. “Quantile Regression”. Journal of Economic Perspectives, Volume 15, Number 4, Fall 2001, Pages 143–156</p></li>
 </ul>
 <p>We are interested in the relationship between income and expenditures on food for a sample of working class Belgian households in 1857 (the Engel data).</p>
 <div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">35.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>We first need to load some modules and to retrieve the data. Conveniently, the Engel dataset is shipped with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </pre></div>
@@ -406,7 +474,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="least-absolute-deviation">
-<h2>Least Absolute Deviation<a class="headerlink" href="#least-absolute-deviation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">35.2. </span>Least Absolute Deviation<a class="headerlink" href="#least-absolute-deviation" title="Permalink to this headline">¶</a></h2>
 <p>The LAD model is a special case of quantile regression where q=0.5</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mod</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">quantreg</span><span class="p">(</span><span class="s1">&#39;foodexp ~ income&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
@@ -415,10 +483,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="visualizing-the-results">
-<h2>Visualizing the results<a class="headerlink" href="#visualizing-the-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">35.3. </span>Visualizing the results<a class="headerlink" href="#visualizing-the-results" title="Permalink to this headline">¶</a></h2>
 <p>We estimate the quantile regression model for many quantiles between .05 and .95, and compare best fit line from each of these models to Ordinary Least Squares results.</p>
 <div class="section" id="prepare-data-for-plotting">
-<h3>Prepare data for plotting<a class="headerlink" href="#prepare-data-for-plotting" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">35.3.1. </span>Prepare data for plotting<a class="headerlink" href="#prepare-data-for-plotting" title="Permalink to this headline">¶</a></h3>
 <p>For convenience, we place the quantile regression results in a Pandas DataFrame, and the OLS results in a dictionary.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quantiles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">.05</span><span class="p">,</span> <span class="mf">.96</span><span class="p">,</span> <span class="mf">.1</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">fit_model</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
@@ -442,7 +510,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="first-plot">
-<h3>First plot<a class="headerlink" href="#first-plot" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">35.3.2. </span>First plot<a class="headerlink" href="#first-plot" title="Permalink to this headline">¶</a></h3>
 <p>This plot compares best fit lines for 10 quantile regression models to the least squares fit. As Koenker and Hallock (2001) point out, we see that:</p>
 <ol class="simple">
 <li><p>Food expenditure increases with income</p></li>
@@ -471,7 +539,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="second-plot">
-<h3>Second plot<a class="headerlink" href="#second-plot" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">35.3.3. </span>Second plot<a class="headerlink" href="#second-plot" title="Permalink to this headline">¶</a></h3>
 <p>The dotted black lines form 95% point-wise confidence band around 10 quantile regression estimates (solid black line). The red lines represent OLS regression results along with their 95% confidence interval.</p>
 <p>In most cases, the quantile regression point estimates lie outside the OLS confidence interval, which suggests that the effect of income on food expenditure may not be constant across the distribution.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -515,7 +583,21 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="10_workbook.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">34. </span>Prediction (out of sample)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="12_workbook.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">36. </span>Data Visualization</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

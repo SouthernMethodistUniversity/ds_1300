@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Optimization Introduction &#8212; DS 1300</title>
+    <title>37. Optimization Introduction &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="38. Art" href="../book/13_art.html" />
+    <link rel="prev" title="36. Data Visualization" href="12_workbook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -220,6 +222,72 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 7
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/12_inference.html">
+   31. Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_workbook.html">
+   32. Data Storage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_workbook.html">
+   33. Ordinary Least Squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10_workbook.html">
+   34. Prediction (out of sample)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_workbook.html">
+   35. Quantile regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 8
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_workbook.html">
+   36. Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   37. Optimization Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/13_art.html">
+   38. Art
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14_workbook.html">
+   39. Intermediate TextMining with Python
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -292,41 +360,41 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#knapsack-problems">
-   Knapsack Problems
+   37.1. Knapsack Problems
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#greedy-algorithms">
-     Greedy Algorithms
+     37.1.1. Greedy Algorithms
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#optimal-solution">
-     Optimal Solution
+     37.1.2. Optimal Solution
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dynamic-programming">
-   Dynamic Programming
+   37.2. Dynamic Programming
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fibonacci-sequences">
-     Fibonacci Sequences
+     37.2.1. Fibonacci Sequences
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#solving-the-0-1-knapsack-problem-using-dynamic-programming">
-     Solving the 0/1 Knapsack Problem Using Dynamic Programming
+     37.2.2. Solving the 0/1 Knapsack Problem Using Dynamic Programming
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   References
+   37.3. References
   </a>
  </li>
 </ul>
@@ -351,41 +419,41 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#knapsack-problems">
-   Knapsack Problems
+   37.1. Knapsack Problems
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#greedy-algorithms">
-     Greedy Algorithms
+     37.1.1. Greedy Algorithms
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#optimal-solution">
-     Optimal Solution
+     37.1.2. Optimal Solution
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dynamic-programming">
-   Dynamic Programming
+   37.2. Dynamic Programming
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fibonacci-sequences">
-     Fibonacci Sequences
+     37.2.1. Fibonacci Sequences
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#solving-the-0-1-knapsack-problem-using-dynamic-programming">
-     Solving the 0/1 Knapsack Problem Using Dynamic Programming
+     37.2.2. Solving the 0/1 Knapsack Problem Using Dynamic Programming
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   References
+   37.3. References
   </a>
  </li>
 </ul>
@@ -398,17 +466,17 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="optimization-introduction">
-<h1>Optimization Introduction<a class="headerlink" href="#optimization-introduction" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">37. </span>Optimization Introduction<a class="headerlink" href="#optimization-introduction" title="Permalink to this headline">¶</a></h1>
 <p>Optimization problems attempt to solve for the optimal solution to a given problem that in general have:</p>
 <ol class="simple">
 <li><p>An <strong>objective</strong> function that should be taken to its maximum or minimum.</p></li>
 <li><p>A <strong>set of constraints</strong> that set boundaries for the problem.</p></li>
 </ol>
 <div class="section" id="knapsack-problems">
-<h2>Knapsack Problems<a class="headerlink" href="#knapsack-problems" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">37.1. </span>Knapsack Problems<a class="headerlink" href="#knapsack-problems" title="Permalink to this headline">¶</a></h2>
 <p>A very common class of optimiztion problems are know generally known as <strong>knapsack problems</strong>. At their most basic these problems have datasets composed items with values and weights (costs). Examples could include a grocery shopping list maximizing what you can get for a certain amount of money or diversifying a stock portfolio to maximize the total value, or even what burglar should choose to carry out a house.</p>
 <div class="section" id="greedy-algorithms">
-<h3>Greedy Algorithms<a class="headerlink" href="#greedy-algorithms" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">37.1.1. </span>Greedy Algorithms<a class="headerlink" href="#greedy-algorithms" title="Permalink to this headline">¶</a></h3>
 <p>Greedy algorithms find approximate solutions, but are generaly fast at providing <em>a</em> solution. However, the solution provided may not be the optimal solution.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -504,7 +572,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="optimal-solution">
-<h3>Optimal Solution<a class="headerlink" href="#optimal-solution" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">37.1.2. </span>Optimal Solution<a class="headerlink" href="#optimal-solution" title="Permalink to this headline">¶</a></h3>
 <p>The optimization case above is specifically called a <strong>0/1 knapsack problem</strong> and is defined by:</p>
 <ol class="simple">
 <li><p>Each item has a value and a weight.</p></li>
@@ -578,10 +646,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="dynamic-programming">
-<h2>Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">37.2. </span>Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="Permalink to this headline">¶</a></h2>
 <p>Broadly, dynamic programming is a set of programming methods for solving problems where the problem has the characteristics of <strong>optimal substructure</strong> and <strong>overlapping subproblems</strong>. The former means that the problem can be decomposed into smaller problems and that the finding the optimal solutions to the smaller problems will lead to a global optimal solution for the problem. The latter means that the smaller problems are all formulated in the same way, i.e. they are are all the same.</p>
 <div class="section" id="fibonacci-sequences">
-<h3>Fibonacci Sequences<a class="headerlink" href="#fibonacci-sequences" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">37.2.1. </span>Fibonacci Sequences<a class="headerlink" href="#fibonacci-sequences" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Assumes n is an int &gt;= 0</span>
 <span class="sd">       Returns Fibonacci of n&quot;&quot;&quot;</span>
@@ -618,7 +686,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="solving-the-0-1-knapsack-problem-using-dynamic-programming">
-<h3>Solving the 0/1 Knapsack Problem Using Dynamic Programming<a class="headerlink" href="#solving-the-0-1-knapsack-problem-using-dynamic-programming" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">37.2.2. </span>Solving the 0/1 Knapsack Problem Using Dynamic Programming<a class="headerlink" href="#solving-the-0-1-knapsack-problem-using-dynamic-programming" title="Permalink to this headline">¶</a></h3>
 <p>Thinking back on our previous attempts to solve our knapsack problem, the greedy algorithm finds a solution in <span class="math notranslate nohighlight">\(log\ n\)</span> time, but that solution may not be optimal, and the brute-force, exhaustive alogirhtm would give use an optimal solution, but in <span class="math notranslate nohighlight">\(O(n2^{n})\)</span>, i.e. exponetial time. Is there a better way?</p>
 <p>Using dynamic programming methods we can optimally search through the space of possible solutions as if it were a tree. In the case of the 0/1 knapsack problem, the tree is what is called a <strong>rooted binary tree</strong>, which is an acyclic directed graph with the following properties:</p>
 <ol class="simple">
@@ -710,7 +778,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">37.3. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Example code derived from <a class="reference external" href="https://github.com/guttag/Intro-to-Computation-and-Programming">Introduction to Computation and Programming Using Python</a>.</p></li>
 <li><p>Example data derived from <a class="reference external" href="https://github.com/dwave-examples/knapsack">D-Wave Examples</a>.</p></li>
@@ -742,7 +810,21 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="12_workbook.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">36. </span>Data Visualization</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../book/13_art.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">38. </span>Art</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

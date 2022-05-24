@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prediction (out of sample) &#8212; DS 1300</title>
+    <title>34. Prediction (out of sample) &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="35. Quantile regression" href="11_workbook.html" />
+    <link rel="prev" title="33. Ordinary Least Squares" href="09_workbook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -218,6 +220,72 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 7
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/12_inference.html">
+   31. Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_workbook.html">
+   32. Data Storage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_workbook.html">
+   33. Ordinary Least Squares
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   34. Prediction (out of sample)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11_workbook.html">
+   35. Quantile regression
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12_workbook.html">
+   36. Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13_workbook.html">
+   37. Optimization Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Day 9
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/13_art.html">
+   38. Art
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14_workbook.html">
+   39. Intermediate TextMining with Python
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -290,32 +358,32 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#artificial-data">
-   Artificial data
+   34.1. Artificial data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#estimation">
-   Estimation
+   34.2. Estimation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#in-sample-prediction">
-   In-sample prediction
+   34.3. In-sample prediction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-new-sample-of-explanatory-variables-xnew-predict-and-plot">
-   Create a new sample of explanatory variables Xnew, predict and plot
+   34.4. Create a new sample of explanatory variables Xnew, predict and plot
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot-comparison">
-   Plot comparison
+   34.5. Plot comparison
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#predicting-with-formulas">
-   Predicting with Formulas
+   34.6. Predicting with Formulas
   </a>
  </li>
 </ul>
@@ -340,32 +408,32 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#artificial-data">
-   Artificial data
+   34.1. Artificial data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#estimation">
-   Estimation
+   34.2. Estimation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#in-sample-prediction">
-   In-sample prediction
+   34.3. In-sample prediction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-new-sample-of-explanatory-variables-xnew-predict-and-plot">
-   Create a new sample of explanatory variables Xnew, predict and plot
+   34.4. Create a new sample of explanatory variables Xnew, predict and plot
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot-comparison">
-   Plot comparison
+   34.5. Plot comparison
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#predicting-with-formulas">
-   Predicting with Formulas
+   34.6. Predicting with Formulas
   </a>
  </li>
 </ul>
@@ -378,7 +446,7 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="prediction-out-of-sample">
-<h1>Prediction (out of sample)<a class="headerlink" href="#prediction-out-of-sample" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">34. </span>Prediction (out of sample)<a class="headerlink" href="#prediction-out-of-sample" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </pre></div>
 </div>
@@ -392,7 +460,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="section" id="artificial-data">
-<h2>Artificial data<a class="headerlink" href="#artificial-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.1. </span>Artificial data<a class="headerlink" href="#artificial-data" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nsample</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.25</span>
 <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">nsample</span><span class="p">)</span>
@@ -405,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="estimation">
-<h2>Estimation<a class="headerlink" href="#estimation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.2. </span>Estimation<a class="headerlink" href="#estimation" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">olsmod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
 <span class="n">olsres</span> <span class="o">=</span> <span class="n">olsmod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">olsres</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
@@ -413,14 +481,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="in-sample-prediction">
-<h2>In-sample prediction<a class="headerlink" href="#in-sample-prediction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.3. </span>In-sample prediction<a class="headerlink" href="#in-sample-prediction" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ypred</span> <span class="o">=</span> <span class="n">olsres</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ypred</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-a-new-sample-of-explanatory-variables-xnew-predict-and-plot">
-<h2>Create a new sample of explanatory variables Xnew, predict and plot<a class="headerlink" href="#create-a-new-sample-of-explanatory-variables-xnew-predict-and-plot" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.4. </span>Create a new sample of explanatory variables Xnew, predict and plot<a class="headerlink" href="#create-a-new-sample-of-explanatory-variables-xnew-predict-and-plot" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x1n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">20.5</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">Xnew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">x1n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x1n</span><span class="p">),</span> <span class="p">(</span><span class="n">x1n</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">Xnew</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">Xnew</span><span class="p">)</span>
@@ -430,7 +498,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="plot-comparison">
-<h2>Plot comparison<a class="headerlink" href="#plot-comparison" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.5. </span>Plot comparison<a class="headerlink" href="#plot-comparison" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -442,7 +510,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="predicting-with-formulas">
-<h2>Predicting with Formulas<a class="headerlink" href="#predicting-with-formulas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.6. </span>Predicting with Formulas<a class="headerlink" href="#predicting-with-formulas" title="Permalink to this headline">¶</a></h2>
 <p>Using formulas can make both estimation and prediction a lot easier</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
 
@@ -486,7 +554,21 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="09_workbook.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">33. </span>Ordinary Least Squares</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="11_workbook.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">35. </span>Quantile regression</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
