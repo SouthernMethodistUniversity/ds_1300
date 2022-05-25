@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GeoPandas and Mapping in Python &#8212; DS 1300</title>
+    <title>39. GeoPandas and Mapping in Python &#8212; DS 1300</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="40. Optimization Introduction" href="13_workbook.html" />
+    <link rel="prev" title="38. Data Visualization" href="12_workbook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -260,20 +262,25 @@ const thebe_selector_output = ".output, .cell_output"
   Day 8
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="12_workbook.html">
    38. Data Visualization
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   39. GeoPandas and Mapping in Python
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="13_workbook.html">
-   39. Optimization Introduction
+   40. Optimization Introduction
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_assignment.html">
-   40. Data Visualization
+   41. Data Visualization
   </a>
  </li>
 </ul>
@@ -285,12 +292,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../book/13_art.html">
-   41. Art
+   42. Art
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="14_workbook.html">
-   42. Intermediate TextMining with Python
+   43. Intermediate TextMining with Python
   </a>
  </li>
 </ul>
@@ -366,113 +373,113 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#getting-started-boroughs-of-nyc">
-   Getting Started - Boroughs of NYC
+   39.1. Getting Started - Boroughs of NYC
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reading-files">
-     Reading Files
+     39.1.1. Reading Files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#writing-files">
-     Writing Files
+     39.1.2. Writing Files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getting-features">
-     Getting Features
+     39.1.3. Getting Features
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#measuring-distance">
-     Measuring Distance
+     39.1.4. Measuring Distance
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#making-maps">
-   Making Maps
+   39.2. Making Maps
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#modifying-polygons">
-     Modifying Polygons
+     39.2.1. Modifying Polygons
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#buffering">
-     Buffering
+     39.2.2. Buffering
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#geometry-relations">
-   Geometry Relations
+   39.3. Geometry Relations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-on-mapping">
-   More on Mapping
+   39.4. More on Mapping
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-global-data">
-     Load Global Data
+     39.4.1. Load Global Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#choropleth-maps">
-     Choropleth Maps
+     39.4.2. Choropleth Maps
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-legends">
-     Adding Legends
+     39.4.3. Adding Legends
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-colors">
-     Adding Colors
+     39.4.4. Adding Colors
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#missing-data">
-     Missing Data
+     39.4.5. Missing Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#other-customizations">
-     Other Customizations
+     39.4.6. Other Customizations
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#maps-with-layers">
-   Maps with Layers
+   39.5. Maps with Layers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-pandas-and-geopandas">
-   Using Pandas and GeoPandas
+   39.6. Using Pandas and GeoPandas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#read-in-shape-file">
-     Read in Shape File
+     39.6.1. Read in Shape File
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-pandas">
-     Load Pandas
+     39.6.2. Load Pandas
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#merge-pandas-and-geopandas">
-     Merge Pandas and GeoPandas
+     39.6.3. Merge Pandas and GeoPandas
     </a>
    </li>
   </ul>
@@ -499,113 +506,113 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#getting-started-boroughs-of-nyc">
-   Getting Started - Boroughs of NYC
+   39.1. Getting Started - Boroughs of NYC
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reading-files">
-     Reading Files
+     39.1.1. Reading Files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#writing-files">
-     Writing Files
+     39.1.2. Writing Files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getting-features">
-     Getting Features
+     39.1.3. Getting Features
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#measuring-distance">
-     Measuring Distance
+     39.1.4. Measuring Distance
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#making-maps">
-   Making Maps
+   39.2. Making Maps
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#modifying-polygons">
-     Modifying Polygons
+     39.2.1. Modifying Polygons
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#buffering">
-     Buffering
+     39.2.2. Buffering
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#geometry-relations">
-   Geometry Relations
+   39.3. Geometry Relations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-on-mapping">
-   More on Mapping
+   39.4. More on Mapping
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-global-data">
-     Load Global Data
+     39.4.1. Load Global Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#choropleth-maps">
-     Choropleth Maps
+     39.4.2. Choropleth Maps
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-legends">
-     Adding Legends
+     39.4.3. Adding Legends
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-colors">
-     Adding Colors
+     39.4.4. Adding Colors
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#missing-data">
-     Missing Data
+     39.4.5. Missing Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#other-customizations">
-     Other Customizations
+     39.4.6. Other Customizations
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#maps-with-layers">
-   Maps with Layers
+   39.5. Maps with Layers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-pandas-and-geopandas">
-   Using Pandas and GeoPandas
+   39.6. Using Pandas and GeoPandas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#read-in-shape-file">
-     Read in Shape File
+     39.6.1. Read in Shape File
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-pandas">
-     Load Pandas
+     39.6.2. Load Pandas
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#merge-pandas-and-geopandas">
-     Merge Pandas and GeoPandas
+     39.6.3. Merge Pandas and GeoPandas
     </a>
    </li>
   </ul>
@@ -620,10 +627,10 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="geopandas-and-mapping-in-python">
-<h1>GeoPandas and Mapping in Python<a class="headerlink" href="#geopandas-and-mapping-in-python" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">39. </span>GeoPandas and Mapping in Python<a class="headerlink" href="#geopandas-and-mapping-in-python" title="Permalink to this headline">¶</a></h1>
 <p>A large portion of this tutorial was derived from the GeoPandas <a class="reference external" href="https://geopandas.org/en/stable/docs/user_guide/mapping.html">user guide</a> and <a class="reference external" href="https://geopandas.org/en/stable/getting_started/introduction.html">introduction</a>.</p>
 <div class="section" id="getting-started-boroughs-of-nyc">
-<h2>Getting Started - Boroughs of NYC<a class="headerlink" href="#getting-started-boroughs-of-nyc" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">39.1. </span>Getting Started - Boroughs of NYC<a class="headerlink" href="#getting-started-boroughs-of-nyc" title="Permalink to this headline">¶</a></h2>
 <p>One commmon way to visualize and interact with data is to use spatial information in the data to generate maps. In order to do that, we need to build out shapes (called geometries) in our data set.</p>
 <p>GeoPandas is an extension of pandas that allows us to include functionality for working with these geometries and perform analyses using that data.</p>
 <p>To start we need some data. In this tutorial, we’ll use a few built in data sets but we will also load data from external shape files.</p>
@@ -633,7 +640,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="section" id="reading-files">
-<h3>Reading Files<a class="headerlink" href="#reading-files" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.1.1. </span>Reading Files<a class="headerlink" href="#reading-files" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path_to_data</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">&quot;nybb&quot;</span><span class="p">)</span>
 <span class="n">gdf</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">path_to_data</span><span class="p">)</span>
 <span class="n">gdf</span>
@@ -641,13 +648,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="writing-files">
-<h3>Writing Files<a class="headerlink" href="#writing-files" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.1.2. </span>Writing Files<a class="headerlink" href="#writing-files" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;my_file.geojson&quot;</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;GeoJSON&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="getting-features">
-<h3>Getting Features<a class="headerlink" href="#getting-features" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.1.3. </span>Getting Features<a class="headerlink" href="#getting-features" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;BoroName&quot;</span><span class="p">)</span> <span class="c1">#resetting the name of the boroughs as the index</span>
 </pre></div>
 </div>
@@ -668,7 +675,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="measuring-distance">
-<h3>Measuring Distance<a class="headerlink" href="#measuring-distance" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.1.4. </span>Measuring Distance<a class="headerlink" href="#measuring-distance" title="Permalink to this headline">¶</a></h3>
 <p>Distance from the first point in the data to the centroid</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_point</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;centroid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;centroid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">first_point</span><span class="p">)</span>
@@ -682,7 +689,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="making-maps">
-<h2>Making Maps<a class="headerlink" href="#making-maps" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">39.2. </span>Making Maps<a class="headerlink" href="#making-maps" title="Permalink to this headline">¶</a></h2>
 <p>GeoPandas can generate maps based on the geometries in the dataset.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -705,7 +712,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="section" id="modifying-polygons">
-<h3>Modifying Polygons<a class="headerlink" href="#modifying-polygons" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.2.1. </span>Modifying Polygons<a class="headerlink" href="#modifying-polygons" title="Permalink to this headline">¶</a></h3>
 <p>We can round out our polygons by creating a “convex hull” around our polygon</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;convex_hull&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">convex_hull</span>
 </pre></div>
@@ -716,7 +723,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="buffering">
-<h3>Buffering<a class="headerlink" href="#buffering" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.2.2. </span>Buffering<a class="headerlink" href="#buffering" title="Permalink to this headline">¶</a></h3>
 <p>We might want to add buffers to our polygons.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># buffering the active geometry by 10 000 feet (geometry is already in feet)</span>
 <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;buffered&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
@@ -733,7 +740,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="geometry-relations">
-<h2>Geometry Relations<a class="headerlink" href="#geometry-relations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">39.3. </span>Geometry Relations<a class="headerlink" href="#geometry-relations" title="Permalink to this headline">¶</a></h2>
 <p>We can also use our geometries to check for relations between them. For example, we might want to check on intersections or nearby entities.</p>
 <p>First we need to isolate the geometry we want to look at - in this case Brooklyn</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brooklyn</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Brooklyn&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]</span>
@@ -761,10 +768,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="more-on-mapping">
-<h2>More on Mapping<a class="headerlink" href="#more-on-mapping" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">39.4. </span>More on Mapping<a class="headerlink" href="#more-on-mapping" title="Permalink to this headline">¶</a></h2>
 <p>We might want to make more types of maps. Here are some examples of ways we can manipulate maps.</p>
 <div class="section" id="load-global-data">
-<h3>Load Global Data<a class="headerlink" href="#load-global-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.4.1. </span>Load Global Data<a class="headerlink" href="#load-global-data" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">geopandas</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;naturalearth_lowres&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -779,7 +786,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="choropleth-maps">
-<h3>Choropleth Maps<a class="headerlink" href="#choropleth-maps" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.4.2. </span>Choropleth Maps<a class="headerlink" href="#choropleth-maps" title="Permalink to this headline">¶</a></h3>
 <p>These are maps based on a variable. First we’ll filter out some of the data that we don’t care about (Antarctica, uninhabitated land).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">world</span><span class="p">[(</span><span class="n">world</span><span class="o">.</span><span class="n">pop_est</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">name</span><span class="o">!=</span><span class="s2">&quot;Antarctica&quot;</span><span class="p">)]</span>
 </pre></div>
@@ -793,7 +800,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="adding-legends">
-<h3>Adding Legends<a class="headerlink" href="#adding-legends" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.4.3. </span>Adding Legends<a class="headerlink" href="#adding-legends" title="Permalink to this headline">¶</a></h3>
 <p>We can add legends to our map using matplotlib.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -828,7 +835,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="adding-colors">
-<h3>Adding Colors<a class="headerlink" href="#adding-colors" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.4.4. </span>Adding Colors<a class="headerlink" href="#adding-colors" title="Permalink to this headline">¶</a></h3>
 <p>We can use color maps (cmap) to change the color scheme of our map. For more colormap options, check out the <a class="reference external" href="https://matplotlib.org/2.0.2/users/colormaps.html">documentation</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;gdp_per_cap&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gist_rainbow&#39;</span><span class="p">)</span>
 </pre></div>
@@ -843,7 +850,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="missing-data">
-<h3>Missing Data<a class="headerlink" href="#missing-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.4.5. </span>Missing Data<a class="headerlink" href="#missing-data" title="Permalink to this headline">¶</a></h3>
 <p>GeoPandas will ignore missing data by default but you can force it to fill in that missing data if you want using the missing keywords argument</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -870,7 +877,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="other-customizations">
-<h3>Other Customizations<a class="headerlink" href="#other-customizations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.4.6. </span>Other Customizations<a class="headerlink" href="#other-customizations" title="Permalink to this headline">¶</a></h3>
 <p>We can turn off the axes for a cleaner map</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
@@ -880,7 +887,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="maps-with-layers">
-<h2>Maps with Layers<a class="headerlink" href="#maps-with-layers" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">39.5. </span>Maps with Layers<a class="headerlink" href="#maps-with-layers" title="Permalink to this headline">¶</a></h2>
 <p>We can combine maps of different things to make a layered map. Here we’ve done it with our world map and global cities</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
@@ -894,12 +901,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="using-pandas-and-geopandas">
-<h2>Using Pandas and GeoPandas<a class="headerlink" href="#using-pandas-and-geopandas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">39.6. </span>Using Pandas and GeoPandas<a class="headerlink" href="#using-pandas-and-geopandas" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 <div class="section" id="read-in-shape-file">
-<h3>Read in Shape File<a class="headerlink" href="#read-in-shape-file" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.6.1. </span>Read in Shape File<a class="headerlink" href="#read-in-shape-file" title="Permalink to this headline">¶</a></h3>
 <p>When reading in a shape file, you actually need the reference files in the same directory as the shape file. This means you need a .shp as well as .shx, .dpf, and .prj files with the same names.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">usa</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;../data/s_22mr22.shp&#39;</span><span class="p">)</span>
 
@@ -914,7 +921,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="load-pandas">
-<h3>Load Pandas<a class="headerlink" href="#load-pandas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.6.2. </span>Load Pandas<a class="headerlink" href="#load-pandas" title="Permalink to this headline">¶</a></h3>
 <p>Here we pull in our state facts data set to combine it with the state geometry data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">facts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/state_facts.tsv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
@@ -924,7 +931,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="merge-pandas-and-geopandas">
-<h3>Merge Pandas and GeoPandas<a class="headerlink" href="#merge-pandas-and-geopandas" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">39.6.3. </span>Merge Pandas and GeoPandas<a class="headerlink" href="#merge-pandas-and-geopandas" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">facts</span><span class="p">,</span><span class="n">usa</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;USPS_code&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;STATE&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -963,7 +970,21 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="12_workbook.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">38. </span>Data Visualization</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="13_workbook.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">40. </span>Optimization Introduction</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
