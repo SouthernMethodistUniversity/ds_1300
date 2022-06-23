@@ -52,7 +52,7 @@ So how does all of this actually work?
 
 [CPGrey Video - How Machines Learn](https://youtu.be/R9OHn5ZF4Uo)
 
-
+![NN](images/nn.png)
 
 ## Deep Learning
 
