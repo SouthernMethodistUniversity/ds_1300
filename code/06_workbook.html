@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>29. Dask Arrays &#8212; DS 1300</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +86,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
@@ -88,14 +102,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/00_introduction.html">
-   DS1300: A Practical Introduction to Data Science
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../book/00_introduction.html">
+                    DS1300: A Practical Introduction to Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Day 1
  </span>
@@ -302,15 +317,40 @@ const thebe_selector_output = ".output, .cell_output"
    43. Intermediate TextMining with Python
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/14_intro_to_AI.html">
+   46. Introduction to AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16_workbook.html">
+   47. Unsupervised Learning Example - Folktale Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17_workbook.html">
+   48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18_workbook.html">
+   49. Reinforcement Learning Example - Tic Tac Toe
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -318,61 +358,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/code/06_workbook.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/code/06_workbook.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
    29.1. Setup
@@ -447,12 +543,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Dask Arrays</h1>
@@ -543,11 +638,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="dask-arrays">
-<h1><span class="section-number">29. </span>Dask Arrays<a class="headerlink" href="#dask-arrays" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="dask-arrays">
+<h1><span class="section-number">29. </span>Dask Arrays<a class="headerlink" href="#dask-arrays" title="Permalink to this headline">#</a></h1>
 <p>Dask array provides a parallel, larger-than-memory, n-dimensional array using blocked algorithms. Simply put: distributed Numpy.</p>
 <ul class="simple">
 <li><p><strong>Parallel</strong>: Uses all of the cores on your computer</p></li>
@@ -563,16 +659,16 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <li><p><a class="reference external" href="https://docs.dask.org/en/latest/array-api.html">Array API</a></p></li>
 <li><p><a class="reference external" href="https://examples.dask.org/array.html">Array examples</a></p></li>
 </ul>
-<div class="section" id="setup">
-<h2><span class="section-number">29.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<section id="setup">
+<h2><span class="section-number">29.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">n_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="blocked-algorithms">
-<h2><span class="section-number">29.2. </span>Blocked Algorithms<a class="headerlink" href="#blocked-algorithms" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="blocked-algorithms">
+<h2><span class="section-number">29.2. </span>Blocked Algorithms<a class="headerlink" href="#blocked-algorithms" title="Permalink to this headline">#</a></h2>
 <p>A <em>blocked algorithm</em> executes on a large dataset by breaking it up into many small blocks.</p>
 <p>For example, consider taking the sum of a billion numbers.  We might instead break up the array into 1,000 chunks, each of size 1,000,000, take the sum of each chunk, and then take the sum of the intermediate sums.</p>
 <p>We achieve the intended result (one sum on one billion numbers) by performing many smaller results (one thousand sums on one million numbers each, followed by another sum of a thousand numbers.)</p>
@@ -603,8 +699,8 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="exercise-compute-the-mean-using-a-blocked-algorithm">
-<h3><span class="section-number">29.2.1. </span>Exercise:  Compute the mean using a blocked algorithm<a class="headerlink" href="#exercise-compute-the-mean-using-a-blocked-algorithm" title="Permalink to this headline">¶</a></h3>
+<section id="exercise-compute-the-mean-using-a-blocked-algorithm">
+<h3><span class="section-number">29.2.1. </span>Exercise:  Compute the mean using a blocked algorithm<a class="headerlink" href="#exercise-compute-the-mean-using-a-blocked-algorithm" title="Permalink to this headline">#</a></h3>
 <p>Now that we’ve seen the simple example above, try doing a slightly more complicated problem. Compute the mean of the array, assuming for a moment that we don’t happen to already know how many elements are in the data.  You can do this by changing the code above with the following alterations:</p>
 <ol class="simple">
 <li><p>Compute the sum of each block</p></li>
@@ -624,10 +720,10 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <span class="nb">print</span><span class="p">(</span><span class="n">total</span> <span class="o">/</span> <span class="n">length</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="dask-array-contains-these-algorithms">
-<h2><span class="section-number">29.3. </span><code class="docutils literal notranslate"><span class="pre">dask.array</span></code> contains these algorithms<a class="headerlink" href="#dask-array-contains-these-algorithms" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="dask-array-contains-these-algorithms">
+<h2><span class="section-number">29.3. </span><code class="docutils literal notranslate"><span class="pre">dask.array</span></code> contains these algorithms<a class="headerlink" href="#dask-array-contains-these-algorithms" title="Permalink to this headline">#</a></h2>
 <p>Dask.array is a NumPy-like library that does these kinds of tricks to operate on large datasets that don’t fit into memory.  It extends beyond the linear problems discussed above to full N-Dimensional algorithms and a decent subset of the NumPy interface.</p>
 <p><strong>Create <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> object</strong></p>
 <p>You can create a <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> <code class="docutils literal notranslate"><span class="pre">Array</span></code> object with the <code class="docutils literal notranslate"><span class="pre">da.from_array</span></code> function.  This function accepts</p>
@@ -657,17 +753,17 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="performance-and-parallelism">
-<h2><span class="section-number">29.4. </span>Performance and Parallelism<a class="headerlink" href="#performance-and-parallelism" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="performance-and-parallelism">
+<h2><span class="section-number">29.4. </span>Performance and Parallelism<a class="headerlink" href="#performance-and-parallelism" title="Permalink to this headline">#</a></h2>
 <p>In our first examples we used <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to walk through the array one block at a time.  For simple operations like <code class="docutils literal notranslate"><span class="pre">sum</span></code> this is optimal.  However for complex operations we may want to traverse through the array differently.  In particular we may want the following:</p>
 <ol class="simple">
 <li><p>Use multiple cores in parallel</p></li>
 <li><p>Chain operations on a single blocks before moving on to the next one</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">Dask.array</span></code> translates your array operations into a graph of inter-related tasks with data dependencies between them.  Dask then executes this graph in parallel with multiple threads.  We’ll discuss more about this in the next section.</p>
-<div class="section" id="example">
-<h3><span class="section-number">29.4.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<section id="example">
+<h3><span class="section-number">29.4.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Construct a 20000x20000 array of normally distributed random values broken up into 1000x1000 sized chunks</p></li>
 <li><p>Take the mean along one axis</p></li>
@@ -688,9 +784,9 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <span class="n">y</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>     <span class="c1"># Time to compute the result</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="performance-comparison">
-<h3><span class="section-number">29.4.2. </span>Performance comparison<a class="headerlink" href="#performance-comparison" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="performance-comparison">
+<h3><span class="section-number">29.4.2. </span>Performance comparison<a class="headerlink" href="#performance-comparison" title="Permalink to this headline">#</a></h3>
 <p><strong>NumPy: Needs gigabytes of memory</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
@@ -728,9 +824,9 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="exercise-meteorological-data">
-<h3><span class="section-number">29.4.3. </span>Exercise:  Meteorological data<a class="headerlink" href="#exercise-meteorological-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-meteorological-data">
+<h3><span class="section-number">29.4.3. </span>Exercise:  Meteorological data<a class="headerlink" href="#exercise-meteorological-data" title="Permalink to this headline">#</a></h3>
 <p>There is 2GB of somewhat artifical weather data in HDF5 files in <code class="docutils literal notranslate"><span class="pre">data/weather-big/*.hdf5</span></code>.  We’ll use the <code class="docutils literal notranslate"><span class="pre">h5py</span></code> library to interact with this data and <code class="docutils literal notranslate"><span class="pre">dask.array</span></code> to compute on it.</p>
 <p>Our goal is to visualize the average temperature on the surface of the Earth for this month.  This will require a mean over all of this data.  We’ll do this in the following steps</p>
 <ol class="simple">
@@ -783,9 +879,9 @@ We’ll then use Dask Array to analyze large datasets, in parallel, using a fami
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="exercise-subsample-and-store">
-<h3><span class="section-number">29.4.4. </span>Exercise:  Subsample and store<a class="headerlink" href="#exercise-subsample-and-store" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-subsample-and-store">
+<h3><span class="section-number">29.4.4. </span>Exercise:  Subsample and store<a class="headerlink" href="#exercise-subsample-and-store" title="Permalink to this headline">#</a></h3>
 <p>In the above exercise the result of our computation is small, so we can call <code class="docutils literal notranslate"><span class="pre">compute</span></code> safely.  Sometimes our result is still too large to fit into memory and we want to save it to disk.  In these cases you can use one of the following two functions</p>
 <ol>
 <li><p><code class="docutils literal notranslate"><span class="pre">da.store</span></code>: Store dask.array into any object that supports numpy setitem syntax, e.g.</p>
@@ -828,10 +924,10 @@ da.store(my_dask_array, output)
 <span class="n">da</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../work&#39;</span><span class="p">,</span> <span class="s1">&#39;myfile.zarr&#39;</span><span class="p">),</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="example-lennard-jones-potential">
-<h2><span class="section-number">29.5. </span>Example: Lennard-Jones potential<a class="headerlink" href="#example-lennard-jones-potential" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="example-lennard-jones-potential">
+<h2><span class="section-number">29.5. </span>Example: Lennard-Jones potential<a class="headerlink" href="#example-lennard-jones-potential" title="Permalink to this headline">#</a></h2>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Lennard-Jones_potential">Lennard-Jones potential</a> is used in particle simulations in physics, chemistry and engineering. It is highly parallelizable.</p>
 <p>First, we’ll run and profile the Numpy version on 7,000 particles.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -872,8 +968,8 @@ da.store(my_dask_array, output)
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">prun</span> <span class="o">-</span><span class="n">s</span> <span class="n">tottime</span> <span class="n">potential</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="dask-version">
-<h3><span class="section-number">29.5.1. </span>Dask version<a class="headerlink" href="#dask-version" title="Permalink to this headline">¶</a></h3>
+<section id="dask-version">
+<h3><span class="section-number">29.5.1. </span>Dask version<a class="headerlink" href="#dask-version" title="Permalink to this headline">#</a></h3>
 <p>Here’s the Dask version. Only the <code class="docutils literal notranslate"><span class="pre">potential</span></code> function needs to be rewritten to best utilize Dask.</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">da.nansum</span></code> has been used over the full <span class="math notranslate nohighlight">\(NxN\)</span> distance matrix to improve parallel efficiency.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
@@ -897,10 +993,10 @@ da.store(my_dask_array, output)
 <span class="o">%</span><span class="n">time</span> <span class="n">e</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="limitations">
-<h2><span class="section-number">29.6. </span>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="limitations">
+<h2><span class="section-number">29.6. </span>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">#</a></h2>
 <p>Dask Array does not implement the entire numpy interface.  Users expecting this
 will be disappointed.  Notably Dask Array has the following failings:</p>
 <ol class="simple">
@@ -930,8 +1026,8 @@ laziness.  These would make excellent community contributions.</p></li>
 </pre></div>
 </div>
 <p>Adapted from <a class="reference external" href="https://tutorial.dask.org">Dask Tutorial</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -955,9 +1051,11 @@ laziness.  These would make excellent community contributions.</p></li>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="05_workbook.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -973,24 +1071,28 @@ laziness.  These would make excellent community contributions.</p></li>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

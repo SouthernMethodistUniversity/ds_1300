@@ -6,9 +6,9 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.10.3
+      jupytext_version: 1.13.8
   kernelspec:
-    display_name: Python 3
+    display_name: Python 3 (ipykernel)
     language: python
     name: python3
 ---
@@ -196,7 +196,11 @@ There are a lot of elements that go into a plot. Let's start simpler
 Pandas makes plotting really easy. All we need to do is call the plot function. Done!
 
 ```python
-data.plot(figsize=(10,10))
+data.head()
+```
+
+```python
+data.plot(figsize=(10,10));
 ```
 
 ```python
@@ -212,7 +216,15 @@ Ok, so this plot isn't helpful. It is hard to read, it's not clear what is reall
 The first step to making a better plot is to isolate what we the question we are trying to answer and what type of plot we should make to answer that question. For this example, let's try to determine if there is a correlation between 2020 population and capital city population.
 
 ```python
+data.head(1)
+```
+
+```python
 p1 = data[['USPS_code','Pop_2020','Capital_pop','city_1_pop']]
+```
+
+```python
+p1.head(1)
 ```
 
 First let's just slice our data down to what we are interested in - populations by state
@@ -233,8 +245,12 @@ p1.plot(kind='bar',figsize=(10,10))
 ```
 
 ```python
-plot = data[['State_bird','Pop_2020']].plot(kind='bar',figsize=(10,10)) # we are setting the type of plot to a bar graph
-plot.set_xticklabels(data['State_bird']);
+data.columns
+```
+
+```python
+plot = data[['State_bird','Pop_2020',"Pop_2010"]].plot(kind='bar',figsize=(10,10)) # we are setting the type of plot to a bar graph
+plot.set_xticklabels(data['USPS_code']);
 ```
 
 Not much better at answering our question. Bar graphs are good for showing counts of things that are related but get hard to use when you have too many bars or the bars are vastly different in size.
@@ -258,10 +274,24 @@ We could also make a pie chart. This would be good at telling us what fraction o
 p1['Pop_2020'].plot.pie(figsize=(10,10))
 ```
 
+Also be careful that your Pie Chart is representative of the whole data set!
+
+```python
+top5 = p1.sort_values(by='Pop_2020',ascending=False)[:5]
+```
+
+```python
+top5['Pop_2020'].plot.pie(figsize=(10,10))
+```
+
 We could try a scatter plot. Why would make sense?
 
 ```python
-p1.plot.scatter(x='Pop_2020', y='Capital_pop',figsize=(10,10))
+p1.columns
+```
+
+```python
+p1.plot.scatter(x='city_1_pop', y='Capital_pop',figsize=(10,10))
 ```
 
 ### Adding Features
@@ -282,7 +312,7 @@ p1.plot.scatter(x='Pop_2020', y='Capital_pop', label='Capitals',figsize=(10,10))
 We can add labels to our plots using the label flag. We can also show/hide the legend using the legend flag. If you do this, you have to be careful that your data is well described elsewhere.
 
 ```python
-data[['USPS_code','city_1_pop','city_2_pop','city_3_pop','city_4_pop','city_5_pop']].plot.bar(stacked=True, legend=False,figsize=(10,10))
+data[['USPS_code','city_1_pop','city_2_pop','city_3_pop','city_4_pop','city_5_pop']].plot.bar(stacked=True, legend=True,figsize=(10,10))
 ```
 
 #### Additional Data

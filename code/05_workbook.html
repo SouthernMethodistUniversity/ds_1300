@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>28. Dask Delayed &#8212; DS 1300</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
@@ -86,14 +100,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/00_introduction.html">
-   DS1300: A Practical Introduction to Data Science
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../book/00_introduction.html">
+                    DS1300: A Practical Introduction to Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Day 1
  </span>
@@ -300,15 +315,40 @@ const thebe_selector_output = ".output, .cell_output"
    43. Intermediate TextMining with Python
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/14_intro_to_AI.html">
+   46. Introduction to AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16_workbook.html">
+   47. Unsupervised Learning Example - Folktale Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17_workbook.html">
+   48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18_workbook.html">
+   49. Reinforcement Learning Example - Tic Tac Toe
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -316,61 +356,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/code/05_workbook.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/code/05_workbook.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basics">
    28.1. Basics
@@ -468,12 +564,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Dask Delayed</h1>
@@ -587,11 +682,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="dask-delayed">
-<h1><span class="section-number">28. </span>Dask Delayed<a class="headerlink" href="#dask-delayed" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="dask-delayed">
+<h1><span class="section-number">28. </span>Dask Delayed<a class="headerlink" href="#dask-delayed" title="Permalink to this headline">#</a></h1>
 <p>In this section we parallelize simple for-loop style code with Dask and <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>. Often, this is the only function that you will need to convert functions for use with Dask.</p>
 <p>This is a simple way to use <code class="docutils literal notranslate"><span class="pre">dask</span></code> to parallelize existing codebases or build <a class="reference external" href="https://blog.dask.org/2018/02/09/credit-models-with-dask">complex systems</a>.  This will also help us to develop an understanding for later sections.</p>
 <p><strong>Related Documentation</strong></p>
@@ -608,8 +704,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">n_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="basics">
-<h2><span class="section-number">28.1. </span>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
+<section id="basics">
+<h2><span class="section-number">28.1. </span>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">#</a></h2>
 <p>First let’s make some toy functions, <code class="docutils literal notranslate"><span class="pre">inc</span></code> and <code class="docutils literal notranslate"><span class="pre">add</span></code>, that sleep for a while to simulate work. We’ll then time running these functions normally.</p>
 <p>In the next section we’ll parallelize this code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
@@ -633,8 +729,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">z</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="parallelize-with-the-dask-delayed-decorator">
-<h3><span class="section-number">28.1.1. </span>Parallelize with the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> decorator<a class="headerlink" href="#parallelize-with-the-dask-delayed-decorator" title="Permalink to this headline">¶</a></h3>
+<section id="parallelize-with-the-dask-delayed-decorator">
+<h3><span class="section-number">28.1.1. </span>Parallelize with the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> decorator<a class="headerlink" href="#parallelize-with-the-dask-delayed-decorator" title="Permalink to this headline">#</a></h3>
 <p>Those two increment calls <em>could</em> be called in parallel, because they are totally independent of one-another.</p>
 <p>We’ll transform the <code class="docutils literal notranslate"><span class="pre">inc</span></code> and <code class="docutils literal notranslate"><span class="pre">add</span></code> functions using the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> function. When we call the delayed version by passing the arguments, exactly as before, the original function isn’t actually called yet - which is why the cell execution finishes very quickly.
 Instead, a <em>delayed object</em> is made, which keeps track of the function to call and the arguments to pass to it.</p>
@@ -657,10 +753,10 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 <span class="n">z</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="what-just-happened">
-<h2><span class="section-number">28.2. </span>What just happened?<a class="headerlink" href="#what-just-happened" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="what-just-happened">
+<h2><span class="section-number">28.2. </span>What just happened?<a class="headerlink" href="#what-just-happened" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">z</span></code> object is a lazy <code class="docutils literal notranslate"><span class="pre">Delayed</span></code> object.  This object holds everything we need to compute the final result, including references to all of the functions that are required and their inputs and relationship to one-another.  We can evaluate the result with <code class="docutils literal notranslate"><span class="pre">.compute()</span></code> as above or we can visualize the task graph for this value with <code class="docutils literal notranslate"><span class="pre">.visualize()</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
 </pre></div>
@@ -670,17 +766,17 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </pre></div>
 </div>
 <p>Notice that this includes the names of the functions from before, and the logical flow of the outputs of the <code class="docutils literal notranslate"><span class="pre">inc</span></code> functions to the inputs of <code class="docutils literal notranslate"><span class="pre">add</span></code>.</p>
-<div class="section" id="some-questions-to-consider">
-<h3><span class="section-number">28.2.1. </span>Some questions to consider:<a class="headerlink" href="#some-questions-to-consider" title="Permalink to this headline">¶</a></h3>
+<section id="some-questions-to-consider">
+<h3><span class="section-number">28.2.1. </span>Some questions to consider:<a class="headerlink" href="#some-questions-to-consider" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Why did we go from 3s to 2s?  Why weren’t we able to parallelize down to 1s?</p></li>
 <li><p>What would have happened if the inc and add functions didn’t include the <code class="docutils literal notranslate"><span class="pre">sleep(1)</span></code>?  Would Dask still be able to speed up this code?</p></li>
 <li><p>What if we have multiple outputs or also want to get access to x or y?</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="exercise-parallelize-a-for-loop">
-<h2><span class="section-number">28.3. </span>Exercise: Parallelize a for loop<a class="headerlink" href="#exercise-parallelize-a-for-loop" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="exercise-parallelize-a-for-loop">
+<h2><span class="section-number">28.3. </span>Exercise: Parallelize a for loop<a class="headerlink" href="#exercise-parallelize-a-for-loop" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops are one of the most common things that we want to parallelize.  Use <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> on <code class="docutils literal notranslate"><span class="pre">inc</span></code> and <code class="docutils literal notranslate"><span class="pre">sum</span></code> to parallelize the computation below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 </pre></div>
@@ -716,9 +812,9 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">delayed</span><span class="p">(</span><span class="n">inc</span><span class="p">)(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="exercise-parallelizing-a-for-loop-code-with-control-flow">
-<h2><span class="section-number">28.4. </span>Exercise: Parallelizing a for-loop code with control flow<a class="headerlink" href="#exercise-parallelizing-a-for-loop-code-with-control-flow" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exercise-parallelizing-a-for-loop-code-with-control-flow">
+<h2><span class="section-number">28.4. </span>Exercise: Parallelizing a for-loop code with control flow<a class="headerlink" href="#exercise-parallelizing-a-for-loop-code-with-control-flow" title="Permalink to this headline">#</a></h2>
 <p>Often we want to delay only <em>some</em> functions, running a few of them immediately.  This is especially helpful when those functions are fast and help us to determine what other slower functions we should call.  This decision, to delay or not to delay, is usually where we need to be thoughtful when using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>.</p>
 <p>In the example below we iterate through a list of inputs.  If that input is even then we want to call <code class="docutils literal notranslate"><span class="pre">inc</span></code>.  If the input is odd then we want to call <code class="docutils literal notranslate"><span class="pre">double</span></code>.  This <code class="docutils literal notranslate"><span class="pre">is_even</span></code> decision to call <code class="docutils literal notranslate"><span class="pre">inc</span></code> or <code class="docutils literal notranslate"><span class="pre">double</span></code> has to be made immediately (not lazily) in order for our graph-building Python code to proceed.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -764,28 +860,28 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span><span class="o">.</span><span class="n">visualize</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="section" id="id1">
-<h3><span class="section-number">28.4.1. </span>Some questions to consider:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h3><span class="section-number">28.4.1. </span>Some questions to consider:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>What are other examples of control flow where we can’t use delayed?</p></li>
 <li><p>What would have happened if we had delayed the evaluation of <code class="docutils literal notranslate"><span class="pre">is_even(x)</span></code> in the example above?</p></li>
 <li><p>What are your thoughts on delaying <code class="docutils literal notranslate"><span class="pre">sum</span></code>?  This function is both computational but also fast to run.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="exercise-parallelizing-a-pandas-groupby-reduction">
-<h2><span class="section-number">28.5. </span>Exercise: Parallelizing a Pandas Groupby Reduction<a class="headerlink" href="#exercise-parallelizing-a-pandas-groupby-reduction" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="exercise-parallelizing-a-pandas-groupby-reduction">
+<h2><span class="section-number">28.5. </span>Exercise: Parallelizing a Pandas Groupby Reduction<a class="headerlink" href="#exercise-parallelizing-a-pandas-groupby-reduction" title="Permalink to this headline">#</a></h2>
 <p>In this exercise we read several CSV files and perform a groupby operation in parallel.  We are given sequential code to do this and parallelize it with <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>.</p>
 <p>The computation we will parallelize is to compute the mean departure delay per airport from some historical flight data.  We will do this by using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> together with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.  In a future section we will do this same exercise with <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code>.</p>
-<div class="section" id="inspect-data">
-<h3><span class="section-number">28.5.1. </span>Inspect data<a class="headerlink" href="#inspect-data" title="Permalink to this headline">¶</a></h3>
+<section id="inspect-data">
+<h3><span class="section-number">28.5.1. </span>Inspect data<a class="headerlink" href="#inspect-data" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay">
-<h3><span class="section-number">28.5.2. </span>Read one file with <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> and compute mean departure delay<a class="headerlink" href="#read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay">
+<h3><span class="section-number">28.5.2. </span>Read one file with <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> and compute mean departure delay<a class="headerlink" href="#read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;1990.csv&#39;</span><span class="p">))</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -803,9 +899,9 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Origin&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="sequential-code-mean-departure-delay-per-airport">
-<h3><span class="section-number">28.5.3. </span>Sequential code: Mean Departure Delay Per Airport<a class="headerlink" href="#sequential-code-mean-departure-delay-per-airport" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sequential-code-mean-departure-delay-per-airport">
+<h3><span class="section-number">28.5.3. </span>Sequential code: Mean Departure Delay Per Airport<a class="headerlink" href="#sequential-code-mean-departure-delay-per-airport" title="Permalink to this headline">#</a></h3>
 <p>The above cell computes the mean departure delay per-airport for one year. Here we expand that to all years using a sequential for loop.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
 <span class="n">filenames</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">)))</span>
@@ -841,9 +937,9 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="parallelize-the-code-above">
-<h3><span class="section-number">28.5.4. </span>Parallelize the code above<a class="headerlink" href="#parallelize-the-code-above" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="parallelize-the-code-above">
+<h3><span class="section-number">28.5.4. </span>Parallelize the code above<a class="headerlink" href="#parallelize-the-code-above" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask</span> <span class="kn">import</span> <span class="n">compute</span>
 </pre></div>
 </div>
@@ -881,30 +977,30 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 <span class="n">mean</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
-<h3><span class="section-number">28.5.5. </span>Some questions to consider:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3><span class="section-number">28.5.5. </span>Some questions to consider:<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>How much speedup did you get? Is this how much speedup you’d expect?</p></li>
 <li><p>Experiment with where to call <code class="docutils literal notranslate"><span class="pre">compute</span></code>. What happens when you call it on <code class="docutils literal notranslate"><span class="pre">sums</span></code> and <code class="docutils literal notranslate"><span class="pre">counts</span></code>? What happens if you wait and call it on <code class="docutils literal notranslate"><span class="pre">mean</span></code>?</p></li>
 <li><p>Experiment with delaying the call to <code class="docutils literal notranslate"><span class="pre">sum</span></code>. What does the graph look like if <code class="docutils literal notranslate"><span class="pre">sum</span></code> is delayed? What does the graph look like if it isn’t?</p></li>
 <li><p>Can you think of any reason why you’d want to do the reduction one way over the other?</p></li>
 </ul>
-</div>
-<div class="section" id="learn-more">
-<h3><span class="section-number">28.5.6. </span>Learn More<a class="headerlink" href="#learn-more" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="learn-more">
+<h3><span class="section-number">28.5.6. </span>Learn More<a class="headerlink" href="#learn-more" title="Permalink to this headline">#</a></h3>
 <p>Visit the <a class="reference external" href="https://docs.dask.org/en/latest/delayed.html">Delayed documentation</a>. In particular, this <a class="reference external" href="https://www.youtube.com/watch?v=SHqFmynRxVU">delayed screencast</a> will reinforce the concepts you learned here and the <a class="reference external" href="https://docs.dask.org/en/latest/delayed-best-practices.html">delayed best practices</a> document collects advice on using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> well.</p>
-</div>
-</div>
-<div class="section" id="close-the-client">
-<h2><span class="section-number">28.6. </span>Close the Client<a class="headerlink" href="#close-the-client" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="close-the-client">
+<h2><span class="section-number">28.6. </span>Close the Client<a class="headerlink" href="#close-the-client" title="Permalink to this headline">#</a></h2>
 <p>Before moving on to the next exercise, make sure to close your client or stop this kernel.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Adapted from <a class="reference external" href="https://tutorial.dask.org">Dask Tutorial</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -928,9 +1024,11 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../book/11_dask_initial_setup.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -946,24 +1044,28 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

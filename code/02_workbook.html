@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>13. Working with Data &#8212; DS 1300</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
@@ -86,14 +100,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/00_introduction.html">
-   DS1300: A Practical Introduction to Data Science
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../book/00_introduction.html">
+                    DS1300: A Practical Introduction to Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Day 1
  </span>
@@ -300,15 +315,40 @@ const thebe_selector_output = ".output, .cell_output"
    43. Intermediate TextMining with Python
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/14_intro_to_AI.html">
+   46. Introduction to AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16_workbook.html">
+   47. Unsupervised Learning Example - Folktale Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17_workbook.html">
+   48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18_workbook.html">
+   49. Reinforcement Learning Example - Tic Tac Toe
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -316,61 +356,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/code/02_workbook.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/code/02_workbook.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#loading-data-into-python">
    13.1. Loading Data into Python
@@ -471,12 +567,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Working with Data</h1>
@@ -593,31 +688,32 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="working-with-data">
-<h1><span class="section-number">13. </span>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="working-with-data">
+<h1><span class="section-number">13. </span>Working with Data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">#</a></h1>
 <p>By: Dr. Eric Godat and Dr. Rob Kalescky</p>
 <p>As implied by the name, a Data Scientist needs to be able to work with data. However, what consitutes data can vary wildly depending on the project you’re working on.</p>
 <p>In this notebook, we will dive into a few common types of data and some of the common pitfalls you’ll encounter.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
-<div class="section" id="loading-data-into-python">
-<h2><span class="section-number">13.1. </span>Loading Data into Python<a class="headerlink" href="#loading-data-into-python" title="Permalink to this headline">¶</a></h2>
+<section id="loading-data-into-python">
+<h2><span class="section-number">13.1. </span>Loading Data into Python<a class="headerlink" href="#loading-data-into-python" title="Permalink to this headline">#</a></h2>
 <p>The first step is getting data into python. While you could type the data into a dictionary, list, or other data format, that quickly becomes unsustainable. Fortunately there are several ways to load our data directly.</p>
-<div class="section" id="from-csv">
-<h3><span class="section-number">13.1.1. </span>From csv<a class="headerlink" href="#from-csv" title="Permalink to this headline">¶</a></h3>
+<section id="from-csv">
+<h3><span class="section-number">13.1.1. </span>From csv<a class="headerlink" href="#from-csv" title="Permalink to this headline">#</a></h3>
 <p>The easiest way to load data is to use pandas to <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">read a csv</a> (comma separated values) file into a data frame. This also works with other deliminators (things that split your data fields) too.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/sample_data.csv&quot;</span><span class="p">)</span> <span class="c1"># This means that our data lives one level up (..) and in a directory named data</span>
 <span class="n">df</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="numbers-as-data">
-<h2><span class="section-number">13.2. </span>Numbers as Data<a class="headerlink" href="#numbers-as-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="numbers-as-data">
+<h2><span class="section-number">13.2. </span>Numbers as Data<a class="headerlink" href="#numbers-as-data" title="Permalink to this headline">#</a></h2>
 <p>The most classic example of data (and the one most people think of when you say data) is numerical data.</p>
 <p>Using the data we just loaded. Let’s ask a question and work towards a solution.</p>
 <p>Before we start, let’s look at two neat tricks that will come in handy as we explore our data.</p>
@@ -636,8 +732,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3">
-<h3><span class="section-number">13.2.1. </span>Question 1) Which property increased in value the most from price 1 to price 3?<a class="headerlink" href="#question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3" title="Permalink to this headline">¶</a></h3>
+<section id="question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3">
+<h3><span class="section-number">13.2.1. </span>Question 1) Which property increased in value the most from price 1 to price 3?<a class="headerlink" href="#question-1-which-property-increased-in-value-the-most-from-price-1-to-price-3" title="Permalink to this headline">#</a></h3>
 <p>Let’s assume that our data means price in year 1, year 2, year 3. This is a guess we have to make because we don’t know much about where this data comes from.</p>
 <p>Now that we have a little less to look at, we want to make a column with the increase in price.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;increase&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_3&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_1&#39;</span><span class="p">]</span> <span class="c1">#operation on 2 columns, saving to a new column</span>
@@ -650,9 +746,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>Answer 1) Property F has increased the most in value</p>
-</div>
-<div class="section" id="question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft">
-<h3><span class="section-number">13.2.2. </span>Question 2) Which property is the best price (year_3) per square foot (sqft)?<a class="headerlink" href="#question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft">
+<h3><span class="section-number">13.2.2. </span>Question 2) Which property is the best price (year_3) per square foot (sqft)?<a class="headerlink" href="#question-2-which-property-is-the-best-price-year-3-per-square-foot-sqft" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;p/sqft&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price_3&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sqft&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -660,16 +756,16 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>Answer 2) Property C has the best price per square foot</p>
-</div>
-<div class="section" id="question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options">
-<h3><span class="section-number">13.2.3. </span>Question 3) I’m in the market for a house that has more than 3 bedrooms and more than 2 bathrooms, what are my options?<a class="headerlink" href="#question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options">
+<h3><span class="section-number">13.2.3. </span>Question 3) I’m in the market for a house that has more than 3 bedrooms and more than 2 bathrooms, what are my options?<a class="headerlink" href="#question-3-i-m-in-the-market-for-a-house-that-has-more-than-3-bedrooms-and-more-than-2-bathrooms-what-are-my-options" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bathrooms&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)]</span>
 </pre></div>
 </div>
 <p>Answer 3) B or C are good options for what I’m looking for</p>
-</div>
-<div class="section" id="question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination">
-<h3><span class="section-number">13.2.4. </span>Question 4) I’m a relator and trying to write a formula for the best house to show my clients. I want to show them the place with high bed/bath/sqft with a low price but consistent growth. How could I make that determination?<a class="headerlink" href="#question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination">
+<h3><span class="section-number">13.2.4. </span>Question 4) I’m a relator and trying to write a formula for the best house to show my clients. I want to show them the place with high bed/bath/sqft with a low price but consistent growth. How could I make that determination?<a class="headerlink" href="#question-4-i-m-a-relator-and-trying-to-write-a-formula-for-the-best-house-to-show-my-clients-i-want-to-show-them-the-place-with-high-bed-bath-sqft-with-a-low-price-but-consistent-growth-how-could-i-make-that-determination" title="Permalink to this headline">#</a></h3>
 <p>Let’s break this one down into smaller pieces. I need to:</p>
 <ul class="simple">
 <li><p>Combine bedrooms, bathrooms, and sqft into a single number (larger is better)</p></li>
@@ -713,10 +809,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Looks like I should start by showing my client property A</p>
 <p><strong>Is this the only way I could do this? What could we change?</strong></p>
-</div>
-</div>
-<div class="section" id="text-as-data">
-<h2><span class="section-number">13.3. </span>Text as Data<a class="headerlink" href="#text-as-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="text-as-data">
+<h2><span class="section-number">13.3. </span>Text as Data<a class="headerlink" href="#text-as-data" title="Permalink to this headline">#</a></h2>
 <p>A type of data that has become especially popular and powerful to investigate is text. Turns out there is a lot that we can learn by looking at what we write down. We’ll spend more time working with text later in the class but for now, we’ll just load the data and do some basic parsing.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/folktales.csv&quot;</span><span class="p">)</span>
 </pre></div>
@@ -724,8 +820,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
 </pre></div>
 </div>
-<div class="section" id="question-1-what-countries-do-we-have-stories-from">
-<h3><span class="section-number">13.3.1. </span>Question 1) What countries do we have stories from?<a class="headerlink" href="#question-1-what-countries-do-we-have-stories-from" title="Permalink to this headline">¶</a></h3>
+<section id="question-1-what-countries-do-we-have-stories-from">
+<h3><span class="section-number">13.3.1. </span>Question 1) What countries do we have stories from?<a class="headerlink" href="#question-1-what-countries-do-we-have-stories-from" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country of Origin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
@@ -733,9 +829,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country of Origin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm">
-<h3><span class="section-number">13.3.2. </span>Question 2) What fraction of my stories were written by the Brothers Grimm?<a class="headerlink" href="#question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm">
+<h3><span class="section-number">13.3.2. </span>Question 2) What fraction of my stories were written by the Brothers Grimm?<a class="headerlink" href="#question-2-what-fraction-of-my-stories-were-written-by-the-brothers-grimm" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_stories</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">total_stories</span>
 </pre></div>
@@ -747,29 +843,29 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grimm</span><span class="o">/</span><span class="n">total_stories</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="question-3-how-many-titles-contain-animals">
-<h3><span class="section-number">13.3.3. </span>Question 3) How many titles contain animals?<a class="headerlink" href="#question-3-how-many-titles-contain-animals" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-3-how-many-titles-contain-animals">
+<h3><span class="section-number">13.3.3. </span>Question 3) How many titles contain animals?<a class="headerlink" href="#question-3-how-many-titles-contain-animals" title="Permalink to this headline">#</a></h3>
 <p>How would I even do this?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;animals&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>That clearly doesn’t seem like what the question is asking… Maybe this isn’t something we can answer. Why not? What would we need to answer this question?</p>
-</div>
-</div>
-<div class="section" id="people-as-data">
-<h2><span class="section-number">13.4. </span>People as Data<a class="headerlink" href="#people-as-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="people-as-data">
+<h2><span class="section-number">13.4. </span>People as Data<a class="headerlink" href="#people-as-data" title="Permalink to this headline">#</a></h2>
 <p>Another common type of data set is personal information. Just think of every sign up sheet, grade book, or class roster. One major problem with personal data is that people generally don’t fit into clean data “boxes”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/messy_data.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 <span class="n">messy</span>
 </pre></div>
 </div>
 <p>Let’s just look at this data. How many data issues can you find that would hinder an analysis? How would you handle it?</p>
-</div>
-<div class="section" id="tricks-for-messy-data">
-<h2><span class="section-number">13.5. </span>Tricks for messy data<a class="headerlink" href="#tricks-for-messy-data" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="names">
-<h3><span class="section-number">13.5.1. </span>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tricks-for-messy-data">
+<h2><span class="section-number">13.5. </span>Tricks for messy data<a class="headerlink" href="#tricks-for-messy-data" title="Permalink to this headline">#</a></h2>
+<section id="names">
+<h3><span class="section-number">13.5.1. </span>Names<a class="headerlink" href="#names" title="Permalink to this headline">#</a></h3>
 <p>One common problem is that names tend to be really bad ways to identify people. Why is that?</p>
 <p>A solution to this is to use something called a unique identifier (think your SMU ID number). A unique identifier can be used instead of a name because it will have a standard format and generally can be used to link an individual across multiple data sets. If used properly it can also be a good way to de-identify individuals.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -800,9 +896,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">messy</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="dates">
-<h3><span class="section-number">13.5.2. </span>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dates">
+<h3><span class="section-number">13.5.2. </span>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">#</a></h3>
 <p>Another common issue is that there are lots of formats for dates and times. This isn’t just an issue with personal data but is one that can cause huge headaches when working with data sets. Even asking simple questions can become complicated when working with dates if you aren’t sure of the formatting.</p>
 <p>Think about all the steps your brain makes if I ask you what the date was 3 weeks ago?</p>
 <p>Somewhat incredibly, pandas can actually recognize several forms of dates and guess what the date formats are and convert them to a standardize format using the function <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html?highlight=to_datetime#pandas.to_datetime">to_datetime</a>.</p>
@@ -810,9 +906,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">messy</span><span class="p">[[</span><span class="s1">&#39;Air_Date&#39;</span><span class="p">,</span><span class="s1">&#39;Date_Fixed&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="missing-values">
-<h3><span class="section-number">13.5.3. </span>Missing Values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="missing-values">
+<h3><span class="section-number">13.5.3. </span>Missing Values<a class="headerlink" href="#missing-values" title="Permalink to this headline">#</a></h3>
 <p>Another problem we can encounter is missing data. This happens all the time with “wild data” and can happen for numerous reasons, for example:</p>
 <ul class="simple">
 <li><p>no data should exist for a reason</p></li>
@@ -824,9 +920,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">messy</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="case-sensitivity">
-<h3><span class="section-number">13.5.4. </span>Case Sensitivity<a class="headerlink" href="#case-sensitivity" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="case-sensitivity">
+<h3><span class="section-number">13.5.4. </span>Case Sensitivity<a class="headerlink" href="#case-sensitivity" title="Permalink to this headline">#</a></h3>
 <p>Another common issue with dealing with messy data is case sensitivity. Since python sees ‘A’ and ‘a’ as two different characters, it is important to be aware of case sensitivity. The easiest way to do this is to send all the characters in a particular column to a single case pattern. Fortunately, pandas has a family of functions to do that for us. <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.lower.html?highlight=lower#pandas.Series.str.lower">lower</a> is a good example.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span><span class="p">[</span><span class="s1">&#39;Ship&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">messy</span><span class="p">[</span><span class="s1">&#39;Ship&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 <span class="n">messy</span>
@@ -836,9 +932,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">messy</span><span class="p">[</span><span class="s1">&#39;Ship&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="wrap-up">
-<h3><span class="section-number">13.5.5. </span>Wrap Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="wrap-up">
+<h3><span class="section-number">13.5.5. </span>Wrap Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">#</a></h3>
 <p>Let’s look at our messy data before:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">before</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/messy_data.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 <span class="n">before</span>
@@ -852,9 +948,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -878,9 +974,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../book/06_data_ethics_bias.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -896,24 +994,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

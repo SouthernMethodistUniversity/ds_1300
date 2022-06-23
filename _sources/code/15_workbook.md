@@ -6,9 +6,9 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.10.3
+      jupytext_version: 1.13.8
   kernelspec:
-    display_name: Python 3
+    display_name: Python 3 (ipykernel)
     language: python
     name: python3
 ---
@@ -240,7 +240,11 @@ world['gdp_per_cap'] = world.gdp_md_est / world.pop_est
 ```
 
 ```python
-world.plot(column='gdp_per_cap')
+world.plot(column='gdp_per_cap',figsize=(12,6))
+```
+
+```python
+world.sort_values(by='gdp_per_cap',ascending=False)
 ```
 
 ### Adding Legends
@@ -280,7 +284,7 @@ world.plot(column='pop_est',
             ax=ax,
             legend=True,
             legend_kwds={'label': "Population by Country",
-                         'orientation': "horizontal"})
+                         'orientation': "horizontal"});
 ```
 
 ### Adding Colors
@@ -289,7 +293,7 @@ world.plot(column='pop_est',
 We can use color maps (cmap) to change the color scheme of our map. For more colormap options, check out the [documentation](https://matplotlib.org/2.0.2/users/colormaps.html).
 
 ```python
-world.plot(column='gdp_per_cap', cmap='gist_rainbow')
+world.plot(column='gdp_per_cap', cmap='nipy_spectral',figsize=(12,6))
 ```
 
 We can also just plot the boundaries of our polygons
@@ -301,7 +305,7 @@ world.boundary.plot()
 We can use different schemes (here we use quantiles) to classify our map into colors. 
 
 ```python
-world.plot(column='gdp_per_cap', cmap='OrRd', scheme='quantiles')
+world.plot(column='gdp_per_cap', cmap='nipy_spectral', scheme='quantiles')
 ```
 
 ### Missing Data
@@ -351,15 +355,19 @@ ax.set_axis_off();
 We can combine maps of different things to make a layered map. Here we've done it with our world map and global cities
 
 ```python
-cities.plot(marker='*', color='green', markersize=5)
+cities.plot(marker='*', color='green', markersize=7)
 
 cities = cities.to_crs(world.crs)
 ```
 
 ```python
+cities
+```
+
+```python
 base = world.plot(color='white', edgecolor='black')
 
-cities.plot(ax=base, marker='o', color='red', markersize=5)
+cities.plot(ax=base, marker='*', color='green', markersize=10)
 ```
 
 ## Using Pandas and GeoPandas
@@ -376,7 +384,7 @@ When reading in a shape file, you actually need the reference files in the same 
 ```python
 usa = geopandas.read_file('../data/s_22mr22.shp')
 
-usa
+usa.head()
 ```
 
 ```python
@@ -397,13 +405,35 @@ facts = pd.read_csv('../data/state_facts.tsv', delimiter='\t')
 ```
 
 ```python
+dates = pd.read_csv('../data/state_dates.tsv', delimiter='\t')
+```
+
+```python
+facts.head()
+```
+
+```python
 facts['USPS_code']=facts['USPS_code'].apply(lambda x: x.strip()) #trim off whitespace to make the abbreviations match
+dates['Abbreviation']=dates['Abbreviation'].apply(lambda x: x.strip()) #trim off whitespace to make the abbreviations match
 ```
 
 ### Merge Pandas and GeoPandas
 
 ```python
-merged = pd.merge(facts,usa, left_on='USPS_code', right_on='STATE', how='left')
+dates.columns
+```
+
+```python
+merged = pd.merge(facts,dates, left_on='USPS_code', right_on='Abbreviation', how='left')
+```
+
+```python
+merged = pd.merge(merged,usa, left_on='USPS_code', right_on='STATE', how='left')
+merged['State_bird'] = merged['State_bird'].str.strip()
+```
+
+```python
+merged.head()
 ```
 
 ```python
@@ -414,4 +444,24 @@ Now we can filter using conditions like we are familar with when working with pa
 
 ```python
 gdf[gdf['Pop_2020']>5000000].plot()
+```
+
+```python
+gdf[gdf['State_bird']==("Northern cardinal")].plot(column='Pop_2020',cmap='nipy_spectral')
+```
+
+```python
+ax = gdf[gdf['State_bird']==("Northern cardinal")].plot(column='Pop_2020',cmap='nipy_spectral', scheme='quantiles', legend=True);
+
+ax.set_axis_off();
+```
+
+```python
+ax = gdf[(~gdf['State_flower'].str.contains('a'))&(gdf['Status']=='State')&(gdf['USPS_code']!='AK')].plot(column='Pop_2020',cmap='nipy_spectral', scheme='quantiles', legend=False);
+
+ax.set_axis_off();
+```
+
+```python
+gdf[(~gdf['State_flower'].str.contains('a'))&(gdf['USPS_code']!='AK')&(gdf['Status']=='State')].explore(column='Pop_2020',cmap='nipy_spectral', scheme='quantiles', legend=False)
 ```

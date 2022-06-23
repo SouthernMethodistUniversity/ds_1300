@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>38. Data Visualization &#8212; DS 1300</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
@@ -86,14 +100,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/00_introduction.html">
-   DS1300: A Practical Introduction to Data Science
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../book/00_introduction.html">
+                    DS1300: A Practical Introduction to Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Day 1
  </span>
@@ -300,15 +315,40 @@ const thebe_selector_output = ".output, .cell_output"
    43. Intermediate TextMining with Python
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/14_intro_to_AI.html">
+   46. Introduction to AI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16_workbook.html">
+   47. Unsupervised Learning Example - Folktale Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17_workbook.html">
+   48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18_workbook.html">
+   49. Reinforcement Learning Example - Tic Tac Toe
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -316,61 +356,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/code/12_workbook.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/code/12_workbook.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anatomy-of-a-plot">
    38.1. Anatomy of a plot
@@ -444,12 +540,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Data Visualization</h1>
@@ -539,11 +634,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="data-visualization">
-<h1><span class="section-number">38. </span>Data Visualization<a class="headerlink" href="#data-visualization" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-visualization">
+<h1><span class="section-number">38. </span>Data Visualization<a class="headerlink" href="#data-visualization" title="Permalink to this headline">#</a></h1>
 <p>Being able to visualize your data is vital to being a data scientist. This generally involves making graphs or plots. More advanced techniques (beyond the scope of this notebook) include interactive graphics and dashboards.</p>
 <p>We’re going to focus on two different types of plotting (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">Pandas</a> and <a class="reference external" href="https://matplotlib.org/stable/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py">Matplotlib</a>) but under the hood they’re both matplotlib. There are other plotting libraries like <a class="reference external" href="https://seaborn.pydata.org/tutorial.html">seaborn</a>.</p>
 <p>Here is a really quick but good <a class="reference external" href="https://towardsdatascience.com/all-your-matplotlib-questions-answered-420dd95cb4ff">article</a> to read for getting started too.</p>
@@ -560,8 +656,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="section" id="anatomy-of-a-plot">
-<h2><span class="section-number">38.1. </span>Anatomy of a plot<a class="headerlink" href="#anatomy-of-a-plot" title="Permalink to this headline">¶</a></h2>
+<section id="anatomy-of-a-plot">
+<h2><span class="section-number">38.1. </span>Anatomy of a plot<a class="headerlink" href="#anatomy-of-a-plot" title="Permalink to this headline">#</a></h2>
 <p>Let’s ignore the following code, butjust look at the resulting image.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This figure shows the name of several matplotlib elements composing a figure</span>
 
@@ -706,21 +802,30 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>There are a lot of elements that go into a plot. Let’s start simpler</p>
-</div>
-<div class="section" id="plotting-with-pandas">
-<h2><span class="section-number">38.2. </span>Plotting with Pandas<a class="headerlink" href="#plotting-with-pandas" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting-with-pandas">
+<h2><span class="section-number">38.2. </span>Plotting with Pandas<a class="headerlink" href="#plotting-with-pandas" title="Permalink to this headline">#</a></h2>
 <p>Pandas makes plotting really easy. All we need to do is call the plot function. Done!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># data.plot(); # The ; can be used to hide the &#39;&lt;Text&gt;&#39; if you want.</span>
 </pre></div>
 </div>
 <p>Ok, so this plot isn’t helpful. It is hard to read, it’s not clear what is really being shown. Why is it a line graph? Let’s dive into some options to improve this.</p>
-<div class="section" id="making-a-better-plot">
-<h3><span class="section-number">38.2.1. </span>Making a better plot<a class="headerlink" href="#making-a-better-plot" title="Permalink to this headline">¶</a></h3>
+<section id="making-a-better-plot">
+<h3><span class="section-number">38.2.1. </span>Making a better plot<a class="headerlink" href="#making-a-better-plot" title="Permalink to this headline">#</a></h3>
 <p>The first step to making a better plot is to isolate what we the question we are trying to answer and what type of plot we should make to answer that question. For this example, let’s try to determine if there is a correlation between 2020 population and capital city population.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;USPS_code&#39;</span><span class="p">,</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span><span class="s1">&#39;Capital_pop&#39;</span><span class="p">,</span><span class="s1">&#39;city_1_pop&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>First let’s just slice our data down to what we are interested in - populations by state</p>
@@ -733,8 +838,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;State_bird&#39;</span><span class="p">,</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># we are setting the type of plot to a bar graph</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;State_bird&#39;</span><span class="p">]);</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;State_bird&#39;</span><span class="p">,</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span><span class="s2">&quot;Pop_2010&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># we are setting the type of plot to a bar graph</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;USPS_code&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 <p>Not much better at answering our question. Bar graphs are good for showing counts of things that are related but get hard to use when you have too many bars or the bars are vastly different in size.</p>
@@ -750,38 +858,48 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="p">[</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>We could try a scatter plot. Why would make sense?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Capital_pop&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<p>Also be careful that your Pie Chart is representative of the whole data set!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top5</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top5</span><span class="p">[</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
 </div>
-<div class="section" id="adding-features">
-<h3><span class="section-number">38.2.2. </span>Adding Features<a class="headerlink" href="#adding-features" title="Permalink to this headline">¶</a></h3>
+<p>We could try a scatter plot. Why would make sense?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;city_1_pop&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Capital_pop&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-features">
+<h3><span class="section-number">38.2.2. </span>Adding Features<a class="headerlink" href="#adding-features" title="Permalink to this headline">#</a></h3>
 <p>Now that we have a plot that we like, let’s improve it to better describe our results.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Capital_pop&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="section" id="labels-and-legends">
-<h4><span class="section-number">38.2.2.1. </span>Labels and Legends<a class="headerlink" href="#labels-and-legends" title="Permalink to this headline">¶</a></h4>
+<section id="labels-and-legends">
+<h4><span class="section-number">38.2.2.1. </span>Labels and Legends<a class="headerlink" href="#labels-and-legends" title="Permalink to this headline">#</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Capital_pop&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Capitals&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>We can add labels to our plots using the label flag. We can also show/hide the legend using the legend flag. If you do this, you have to be careful that your data is well described elsewhere.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;USPS_code&#39;</span><span class="p">,</span><span class="s1">&#39;city_1_pop&#39;</span><span class="p">,</span><span class="s1">&#39;city_2_pop&#39;</span><span class="p">,</span><span class="s1">&#39;city_3_pop&#39;</span><span class="p">,</span><span class="s1">&#39;city_4_pop&#39;</span><span class="p">,</span><span class="s1">&#39;city_5_pop&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;USPS_code&#39;</span><span class="p">,</span><span class="s1">&#39;city_1_pop&#39;</span><span class="p">,</span><span class="s1">&#39;city_2_pop&#39;</span><span class="p">,</span><span class="s1">&#39;city_3_pop&#39;</span><span class="p">,</span><span class="s1">&#39;city_4_pop&#39;</span><span class="p">,</span><span class="s1">&#39;city_5_pop&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="additional-data">
-<h4><span class="section-number">38.2.2.2. </span>Additional Data<a class="headerlink" href="#additional-data" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="additional-data">
+<h4><span class="section-number">38.2.2.2. </span>Additional Data<a class="headerlink" href="#additional-data" title="Permalink to this headline">#</a></h4>
 <p>Sometimes we’ll want to plot multiple things on a single axis. To do that we have to use the axes option.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;city_1_pop&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Largest Cities&quot;</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Capital_pop&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Capital Cities&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>What is wrong with this plot?</p>
-</div>
-<div class="section" id="color-and-markers">
-<h4><span class="section-number">38.2.2.3. </span>Color and Markers<a class="headerlink" href="#color-and-markers" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="color-and-markers">
+<h4><span class="section-number">38.2.2.3. </span>Color and Markers<a class="headerlink" href="#color-and-markers" title="Permalink to this headline">#</a></h4>
 <p>You can specify colors by name (‘red’) or by letter (‘b’). A full table of named python colors can be found <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">here</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;city_1_pop&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Largest Cities&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Capital_pop&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Capital Cities&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -796,25 +914,25 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span><span class="p">[</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;flag&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="titles">
-<h4><span class="section-number">38.2.2.4. </span>Titles<a class="headerlink" href="#titles" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="titles">
+<h4><span class="section-number">38.2.2.4. </span>Titles<a class="headerlink" href="#titles" title="Permalink to this headline">#</a></h4>
 <p>You can add titles to both your axes and your overall graph.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;city_1_pop&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Largest Cities&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Capital_pop&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Capital Cities&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;2020 State Population&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Population of Select Cities&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;State and City Populations - 2020&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="grid">
-<h4><span class="section-number">38.2.2.5. </span>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="grid">
+<h4><span class="section-number">38.2.2.5. </span>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">#</a></h4>
 <p>Sometimes (certainly not always) you’ll want to add a grid to your graph for added specificity.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;city_1_pop&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Largest Cities&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Capital_pop&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Capital Cities&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;2020 State Population&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Population of Select Cities&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;State and City Populations - 2020&#39;</span><span class="p">,</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="saving-your-plot">
-<h4><span class="section-number">38.2.2.6. </span>Saving your plot<a class="headerlink" href="#saving-your-plot" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="saving-your-plot">
+<h4><span class="section-number">38.2.2.6. </span>Saving your plot<a class="headerlink" href="#saving-your-plot" title="Permalink to this headline">#</a></h4>
 <p>Once you have your plot the way you like it, you’ll want to export it. There are multiple formats you can export in, but pdf and png are likely the ones you’ll want to utilize.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;city_1_pop&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Largest Cities&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">)</span>
 <span class="n">plt</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pop_2020&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Capital_pop&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Capital Cities&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;2020 State Population&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Population of Select Cities&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;State and City Populations - 2020&#39;</span><span class="p">,</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -823,14 +941,14 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figure.pdf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="other-plotting-libraries">
-<h2><span class="section-number">38.3. </span>Other plotting libraries<a class="headerlink" href="#other-plotting-libraries" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="other-plotting-libraries">
+<h2><span class="section-number">38.3. </span>Other plotting libraries<a class="headerlink" href="#other-plotting-libraries" title="Permalink to this headline">#</a></h2>
 <p>Matplotlib and Seaborn both have extensive and impressive catalogues of sample plots that I’d encourage you to explore and pull from</p>
-<div class="section" id="matplotlib-examples">
-<h3><span class="section-number">38.3.1. </span>Matplotlib Examples<a class="headerlink" href="#matplotlib-examples" title="Permalink to this headline">¶</a></h3>
+<section id="matplotlib-examples">
+<h3><span class="section-number">38.3.1. </span>Matplotlib Examples<a class="headerlink" href="#matplotlib-examples" title="Permalink to this headline">#</a></h3>
 <p>Here are some links to really cool matplotlib examples:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/introductory/sample_plots.html">Matplotlib samples</a></p></li>
@@ -885,9 +1003,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="seaborn-examples">
-<h3><span class="section-number">38.3.2. </span>Seaborn Examples<a class="headerlink" href="#seaborn-examples" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="seaborn-examples">
+<h3><span class="section-number">38.3.2. </span>Seaborn Examples<a class="headerlink" href="#seaborn-examples" title="Permalink to this headline">#</a></h3>
 <p>Here are some links to really cool seaborn examples:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://seaborn.pydata.org/tutorial.html">Seaborn tutorial</a></p></li>
@@ -920,9 +1038,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -946,9 +1064,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="03_assignment.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -964,24 +1084,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
