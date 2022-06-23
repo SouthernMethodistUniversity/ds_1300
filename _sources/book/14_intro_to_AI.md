@@ -1,23 +1,10 @@
----
-jupyter:
-  jupytext:
-    formats: ipynb,md
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.13.8
-  kernelspec:
-    display_name: Python 3 (ipykernel)
-    language: python
-    name: python3
----
 
 # Introduction to AI
 
 
 ## What is AI?
 
+![AI](images/AIMLDL.png)
 
 [Artificial Intelligence (AI)](https://en.wikipedia.org/wiki/Artificial_intelligence) is the general name given to intelligence demonstrated by machines (software or hardware). This covers a lot of different areas and has broad-reaching applications. Typically when discussing AI in terms of data science, we're specifically interested in a subfield focused on learning. This is called [Machine Learning (ML)](https://en.wikipedia.org/wiki/Machine_learning).
 
@@ -37,7 +24,7 @@ There are many types of machine learning algorithms and each has a variety of ap
 Unsupervised learning is used to extract patterns from data that might be difficult for a human to detect. Sometimes this is the end of the story (i.e. the pattern is your result) but you can also use unsupervised learning to identify key features in your data that can help you focus your analysis.
 
 
-Example: Sorting things into categories (songs into genres, ice cream flavors you like/dislike)
+Example: Sorting things into categories (songs into genres, ice cream flavors you like/dislike). Unsupervised Learning is mostly used in clustering/sorting thing like songs in to genres, climate regions, customer segmentation or more advance like recommender systems (likes/dislikes) and anomaly detection
 
 
 ### Supervised Learning
@@ -70,7 +57,7 @@ So how does all of this actually work?
 ## Deep Learning
 
 
-Deep learning (DL) is a sub-field of machine learning that uses models of human neurology to pass data and make decisions. Traditionally this is done using convolutional neural networks with several layers. Deep learning is a rapidly growing field and has applications from computer vision to drug design.
+Deep learning (DL) is a sub-field of machine learning where the artificial neural networks are inspired by the human brain. The term ‘deep learning’ is used because the neural networks have various layers that enable learning, unlearning, and relearning. For example the Convolutional Neural Networks can be used for image detection, Recurrent Neural Network can be used for weather prediction. Deep learning is a rapidly growing field and has applications from computer vision to drug design.
 
 - More on [Neural Networks from 3Blue1Brown](https://www.3blue1brown.com/lessons/neural-networks)
 
