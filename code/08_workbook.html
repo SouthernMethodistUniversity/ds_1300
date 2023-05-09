@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>32. Data Storage &#8212; DS 1300</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,56 +61,87 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'code/08_workbook';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="33. Ordinary Least Squares" href="09_workbook.html" />
     <link rel="prev" title="31. Inference" href="../book/12_inference.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">DS 1300</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../book/00_introduction.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">DS 1300</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -108,455 +150,261 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 1
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 1</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/01_data_science.html">
-   1. Data Science Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/02_hpc.html">
-   2. Introduction to High-Performance Computing
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/01_data_science.html">1. Data Science Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/02_hpc.html">2. Introduction to High-Performance Computing</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 2
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 2</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/08_project.html">
-   3. Semester Project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/03_using_m2.html">
-   4. Using ManeFrame II for Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
-   5. Introduction to GitHub and Getting Setup
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_workbook.html">
-   6. Introduction to Python Programming
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/08_project.html">3. Semester Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/03_using_m2.html">4. Using ManeFrame II for Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/04_github_and_initial_setup.html">5. Introduction to GitHub and Getting Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_workbook.html">6. Introduction to Python Programming</a></li>
+
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 3
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 3</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/06_data_ethics_bias.html">
-   12. Data Ethics and Bias
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_workbook.html">
-   13. Working with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_assignment.html">
-   14. Introduction to Python Programming
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/06_data_ethics_bias.html">12. Data Ethics and Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_workbook.html">13. Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_assignment.html">14. Introduction to Python Programming</a></li>
+
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 4
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 4</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="04_workbook.html">
-   20. Exploring and Cleaning a Data Set
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/10_pudding.html">
-   23. The Pudding: Data Story Telling and Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_assignment.html">
-   25. Assignment: Working with Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="04_workbook.html">20. Exploring and Cleaning a Data Set</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../book/10_pudding.html">23. The Pudding: Data Story Telling and Visualization</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02_assignment.html">25. Assignment: Working with Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 5
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 5</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/09_modeling.html">
-   26. Building Models with Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/09_modeling.html">26. Building Models with Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 6
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 6</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/11_dask_initial_setup.html">
-   27. Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05_workbook.html">
-   28. Dask Delayed
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06_workbook.html">
-   29. Dask Arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07_workbook.html">
-   30. Dask DataFrames
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/11_dask_initial_setup.html">27. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_workbook.html">28. Dask Delayed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_workbook.html">29. Dask Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_workbook.html">30. Dask DataFrames</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 7
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 7</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/12_inference.html">
-   31. Inference
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   32. Data Storage
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09_workbook.html">
-   33. Ordinary Least Squares
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10_workbook.html">
-   34. Prediction (out of sample)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11_workbook.html">
-   35. Quantile regression
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_assignment.html">
-   36. Linear Regression and Temperature
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/12_inference.html">31. Inference</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">32. Data Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_workbook.html">33. Ordinary Least Squares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_workbook.html">34. Prediction (out of sample)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_workbook.html">35. Quantile regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_assignment.html">36. Linear Regression and Temperature</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 8
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 8</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="12_workbook.html">
-   38. Data Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="15_workbook.html">
-   39. GeoPandas and Mapping in Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13_workbook.html">
-   40. Optimization Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04_assignment.html">
-   41. Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="12_workbook.html">38. Data Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_workbook.html">39. GeoPandas and Mapping in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_workbook.html">40. Optimization Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_assignment.html">41. Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 9
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 9</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/13_art.html">
-   42. Art
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="14_workbook.html">
-   43. Intermediate TextMining with Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/14_intro_to_AI.html">
-   46. Introduction to AI
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="16_workbook.html">
-   47. Unsupervised Learning Example - Folktale Clustering
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="17_workbook.html">
-   48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18_workbook.html">
-   49. Reinforcement Learning Example - Tic Tac Toe
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/13_art.html">42. Art</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_workbook.html">43. Intermediate TextMining with Python</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../book/14_intro_to_AI.html">46. Introduction to AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_workbook.html">47. Unsupervised Learning Example - Folktale Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_workbook.html">48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_workbook.html">49. Reinforcement Learning Example - Tic Tac Toe</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/code/08_workbook.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-          
 
 
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/code/08_workbook.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-csv">
-   32.1. Read CSV
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-to-hdf5">
-     32.1.1. Write to HDF5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compare-csv-to-hdf5-speeds">
-     32.1.2. Compare CSV to HDF5 speeds
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#store-text-efficiently-with-categoricals">
-     32.1.3. 1.  Store text efficiently with categoricals
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data Storage</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-csv">
-   32.1. Read CSV
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-to-hdf5">
-     32.1.1. Write to HDF5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compare-csv-to-hdf5-speeds">
-     32.1.2. Compare CSV to HDF5 speeds
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#store-text-efficiently-with-categoricals">
-     32.1.3. 1.  Store text efficiently with categoricals
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Storage</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-csv">32.1. Read CSV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-to-hdf5">32.1.1. Write to HDF5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-csv-to-hdf5-speeds">32.1.2. Compare CSV to HDF5 speeds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#store-text-efficiently-with-categoricals">32.1.3. 1.  Store text efficiently with categoricals</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="data-storage">
-<h1><span class="section-number">32. </span>Data Storage<a class="headerlink" href="#data-storage" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">32. </span>Data Storage<a class="headerlink" href="#data-storage" title="Permalink to this heading">#</a></h1>
 <p>Efficient storage can dramatically improve performance, particularly when operating repeatedly from disk.</p>
 <p>Decompressing text and parsing CSV files is expensive.  One of the most effective strategies with medium data is to use a binary storage format like HDF5.  Often the performance gains from doing this is sufficient so that you can switch back to using Pandas again instead of using <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code>.</p>
 <p>In this section we’ll learn how to efficiently arrange and store your datasets in on-disk binary formats.  We’ll use the following:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/io.html#io-hdf5">Pandas <code class="docutils literal notranslate"><span class="pre">HDFStore</span></code></a> format on top of <code class="docutils literal notranslate"><span class="pre">HDF5</span></code></p></li>
 <li><p>Categoricals for storing text data numerically</p></li>
 </ol>
 <p><strong>Main Take-aways</strong></p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Storage formats affect performance by an order of magnitude</p></li>
 <li><p>Text data will keep even a fast format like HDF5 slow</p></li>
 <li><p>A combination of binary formats, column storage, and partitioned data turns one second wait times into 80ms wait times.</p></li>
 </ol>
 <section id="read-csv">
-<h2><span class="section-number">32.1. </span>Read CSV<a class="headerlink" href="#read-csv" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">32.1. </span>Read CSV<a class="headerlink" href="#read-csv" title="Permalink to this heading">#</a></h2>
 <p>First we read our csv data as before.</p>
 <p>CSV and other text-based file formats are the most common storage for data from many sources, because they require minimal pre-processing, can be written line-by-line and are human-readable. Since Pandas’ <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> is well-optimized, CSVs are a reasonable input, but far from optimized, since reading required extensive text parsing.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -570,7 +418,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <section id="write-to-hdf5">
-<h3><span class="section-number">32.1.1. </span>Write to HDF5<a class="headerlink" href="#write-to-hdf5" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">32.1.1. </span>Write to HDF5<a class="headerlink" href="#write-to-hdf5" title="Permalink to this heading">#</a></h3>
 <p>HDF5 and netCDF are binary array formats very commonly used in the scientific realm.</p>
 <p>Pandas contains a specialized HDF5 format, <code class="docutils literal notranslate"><span class="pre">HDFStore</span></code>.  The <code class="docutils literal notranslate"><span class="pre">dd.DataFrame.to_hdf</span></code> method works exactly like the <code class="docutils literal notranslate"><span class="pre">pd.DataFrame.to_hdf</span></code> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../work&#39;</span><span class="p">,</span> <span class="s1">&#39;accounts.h5&#39;</span><span class="p">)</span>
@@ -588,7 +436,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="compare-csv-to-hdf5-speeds">
-<h3><span class="section-number">32.1.2. </span>Compare CSV to HDF5 speeds<a class="headerlink" href="#compare-csv-to-hdf5-speeds" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">32.1.2. </span>Compare CSV to HDF5 speeds<a class="headerlink" href="#compare-csv-to-hdf5-speeds" title="Permalink to this heading">#</a></h3>
 <p>We do a simple computation that requires reading a column of our dataset and compare performance between CSV files and our newly created HDF5 file.  Which do you expect to be faster?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">time</span> <span class="n">df_csv</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 </pre></div>
@@ -598,13 +446,13 @@ title="Print to PDF"
 </div>
 <p>Sadly they are about the same, or perhaps even slower.</p>
 <p>The culprit here is <code class="docutils literal notranslate"><span class="pre">names</span></code> column, which is of <code class="docutils literal notranslate"><span class="pre">object</span></code> dtype and thus hard to store efficiently.  There are two problems here:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>How do we store text data like <code class="docutils literal notranslate"><span class="pre">names</span></code> efficiently on disk?</p></li>
 <li><p>Why did we have to read the <code class="docutils literal notranslate"><span class="pre">names</span></code> column when all we wanted was <code class="docutils literal notranslate"><span class="pre">amount</span></code></p></li>
 </ol>
 </section>
 <section id="store-text-efficiently-with-categoricals">
-<h3><span class="section-number">32.1.3. </span>1.  Store text efficiently with categoricals<a class="headerlink" href="#store-text-efficiently-with-categoricals" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">32.1.3. </span>1.  Store text efficiently with categoricals<a class="headerlink" href="#store-text-efficiently-with-categoricals" title="Permalink to this heading">#</a></h3>
 <p>We can use Pandas categoricals to replace our object dtypes with a numerical representation.  This takes a bit more time up front, but results in better performance.</p>
 <p>More on categoricals at the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/categorical.html">pandas docs</a> and <a class="reference external" href="http://matthewrocklin.com/blog/work/2015/06/18/Categoricals">this blogpost</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Categorize data, then store in HDFStore</span>
@@ -638,7 +486,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./code"
         },
         predefinedOutput: true
@@ -646,50 +494,110 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../book/12_inference.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">31. </span>Inference</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../book/12_inference.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">31. </span>Inference</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="09_workbook.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="09_workbook.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">33. </span>Ordinary Least Squares</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By The Jupyter Book community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-csv">32.1. Read CSV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-to-hdf5">32.1.1. Write to HDF5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-csv-to-hdf5-speeds">32.1.2. Compare CSV to HDF5 speeds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#store-text-efficiently-with-categoricals">32.1.3. 1.  Store text efficiently with categoricals</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

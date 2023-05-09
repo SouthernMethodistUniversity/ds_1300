@@ -14,9 +14,15 @@ on the semester project.
 
 Class information and assignments will be posted in Canvas.
 
+## Useful Links
+
+* [Canvas](https://www.smu.edu/OIT/Services/Canvas)
+* [Class GitHub Repository with Jupyter
+  Notebooks](https://github.com/SouthernMethodistUniversity/ds_1300_notebooks)
+
 ## Dates and Times
 
-May Term, May 16 through 31
+May Term, May 11 through 25
 10:00 AM - 12:00 PM, 1:00 PM - 3:00 PM
 
 ## Course Overview
@@ -130,11 +136,11 @@ Each calendar date on the syllabus corresponds to 4 lecture hours, in
 line with the structure of a May Term semester.
 
 * **Day 1**
-  * Data Science Overview
   * High-performance Computing
-* **Day 2**
   * Using ManeFrame II
   * Using GitHub
+* **Day 2**
+  * Data Science Overview
   * Using Jupyter
   * Python Programming I
 * **Day 3**

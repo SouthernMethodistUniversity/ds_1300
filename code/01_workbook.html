@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>6. Introduction to Python Programming &#8212; DS 1300</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,56 +61,87 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'code/01_workbook';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="12. Data Ethics and Bias" href="../book/06_data_ethics_bias.html" />
     <link rel="prev" title="5. Introduction to GitHub and Getting Setup" href="../book/04_github_and_initial_setup.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">DS 1300</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../book/00_introduction.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">DS 1300</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -108,608 +150,279 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 1
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 1</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/01_data_science.html">
-   1. Data Science Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/02_hpc.html">
-   2. Introduction to High-Performance Computing
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/01_data_science.html">1. Data Science Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/02_hpc.html">2. Introduction to High-Performance Computing</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 2
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 2</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/08_project.html">
-   3. Semester Project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/03_using_m2.html">
-   4. Using ManeFrame II for Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
-   5. Introduction to GitHub and Getting Setup
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   6. Introduction to Python Programming
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/08_project.html">3. Semester Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/03_using_m2.html">4. Using ManeFrame II for Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/04_github_and_initial_setup.html">5. Introduction to GitHub and Getting Setup</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Introduction to Python Programming</a></li>
+
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 3
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 3</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/06_data_ethics_bias.html">
-   12. Data Ethics and Bias
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_workbook.html">
-   13. Working with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_assignment.html">
-   14. Introduction to Python Programming
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/06_data_ethics_bias.html">12. Data Ethics and Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_workbook.html">13. Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_assignment.html">14. Introduction to Python Programming</a></li>
+
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 4
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 4</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="04_workbook.html">
-   20. Exploring and Cleaning a Data Set
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/10_pudding.html">
-   23. The Pudding: Data Story Telling and Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_assignment.html">
-   25. Assignment: Working with Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="04_workbook.html">20. Exploring and Cleaning a Data Set</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../book/10_pudding.html">23. The Pudding: Data Story Telling and Visualization</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02_assignment.html">25. Assignment: Working with Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 5
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 5</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/09_modeling.html">
-   26. Building Models with Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/09_modeling.html">26. Building Models with Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 6
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 6</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/11_dask_initial_setup.html">
-   27. Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05_workbook.html">
-   28. Dask Delayed
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06_workbook.html">
-   29. Dask Arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07_workbook.html">
-   30. Dask DataFrames
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/11_dask_initial_setup.html">27. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_workbook.html">28. Dask Delayed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_workbook.html">29. Dask Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_workbook.html">30. Dask DataFrames</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 7
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 7</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/12_inference.html">
-   31. Inference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08_workbook.html">
-   32. Data Storage
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09_workbook.html">
-   33. Ordinary Least Squares
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10_workbook.html">
-   34. Prediction (out of sample)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11_workbook.html">
-   35. Quantile regression
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_assignment.html">
-   36. Linear Regression and Temperature
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/12_inference.html">31. Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_workbook.html">32. Data Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_workbook.html">33. Ordinary Least Squares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_workbook.html">34. Prediction (out of sample)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_workbook.html">35. Quantile regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_assignment.html">36. Linear Regression and Temperature</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 8
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 8</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="12_workbook.html">
-   38. Data Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="15_workbook.html">
-   39. GeoPandas and Mapping in Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13_workbook.html">
-   40. Optimization Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04_assignment.html">
-   41. Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="12_workbook.html">38. Data Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_workbook.html">39. GeoPandas and Mapping in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_workbook.html">40. Optimization Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_assignment.html">41. Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 9
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 9</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/13_art.html">
-   42. Art
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="14_workbook.html">
-   43. Intermediate TextMining with Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/14_intro_to_AI.html">
-   46. Introduction to AI
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="16_workbook.html">
-   47. Unsupervised Learning Example - Folktale Clustering
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="17_workbook.html">
-   48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18_workbook.html">
-   49. Reinforcement Learning Example - Tic Tac Toe
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/13_art.html">42. Art</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_workbook.html">43. Intermediate TextMining with Python</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../book/14_intro_to_AI.html">46. Introduction to AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_workbook.html">47. Unsupervised Learning Example - Folktale Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_workbook.html">48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_workbook.html">49. Reinforcement Learning Example - Tic Tac Toe</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/code/01_workbook.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-          
 
 
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/code/01_workbook.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   6. Introduction to Python Programming
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#intro-to-python-basics">
-   7. Intro to Python Basics
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#operating-this-notebook">
-     7.1. Operating this notebook
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#basic-math">
-       7.1.1. Basic Math
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#variables-and-objects">
-     7.2. Variables and Objects
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dictionaries">
-       7.2.1. Dictionaries
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loops-and-functions">
-     7.3. Loops and Functions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#loops">
-       7.3.1. Loops
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#functions">
-       7.3.2. Functions
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#libraries">
-   8. Libraries
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataframes-and-pandas">
-   9. DataFrames and Pandas
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-complex-data">
-     9.1. More Complex Data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#groupby">
-     9.2. GroupBy
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-advanced-slicing">
-     9.3. Selecting (Advanced Slicing)
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joining">
-     9.4. Joining
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting">
-   10. Plotting
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-complex-plotting">
-     10.1. More Complex Plotting
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wrapping-up">
-   11. Wrapping up
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction to Python Programming</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   6. Introduction to Python Programming
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#intro-to-python-basics">
-   7. Intro to Python Basics
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#operating-this-notebook">
-     7.1. Operating this notebook
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#basic-math">
-       7.1.1. Basic Math
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#variables-and-objects">
-     7.2. Variables and Objects
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dictionaries">
-       7.2.1. Dictionaries
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loops-and-functions">
-     7.3. Loops and Functions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#loops">
-       7.3.1. Loops
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#functions">
-       7.3.2. Functions
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#libraries">
-   8. Libraries
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataframes-and-pandas">
-   9. DataFrames and Pandas
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-complex-data">
-     9.1. More Complex Data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#groupby">
-     9.2. GroupBy
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-advanced-slicing">
-     9.3. Selecting (Advanced Slicing)
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joining">
-     9.4. Joining
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting">
-   10. Plotting
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-complex-plotting">
-     10.1. More Complex Plotting
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wrapping-up">
-   11. Wrapping up
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Python Programming</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Introduction to Python Programming</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-python-basics">7. Intro to Python Basics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-this-notebook">7.1. Operating this notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-math">7.1.1. Basic Math</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-objects">7.2. Variables and Objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">7.2.1. Dictionaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-and-functions">7.3. Loops and Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">7.3.1. Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">7.3.2. Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">8. Libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-and-pandas">9. DataFrames and Pandas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-data">9.1. More Complex Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">9.2. GroupBy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-advanced-slicing">9.3. Selecting (Advanced Slicing)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining">9.4. Joining</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">10. Plotting</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-plotting">10.1. More Complex Plotting</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up">11. Wrapping up</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-programming">
-<h1><span class="section-number">6. </span>Introduction to Python Programming<a class="headerlink" href="#introduction-to-python-programming" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">6. </span>Introduction to Python Programming<a class="headerlink" href="#introduction-to-python-programming" title="Permalink to this heading">#</a></h1>
 <p>By: Dr. Eric Godat and Dr. Rob Kalescky</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="intro-to-python-basics">
-<h1><span class="section-number">7. </span>Intro to Python Basics<a class="headerlink" href="#intro-to-python-basics" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">7. </span>Intro to Python Basics<a class="headerlink" href="#intro-to-python-basics" title="Permalink to this heading">#</a></h1>
 <p><em>This section is designed to guide you from having never used Python before to feeling comfortable with basic operations.</em></p>
 <p>Python is a programming language capable of just about anything you could want to do. It is designed to be human readable and robust. This particular document is called a Jupyter Notebook. Notebooks are tools for developing Python code and running that code in small steps and see the intermediate results in line.</p>
 <section id="operating-this-notebook">
-<h2><span class="section-number">7.1. </span>Operating this notebook<a class="headerlink" href="#operating-this-notebook" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.1. </span>Operating this notebook<a class="headerlink" href="#operating-this-notebook" title="Permalink to this heading">#</a></h2>
 <p>To operate this notebook, you will need to execute boxes of code, called cells. To do this you can either click the <em>Run</em> button on the toolbar or use [Shift]+[Enter].</p>
 <p>Throughout this notebook you will see cells that are not code (like this one). These cells contain text in a language called Markdown. You can execute these cells to render formatted text. A cheatsheet for Markdown can be found by clicking <code class="docutils literal notranslate"><span class="pre">Help</span> <span class="pre">-&gt;</span> <span class="pre">Markdown</span> <span class="pre">Reference</span></code> or articles <a class="reference external" href="https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd">like this</a>. There will also be comments with in the code itself that give additional information about the operation of the code, describe functions or show you places where you might want to make changes. These comments are always preceded by an octothorp (#) and in most cases be a different color from the surrounding text.</p>
 <p>Notebooks save automatically, however if you have made big changes your code, you can checkpoint it. This allows you to roll back changes to this point (or any previous checkpoints) should something break in the future.</p>
@@ -719,7 +432,7 @@ title="Print to PDF"
 <p>-<strong>D</strong>elete the current cell   [D,D]</p>
 <p><strong>Let’s try it out!</strong></p>
 <section id="basic-math">
-<h3><span class="section-number">7.1.1. </span>Basic Math<a class="headerlink" href="#basic-math" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.1.1. </span>Basic Math<a class="headerlink" href="#basic-math" title="Permalink to this heading">#</a></h3>
 <p>Python can do simple mathematical operations just like a calculator. Try executing the following cells.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
 </pre></div>
@@ -730,7 +443,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="variables-and-objects">
-<h2><span class="section-number">7.2. </span>Variables and Objects<a class="headerlink" href="#variables-and-objects" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.2. </span>Variables and Objects<a class="headerlink" href="#variables-and-objects" title="Permalink to this heading">#</a></h2>
 <p>Calculations are nice but we really want to be able to store our calculations in memory so that we can access them later. We do that by assigning variables.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">2</span>
 <span class="n">b</span><span class="o">=</span><span class="mi">3</span>
@@ -786,7 +499,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <section id="dictionaries">
-<h3><span class="section-number">7.2.1. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.2.1. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h3>
 <p>Dictionaries are a different way of storing data than lists. They rely on a key and value system as opposed to the order of the entries.</p>
 <p>Dictionaries are enclosed in curly braces {}, the key and value are separated by a colon : and entries are separated by commas ,</p>
 <p>Values can then be accessed by referencing the key.</p>
@@ -802,10 +515,10 @@ title="Print to PDF"
 </section>
 </section>
 <section id="loops-and-functions">
-<h2><span class="section-number">7.3. </span>Loops and Functions<a class="headerlink" href="#loops-and-functions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.3. </span>Loops and Functions<a class="headerlink" href="#loops-and-functions" title="Permalink to this heading">#</a></h2>
 <p>Computers are much better at doing simple repeatable tasks than humans are so to leverage this advantage, we will cover two different ways of writing these kind of repeatable instructions.</p>
 <section id="loops">
-<h3><span class="section-number">7.3.1. </span>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.3.1. </span>Loops<a class="headerlink" href="#loops" title="Permalink to this heading">#</a></h3>
 <p>Loops are a way of having Python complete a task over and over.</p>
 <p>The most common form if a <strong>for</strong> loop. A <strong>for</strong> loop completes a task a fixed number of times by iterating a variable over the members of a sequence in order.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example for loop</span>
@@ -816,7 +529,7 @@ title="Print to PDF"
 <p><em><strong>Note</strong>: The indention is important, it tells Python that the line <em>print(i)</em> belongs inside the loop.</em></p>
 </section>
 <section id="functions">
-<h3><span class="section-number">7.3.2. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.3.2. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h3>
 <p>Sometimes it would be nice to be able to save a group of instructions in a single block, that way we won’t need to rewrite several lines of code each time we want to do that set of operations.</p>
 <p>To do this we define a <strong>function</strong>.</p>
 <p>Functions allow us to define a more complicated set of instructions as a single entity and call that entire block of code directly.</p>
@@ -853,7 +566,7 @@ Is that task something you could use a <em>loop</em> for or a <em>function</em> 
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="libraries">
-<h1><span class="section-number">8. </span>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">8. </span>Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h1>
 <p>Libraries are pre-written chunks of code designed to be integrated into projects for a specific purpose.  The idea is to keep people from having to reinvent the wheel every time they want to write a program.  When we encounter situations where a libary might be useful, we use the keyword <em>import</em> to tell the program that we want to use this pre-existing code.  As an example, in the next section you will use a library called Pandas which helps visualize data and make it easier to digest, which is very useful for us.  Because of this, we will import that code into this program simply by running the cell with the import that goes with that code.  Here is what you will see, only in commented code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#import pandas as pd</span>
 
@@ -864,7 +577,7 @@ Is that task something you could use a <em>loop</em> for or a <em>function</em> 
 <p>Most programming languages have libraries that allow you to import code this way, and it will save you a lot of time and allow you to quickly use many new functions that are highly polished.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="dataframes-and-pandas">
-<h1><span class="section-number">9. </span>DataFrames and Pandas<a class="headerlink" href="#dataframes-and-pandas" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">9. </span>DataFrames and Pandas<a class="headerlink" href="#dataframes-and-pandas" title="Permalink to this heading">#</a></h1>
 <p>Now it is time to use what we have learned to start doing some data science.</p>
 <p>Pandas is the name of a library in which there are functions and tools for doing operations common in data analysis and data science. One particularly great feature is the DataFrame structure which allows us to work with an object similar to an Excel spreadsheet but with the flexibility and power of Python behind it.</p>
 <p>First we will need to import the Pandas library and create a DataFrame. DataFrames are can also be created when you import files (like CSV’s) or tables from a database (like SQL).</p>
@@ -900,7 +613,7 @@ Is that task something you could use a <em>loop</em> for or a <em>function</em> 
 </pre></div>
 </div>
 <section id="more-complex-data">
-<h2><span class="section-number">9.1. </span>More Complex Data<a class="headerlink" href="#more-complex-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">9.1. </span>More Complex Data<a class="headerlink" href="#more-complex-data" title="Permalink to this heading">#</a></h2>
 <p>To look at slightly more complex data operations, we need more complex data.</p>
 <p>Below we have all the chapters from the Hobbit and Lord of the Rings books along with their word counts. Notice that each chapter is a list of information and then each of those list is an element in a larger list.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chapters</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;An Unexpected Party&#39;</span><span class="p">,</span><span class="mi">8638</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
@@ -1008,7 +721,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </div>
 </section>
 <section id="groupby">
-<h2><span class="section-number">9.2. </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">GroupBy</a><a class="headerlink" href="#groupby" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">9.2. </span><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">GroupBy</a><a class="headerlink" href="#groupby" title="Permalink to this heading">#</a></h2>
 <p>Now that we have data for each of the chapters, we can group them using groupby. This lets us do aggregate operations like “add all the wordcounts for each book” or “count how many chapters there are in each book”.</p>
 <p>Groupby is a powerful tool but if you don’t understand your data, it can quickly introduce errors.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;CollectionName&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -1019,7 +732,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </div>
 </section>
 <section id="selecting-advanced-slicing">
-<h2><span class="section-number">9.3. </span>Selecting (Advanced Slicing)<a class="headerlink" href="#selecting-advanced-slicing" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">9.3. </span>Selecting (Advanced Slicing)<a class="headerlink" href="#selecting-advanced-slicing" title="Permalink to this heading">#</a></h2>
 <p>You can select slices of your dataframe using conditional logic as well. Conditional logic means determining if a condition is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> and often relies on operations like: equals <code class="docutils literal notranslate"><span class="pre">==</span></code>, not <code class="docutils literal notranslate"><span class="pre">!</span></code>, and <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, or <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
 </pre></div>
@@ -1042,7 +755,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </div>
 </section>
 <section id="joining">
-<h2><span class="section-number">9.4. </span>Joining<a class="headerlink" href="#joining" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">9.4. </span>Joining<a class="headerlink" href="#joining" title="Permalink to this heading">#</a></h2>
 <p>You can also merge 2 dataframes if you want. Merging allows you to combine datasets in new ways and is a great tool to have when working with complex datasets.</p>
 <p>First we need a second dataframe to work with. Here, we have made a dataframe with the publication year of each of of our Tolkien books.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
@@ -1068,7 +781,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="plotting">
-<h1><span class="section-number">10. </span>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">10. </span>Plotting<a class="headerlink" href="#plotting" title="Permalink to this heading">#</a></h1>
 <p>Visualizing data is incredibly important when trying to convey findings. There are several libraries available for doing data visualization. Pandas has some built in plotting functionality, but we have provided access to MatPlotLib as well.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is only needed in this case because we wanted to show the names of the books. You could make a similar plot in Pandas.</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1081,7 +794,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </pre></div>
 </div>
 <section id="more-complex-plotting">
-<h2><span class="section-number">10.1. </span>More Complex Plotting<a class="headerlink" href="#more-complex-plotting" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">10.1. </span>More Complex Plotting<a class="headerlink" href="#more-complex-plotting" title="Permalink to this heading">#</a></h2>
 <p>Lastly, we can combine several of the things we have learned into a single plot. Here we can group each book together and then look at the word counts by chapter throughout the story.</p>
 <p>First, we want to come up with a way to step through the books in a linear way. We have provided a few ways to do this in increasing complexity.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple - add the collection number to the chapter number divided by 10</span>
@@ -1108,7 +821,7 @@ Where the variable represents the value in each row and the opertaion of functio
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="wrapping-up">
-<h1><span class="section-number">11. </span>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">11. </span>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this heading">#</a></h1>
 <p>We covered:</p>
 <ul class="simple">
 <li><p>Basic Math</p></li>
@@ -1132,7 +845,7 @@ Where the variable represents the value in each row and the opertaion of functio
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./code"
         },
         predefinedOutput: true
@@ -1140,50 +853,135 @@ Where the variable represents the value in each row and the opertaion of functio
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../book/04_github_and_initial_setup.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>Introduction to GitHub and Getting Setup</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../book/04_github_and_initial_setup.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Introduction to GitHub and Getting Setup</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../book/06_data_ethics_bias.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../book/06_data_ethics_bias.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">12. </span>Data Ethics and Bias</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By The Jupyter Book community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Introduction to Python Programming</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-python-basics">7. Intro to Python Basics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-this-notebook">7.1. Operating this notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-math">7.1.1. Basic Math</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-objects">7.2. Variables and Objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">7.2.1. Dictionaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-and-functions">7.3. Loops and Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">7.3.1. Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">7.3.2. Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">8. Libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-and-pandas">9. DataFrames and Pandas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-data">9.1. More Complex Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">9.2. GroupBy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-advanced-slicing">9.3. Selecting (Advanced Slicing)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining">9.4. Joining</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">10. Plotting</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-plotting">10.1. More Complex Plotting</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up">11. Wrapping up</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

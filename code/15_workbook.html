@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>39. GeoPandas and Mapping in Python &#8212; DS 1300</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,56 +61,87 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'code/15_workbook';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="40. Optimization Introduction" href="13_workbook.html" />
     <link rel="prev" title="38. Data Visualization" href="12_workbook.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">DS 1300</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../book/00_introduction.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">DS 1300</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -108,625 +150,272 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 1
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 1</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/01_data_science.html">
-   1. Data Science Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/02_hpc.html">
-   2. Introduction to High-Performance Computing
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/01_data_science.html">1. Data Science Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/02_hpc.html">2. Introduction to High-Performance Computing</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 2
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 2</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/08_project.html">
-   3. Semester Project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/03_using_m2.html">
-   4. Using ManeFrame II for Class
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/04_github_and_initial_setup.html">
-   5. Introduction to GitHub and Getting Setup
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_workbook.html">
-   6. Introduction to Python Programming
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/08_project.html">3. Semester Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/03_using_m2.html">4. Using ManeFrame II for Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../book/04_github_and_initial_setup.html">5. Introduction to GitHub and Getting Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_workbook.html">6. Introduction to Python Programming</a></li>
+
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 3
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 3</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/06_data_ethics_bias.html">
-   12. Data Ethics and Bias
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_workbook.html">
-   13. Working with Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_assignment.html">
-   14. Introduction to Python Programming
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/06_data_ethics_bias.html">12. Data Ethics and Bias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_workbook.html">13. Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_assignment.html">14. Introduction to Python Programming</a></li>
+
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 4
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 4</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="04_workbook.html">
-   20. Exploring and Cleaning a Data Set
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/10_pudding.html">
-   23. The Pudding: Data Story Telling and Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_assignment.html">
-   25. Assignment: Working with Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="04_workbook.html">20. Exploring and Cleaning a Data Set</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../book/10_pudding.html">23. The Pudding: Data Story Telling and Visualization</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02_assignment.html">25. Assignment: Working with Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 5
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 5</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/09_modeling.html">
-   26. Building Models with Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/09_modeling.html">26. Building Models with Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 6
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 6</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/11_dask_initial_setup.html">
-   27. Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05_workbook.html">
-   28. Dask Delayed
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06_workbook.html">
-   29. Dask Arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07_workbook.html">
-   30. Dask DataFrames
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/11_dask_initial_setup.html">27. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_workbook.html">28. Dask Delayed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_workbook.html">29. Dask Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_workbook.html">30. Dask DataFrames</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 7
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 7</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/12_inference.html">
-   31. Inference
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08_workbook.html">
-   32. Data Storage
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09_workbook.html">
-   33. Ordinary Least Squares
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10_workbook.html">
-   34. Prediction (out of sample)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11_workbook.html">
-   35. Quantile regression
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_assignment.html">
-   36. Linear Regression and Temperature
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/12_inference.html">31. Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_workbook.html">32. Data Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_workbook.html">33. Ordinary Least Squares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_workbook.html">34. Prediction (out of sample)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_workbook.html">35. Quantile regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_assignment.html">36. Linear Regression and Temperature</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 8
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 8</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="12_workbook.html">
-   38. Data Visualization
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   39. GeoPandas and Mapping in Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13_workbook.html">
-   40. Optimization Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04_assignment.html">
-   41. Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="12_workbook.html">38. Data Visualization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">39. GeoPandas and Mapping in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_workbook.html">40. Optimization Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_assignment.html">41. Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Day 9
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 9</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/13_art.html">
-   42. Art
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="14_workbook.html">
-   43. Intermediate TextMining with Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../book/14_intro_to_AI.html">
-   46. Introduction to AI
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="16_workbook.html">
-   47. Unsupervised Learning Example - Folktale Clustering
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="17_workbook.html">
-   48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18_workbook.html">
-   49. Reinforcement Learning Example - Tic Tac Toe
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../book/13_art.html">42. Art</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_workbook.html">43. Intermediate TextMining with Python</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../book/14_intro_to_AI.html">46. Introduction to AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_workbook.html">47. Unsupervised Learning Example - Folktale Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_workbook.html">48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_workbook.html">49. Reinforcement Learning Example - Tic Tac Toe</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/code/15_workbook.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-          
 
 
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/code/15_workbook.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-started-boroughs-of-nyc">
-   39.1. Getting Started - Boroughs of NYC
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-files">
-     39.1.1. Reading Files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-files">
-     39.1.2. Writing Files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-features">
-     39.1.3. Getting Features
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#measuring-distance">
-     39.1.4. Measuring Distance
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#making-maps">
-   39.2. Making Maps
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modifying-polygons">
-     39.2.1. Modifying Polygons
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#buffering">
-     39.2.2. Buffering
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#geometry-relations">
-   39.3. Geometry Relations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-on-mapping">
-   39.4. More on Mapping
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-global-data">
-     39.4.1. Load Global Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#choropleth-maps">
-     39.4.2. Choropleth Maps
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-legends">
-     39.4.3. Adding Legends
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-colors">
-     39.4.4. Adding Colors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#missing-data">
-     39.4.5. Missing Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#other-customizations">
-     39.4.6. Other Customizations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#maps-with-layers">
-   39.5. Maps with Layers
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-pandas-and-geopandas">
-   39.6. Using Pandas and GeoPandas
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-in-shape-file">
-     39.6.1. Read in Shape File
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-pandas">
-     39.6.2. Load Pandas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#merge-pandas-and-geopandas">
-     39.6.3. Merge Pandas and GeoPandas
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>GeoPandas and Mapping in Python</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-started-boroughs-of-nyc">
-   39.1. Getting Started - Boroughs of NYC
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-files">
-     39.1.1. Reading Files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-files">
-     39.1.2. Writing Files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-features">
-     39.1.3. Getting Features
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#measuring-distance">
-     39.1.4. Measuring Distance
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#making-maps">
-   39.2. Making Maps
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modifying-polygons">
-     39.2.1. Modifying Polygons
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#buffering">
-     39.2.2. Buffering
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#geometry-relations">
-   39.3. Geometry Relations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-on-mapping">
-   39.4. More on Mapping
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-global-data">
-     39.4.1. Load Global Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#choropleth-maps">
-     39.4.2. Choropleth Maps
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-legends">
-     39.4.3. Adding Legends
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-colors">
-     39.4.4. Adding Colors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#missing-data">
-     39.4.5. Missing Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#other-customizations">
-     39.4.6. Other Customizations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#maps-with-layers">
-   39.5. Maps with Layers
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-pandas-and-geopandas">
-   39.6. Using Pandas and GeoPandas
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-in-shape-file">
-     39.6.1. Read in Shape File
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-pandas">
-     39.6.2. Load Pandas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#merge-pandas-and-geopandas">
-     39.6.3. Merge Pandas and GeoPandas
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>GeoPandas and Mapping in Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-boroughs-of-nyc">39.1. Getting Started - Boroughs of NYC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-files">39.1.1. Reading Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">39.1.2. Writing Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-features">39.1.3. Getting Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-distance">39.1.4. Measuring Distance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-maps">39.2. Making Maps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-polygons">39.2.1. Modifying Polygons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buffering">39.2.2. Buffering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-relations">39.3. Geometry Relations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-mapping">39.4. More on Mapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-global-data">39.4.1. Load Global Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choropleth-maps">39.4.2. Choropleth Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-legends">39.4.3. Adding Legends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-colors">39.4.4. Adding Colors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-data">39.4.5. Missing Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-customizations">39.4.6. Other Customizations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maps-with-layers">39.5. Maps with Layers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pandas-and-geopandas">39.6. Using Pandas and GeoPandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-shape-file">39.6.1. Read in Shape File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-pandas">39.6.2. Load Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-pandas-and-geopandas">39.6.3. Merge Pandas and GeoPandas</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="geopandas-and-mapping-in-python">
-<h1><span class="section-number">39. </span>GeoPandas and Mapping in Python<a class="headerlink" href="#geopandas-and-mapping-in-python" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">39. </span>GeoPandas and Mapping in Python<a class="headerlink" href="#geopandas-and-mapping-in-python" title="Permalink to this heading">#</a></h1>
 <p>A large portion of this tutorial was derived from the GeoPandas <a class="reference external" href="https://geopandas.org/en/stable/docs/user_guide/mapping.html">user guide</a> and <a class="reference external" href="https://geopandas.org/en/stable/getting_started/introduction.html">introduction</a>.</p>
 <section id="getting-started-boroughs-of-nyc">
-<h2><span class="section-number">39.1. </span>Getting Started - Boroughs of NYC<a class="headerlink" href="#getting-started-boroughs-of-nyc" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.1. </span>Getting Started - Boroughs of NYC<a class="headerlink" href="#getting-started-boroughs-of-nyc" title="Permalink to this heading">#</a></h2>
 <p>One commmon way to visualize and interact with data is to use spatial information in the data to generate maps. In order to do that, we need to build out shapes (called geometries) in our data set.</p>
 <p>GeoPandas is an extension of pandas that allows us to include functionality for working with these geometries and perform analyses using that data.</p>
 <p>To start we need some data. In this tutorial, we’ll use a few built in data sets but we will also load data from external shape files.</p>
@@ -736,7 +425,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <section id="reading-files">
-<h3><span class="section-number">39.1.1. </span>Reading Files<a class="headerlink" href="#reading-files" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.1.1. </span>Reading Files<a class="headerlink" href="#reading-files" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path_to_data</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s2">&quot;nybb&quot;</span><span class="p">)</span>
 <span class="n">gdf</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">path_to_data</span><span class="p">)</span>
 <span class="n">gdf</span>
@@ -744,13 +433,13 @@ title="Print to PDF"
 </div>
 </section>
 <section id="writing-files">
-<h3><span class="section-number">39.1.2. </span>Writing Files<a class="headerlink" href="#writing-files" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.1.2. </span>Writing Files<a class="headerlink" href="#writing-files" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;my_file.geojson&quot;</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;GeoJSON&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="getting-features">
-<h3><span class="section-number">39.1.3. </span>Getting Features<a class="headerlink" href="#getting-features" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.1.3. </span>Getting Features<a class="headerlink" href="#getting-features" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;BoroName&quot;</span><span class="p">)</span> <span class="c1">#resetting the name of the boroughs as the index</span>
 </pre></div>
 </div>
@@ -771,7 +460,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="measuring-distance">
-<h3><span class="section-number">39.1.4. </span>Measuring Distance<a class="headerlink" href="#measuring-distance" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.1.4. </span>Measuring Distance<a class="headerlink" href="#measuring-distance" title="Permalink to this heading">#</a></h3>
 <p>Distance from the first point in the data to the centroid</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_point</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;centroid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;centroid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">first_point</span><span class="p">)</span>
@@ -785,7 +474,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="making-maps">
-<h2><span class="section-number">39.2. </span>Making Maps<a class="headerlink" href="#making-maps" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.2. </span>Making Maps<a class="headerlink" href="#making-maps" title="Permalink to this heading">#</a></h2>
 <p>GeoPandas can generate maps based on the geometries in the dataset.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -808,7 +497,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <section id="modifying-polygons">
-<h3><span class="section-number">39.2.1. </span>Modifying Polygons<a class="headerlink" href="#modifying-polygons" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.2.1. </span>Modifying Polygons<a class="headerlink" href="#modifying-polygons" title="Permalink to this heading">#</a></h3>
 <p>We can round out our polygons by creating a “convex hull” around our polygon</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;convex_hull&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">convex_hull</span>
 </pre></div>
@@ -819,7 +508,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="buffering">
-<h3><span class="section-number">39.2.2. </span>Buffering<a class="headerlink" href="#buffering" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.2.2. </span>Buffering<a class="headerlink" href="#buffering" title="Permalink to this heading">#</a></h3>
 <p>We might want to add buffers to our polygons.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># buffering the active geometry by 10 000 feet (geometry is already in feet)</span>
 <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;buffered&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
@@ -836,7 +525,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="geometry-relations">
-<h2><span class="section-number">39.3. </span>Geometry Relations<a class="headerlink" href="#geometry-relations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.3. </span>Geometry Relations<a class="headerlink" href="#geometry-relations" title="Permalink to this heading">#</a></h2>
 <p>We can also use our geometries to check for relations between them. For example, we might want to check on intersections or nearby entities.</p>
 <p>First we need to isolate the geometry we want to look at - in this case Brooklyn</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brooklyn</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Brooklyn&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]</span>
@@ -864,10 +553,10 @@ title="Print to PDF"
 </div>
 </section>
 <section id="more-on-mapping">
-<h2><span class="section-number">39.4. </span>More on Mapping<a class="headerlink" href="#more-on-mapping" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.4. </span>More on Mapping<a class="headerlink" href="#more-on-mapping" title="Permalink to this heading">#</a></h2>
 <p>We might want to make more types of maps. Here are some examples of ways we can manipulate maps.</p>
 <section id="load-global-data">
-<h3><span class="section-number">39.4.1. </span>Load Global Data<a class="headerlink" href="#load-global-data" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.4.1. </span>Load Global Data<a class="headerlink" href="#load-global-data" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">geopandas</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;naturalearth_lowres&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -882,7 +571,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="choropleth-maps">
-<h3><span class="section-number">39.4.2. </span>Choropleth Maps<a class="headerlink" href="#choropleth-maps" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.4.2. </span>Choropleth Maps<a class="headerlink" href="#choropleth-maps" title="Permalink to this heading">#</a></h3>
 <p>These are maps based on a variable. First we’ll filter out some of the data that we don’t care about (Antarctica, uninhabitated land).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">world</span><span class="p">[(</span><span class="n">world</span><span class="o">.</span><span class="n">pop_est</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">name</span><span class="o">!=</span><span class="s2">&quot;Antarctica&quot;</span><span class="p">)]</span>
 </pre></div>
@@ -899,7 +588,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="adding-legends">
-<h3><span class="section-number">39.4.3. </span>Adding Legends<a class="headerlink" href="#adding-legends" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.4.3. </span>Adding Legends<a class="headerlink" href="#adding-legends" title="Permalink to this heading">#</a></h3>
 <p>We can add legends to our map using matplotlib.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -934,7 +623,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="adding-colors">
-<h3><span class="section-number">39.4.4. </span>Adding Colors<a class="headerlink" href="#adding-colors" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.4.4. </span>Adding Colors<a class="headerlink" href="#adding-colors" title="Permalink to this heading">#</a></h3>
 <p>We can use color maps (cmap) to change the color scheme of our map. For more colormap options, check out the <a class="reference external" href="https://matplotlib.org/2.0.2/users/colormaps.html">documentation</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;gdp_per_cap&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;nipy_spectral&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 </pre></div>
@@ -949,7 +638,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="missing-data">
-<h3><span class="section-number">39.4.5. </span>Missing Data<a class="headerlink" href="#missing-data" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.4.5. </span>Missing Data<a class="headerlink" href="#missing-data" title="Permalink to this heading">#</a></h3>
 <p>GeoPandas will ignore missing data by default but you can force it to fill in that missing data if you want using the missing keywords argument</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -976,7 +665,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="other-customizations">
-<h3><span class="section-number">39.4.6. </span>Other Customizations<a class="headerlink" href="#other-customizations" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.4.6. </span>Other Customizations<a class="headerlink" href="#other-customizations" title="Permalink to this heading">#</a></h3>
 <p>We can turn off the axes for a cleaner map</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
@@ -986,7 +675,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="maps-with-layers">
-<h2><span class="section-number">39.5. </span>Maps with Layers<a class="headerlink" href="#maps-with-layers" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.5. </span>Maps with Layers<a class="headerlink" href="#maps-with-layers" title="Permalink to this heading">#</a></h2>
 <p>We can combine maps of different things to make a layered map. Here we’ve done it with our world map and global cities</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 
@@ -1003,12 +692,12 @@ title="Print to PDF"
 </div>
 </section>
 <section id="using-pandas-and-geopandas">
-<h2><span class="section-number">39.6. </span>Using Pandas and GeoPandas<a class="headerlink" href="#using-pandas-and-geopandas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.6. </span>Using Pandas and GeoPandas<a class="headerlink" href="#using-pandas-and-geopandas" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 <section id="read-in-shape-file">
-<h3><span class="section-number">39.6.1. </span>Read in Shape File<a class="headerlink" href="#read-in-shape-file" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.6.1. </span>Read in Shape File<a class="headerlink" href="#read-in-shape-file" title="Permalink to this heading">#</a></h3>
 <p>When reading in a shape file, you actually need the reference files in the same directory as the shape file. This means you need a .shp as well as .shx, .dpf, and .prj files with the same names.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">usa</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;../data/s_22mr22.shp&#39;</span><span class="p">)</span>
 
@@ -1023,7 +712,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="load-pandas">
-<h3><span class="section-number">39.6.2. </span>Load Pandas<a class="headerlink" href="#load-pandas" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.6.2. </span>Load Pandas<a class="headerlink" href="#load-pandas" title="Permalink to this heading">#</a></h3>
 <p>Here we pull in our state facts data set to combine it with the state geometry data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">facts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/state_facts.tsv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1040,7 +729,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="merge-pandas-and-geopandas">
-<h3><span class="section-number">39.6.3. </span>Merge Pandas and GeoPandas<a class="headerlink" href="#merge-pandas-and-geopandas" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.6.3. </span>Merge Pandas and GeoPandas<a class="headerlink" href="#merge-pandas-and-geopandas" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
@@ -1093,7 +782,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./code"
         },
         predefinedOutput: true
@@ -1101,50 +790,133 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="12_workbook.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">38. </span>Data Visualization</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="12_workbook.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">38. </span>Data Visualization</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="13_workbook.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="13_workbook.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">40. </span>Optimization Introduction</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By The Jupyter Book community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-boroughs-of-nyc">39.1. Getting Started - Boroughs of NYC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-files">39.1.1. Reading Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-files">39.1.2. Writing Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-features">39.1.3. Getting Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-distance">39.1.4. Measuring Distance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-maps">39.2. Making Maps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-polygons">39.2.1. Modifying Polygons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buffering">39.2.2. Buffering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-relations">39.3. Geometry Relations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-mapping">39.4. More on Mapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-global-data">39.4.1. Load Global Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choropleth-maps">39.4.2. Choropleth Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-legends">39.4.3. Adding Legends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-colors">39.4.4. Adding Colors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-data">39.4.5. Missing Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-customizations">39.4.6. Other Customizations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maps-with-layers">39.5. Maps with Layers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pandas-and-geopandas">39.6. Using Pandas and GeoPandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-shape-file">39.6.1. Read in Shape File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-pandas">39.6.2. Load Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-pandas-and-geopandas">39.6.3. Merge Pandas and GeoPandas</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
