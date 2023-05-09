@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Introduction to High-Performance Computing &#8212; DS 1300</title>
+    <title>1. Introduction to High-Performance Computing &#8212; DS 1300</title>
   
   
   
@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/02_hpc';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/01_hpc';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Semester Project" href="08_project.html" />
-    <link rel="prev" title="1. Data Science Overview" href="01_data_science.html" />
+    <link rel="next" title="2. Using ManeFrame II for Class" href="02_using_hpc.html" />
+    <link rel="prev" title="DS1300: A Practical Introduction to Data Science" href="00_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,14 +154,14 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 1</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_data_science.html">1. Data Science Overview</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Introduction to High-Performance Computing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduction to High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_using_hpc.html">2. Using ManeFrame II for Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_github_and_initial_setup.html">3. Introduction to GitHub and Getting Setup</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 2</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="08_project.html">3. Semester Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_using_m2.html">4. Using ManeFrame II for Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_github_and_initial_setup.html">5. Introduction to GitHub and Getting Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_data_science.html">4. Data Science Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_project.html">5. Semester Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/01_workbook.html">6. Introduction to Python Programming</a></li>
 
 
@@ -281,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/book/02_hpc.md" target="_blank"
+      <li><a href="../_sources/book/01_hpc.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,54 +373,54 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-performance-computing">2.1. High-Performance Computing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">2.1.1. Motivation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moore-s-law">2.1.1.1. Moore’s law</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-vs-memory-disk-speed">2.1.1.2. CPU vs. Memory/Disk Speed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-performance-computing">1.1. High-Performance Computing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">1.1.1. Motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moore-s-law">1.1.1.1. Moore’s law</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-vs-memory-disk-speed">1.1.1.2. CPU vs. Memory/Disk Speed</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-solution">2.1.2. The Parallel Solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flynn-s-parallel-architecture-taxonomy">2.1.3. Flynn’s parallel architecture taxonomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-solution">1.1.2. The Parallel Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flynn-s-parallel-architecture-taxonomy">1.1.3. Flynn’s parallel architecture taxonomy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-hardware">2.2. Parallel Computing Hardware</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessors">2.2.1. Multiprocessors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multicore-processors">2.2.2. Multicore Processors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multicomputers">2.2.3. Multicomputers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-size-history">2.2.4. Machine Size History</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#history-of-parallel-architectures">2.2.5. History of Parallel Architectures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-parallel-networks">2.2.6. Distributed Parallel Networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-hardware">1.2. Parallel Computing Hardware</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessors">1.2.1. Multiprocessors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multicore-processors">1.2.2. Multicore Processors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multicomputers">1.2.3. Multicomputers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-size-history">1.2.4. Machine Size History</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#history-of-parallel-architectures">1.2.5. History of Parallel Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-parallel-networks">1.2.6. Distributed Parallel Networks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-paradigms-shared-vs-distributed-memory">2.3. Parallel Computing Paradigms: Shared vs. Distributed Memory</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mimd-example-the-jiffy-lube-model">2.3.1. MIMD Example – The “Jiffy Lube” Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-parallel-computing-definitions">2.3.2. General parallel computing definitions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-primary-question-in-parallel-algorithms-decomposition">2.3.3. The primary question in parallel algorithms – decomposition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overhead-and-load-balancing">2.3.4. Overhead and load balancing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-decompositions">2.3.5. Data decompositions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-decomposition">2.3.5.1. Domain decomposition</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-decomposition-example-pde-approximation-of-an-aircraft">2.3.5.1.1. Domain decomposition example: PDE approximation of an aircraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-paradigms-shared-vs-distributed-memory">1.3. Parallel Computing Paradigms: Shared vs. Distributed Memory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mimd-example-the-jiffy-lube-model">1.3.1. MIMD Example – The “Jiffy Lube” Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-parallel-computing-definitions">1.3.2. General parallel computing definitions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-primary-question-in-parallel-algorithms-decomposition">1.3.3. The primary question in parallel algorithms – decomposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overhead-and-load-balancing">1.3.4. Overhead and load balancing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-decompositions">1.3.5. Data decompositions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-decomposition">1.3.5.1. Domain decomposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-decomposition-example-pde-approximation-of-an-aircraft">1.3.5.1.1. Domain decomposition example: PDE approximation of an aircraft</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#work-pool-model">2.3.5.2. Work pool model</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#work-pool-example-particle-dynamics">2.3.5.2.1. Work pool example: particle dynamics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#work-pool-model">1.3.5.2. Work pool model</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#work-pool-example-particle-dynamics">1.3.5.2.1. Work pool example: particle dynamics</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-decompositions">2.3.6. Functional decompositions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manager-worker">2.3.6.1. Manager-worker</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#manager-worker-example-simulated-annealing">2.3.6.1.1. Manager-worker example: simulated annealing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-decompositions">1.3.6. Functional decompositions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manager-worker">1.3.6.1. Manager-worker</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#manager-worker-example-simulated-annealing">1.3.6.1.1. Manager-worker example: simulated annealing</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-model">2.3.6.2. Pipeline model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-model">1.3.6.2. Pipeline model</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-metrics">2.3.7. Parallel computing metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-metrics">1.3.7. Parallel computing metrics</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-discussion-parallel-decomposition">2.4. Group Discussion: Parallel Decomposition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maneframe-ii-m2">2.5. ManeFrame II (M2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-discussion-parallel-decomposition">1.4. Group Discussion: Parallel Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maneframe-ii-m2">1.5. ManeFrame II (M2)</a></li>
 </ul>
             </nav>
         </div>
@@ -433,16 +433,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-high-performance-computing">
-<h1><span class="section-number">2. </span>Introduction to High-Performance Computing<a class="headerlink" href="#introduction-to-high-performance-computing" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1. </span>Introduction to High-Performance Computing<a class="headerlink" href="#introduction-to-high-performance-computing" title="Permalink to this heading">#</a></h1>
 <section id="high-performance-computing">
-<h2><span class="section-number">2.1. </span>High-Performance Computing<a class="headerlink" href="#high-performance-computing" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1. </span>High-Performance Computing<a class="headerlink" href="#high-performance-computing" title="Permalink to this heading">#</a></h2>
 <p>In essence, high-performance computing (HPC) merely means the use
 computing resources that are significantly more powerful than what is
 common. As such, it’s always a moving target.</p>
 <section id="motivation">
-<h3><span class="section-number">2.1.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h3>
 <section id="moore-s-law">
-<h4><span class="section-number">2.1.1.1. </span>Moore’s law<a class="headerlink" href="#moore-s-law" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.1.1.1. </span>Moore’s law<a class="headerlink" href="#moore-s-law" title="Permalink to this heading">#</a></h4>
 <p>Historically, we have depended on hardware advances to enable faster and
 larger simulations. In 1965, Gordon Moore observed that the CPU and RAM
 transistor count about doubled each year. “Moore’s Law” has since been
@@ -454,7 +454,7 @@ individual processors, with speeds that have leveled off since around
 <p><img alt="Moore's Law" src="../_images/Moore_law.png" /></p>
 </section>
 <section id="cpu-vs-memory-disk-speed">
-<h4><span class="section-number">2.1.1.2. </span>CPU vs. Memory/Disk Speed<a class="headerlink" href="#cpu-vs-memory-disk-speed" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.1.1.2. </span>CPU vs. Memory/Disk Speed<a class="headerlink" href="#cpu-vs-memory-disk-speed" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>The overall rate of any computation is determined not just by the
 processor speed, but also by the ability of the memory system to
@@ -470,7 +470,7 @@ more and more time idle, waiting on data from RAM.</p></li>
 </section>
 </section>
 <section id="the-parallel-solution">
-<h3><span class="section-number">2.1.2. </span>The Parallel Solution<a class="headerlink" href="#the-parallel-solution" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2. </span>The Parallel Solution<a class="headerlink" href="#the-parallel-solution" title="Permalink to this heading">#</a></h3>
 <p>In addition, many simulations require incredible amounts of memory to
 achieve high-accuracy solutions (PDE &amp; MD solvers, etc.), which cannot
 fit on a single computer alone.</p>
@@ -485,7 +485,7 @@ achieves the highest FLOP rate:</p>
 <p><img alt="[from David E. Keyes, HiPC2007]" src="../_images/algorithm_moore.png" /></p>
 </section>
 <section id="flynn-s-parallel-architecture-taxonomy">
-<h3><span class="section-number">2.1.3. </span>Flynn’s parallel architecture taxonomy<a class="headerlink" href="#flynn-s-parallel-architecture-taxonomy" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.3. </span>Flynn’s parallel architecture taxonomy<a class="headerlink" href="#flynn-s-parallel-architecture-taxonomy" title="Permalink to this heading">#</a></h3>
 <p>We classify parallel computers according to their control structure
 along the metrics:</p>
 <p><img alt="image" src="../_images/flynn.png" /></p>
@@ -501,13 +501,13 @@ on at once?</p></li>
 </section>
 </section>
 <section id="parallel-computing-hardware">
-<h2><span class="section-number">2.2. </span>Parallel Computing Hardware<a class="headerlink" href="#parallel-computing-hardware" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.2. </span>Parallel Computing Hardware<a class="headerlink" href="#parallel-computing-hardware" title="Permalink to this heading">#</a></h2>
 <p>We historically group parallel computing architectures into two primary
 categories according to the memory layout on these machines: <em>shared
 memory</em> and <em>distributed memory</em>. However, modern parallel computers are
 a hybrid between these two categories.</p>
 <section id="multiprocessors">
-<h3><span class="section-number">2.2.1. </span>Multiprocessors<a class="headerlink" href="#multiprocessors" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.1. </span>Multiprocessors<a class="headerlink" href="#multiprocessors" title="Permalink to this heading">#</a></h3>
 <p>In the 80’s, vendors began to attach multiple processors to the same
 memory.</p>
 <p><img alt="image" src="../_images/smp.png" /></p>
@@ -529,7 +529,7 @@ expensive.</p></li>
 </ul>
 </section>
 <section id="multicore-processors">
-<h3><span class="section-number">2.2.2. </span>Multicore Processors<a class="headerlink" href="#multicore-processors" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.2. </span>Multicore Processors<a class="headerlink" href="#multicore-processors" title="Permalink to this heading">#</a></h3>
 <p>Most modern computer processors employ multiple computational cores:</p>
 <p><img alt="image" src="../_images/multicore.png" /></p>
 <ul class="simple">
@@ -553,7 +553,7 @@ shared.</p></li>
 </ul>
 </section>
 <section id="multicomputers">
-<h3><span class="section-number">2.2.3. </span>Multicomputers<a class="headerlink" href="#multicomputers" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.3. </span>Multicomputers<a class="headerlink" href="#multicomputers" title="Permalink to this heading">#</a></h3>
 <p>A more cost-effective approach to construction of larger parallel
 computers relies on a network to connect disjoint computers together:</p>
 <p><img alt="image" src="../_images/distributed.png" /></p>
@@ -575,7 +575,7 @@ becomes complicated and networking gets expensive.</p></li>
 </ul>
 </section>
 <section id="machine-size-history">
-<h3><span class="section-number">2.2.4. </span>Machine Size History<a class="headerlink" href="#machine-size-history" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.4. </span>Machine Size History<a class="headerlink" href="#machine-size-history" title="Permalink to this heading">#</a></h3>
 <p>Historical plot of the processor/core count in computers comprising the
 Top500 list from 1993-2010.</p>
 <p><img alt="In June 2010, ManeFrame [Mana atthat time] was #68 on the Top500 list, with 9210 total cores (figurefromhttp://www.top500.org)." src="../_images/parallelism_history.png" /></p>
@@ -585,7 +585,7 @@ parallelism.</p>
 architectures that may be used.</p>
 </section>
 <section id="history-of-parallel-architectures">
-<h3><span class="section-number">2.2.5. </span>History of Parallel Architectures<a class="headerlink" href="#history-of-parallel-architectures" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.5. </span>History of Parallel Architectures<a class="headerlink" href="#history-of-parallel-architectures" title="Permalink to this heading">#</a></h3>
 <p>Historical plot of the computer architectures comprising the Top500 list
 from 1993-2010:</p>
 <p><img alt="(figure fromhttp://www.top500.org)" src="../_images/architecture_history.png" /></p>
@@ -604,7 +604,7 @@ distributed-memory MPP and Cluster machines.</p>
 </div></blockquote>
 </section>
 <section id="distributed-parallel-networks">
-<h3><span class="section-number">2.2.6. </span>Distributed Parallel Networks<a class="headerlink" href="#distributed-parallel-networks" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.6. </span>Distributed Parallel Networks<a class="headerlink" href="#distributed-parallel-networks" title="Permalink to this heading">#</a></h3>
 <p>Since clusters pass messages to communicate between CPUs, the speed of a
 parallel computation inherently depends on the speed of the network.</p>
 <ul class="simple">
@@ -651,7 +651,7 @@ networks are all common.</p></li>
 </section>
 </section>
 <section id="parallel-computing-paradigms-shared-vs-distributed-memory">
-<h2><span class="section-number">2.3. </span>Parallel Computing Paradigms: Shared vs. Distributed Memory<a class="headerlink" href="#parallel-computing-paradigms-shared-vs-distributed-memory" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.3. </span>Parallel Computing Paradigms: Shared vs. Distributed Memory<a class="headerlink" href="#parallel-computing-paradigms-shared-vs-distributed-memory" title="Permalink to this heading">#</a></h2>
 <p>The question then arises as to how we may use these parallel computers.
 There are a number of options:</p>
 <ul class="simple">
@@ -686,7 +686,7 @@ program.</p></li>
 1024 chickens do it.” – Enrico Clementi</p>
 </div></blockquote>
 <section id="mimd-example-the-jiffy-lube-model">
-<h3><span class="section-number">2.3.1. </span>MIMD Example – The “Jiffy Lube” Model<a class="headerlink" href="#mimd-example-the-jiffy-lube-model" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.1. </span>MIMD Example – The “Jiffy Lube” Model<a class="headerlink" href="#mimd-example-the-jiffy-lube-model" title="Permalink to this heading">#</a></h3>
 <p>Jiffy Lube advertises a “12-point check”, consisting of changing the oil
 and filter, interior vacuum, battery check, windshield wiper check,
 brake fluid check, tire pressure check, etc.; 6 attendants cooperate to
@@ -732,7 +732,7 @@ item on the checklist]</p></li>
 </ul>
 </section>
 <section id="general-parallel-computing-definitions">
-<h3><span class="section-number">2.3.2. </span>General parallel computing definitions<a class="headerlink" href="#general-parallel-computing-definitions" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.2. </span>General parallel computing definitions<a class="headerlink" href="#general-parallel-computing-definitions" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><em>Partitioning/Decomposition</em>: the means by which an overall
 computation is divided into smaller parts, some or all of which may
@@ -758,7 +758,7 @@ tasks.</p></li>
 </ul>
 </section>
 <section id="the-primary-question-in-parallel-algorithms-decomposition">
-<h3><span class="section-number">2.3.3. </span>The primary question in parallel algorithms – decomposition<a class="headerlink" href="#the-primary-question-in-parallel-algorithms-decomposition" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.3. </span>The primary question in parallel algorithms – decomposition<a class="headerlink" href="#the-primary-question-in-parallel-algorithms-decomposition" title="Permalink to this heading">#</a></h3>
 <p>Any decomposition strategy must determine a set of primitive tasks.</p>
 <p><em>Goals</em>:</p>
 <ul class="simple">
@@ -779,7 +779,7 @@ computation into functional parts and then determine how to associate
 data items with the individual computations.</p>
 </section>
 <section id="overhead-and-load-balancing">
-<h3><span class="section-number">2.3.4. </span>Overhead and load balancing<a class="headerlink" href="#overhead-and-load-balancing" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.4. </span>Overhead and load balancing<a class="headerlink" href="#overhead-and-load-balancing" title="Permalink to this heading">#</a></h3>
 <p>After decomposition, we must map tasks onto processes with the goal that
 all tasks finish in the shortest time.</p>
 <p>We strive to minimize <em>overheads</em> for executing the tasks, including:</p>
@@ -806,9 +806,9 @@ working.</p></li>
 conflict with each other.</p>
 </section>
 <section id="data-decompositions">
-<h3><span class="section-number">2.3.5. </span>Data decompositions<a class="headerlink" href="#data-decompositions" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.5. </span>Data decompositions<a class="headerlink" href="#data-decompositions" title="Permalink to this heading">#</a></h3>
 <section id="domain-decomposition">
-<h4><span class="section-number">2.3.5.1. </span>Domain decomposition<a class="headerlink" href="#domain-decomposition" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.3.5.1. </span>Domain decomposition<a class="headerlink" href="#domain-decomposition" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Tasks are statically or semi-statically mapped onto processes based
 on spatial location; each task performs similar operations on
@@ -823,7 +823,7 @@ effective use of more processes on larger problems.</p></li>
 <p><img alt="2D -- decompose processes along two physical dimensions; thistypically requires a logically-rectangular physicaldomain." src="../_images/decomp_2D.png" /></p>
 <p><img alt="3D -- decompose processes along three physical dimensions; typicallyrequires a logically-cuboid physicaldomain." src="../_images/decomp_3D.png" /></p>
 <section id="domain-decomposition-example-pde-approximation-of-an-aircraft">
-<h5><span class="section-number">2.3.5.1.1. </span>Domain decomposition example: PDE approximation of an aircraft<a class="headerlink" href="#domain-decomposition-example-pde-approximation-of-an-aircraft" title="Permalink to this heading">#</a></h5>
+<h5><span class="section-number">1.3.5.1.1. </span>Domain decomposition example: PDE approximation of an aircraft<a class="headerlink" href="#domain-decomposition-example-pde-approximation-of-an-aircraft" title="Permalink to this heading">#</a></h5>
 <p>Suppose we want to simulate 3D elasticity for vibrations/deformations in
 an aircraft.</p>
 <ul class="simple">
@@ -845,7 +845,7 @@ processes 1 and 2 could take longer than process 3.</p></li>
 </section>
 </section>
 <section id="work-pool-model">
-<h4><span class="section-number">2.3.5.2. </span>Work pool model<a class="headerlink" href="#work-pool-model" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.3.5.2. </span>Work pool model<a class="headerlink" href="#work-pool-model" title="Permalink to this heading">#</a></h4>
 <p><img alt="image" src="../_images/work_pool.png" /></p>
 <ul class="simple">
 <li><p>Tasks are dynamically mapped onto processes, where any task may
@@ -857,7 +857,7 @@ associated with tasks, and/or there are <em>many</em> more tasks than
 processes.</p></li>
 </ul>
 <section id="work-pool-example-particle-dynamics">
-<h5><span class="section-number">2.3.5.2.1. </span>Work pool example: particle dynamics<a class="headerlink" href="#work-pool-example-particle-dynamics" title="Permalink to this heading">#</a></h5>
+<h5><span class="section-number">1.3.5.2.1. </span>Work pool example: particle dynamics<a class="headerlink" href="#work-pool-example-particle-dynamics" title="Permalink to this heading">#</a></h5>
 <p>Suppose we wish to simulate the dynamics (position and velocity) of a
 large number of collisionless particles in an external force field, and
 where particles with a greater speed require increased processing.</p>
@@ -879,9 +879,9 @@ determine the remaining work to be done.</p></li>
 </section>
 </section>
 <section id="functional-decompositions">
-<h3><span class="section-number">2.3.6. </span>Functional decompositions<a class="headerlink" href="#functional-decompositions" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.6. </span>Functional decompositions<a class="headerlink" href="#functional-decompositions" title="Permalink to this heading">#</a></h3>
 <section id="manager-worker">
-<h4><span class="section-number">2.3.6.1. </span>Manager-worker<a class="headerlink" href="#manager-worker" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.3.6.1. </span>Manager-worker<a class="headerlink" href="#manager-worker" title="Permalink to this heading">#</a></h4>
 <p>This approach goes by many names: <em>controller-agent</em>, <em>professor-student</em>,
 <em>Wonka-Loompa</em>.</p>
 <p><img alt="image" src="../_images/manager_worker.png" /></p>
@@ -898,7 +898,7 @@ bottleneck.</p></li>
 dominates the cost of assigning/transferring work.</p></li>
 </ul>
 <section id="manager-worker-example-simulated-annealing">
-<h5><span class="section-number">2.3.6.1.1. </span>Manager-worker example: simulated annealing<a class="headerlink" href="#manager-worker-example-simulated-annealing" title="Permalink to this heading">#</a></h5>
+<h5><span class="section-number">1.3.6.1.1. </span>Manager-worker example: simulated annealing<a class="headerlink" href="#manager-worker-example-simulated-annealing" title="Permalink to this heading">#</a></h5>
 <p><em>Simulated annealing</em> is a stochastic optimization algorithm for
 functions with multiple local minima.</p>
 <ul class="simple">
@@ -924,7 +924,7 @@ set.</p></li>
 </section>
 </section>
 <section id="pipeline-model">
-<h4><span class="section-number">2.3.6.2. </span>Pipeline model<a class="headerlink" href="#pipeline-model" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.3.6.2. </span>Pipeline model<a class="headerlink" href="#pipeline-model" title="Permalink to this heading">#</a></h4>
 <p><img alt="image" src="../_images/pipeline.png" /></p>
 <ul class="simple">
 <li><p>A stream of data is passed through a succession of processes, each
@@ -946,7 +946,7 @@ transmission of data.</p></li>
 </section>
 </section>
 <section id="parallel-computing-metrics">
-<h3><span class="section-number">2.3.7. </span>Parallel computing metrics<a class="headerlink" href="#parallel-computing-metrics" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.7. </span>Parallel computing metrics<a class="headerlink" href="#parallel-computing-metrics" title="Permalink to this heading">#</a></h3>
 <p><em>Scalability</em> is the ability of a parallel algorithm to effectively
 utilize a parallel machine.</p>
 <p><em>Strong scaling</em>: the goal is speed up algorithms that are possible on
@@ -986,7 +986,7 @@ should be <span class="math notranslate nohighlight">\(t \left(f + \frac{1-f}{p}
 </section>
 </section>
 <section id="group-discussion-parallel-decomposition">
-<h2><span class="section-number">2.4. </span>Group Discussion: Parallel Decomposition<a class="headerlink" href="#group-discussion-parallel-decomposition" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.4. </span>Group Discussion: Parallel Decomposition<a class="headerlink" href="#group-discussion-parallel-decomposition" title="Permalink to this heading">#</a></h2>
 <p>You need to compute the sum of 1000 numbers as rapidly as possible.</p>
 <p>You have a stack of 1000 index cards, each with a single number, and you
 are in charge of 1000 accountants, each with a pencil and a set of blank
@@ -1010,7 +1010,7 @@ to distribute cards and collect subtotals?</p></li>
 </ol>
 </section>
 <section id="maneframe-ii-m2">
-<h2><span class="section-number">2.5. </span>ManeFrame II (M2)<a class="headerlink" href="#maneframe-ii-m2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.5. </span>ManeFrame II (M2)<a class="headerlink" href="#maneframe-ii-m2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://s2.smu.edu/hpc/documentation/about.html">Hardware</a></p></li>
 <li><p>Software</p>
@@ -1056,20 +1056,20 @@ to distribute cards and collect subtotals?</p></li>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="01_data_science.html"
+       href="00_introduction.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Data Science Overview</p>
+        <p class="prev-next-title">DS1300: A Practical Introduction to Data Science</p>
       </div>
     </a>
     <a class="right-next"
-       href="08_project.html"
+       href="02_using_hpc.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Semester Project</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Using ManeFrame II for Class</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1091,54 +1091,54 @@ to distribute cards and collect subtotals?</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-performance-computing">2.1. High-Performance Computing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">2.1.1. Motivation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moore-s-law">2.1.1.1. Moore’s law</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-vs-memory-disk-speed">2.1.1.2. CPU vs. Memory/Disk Speed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-performance-computing">1.1. High-Performance Computing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">1.1.1. Motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moore-s-law">1.1.1.1. Moore’s law</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-vs-memory-disk-speed">1.1.1.2. CPU vs. Memory/Disk Speed</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-solution">2.1.2. The Parallel Solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flynn-s-parallel-architecture-taxonomy">2.1.3. Flynn’s parallel architecture taxonomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-solution">1.1.2. The Parallel Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flynn-s-parallel-architecture-taxonomy">1.1.3. Flynn’s parallel architecture taxonomy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-hardware">2.2. Parallel Computing Hardware</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessors">2.2.1. Multiprocessors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multicore-processors">2.2.2. Multicore Processors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multicomputers">2.2.3. Multicomputers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-size-history">2.2.4. Machine Size History</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#history-of-parallel-architectures">2.2.5. History of Parallel Architectures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-parallel-networks">2.2.6. Distributed Parallel Networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-hardware">1.2. Parallel Computing Hardware</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessors">1.2.1. Multiprocessors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multicore-processors">1.2.2. Multicore Processors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multicomputers">1.2.3. Multicomputers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-size-history">1.2.4. Machine Size History</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#history-of-parallel-architectures">1.2.5. History of Parallel Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributed-parallel-networks">1.2.6. Distributed Parallel Networks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-paradigms-shared-vs-distributed-memory">2.3. Parallel Computing Paradigms: Shared vs. Distributed Memory</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mimd-example-the-jiffy-lube-model">2.3.1. MIMD Example – The “Jiffy Lube” Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-parallel-computing-definitions">2.3.2. General parallel computing definitions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-primary-question-in-parallel-algorithms-decomposition">2.3.3. The primary question in parallel algorithms – decomposition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overhead-and-load-balancing">2.3.4. Overhead and load balancing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-decompositions">2.3.5. Data decompositions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-decomposition">2.3.5.1. Domain decomposition</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-decomposition-example-pde-approximation-of-an-aircraft">2.3.5.1.1. Domain decomposition example: PDE approximation of an aircraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-paradigms-shared-vs-distributed-memory">1.3. Parallel Computing Paradigms: Shared vs. Distributed Memory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mimd-example-the-jiffy-lube-model">1.3.1. MIMD Example – The “Jiffy Lube” Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-parallel-computing-definitions">1.3.2. General parallel computing definitions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-primary-question-in-parallel-algorithms-decomposition">1.3.3. The primary question in parallel algorithms – decomposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overhead-and-load-balancing">1.3.4. Overhead and load balancing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-decompositions">1.3.5. Data decompositions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-decomposition">1.3.5.1. Domain decomposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-decomposition-example-pde-approximation-of-an-aircraft">1.3.5.1.1. Domain decomposition example: PDE approximation of an aircraft</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#work-pool-model">2.3.5.2. Work pool model</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#work-pool-example-particle-dynamics">2.3.5.2.1. Work pool example: particle dynamics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#work-pool-model">1.3.5.2. Work pool model</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#work-pool-example-particle-dynamics">1.3.5.2.1. Work pool example: particle dynamics</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-decompositions">2.3.6. Functional decompositions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manager-worker">2.3.6.1. Manager-worker</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#manager-worker-example-simulated-annealing">2.3.6.1.1. Manager-worker example: simulated annealing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-decompositions">1.3.6. Functional decompositions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manager-worker">1.3.6.1. Manager-worker</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#manager-worker-example-simulated-annealing">1.3.6.1.1. Manager-worker example: simulated annealing</a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-model">2.3.6.2. Pipeline model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-model">1.3.6.2. Pipeline model</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-metrics">2.3.7. Parallel computing metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-computing-metrics">1.3.7. Parallel computing metrics</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-discussion-parallel-decomposition">2.4. Group Discussion: Parallel Decomposition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maneframe-ii-m2">2.5. ManeFrame II (M2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-discussion-parallel-decomposition">1.4. Group Discussion: Parallel Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maneframe-ii-m2">1.5. ManeFrame II (M2)</a></li>
 </ul>
   </nav></div>
 
