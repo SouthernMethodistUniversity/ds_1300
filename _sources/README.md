@@ -11,8 +11,8 @@ II, and data science.
 
 ## Installing and Loading Anaconda
 
-This step can be skipped when using ManeFrame II (M2) as Anaconda is already
-installed and available via `module load python/3`.
+This step can be skipped when using SMU HPC clusters as Anaconda is already
+installed and available via `module load conda`.
 
 Directions for installing Anaconda on your own machine can be found
 [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html).
@@ -23,27 +23,28 @@ information on getting started can be found
 
 ## Installing the `ds_1300` Environment
 
-1. `conda env create -f environment.yml --force`
+1. `mamba env create -f environment.yml --force`
 
 ## Using the `ds_1300` Environment
 
-1. `conda activate ds_1300` to start (`source activate ~/.conda/envs/ds_1300` on M2)
-2. `conda deactivate` when finished
+1. `mamba activate ds_1300` to start (`source activate ~/.conda/envs/ds_1300`
+   on M2)
+2. `mamba deactivate` when finished
 
 ## Remove Environment
 
-1. `conda remove --name ds_1300 --all`
+1. `mamba remove --name ds_1300 --all`
 
 # Using Python Environments
 
 ## Loading a Python Environment
 
-There are many Python 3 installations on M2. An example of one is given:
+There are many Python 3 installations on SMU HPC clusters. An example from M3
+is given:
 
 ```
 module purge
-module load spack gcc-9.2
-source <(spack module tcl loads --dependencies python@3.7%gcc@9.2)
+module load gcc python
 ```
 
 ## Installing the `ds_1300` Environment
