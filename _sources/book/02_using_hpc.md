@@ -1,5 +1,5 @@
-# Using ManeFrame II for Class
+# Using M3 for Class
 
-* [Portal Overview](https://s2.smu.edu/hpc/documentation/portal.html)
+* [Using the HPC Portal](https://southernmethodistuniversity.github.io/hpc_docs/)
 
 

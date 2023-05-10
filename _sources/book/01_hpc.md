@@ -572,11 +572,15 @@ wish, and you can have accountants do different tasks.
 5.  Is there a better way to arrange the desks to reduce the time needed
     to distribute cards and collect subtotals?
 
-## ManeFrame II (M2)
+## M3
 
-* [Hardware](https://s2.smu.edu/hpc/documentation/about.html)
+Usage and specifics of M3 can be found in the [HPC
+documentation](https://southernmethodistuniversity.github.io/hpc_docs).
+Specifically, we'll cover:
+
+* Hardware
 * Software
-  * [Introduction to UNIX](https://s2.smu.edu/hpc/documentation/unix.html)
-  * [Lmod Environment Module System](https://s2.smu.edu/hpc/documentation/modules.html)
-  * [Slurm Resource Management and Job Scheduling System](https://s2.smu.edu/hpc/documentation/slurm.html)
+  * Introduction to UNIX
+  * Lmod Environment Module System
+  * Slurm Resource Management and Job Scheduling System
 
