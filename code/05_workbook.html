@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>28. Dask Delayed &#8212; DS 1300</title>
+    <title>Dask Delayed &#8212; DS 1300</title>
   
   
   
@@ -64,8 +64,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/05_workbook';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="29. Dask Arrays" href="06_workbook.html" />
-    <link rel="prev" title="27. Getting Started" href="../book/11_dask_initial_setup.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -166,65 +164,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 3</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/06_data_ethics_bias.html">12. Data Ethics and Bias</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_workbook.html">13. Working with Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_assignment.html">14. Introduction to Python Programming</a></li>
-
-
-
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 4</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="04_workbook.html">20. Exploring and Cleaning a Data Set</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../book/10_pudding.html">23. The Pudding: Data Story Telling and Visualization</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="02_assignment.html">25. Assignment: Working with Data</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 5</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/09_modeling.html">26. Building Models with Data</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 6</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/11_dask_initial_setup.html">27. Getting Started</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">28. Dask Delayed</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_workbook.html">29. Dask Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_workbook.html">30. Dask DataFrames</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 7</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/12_inference.html">31. Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_workbook.html">32. Data Storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09_workbook.html">33. Ordinary Least Squares</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_workbook.html">34. Prediction (out of sample)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_workbook.html">35. Quantile regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_assignment.html">36. Linear Regression and Temperature</a></li>
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 8</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="12_workbook.html">38. Data Visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_workbook.html">39. GeoPandas and Mapping in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_workbook.html">40. Optimization Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_assignment.html">41. Data Visualization</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 9</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/13_art.html">42. Art</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_workbook.html">43. Intermediate TextMining with Python</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../book/14_intro_to_AI.html">46. Introduction to AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16_workbook.html">47. Unsupervised Learning Example - Folktale Clustering</a></li>
-<li class="toctree-l1"><a class="reference internal" href="17_workbook.html">48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="18_workbook.html">49. Reinforcement Learning Example - Tic Tac Toe</a></li>
 </ul>
 
     </div>
@@ -371,29 +310,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">28.1. Basics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelize-with-the-dask-delayed-decorator">28.1.1. Parallelize with the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> decorator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelize-with-the-dask-delayed-decorator">Parallelize with the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> decorator</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-just-happened">28.2. What just happened?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-questions-to-consider">28.2.1. Some questions to consider:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-just-happened">What just happened?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-questions-to-consider">Some questions to consider:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelize-a-for-loop">28.3. Exercise: Parallelize a for loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelizing-a-for-loop-code-with-control-flow">28.4. Exercise: Parallelizing a for-loop code with control flow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">28.4.1. Some questions to consider:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelize-a-for-loop">Exercise: Parallelize a for loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelizing-a-for-loop-code-with-control-flow">Exercise: Parallelizing a for-loop code with control flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Some questions to consider:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelizing-a-pandas-groupby-reduction">28.5. Exercise: Parallelizing a Pandas Groupby Reduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-data">28.5.1. Inspect data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay">28.5.2. Read one file with <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> and compute mean departure delay</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-code-mean-departure-delay-per-airport">28.5.3. Sequential code: Mean Departure Delay Per Airport</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelize-the-code-above">28.5.4. Parallelize the code above</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">28.5.5. Some questions to consider:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">28.5.6. Learn More</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelizing-a-pandas-groupby-reduction">Exercise: Parallelizing a Pandas Groupby Reduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-data">Inspect data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay">Read one file with <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> and compute mean departure delay</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-code-mean-departure-delay-per-airport">Sequential code: Mean Departure Delay Per Airport</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelize-the-code-above">Parallelize the code above</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Some questions to consider:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn More</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-the-client">28.6. Close the Client</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-the-client">Close the Client</a></li>
 </ul>
             </nav>
         </div>
@@ -406,7 +345,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dask-delayed">
-<h1><span class="section-number">28. </span>Dask Delayed<a class="headerlink" href="#dask-delayed" title="Permalink to this heading">#</a></h1>
+<h1>Dask Delayed<a class="headerlink" href="#dask-delayed" title="Permalink to this heading">#</a></h1>
 <p>In this section we parallelize simple for-loop style code with Dask and <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>. Often, this is the only function that you will need to convert functions for use with Dask.</p>
 <p>This is a simple way to use <code class="docutils literal notranslate"><span class="pre">dask</span></code> to parallelize existing codebases or build <a class="reference external" href="https://blog.dask.org/2018/02/09/credit-models-with-dask">complex systems</a>.  This will also help us to develop an understanding for later sections.</p>
 <p><strong>Related Documentation</strong></p>
@@ -424,7 +363,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="basics">
-<h2><span class="section-number">28.1. </span>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">#</a></h2>
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">#</a></h2>
 <p>First let’s make some toy functions, <code class="docutils literal notranslate"><span class="pre">inc</span></code> and <code class="docutils literal notranslate"><span class="pre">add</span></code>, that sleep for a while to simulate work. We’ll then time running these functions normally.</p>
 <p>In the next section we’ll parallelize this code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
@@ -449,7 +388,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="parallelize-with-the-dask-delayed-decorator">
-<h3><span class="section-number">28.1.1. </span>Parallelize with the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> decorator<a class="headerlink" href="#parallelize-with-the-dask-delayed-decorator" title="Permalink to this heading">#</a></h3>
+<h3>Parallelize with the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> decorator<a class="headerlink" href="#parallelize-with-the-dask-delayed-decorator" title="Permalink to this heading">#</a></h3>
 <p>Those two increment calls <em>could</em> be called in parallel, because they are totally independent of one-another.</p>
 <p>We’ll transform the <code class="docutils literal notranslate"><span class="pre">inc</span></code> and <code class="docutils literal notranslate"><span class="pre">add</span></code> functions using the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> function. When we call the delayed version by passing the arguments, exactly as before, the original function isn’t actually called yet - which is why the cell execution finishes very quickly.
 Instead, a <em>delayed object</em> is made, which keeps track of the function to call and the arguments to pass to it.</p>
@@ -475,7 +414,7 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </section>
 </section>
 <section id="what-just-happened">
-<h2><span class="section-number">28.2. </span>What just happened?<a class="headerlink" href="#what-just-happened" title="Permalink to this heading">#</a></h2>
+<h2>What just happened?<a class="headerlink" href="#what-just-happened" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">z</span></code> object is a lazy <code class="docutils literal notranslate"><span class="pre">Delayed</span></code> object.  This object holds everything we need to compute the final result, including references to all of the functions that are required and their inputs and relationship to one-another.  We can evaluate the result with <code class="docutils literal notranslate"><span class="pre">.compute()</span></code> as above or we can visualize the task graph for this value with <code class="docutils literal notranslate"><span class="pre">.visualize()</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
 </pre></div>
@@ -486,7 +425,7 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </div>
 <p>Notice that this includes the names of the functions from before, and the logical flow of the outputs of the <code class="docutils literal notranslate"><span class="pre">inc</span></code> functions to the inputs of <code class="docutils literal notranslate"><span class="pre">add</span></code>.</p>
 <section id="some-questions-to-consider">
-<h3><span class="section-number">28.2.1. </span>Some questions to consider:<a class="headerlink" href="#some-questions-to-consider" title="Permalink to this heading">#</a></h3>
+<h3>Some questions to consider:<a class="headerlink" href="#some-questions-to-consider" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Why did we go from 3s to 2s?  Why weren’t we able to parallelize down to 1s?</p></li>
 <li><p>What would have happened if the inc and add functions didn’t include the <code class="docutils literal notranslate"><span class="pre">sleep(1)</span></code>?  Would Dask still be able to speed up this code?</p></li>
@@ -495,7 +434,7 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </section>
 </section>
 <section id="exercise-parallelize-a-for-loop">
-<h2><span class="section-number">28.3. </span>Exercise: Parallelize a for loop<a class="headerlink" href="#exercise-parallelize-a-for-loop" title="Permalink to this heading">#</a></h2>
+<h2>Exercise: Parallelize a for loop<a class="headerlink" href="#exercise-parallelize-a-for-loop" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops are one of the most common things that we want to parallelize.  Use <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> on <code class="docutils literal notranslate"><span class="pre">inc</span></code> and <code class="docutils literal notranslate"><span class="pre">sum</span></code> to parallelize the computation below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 </pre></div>
@@ -533,7 +472,7 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </div>
 </section>
 <section id="exercise-parallelizing-a-for-loop-code-with-control-flow">
-<h2><span class="section-number">28.4. </span>Exercise: Parallelizing a for-loop code with control flow<a class="headerlink" href="#exercise-parallelizing-a-for-loop-code-with-control-flow" title="Permalink to this heading">#</a></h2>
+<h2>Exercise: Parallelizing a for-loop code with control flow<a class="headerlink" href="#exercise-parallelizing-a-for-loop-code-with-control-flow" title="Permalink to this heading">#</a></h2>
 <p>Often we want to delay only <em>some</em> functions, running a few of them immediately.  This is especially helpful when those functions are fast and help us to determine what other slower functions we should call.  This decision, to delay or not to delay, is usually where we need to be thoughtful when using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>.</p>
 <p>In the example below we iterate through a list of inputs.  If that input is even then we want to call <code class="docutils literal notranslate"><span class="pre">inc</span></code>.  If the input is odd then we want to call <code class="docutils literal notranslate"><span class="pre">double</span></code>.  This <code class="docutils literal notranslate"><span class="pre">is_even</span></code> decision to call <code class="docutils literal notranslate"><span class="pre">inc</span></code> or <code class="docutils literal notranslate"><span class="pre">double</span></code> has to be made immediately (not lazily) in order for our graph-building Python code to proceed.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -580,7 +519,7 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </pre></div>
 </div>
 <section id="id1">
-<h3><span class="section-number">28.4.1. </span>Some questions to consider:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Some questions to consider:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>What are other examples of control flow where we can’t use delayed?</p></li>
 <li><p>What would have happened if we had delayed the evaluation of <code class="docutils literal notranslate"><span class="pre">is_even(x)</span></code> in the example above?</p></li>
@@ -589,18 +528,18 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </section>
 </section>
 <section id="exercise-parallelizing-a-pandas-groupby-reduction">
-<h2><span class="section-number">28.5. </span>Exercise: Parallelizing a Pandas Groupby Reduction<a class="headerlink" href="#exercise-parallelizing-a-pandas-groupby-reduction" title="Permalink to this heading">#</a></h2>
+<h2>Exercise: Parallelizing a Pandas Groupby Reduction<a class="headerlink" href="#exercise-parallelizing-a-pandas-groupby-reduction" title="Permalink to this heading">#</a></h2>
 <p>In this exercise we read several CSV files and perform a groupby operation in parallel.  We are given sequential code to do this and parallelize it with <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code>.</p>
 <p>The computation we will parallelize is to compute the mean departure delay per airport from some historical flight data.  We will do this by using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> together with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.  In a future section we will do this same exercise with <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code>.</p>
 <section id="inspect-data">
-<h3><span class="section-number">28.5.1. </span>Inspect data<a class="headerlink" href="#inspect-data" title="Permalink to this heading">#</a></h3>
+<h3>Inspect data<a class="headerlink" href="#inspect-data" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">)))</span>
 </pre></div>
 </div>
 </section>
 <section id="read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay">
-<h3><span class="section-number">28.5.2. </span>Read one file with <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> and compute mean departure delay<a class="headerlink" href="#read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay" title="Permalink to this heading">#</a></h3>
+<h3>Read one file with <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> and compute mean departure delay<a class="headerlink" href="#read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;1990.csv&#39;</span><span class="p">))</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -620,7 +559,7 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </div>
 </section>
 <section id="sequential-code-mean-departure-delay-per-airport">
-<h3><span class="section-number">28.5.3. </span>Sequential code: Mean Departure Delay Per Airport<a class="headerlink" href="#sequential-code-mean-departure-delay-per-airport" title="Permalink to this heading">#</a></h3>
+<h3>Sequential code: Mean Departure Delay Per Airport<a class="headerlink" href="#sequential-code-mean-departure-delay-per-airport" title="Permalink to this heading">#</a></h3>
 <p>The above cell computes the mean departure delay per-airport for one year. Here we expand that to all years using a sequential for loop.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
 <span class="n">filenames</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">)))</span>
@@ -658,7 +597,7 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </div>
 </section>
 <section id="parallelize-the-code-above">
-<h3><span class="section-number">28.5.4. </span>Parallelize the code above<a class="headerlink" href="#parallelize-the-code-above" title="Permalink to this heading">#</a></h3>
+<h3>Parallelize the code above<a class="headerlink" href="#parallelize-the-code-above" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask</span> <span class="kn">import</span> <span class="n">compute</span>
 </pre></div>
 </div>
@@ -698,7 +637,7 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </div>
 </section>
 <section id="id2">
-<h3><span class="section-number">28.5.5. </span>Some questions to consider:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Some questions to consider:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>How much speedup did you get? Is this how much speedup you’d expect?</p></li>
 <li><p>Experiment with where to call <code class="docutils literal notranslate"><span class="pre">compute</span></code>. What happens when you call it on <code class="docutils literal notranslate"><span class="pre">sums</span></code> and <code class="docutils literal notranslate"><span class="pre">counts</span></code>? What happens if you wait and call it on <code class="docutils literal notranslate"><span class="pre">mean</span></code>?</p></li>
@@ -707,12 +646,12 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
 </ul>
 </section>
 <section id="learn-more">
-<h3><span class="section-number">28.5.6. </span>Learn More<a class="headerlink" href="#learn-more" title="Permalink to this heading">#</a></h3>
+<h3>Learn More<a class="headerlink" href="#learn-more" title="Permalink to this heading">#</a></h3>
 <p>Visit the <a class="reference external" href="https://docs.dask.org/en/latest/delayed.html">Delayed documentation</a>. In particular, this <a class="reference external" href="https://www.youtube.com/watch?v=SHqFmynRxVU">delayed screencast</a> will reinforce the concepts you learned here and the <a class="reference external" href="https://docs.dask.org/en/latest/delayed-best-practices.html">delayed best practices</a> document collects advice on using <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> well.</p>
 </section>
 </section>
 <section id="close-the-client">
-<h2><span class="section-number">28.6. </span>Close the Client<a class="headerlink" href="#close-the-client" title="Permalink to this heading">#</a></h2>
+<h2>Close the Client<a class="headerlink" href="#close-the-client" title="Permalink to this heading">#</a></h2>
 <p>Before moving on to the next exercise, make sure to close your client or stop this kernel.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -752,24 +691,6 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../book/11_dask_initial_setup.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">27. </span>Getting Started</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="06_workbook.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">29. </span>Dask Arrays</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -788,29 +709,29 @@ Instead, a <em>delayed object</em> is made, which keeps track of the function to
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">28.1. Basics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelize-with-the-dask-delayed-decorator">28.1.1. Parallelize with the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> decorator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelize-with-the-dask-delayed-decorator">Parallelize with the <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> decorator</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-just-happened">28.2. What just happened?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-questions-to-consider">28.2.1. Some questions to consider:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-just-happened">What just happened?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-questions-to-consider">Some questions to consider:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelize-a-for-loop">28.3. Exercise: Parallelize a for loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelizing-a-for-loop-code-with-control-flow">28.4. Exercise: Parallelizing a for-loop code with control flow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">28.4.1. Some questions to consider:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelize-a-for-loop">Exercise: Parallelize a for loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelizing-a-for-loop-code-with-control-flow">Exercise: Parallelizing a for-loop code with control flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Some questions to consider:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelizing-a-pandas-groupby-reduction">28.5. Exercise: Parallelizing a Pandas Groupby Reduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-data">28.5.1. Inspect data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay">28.5.2. Read one file with <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> and compute mean departure delay</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-code-mean-departure-delay-per-airport">28.5.3. Sequential code: Mean Departure Delay Per Airport</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelize-the-code-above">28.5.4. Parallelize the code above</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">28.5.5. Some questions to consider:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">28.5.6. Learn More</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-parallelizing-a-pandas-groupby-reduction">Exercise: Parallelizing a Pandas Groupby Reduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-data">Inspect data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-one-file-with-pandas-read-csv-and-compute-mean-departure-delay">Read one file with <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> and compute mean departure delay</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-code-mean-departure-delay-per-airport">Sequential code: Mean Departure Delay Per Airport</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelize-the-code-above">Parallelize the code above</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Some questions to consider:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn More</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-the-client">28.6. Close the Client</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close-the-client">Close the Client</a></li>
 </ul>
   </nav></div>
 

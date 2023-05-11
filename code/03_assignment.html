@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>36. Linear Regression and Temperature &#8212; DS 1300</title>
+    <title>Linear Regression and Temperature &#8212; DS 1300</title>
   
   
   
@@ -66,8 +66,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/03_assignment';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="38. Data Visualization" href="12_workbook.html" />
-    <link rel="prev" title="35. Quantile regression" href="11_workbook.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,65 +166,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 3</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/06_data_ethics_bias.html">12. Data Ethics and Bias</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_workbook.html">13. Working with Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_assignment.html">14. Introduction to Python Programming</a></li>
-
-
-
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 4</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="04_workbook.html">20. Exploring and Cleaning a Data Set</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../book/10_pudding.html">23. The Pudding: Data Story Telling and Visualization</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="02_assignment.html">25. Assignment: Working with Data</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 5</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/09_modeling.html">26. Building Models with Data</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 6</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/11_dask_initial_setup.html">27. Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_workbook.html">28. Dask Delayed</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_workbook.html">29. Dask Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_workbook.html">30. Dask DataFrames</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 7</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/12_inference.html">31. Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_workbook.html">32. Data Storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09_workbook.html">33. Ordinary Least Squares</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_workbook.html">34. Prediction (out of sample)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_workbook.html">35. Quantile regression</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">36. Linear Regression and Temperature</a></li>
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 8</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="12_workbook.html">38. Data Visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_workbook.html">39. GeoPandas and Mapping in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_workbook.html">40. Optimization Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_assignment.html">41. Data Visualization</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 9</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/13_art.html">42. Art</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_workbook.html">43. Intermediate TextMining with Python</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../book/14_intro_to_AI.html">46. Introduction to AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16_workbook.html">47. Unsupervised Learning Example - Folktale Clustering</a></li>
-<li class="toctree-l1"><a class="reference internal" href="17_workbook.html">48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="18_workbook.html">49. Reinforcement Learning Example - Tic Tac Toe</a></li>
 </ul>
 
     </div>
@@ -373,20 +312,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">36. Linear Regression and Temperature</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">36.1. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-our-data">36.2. Getting our data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Linear Regression and Temperature</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-our-data">Getting our data</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-our-data">37. Loading our data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-the-data">37.1. Clean the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-scatter-plot">37.2. Generating a scatter plot</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-colors-for-our-graph">37.2.1. Adding colors for our graph</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-our-data">Loading our data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-the-data">Clean the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-scatter-plot">Generating a scatter plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-colors-for-our-graph">Adding colors for our graph</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-a-subset-of-the-data">37.3. Pick a subset of the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">37.4. Linear Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">37.5. Putting it all together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-a-subset-of-the-data">Pick a subset of the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">Linear Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">Putting it all together</a></li>
 </ul>
 </li>
 </ul>
@@ -402,10 +341,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="linear-regression-and-temperature">
-<h1><span class="section-number">36. </span>Linear Regression and Temperature<a class="headerlink" href="#linear-regression-and-temperature" title="Permalink to this heading">#</a></h1>
+<h1>Linear Regression and Temperature<a class="headerlink" href="#linear-regression-and-temperature" title="Permalink to this heading">#</a></h1>
 <p>In this notebook, we’ll look at using linear regression to study changes in temperature.</p>
 <section id="setup">
-<h2><span class="section-number">36.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
@@ -418,7 +357,7 @@ document.write(`
 </div>
 </section>
 <section id="getting-our-data">
-<h2><span class="section-number">36.2. </span>Getting our data<a class="headerlink" href="#getting-our-data" title="Permalink to this heading">#</a></h2>
+<h2>Getting our data<a class="headerlink" href="#getting-our-data" title="Permalink to this heading">#</a></h2>
 <p>We’ll be getting data from <a class="reference external" href="https://wonder.cdc.gov/NASA-NLDAS.html">North America Land Data Assimilation System (NLDAS)</a>, which provides the daily average temperature from 1979-2011 for the United States.</p>
 <p>For the next step, you will need to choose some settings in the data request form. These are:</p>
 <ul class="simple">
@@ -435,7 +374,7 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="loading-our-data">
-<h1><span class="section-number">37. </span>Loading our data<a class="headerlink" href="#loading-our-data" title="Permalink to this heading">#</a></h1>
+<h1>Loading our data<a class="headerlink" href="#loading-our-data" title="Permalink to this heading">#</a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;North America Land Data Assimilation System (NLDAS) Daily Air Temperatures and Heat Index (1979-2011).txt&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">skipfooter</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">engine</span><span class="o">=</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -443,7 +382,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="clean-the-data">
-<h2><span class="section-number">37.1. </span>Clean the data<a class="headerlink" href="#clean-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Clean the data<a class="headerlink" href="#clean-the-data" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><ol class="arabic simple" start="2">
 <li><p>Drop any rows that have the value “Total” in the Notes column, then drop the Notes column</p></li>
@@ -473,7 +412,7 @@ document.write(`
 </div>
 </section>
 <section id="generating-a-scatter-plot">
-<h2><span class="section-number">37.2. </span>Generating a scatter plot<a class="headerlink" href="#generating-a-scatter-plot" title="Permalink to this heading">#</a></h2>
+<h2>Generating a scatter plot<a class="headerlink" href="#generating-a-scatter-plot" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><ol class="arabic simple" start="4">
 <li><p>Use df.plot.scatter to plot ‘Date’ vs ‘Avg Daily Max Air Temperature (F)’. You might want to add figsize=(50,5) as an argument to make it more clear what is happening.</p></li>
@@ -488,7 +427,7 @@ document.write(`
 </ol>
 </div></blockquote>
 <section id="adding-colors-for-our-graph">
-<h3><span class="section-number">37.2.1. </span>Adding colors for our graph<a class="headerlink" href="#adding-colors-for-our-graph" title="Permalink to this heading">#</a></h3>
+<h3>Adding colors for our graph<a class="headerlink" href="#adding-colors-for-our-graph" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># No need to edit this unless you want to try different colors or a pattern other than colors by month</span>
 
 <span class="n">cmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s2">&quot;nipy_spectral&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Month&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span> <span class="c1"># Builds a discrete color mapping using a built in matplotlib color map</span>
@@ -512,7 +451,7 @@ document.write(`
 </section>
 </section>
 <section id="pick-a-subset-of-the-data">
-<h2><span class="section-number">37.3. </span>Pick a subset of the data<a class="headerlink" href="#pick-a-subset-of-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Pick a subset of the data<a class="headerlink" href="#pick-a-subset-of-the-data" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><ol class="arabic simple" start="7">
 <li><p>Select a 6 month period from the data. # Hint use logic and pd.datetime(YYYY, MM, DD)</p></li>
@@ -531,7 +470,7 @@ document.write(`
 </div>
 </section>
 <section id="linear-regression">
-<h2><span class="section-number">37.4. </span>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this heading">#</a></h2>
+<h2>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this heading">#</a></h2>
 <p>We are going to use a very <a class="reference external" href="https://en.wikipedia.org/wiki/Simple_linear_regression">simple linear regression model</a>. You may implement a more complex model if you wish.</p>
 <p>The method described here is called the least squares method and is defined as:</p>
 <p><span class="math notranslate nohighlight">\(m = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}))}{\sum_{i=1}^{n}(x_i-\bar{x})^2}\)</span></p>
@@ -591,7 +530,7 @@ document.write(`
 </div>
 </section>
 <section id="putting-it-all-together">
-<h2><span class="section-number">37.5. </span>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this heading">#</a></h2>
+<h2>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><ol class="arabic simple" start="11">
 <li><p>Generate a best fit line for the full data set and plot the line over top of the data.</p></li>
@@ -645,24 +584,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="11_workbook.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">35. </span>Quantile regression</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="12_workbook.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">38. </span>Data Visualization</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -681,20 +602,20 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">36. Linear Regression and Temperature</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">36.1. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-our-data">36.2. Getting our data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Linear Regression and Temperature</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-our-data">Getting our data</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-our-data">37. Loading our data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-the-data">37.1. Clean the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-scatter-plot">37.2. Generating a scatter plot</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-colors-for-our-graph">37.2.1. Adding colors for our graph</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-our-data">Loading our data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-the-data">Clean the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-scatter-plot">Generating a scatter plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-colors-for-our-graph">Adding colors for our graph</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-a-subset-of-the-data">37.3. Pick a subset of the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">37.4. Linear Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">37.5. Putting it all together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-a-subset-of-the-data">Pick a subset of the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">Linear Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">Putting it all together</a></li>
 </ul>
 </li>
 </ul>

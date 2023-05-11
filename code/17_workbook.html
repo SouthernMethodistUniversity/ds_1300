@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset &#8212; DS 1300</title>
+    <title>Supervised Deep Learning Example - Image Classification with the MNIST Dataset &#8212; DS 1300</title>
   
   
   
@@ -64,8 +64,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/17_workbook';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="49. Reinforcement Learning Example - Tic Tac Toe" href="18_workbook.html" />
-    <link rel="prev" title="47. Unsupervised Learning Example - Folktale Clustering" href="16_workbook.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -166,65 +164,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 3</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/06_data_ethics_bias.html">12. Data Ethics and Bias</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_workbook.html">13. Working with Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_assignment.html">14. Introduction to Python Programming</a></li>
-
-
-
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 4</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="04_workbook.html">20. Exploring and Cleaning a Data Set</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../book/10_pudding.html">23. The Pudding: Data Story Telling and Visualization</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="02_assignment.html">25. Assignment: Working with Data</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 5</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/09_modeling.html">26. Building Models with Data</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 6</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/11_dask_initial_setup.html">27. Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_workbook.html">28. Dask Delayed</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_workbook.html">29. Dask Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_workbook.html">30. Dask DataFrames</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 7</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/12_inference.html">31. Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_workbook.html">32. Data Storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09_workbook.html">33. Ordinary Least Squares</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_workbook.html">34. Prediction (out of sample)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_workbook.html">35. Quantile regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_assignment.html">36. Linear Regression and Temperature</a></li>
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 8</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="12_workbook.html">38. Data Visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_workbook.html">39. GeoPandas and Mapping in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_workbook.html">40. Optimization Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_assignment.html">41. Data Visualization</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 9</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../book/13_art.html">42. Art</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_workbook.html">43. Intermediate TextMining with Python</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../book/14_intro_to_AI.html">46. Introduction to AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16_workbook.html">47. Unsupervised Learning Example - Folktale Clustering</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">48. Supervised Deep Learning Example - Image Classification with the MNIST Dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="18_workbook.html">49. Reinforcement Learning Example - Tic Tac Toe</a></li>
 </ul>
 
     </div>
@@ -371,28 +310,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mnist-dataset">48.1. The MNIST Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validation-data-and-labels">48.2. Training and Validation Data and Labels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data-into-memory-with-keras">48.3. Loading the Data Into Memory (with Keras)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-mnist-data">48.4. Exploring the MNIST Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data-for-training">48.5. Preparing the Data for Training</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flattening-the-image-data">48.5.1. Flattening the Image Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizing-the-image-data">48.5.2. Normalizing the Image Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-encoding">48.5.3. Categorical Encoding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorically-encoding-the-labels">48.5.4. Categorically Encoding the Labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mnist-dataset">The MNIST Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validation-data-and-labels">Training and Validation Data and Labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data-into-memory-with-keras">Loading the Data Into Memory (with Keras)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-mnist-data">Exploring the MNIST Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data-for-training">Preparing the Data for Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flattening-the-image-data">Flattening the Image Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizing-the-image-data">Normalizing the Image Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-encoding">Categorical Encoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorically-encoding-the-labels">Categorically Encoding the Labels</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-model">48.6. Creating the Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instantiating-the-model">48.6.1. Instantiating the Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-input-layer">48.6.2. Creating the Input Layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-hidden-layer">48.6.3. Creating the Hidden Layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-output-layer">48.6.4. Creating the Output Layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summarizing-the-model">48.6.5. Summarizing the Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-the-model">48.6.6. Compiling the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-model">Creating the Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instantiating-the-model">Instantiating the Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-input-layer">Creating the Input Layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-hidden-layer">Creating the Hidden Layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-output-layer">Creating the Output Layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summarizing-the-model">Summarizing the Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-the-model">Compiling the Model</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">48.7. Training the Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observing-accuracy">48.7.1. Observing Accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">Training the Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observing-accuracy">Observing Accuracy</a></li>
 </ul>
 </li>
 </ul>
@@ -408,16 +347,16 @@ document.write(`
                   
   <!-- #region tags=[] -->
 <section class="tex2jax_ignore mathjax_ignore" id="supervised-deep-learning-example-image-classification-with-the-mnist-dataset">
-<h1><span class="section-number">48. </span>Supervised Deep Learning Example - Image Classification with the MNIST Dataset<a class="headerlink" href="#supervised-deep-learning-example-image-classification-with-the-mnist-dataset" title="Permalink to this heading">#</a></h1>
+<h1>Supervised Deep Learning Example - Image Classification with the MNIST Dataset<a class="headerlink" href="#supervised-deep-learning-example-image-classification-with-the-mnist-dataset" title="Permalink to this heading">#</a></h1>
 <!-- #endregion -->
 <section id="the-mnist-dataset">
-<h2><span class="section-number">48.1. </span>The MNIST Dataset<a class="headerlink" href="#the-mnist-dataset" title="Permalink to this heading">#</a></h2>
+<h2>The MNIST Dataset<a class="headerlink" href="#the-mnist-dataset" title="Permalink to this heading">#</a></h2>
 <p>In the history of deep learning, the accurate image classification of the <a class="reference external" href="http://yann.lecun.com/exdb/mnist/">MNIST dataset</a>, a collection of 70,000 grayscale images of handwritten digits from 0 to 9, was a major development. While today the problem is considered trivial, doing image classification with MNIST has become a kind of “Hello World” for deep learning.</p>
 <p>Here are 40 of the images included in the MNIST dataset:</p>
 <img src="../book/images/mnist1.png" style="width: 600px;">
 </section>
 <section id="training-and-validation-data-and-labels">
-<h2><span class="section-number">48.2. </span>Training and Validation Data and Labels<a class="headerlink" href="#training-and-validation-data-and-labels" title="Permalink to this heading">#</a></h2>
+<h2>Training and Validation Data and Labels<a class="headerlink" href="#training-and-validation-data-and-labels" title="Permalink to this heading">#</a></h2>
 <p>When working with images for deep learning, we need both the images themselves, usually denoted as <code class="docutils literal notranslate"><span class="pre">X</span></code>, and also, correct <a class="reference external" href="https://developers.google.com/machine-learning/glossary#label">labels</a> for these images, usually denoted as <code class="docutils literal notranslate"><span class="pre">Y</span></code>. Furthermore, we need <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code> values both for <em>training</em> the model, and then, a separate set of <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code> values for <em>validating</em> the performance of the model after it has been trained. Therefore, we need 4 segments of data for the MNIST dataset:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">x_train</span></code>: Images used for training the neural network</p></li>
@@ -428,7 +367,7 @@ document.write(`
 <p>The process of preparing data for analysis is called <a class="reference external" href="https://medium.com/&#64;rchang/a-beginners-guide-to-data-engineering-part-i-4227c5c457d7">Data Engineering</a>. To learn more about the differences between training data and validation data (as well as test data), check out <a class="reference external" href="https://machinelearningmastery.com/difference-test-validation-datasets/">this article</a> by Jason Brownlee.</p>
 </section>
 <section id="loading-the-data-into-memory-with-keras">
-<h2><span class="section-number">48.3. </span>Loading the Data Into Memory (with Keras)<a class="headerlink" href="#loading-the-data-into-memory-with-keras" title="Permalink to this heading">#</a></h2>
+<h2>Loading the Data Into Memory (with Keras)<a class="headerlink" href="#loading-the-data-into-memory-with-keras" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
 </pre></div>
 </div>
@@ -439,7 +378,7 @@ document.write(`
 </div>
 </section>
 <section id="exploring-the-mnist-data">
-<h2><span class="section-number">48.4. </span>Exploring the MNIST Data<a class="headerlink" href="#exploring-the-mnist-data" title="Permalink to this heading">#</a></h2>
+<h2>Exploring the MNIST Data<a class="headerlink" href="#exploring-the-mnist-data" title="Permalink to this heading">#</a></h2>
 <p>We stated above that the MNIST dataset contained 70,000 grayscale images of handwritten digits. By executing the following cells, we can see that Keras has partitioned 60,000 of these images for training, and 10,000 for validation (after training), and also, that each image itself is a 2D array with the dimensions 28x28:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_train</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
@@ -473,7 +412,7 @@ document.write(`
 </div>
 </section>
 <section id="preparing-the-data-for-training">
-<h2><span class="section-number">48.5. </span>Preparing the Data for Training<a class="headerlink" href="#preparing-the-data-for-training" title="Permalink to this heading">#</a></h2>
+<h2>Preparing the Data for Training<a class="headerlink" href="#preparing-the-data-for-training" title="Permalink to this heading">#</a></h2>
 <p>In deep learning, it is common that data needs to be transformed to be in the ideal state for training. For this particular image classification problem, there are 3 tasks we should perform with the data in preparation for training:</p>
 <ol class="arabic simple">
 <li><p>Flatten the image data, to simplify the image input into the model</p></li>
@@ -481,7 +420,7 @@ document.write(`
 <li><p>Categorize the labels, to make the label values easier to work with for the model</p></li>
 </ol>
 <section id="flattening-the-image-data">
-<h3><span class="section-number">48.5.1. </span>Flattening the Image Data<a class="headerlink" href="#flattening-the-image-data" title="Permalink to this heading">#</a></h3>
+<h3>Flattening the Image Data<a class="headerlink" href="#flattening-the-image-data" title="Permalink to this heading">#</a></h3>
 <p>Though it’s possible for a deep learning model to accept a 2-dimensional image (in our case 28x28 pixels), we’re going to simplify things to start and <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/reshape">reshape</a> each image into a single array of 784 continuous pixels (note: 28x28 = 784). This is also called flattening the image.</p>
 <p>Here we accomplish this using the helper method <code class="docutils literal notranslate"><span class="pre">reshape</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_train</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">60000</span><span class="p">,</span> <span class="mi">784</span><span class="p">)</span>
@@ -497,7 +436,7 @@ document.write(`
 </div>
 </section>
 <section id="normalizing-the-image-data">
-<h3><span class="section-number">48.5.2. </span>Normalizing the Image Data<a class="headerlink" href="#normalizing-the-image-data" title="Permalink to this heading">#</a></h3>
+<h3>Normalizing the Image Data<a class="headerlink" href="#normalizing-the-image-data" title="Permalink to this heading">#</a></h3>
 <p>Deep learning models are better at dealing with floating point numbers between 0 and 1 (more on this topic later). Converting integer values to floating point values between 0 and 1 is called <a class="reference external" href="https://developers.google.com/machine-learning/glossary#normalization">normalization</a>, and a simple approach we will take here to normalize the data will be to divide all the pixel values (which if you recall are between 0 and 255) by 255:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_train</span> <span class="o">=</span> <span class="n">x_train</span> <span class="o">/</span> <span class="mi">255</span>
 <span class="n">x_valid</span> <span class="o">=</span> <span class="n">x_valid</span> <span class="o">/</span> <span class="mi">255</span> 
@@ -515,7 +454,7 @@ document.write(`
 </div>
 </section>
 <section id="categorical-encoding">
-<h3><span class="section-number">48.5.3. </span>Categorical Encoding<a class="headerlink" href="#categorical-encoding" title="Permalink to this heading">#</a></h3>
+<h3>Categorical Encoding<a class="headerlink" href="#categorical-encoding" title="Permalink to this heading">#</a></h3>
 <p>Consider for a moment, if we were to ask, what is 7 - 2? Stating that the answer was 4 is closer than stating that the answer was 9. However, for this image classification problem, we don’t want the neural network to learn this kind of reasoning: we just want it to select the correct category, and understand that if we have an image of the number 5, that guessing 4 is just as bad as guessing 9.</p>
 <p>As it stands, the labels for the images are integers between 0 and 9. Because these values represent a numerical range, the model might try to draw some conclusions about its performance based on how close to the correct numerical category it guesses.</p>
 <p>Therefore, we will do something to our data called categorical encoding. This kind of transformation modifies the data so that each value is a collection of all possible categories, with the actual category that this particular value is set as true.</p>
@@ -602,7 +541,7 @@ document.write(`
 <!-- #endregion -->
 </section>
 <section id="categorically-encoding-the-labels">
-<h3><span class="section-number">48.5.4. </span>Categorically Encoding the Labels<a class="headerlink" href="#categorically-encoding-the-labels" title="Permalink to this heading">#</a></h3>
+<h3>Categorically Encoding the Labels<a class="headerlink" href="#categorically-encoding-the-labels" title="Permalink to this heading">#</a></h3>
 <p>Keras provides a utility to <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical">categorically encode values</a>, and here we use it to perform categorical encoding for both the training and validation labels:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow.keras</span> <span class="k">as</span> <span class="nn">keras</span>
 <span class="n">num_categories</span> <span class="o">=</span> <span class="mi">10</span>
@@ -618,7 +557,7 @@ document.write(`
 </section>
 </section>
 <section id="creating-the-model">
-<h2><span class="section-number">48.6. </span>Creating the Model<a class="headerlink" href="#creating-the-model" title="Permalink to this heading">#</a></h2>
+<h2>Creating the Model<a class="headerlink" href="#creating-the-model" title="Permalink to this heading">#</a></h2>
 <p>With the data prepared for training, it is now time to create the model that we will train with the data. This first basic model will be made up of several <em>layers</em> and will be comprised of 3 main parts:</p>
 <ol class="arabic simple">
 <li><p>An input layer, which will receive data in some expected format</p></li>
@@ -626,7 +565,7 @@ document.write(`
 <li><p>An output layer, which will depict the network’s guess for a given image</p></li>
 </ol>
 <section id="instantiating-the-model">
-<h3><span class="section-number">48.6.1. </span>Instantiating the Model<a class="headerlink" href="#instantiating-the-model" title="Permalink to this heading">#</a></h3>
+<h3>Instantiating the Model<a class="headerlink" href="#instantiating-the-model" title="Permalink to this heading">#</a></h3>
 <p>To begin, we will use Keras’s <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/Sequential">Sequential</a> model class to instantiate an instance of a model that will have a series of layers that data will pass through in sequence:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
 
@@ -635,7 +574,7 @@ document.write(`
 </div>
 </section>
 <section id="creating-the-input-layer">
-<h3><span class="section-number">48.6.2. </span>Creating the Input Layer<a class="headerlink" href="#creating-the-input-layer" title="Permalink to this heading">#</a></h3>
+<h3>Creating the Input Layer<a class="headerlink" href="#creating-the-input-layer" title="Permalink to this heading">#</a></h3>
 <p>Next, we will add the input layer. This layer will be <em>densely connected</em>, meaning that each neuron in it, and its weights, will affect every neuron in the next layer. To do this with Keras, we use Keras’s <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense">Dense</a> layer class.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span>
 </pre></div>
@@ -648,21 +587,21 @@ document.write(`
 </div>
 </section>
 <section id="creating-the-hidden-layer">
-<h3><span class="section-number">48.6.3. </span>Creating the Hidden Layer<a class="headerlink" href="#creating-the-hidden-layer" title="Permalink to this heading">#</a></h3>
+<h3>Creating the Hidden Layer<a class="headerlink" href="#creating-the-hidden-layer" title="Permalink to this heading">#</a></h3>
 <p>Now we will add an additional densely connected layer. Again, much more will be said about these later, but for now know that these layers give the network more parameters to contribute towards its guesses, and therefore, more subtle opportunities for accurate learning:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span> <span class="o">=</span> <span class="mi">512</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
 <section id="creating-the-output-layer">
-<h3><span class="section-number">48.6.4. </span>Creating the Output Layer<a class="headerlink" href="#creating-the-output-layer" title="Permalink to this heading">#</a></h3>
+<h3>Creating the Output Layer<a class="headerlink" href="#creating-the-output-layer" title="Permalink to this heading">#</a></h3>
 <p>Finally, we will add an output layer. This layer uses the activation function <code class="docutils literal notranslate"><span class="pre">softmax</span></code> which will result in each of the layer’s values being a probability between 0 and 1 and will result in all the outputs of the layer adding to 1. In this case, since the network is to make a guess about a single image belonging to 1 of 10 possible categories, there will be 10 outputs. Each output gives the model’s guess (a probability) that the image belongs to that specific class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
 <section id="summarizing-the-model">
-<h3><span class="section-number">48.6.5. </span>Summarizing the Model<a class="headerlink" href="#summarizing-the-model" title="Permalink to this heading">#</a></h3>
+<h3>Summarizing the Model<a class="headerlink" href="#summarizing-the-model" title="Permalink to this heading">#</a></h3>
 <p>Keras provides the model instance method <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/summary">summary</a> which will print a readable summary of a model:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
@@ -670,7 +609,7 @@ document.write(`
 <p>Note the number of trainable parameters. Each of these can be adjusted during training and will contribute towards the trained model’s guesses.</p>
 </section>
 <section id="compiling-the-model">
-<h3><span class="section-number">48.6.6. </span>Compiling the Model<a class="headerlink" href="#compiling-the-model" title="Permalink to this heading">#</a></h3>
+<h3>Compiling the Model<a class="headerlink" href="#compiling-the-model" title="Permalink to this heading">#</a></h3>
 <p>Again, more details are to follow, but the final step we need to do before we can actually train our model with data is to <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/Sequential#compile">compile</a> it. Here we specify a <a class="reference external" href="https://developers.google.com/machine-learning/glossary#loss">loss function</a> which will be used for the model to understand how well it is performing during training. We also specify that we would like to track <code class="docutils literal notranslate"><span class="pre">accuracy</span></code> while the model trains:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 </pre></div>
@@ -678,7 +617,7 @@ document.write(`
 </section>
 </section>
 <section id="training-the-model">
-<h2><span class="section-number">48.7. </span>Training the Model<a class="headerlink" href="#training-the-model" title="Permalink to this heading">#</a></h2>
+<h2>Training the Model<a class="headerlink" href="#training-the-model" title="Permalink to this heading">#</a></h2>
 <p>Now that we have prepared training and validation data, and a model, it’s time to train our model with our training data, and verify it with its validation data.</p>
 <p>“Training a model with data” is often also called “fitting a model to data.” Put this latter way, it highlights that the shape of the model changes over time to more accurately understand the data that it is being given.</p>
 <p>When fitting (training) a model with Keras, we use the model’s <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit">fit</a> method. It expects the following arguments:</p>
@@ -695,7 +634,7 @@ document.write(`
 </pre></div>
 </div>
 <section id="observing-accuracy">
-<h3><span class="section-number">48.7.1. </span>Observing Accuracy<a class="headerlink" href="#observing-accuracy" title="Permalink to this heading">#</a></h3>
+<h3>Observing Accuracy<a class="headerlink" href="#observing-accuracy" title="Permalink to this heading">#</a></h3>
 <p>For each of the 5 epochs, notice the <code class="docutils literal notranslate"><span class="pre">accuracy</span></code> and <code class="docutils literal notranslate"><span class="pre">val_accuracy</span></code> scores. <code class="docutils literal notranslate"><span class="pre">accuracy</span></code> states how well the model did for the epoch on all the training data. <code class="docutils literal notranslate"><span class="pre">val_accuracy</span></code> states how well the model did on the validation data, which if you recall, was not used at all for training the model.</p>
 <p>The model did quite well! The accuracy quickly reached close to 100%, as did the validation accuracy. We now have a model that can be used to accurately detect and classify hand-written images.</p>
 <p>The next step would be to use this model to classify new not-yet-seen handwritten images. This is called <a class="reference external" href="https://blogs.nvidia.com/blog/2016/08/22/difference-deep-learning-training-inference-ai/">inference</a>.</p>
@@ -734,24 +673,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="16_workbook.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">47. </span>Unsupervised Learning Example - Folktale Clustering</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="18_workbook.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">49. </span>Reinforcement Learning Example - Tic Tac Toe</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -770,28 +691,28 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mnist-dataset">48.1. The MNIST Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validation-data-and-labels">48.2. Training and Validation Data and Labels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data-into-memory-with-keras">48.3. Loading the Data Into Memory (with Keras)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-mnist-data">48.4. Exploring the MNIST Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data-for-training">48.5. Preparing the Data for Training</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flattening-the-image-data">48.5.1. Flattening the Image Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizing-the-image-data">48.5.2. Normalizing the Image Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-encoding">48.5.3. Categorical Encoding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorically-encoding-the-labels">48.5.4. Categorically Encoding the Labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mnist-dataset">The MNIST Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-validation-data-and-labels">Training and Validation Data and Labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data-into-memory-with-keras">Loading the Data Into Memory (with Keras)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-mnist-data">Exploring the MNIST Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data-for-training">Preparing the Data for Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flattening-the-image-data">Flattening the Image Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizing-the-image-data">Normalizing the Image Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-encoding">Categorical Encoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorically-encoding-the-labels">Categorically Encoding the Labels</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-model">48.6. Creating the Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instantiating-the-model">48.6.1. Instantiating the Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-input-layer">48.6.2. Creating the Input Layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-hidden-layer">48.6.3. Creating the Hidden Layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-output-layer">48.6.4. Creating the Output Layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summarizing-the-model">48.6.5. Summarizing the Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-the-model">48.6.6. Compiling the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-model">Creating the Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instantiating-the-model">Instantiating the Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-input-layer">Creating the Input Layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-hidden-layer">Creating the Hidden Layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-output-layer">Creating the Output Layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summarizing-the-model">Summarizing the Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-the-model">Compiling the Model</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">48.7. Training the Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observing-accuracy">48.7.1. Observing Accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">Training the Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observing-accuracy">Observing Accuracy</a></li>
 </ul>
 </li>
 </ul>
