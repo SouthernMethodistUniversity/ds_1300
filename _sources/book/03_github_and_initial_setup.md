@@ -26,7 +26,9 @@ mamba env create -f environment.yml --force
 exit
 ```
 
-## Launching a JupyterLab Session and Accessing Your Notebooks
+## Launching a JupyterLab Session
+
+### Via Conda (Mamba) Environment
 
 1. Go to the [HPC Portal](https://hpc.m3.smu.edu) and log in.
 2. Select "Interactive Apps" and then "JupyterLab".
@@ -40,6 +42,36 @@ exit
 4. Select "Launch" and wait for the job and JupyterLab session to begin (this can take a few minutes).
 5. Select "Connect to JupyterLab", which will appear when the JupyterLab session has started.
 6. Select the "File Browser" icon at the top of the left sidebar and browse to your `ds_1300_notebooks` directory.
+
+### Via Container
+
+1. Go to the [HPC Portal](https://hpc.m3.smu.edu) and log in.
+2. Select "Interactive Apps" and then "JupyterLab".
+3. Set the fields to:
+  * "Partition": `standard-s`
+  * "Select Python Environment": `Custom Environment - only use what is specified below`
+  * "Custom environment settings":
+
+```bash
+module purge
+module use /work/classes/ds_1300/modules
+module load ds_1300
+```
+
+```{figure} ./images/container_env.png
+:name: Container Environment
+
+DS 1300 container environment.
+```
+
+  * "Time (Hours)" `4`
+  * "Timeout (minutes)": `60`
+  * "Cores per node": `4`
+  * "Memory": `16`
+4. Select "Launch" and wait for the job and JupyterLab session to begin (this can take a few minutes).
+5. Select "Connect to JupyterLab", which will appear when the JupyterLab session has started.
+6. Select the "File Browser" icon at the top of the left sidebar and browse to your `ds_1300_notebooks` directory.
+
 
 ## Working on Notebooks
 
