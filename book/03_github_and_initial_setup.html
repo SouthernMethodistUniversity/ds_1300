@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Introduction to GitHub and Getting Setup &#8212; DS 1300</title>
+    <title>Introduction to GitHub and Getting Setup &#8212; DS 1300</title>
   
   
   
@@ -64,8 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/03_github_and_initial_setup';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Data Science Overview" href="04_data_science.html" />
-    <link rel="prev" title="2. Using M3 for Class" href="02_using_hpc.html" />
+    <link rel="next" title="Data Science Overview" href="04_data_science.html" />
+    <link rel="prev" title="Using M3 for Class" href="02_using_hpc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,15 +152,15 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 1</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_hpc.html">1. Introduction to High-Performance Computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_using_hpc.html">2. Using M3 for Class</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Introduction to GitHub and Getting Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_hpc.html">Introduction to High-Performance Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_using_hpc.html">Using M3 for Class</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to GitHub and Getting Setup</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 2</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="04_data_science.html">4. Data Science Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_project.html">5. Semester Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/01_workbook.html">6. Introduction to Python Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_data_science.html">Data Science Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_project.html">Semester Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/01_workbook.html">Introduction to Python Programming</a></li>
 
 
 
@@ -169,10 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 3</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="10_pudding.html">12. The Pudding: Data Story Telling and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_pudding.html">The Pudding: Data Story Telling and Visualization</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../code/02_workbook.html">14. Working with Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/01_assignment.html">15. Introduction to Python Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/02_workbook.html">Working with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/01_assignment.html">Introduction to Python Programming</a></li>
 
 
 
@@ -324,22 +324,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-github">3.1. Getting Started with GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup-of-your-repository-and-python-environment">3.2. Initial Setup of Your Repository and Python Environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-a-jupyterlab-session">3.3. Launching a JupyterLab Session</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-conda-mamba-environment">3.3.1. Via Conda (Mamba) Environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-container">3.3.2. Via Container</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-github">Getting Started with GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup-of-your-repository-and-python-environment">Initial Setup of Your Repository and Python Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-a-jupyterlab-session">Launching a JupyterLab Session</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-conda-mamba-environment">Via Conda (Mamba) Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-container">Via Container</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-notebooks">3.4. Working on Notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulling-new-notebooks">3.5. Pulling New Notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-new-packages">3.6. Installing New Packages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-packages-via-pip">3.6.1. New Packages via <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-packages-via-requirements-txt">3.6.2. New Packages via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-notebooks">Working on Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulling-new-notebooks">Pulling New Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-new-packages">Installing New Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-packages-via-pip">New Packages via <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-packages-via-requirements-txt">New Packages via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-completed-assignments-via-github">3.7. Submitting Completed Assignments via GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-dr-godat-and-dr-kalescky-to-your-forked-github-repository">3.8. Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-completed-assignments-via-github">Submitting Completed Assignments via GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-dr-godat-and-dr-kalescky-to-your-forked-github-repository">Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository</a></li>
 </ul>
             </nav>
         </div>
@@ -352,16 +352,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-github-and-getting-setup">
-<h1><span class="section-number">3. </span>Introduction to GitHub and Getting Setup<a class="headerlink" href="#introduction-to-github-and-getting-setup" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to GitHub and Getting Setup<a class="headerlink" href="#introduction-to-github-and-getting-setup" title="Permalink to this heading">#</a></h1>
 <section id="getting-started-with-github">
-<h2><span class="section-number">3.1. </span>Getting Started with GitHub<a class="headerlink" href="#getting-started-with-github" title="Permalink to this heading">#</a></h2>
+<h2>Getting Started with GitHub<a class="headerlink" href="#getting-started-with-github" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://s2.smu.edu/hpc/workshops/2020/summer/git/">Version Control with Git</a></p></li>
 <li><p><a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github">Getting Started with GitHub</a></p></li>
 </ul>
 </section>
 <section id="initial-setup-of-your-repository-and-python-environment">
-<h2><span class="section-number">3.2. </span>Initial Setup of Your Repository and Python Environment<a class="headerlink" href="#initial-setup-of-your-repository-and-python-environment" title="Permalink to this heading">#</a></h2>
+<h2>Initial Setup of Your Repository and Python Environment<a class="headerlink" href="#initial-setup-of-your-repository-and-python-environment" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Go to the <a class="reference external" href="https://github.com/SouthernMethodistUniversity/ds_1300_notebooks">GitHub repository for our class Jupyter notebooks</a>.</p></li>
 <li><p>Select “Fork”. This will create a personal copy of the repository.</p></li>
@@ -383,9 +383,9 @@ mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> <
 </div>
 </section>
 <section id="launching-a-jupyterlab-session">
-<h2><span class="section-number">3.3. </span>Launching a JupyterLab Session<a class="headerlink" href="#launching-a-jupyterlab-session" title="Permalink to this heading">#</a></h2>
+<h2>Launching a JupyterLab Session<a class="headerlink" href="#launching-a-jupyterlab-session" title="Permalink to this heading">#</a></h2>
 <section id="via-conda-mamba-environment">
-<h3><span class="section-number">3.3.1. </span>Via Conda (Mamba) Environment<a class="headerlink" href="#via-conda-mamba-environment" title="Permalink to this heading">#</a></h3>
+<h3>Via Conda (Mamba) Environment<a class="headerlink" href="#via-conda-mamba-environment" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Go to the <a class="reference external" href="https://hpc.m3.smu.edu">HPC Portal</a> and log in.</p></li>
 <li><p>Select “Interactive Apps” and then “JupyterLab”.</p></li>
@@ -406,7 +406,7 @@ mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> <
 </ol>
 </section>
 <section id="via-container">
-<h3><span class="section-number">3.3.2. </span>Via Container<a class="headerlink" href="#via-container" title="Permalink to this heading">#</a></h3>
+<h3>Via Container<a class="headerlink" href="#via-container" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Go to the <a class="reference external" href="https://hpc.m3.smu.edu">HPC Portal</a> and log in.</p></li>
 <li><p>Select “Interactive Apps” and then “JupyterLab”.</p></li>
@@ -425,7 +425,7 @@ module<span class="w"> </span>load<span class="w"> </span>ds_1300
 <figure class="align-default" id="container-environment">
 <img alt="../_images/container_env.png" src="../_images/container_env.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">DS 1300 container environment.</span><a class="headerlink" href="#container-environment" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">DS 1300 container environment.</span><a class="headerlink" href="#container-environment" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -442,7 +442,7 @@ module<span class="w"> </span>load<span class="w"> </span>ds_1300
 </section>
 </section>
 <section id="working-on-notebooks">
-<h2><span class="section-number">3.4. </span>Working on Notebooks<a class="headerlink" href="#working-on-notebooks" title="Permalink to this heading">#</a></h2>
+<h2>Working on Notebooks<a class="headerlink" href="#working-on-notebooks" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Browser into “code” directory.</p></li>
 <li><p>Right-click on a notebook and select “Copy”.</p></li>
@@ -452,7 +452,7 @@ module<span class="w"> </span>load<span class="w"> </span>ds_1300
 </ol>
 </section>
 <section id="pulling-new-notebooks">
-<h2><span class="section-number">3.5. </span>Pulling New Notebooks<a class="headerlink" href="#pulling-new-notebooks" title="Permalink to this heading">#</a></h2>
+<h2>Pulling New Notebooks<a class="headerlink" href="#pulling-new-notebooks" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Save the notebook.</p></li>
 <li><p>Open a terminal session via “File”, “New”, “Terminal”.</p></li>
@@ -475,7 +475,7 @@ proceed with the fetch and merge steps.</p></li>
 </div>
 </section>
 <section id="installing-new-packages">
-<h2><span class="section-number">3.6. </span>Installing New Packages<a class="headerlink" href="#installing-new-packages" title="Permalink to this heading">#</a></h2>
+<h2>Installing New Packages<a class="headerlink" href="#installing-new-packages" title="Permalink to this heading">#</a></h2>
 <p>New Python packages can be installed allowing you to build upon the work of
 others. Both methods should be run from the Terminal from within the Jupyter
 Lab session. Installing packages directly via <code class="docutils literal notranslate"><span class="pre">pip</span></code> is the suggested procedure
@@ -487,14 +487,14 @@ from upstream.</p>
 <li><p>In the terminal session, type each command and press Enter after each line:</p></li>
 </ol>
 <section id="new-packages-via-pip">
-<h3><span class="section-number">3.6.1. </span>New Packages via <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#new-packages-via-pip" title="Permalink to this heading">#</a></h3>
+<h3>New Packages via <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#new-packages-via-pip" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ds_1300_notebooks</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">package_name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </section>
 <section id="new-packages-via-requirements-txt">
-<h3><span class="section-number">3.6.2. </span>New Packages via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#new-packages-via-requirements-txt" title="Permalink to this heading">#</a></h3>
+<h3>New Packages via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#new-packages-via-requirements-txt" title="Permalink to this heading">#</a></h3>
 <p>Before executing the following commands do the “Pulling New Notebooks” commands
 above first. This will make sure that you have the most recent version of the
 <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file available to you.</p>
@@ -505,7 +505,7 @@ above first. This will make sure that you have the most recent version of the
 </section>
 </section>
 <section id="submitting-completed-assignments-via-github">
-<h2><span class="section-number">3.7. </span>Submitting Completed Assignments via GitHub<a class="headerlink" href="#submitting-completed-assignments-via-github" title="Permalink to this heading">#</a></h2>
+<h2>Submitting Completed Assignments via GitHub<a class="headerlink" href="#submitting-completed-assignments-via-github" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Save the notebook.</p></li>
 <li><p>Open a terminal session via “File”, “New”, “Terminal”.</p></li>
@@ -521,7 +521,7 @@ above first. This will make sure that you have the most recent version of the
 </div>
 </section>
 <section id="add-dr-godat-and-dr-kalescky-to-your-forked-github-repository">
-<h2><span class="section-number">3.8. </span>Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository<a class="headerlink" href="#add-dr-godat-and-dr-kalescky-to-your-forked-github-repository" title="Permalink to this heading">#</a></h2>
+<h2>Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository<a class="headerlink" href="#add-dr-godat-and-dr-kalescky-to-your-forked-github-repository" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Log into GitHub</p></li>
 <li><p>Go to your ds_1300_notebooks repository</p></li>
@@ -574,7 +574,7 @@ above first. This will make sure that you have the most recent version of the
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Using M3 for Class</p>
+        <p class="prev-next-title">Using M3 for Class</p>
       </div>
     </a>
     <a class="right-next"
@@ -582,7 +582,7 @@ above first. This will make sure that you have the most recent version of the
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Data Science Overview</p>
+        <p class="prev-next-title">Data Science Overview</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -604,22 +604,22 @@ above first. This will make sure that you have the most recent version of the
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-github">3.1. Getting Started with GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup-of-your-repository-and-python-environment">3.2. Initial Setup of Your Repository and Python Environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-a-jupyterlab-session">3.3. Launching a JupyterLab Session</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-conda-mamba-environment">3.3.1. Via Conda (Mamba) Environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-container">3.3.2. Via Container</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-github">Getting Started with GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup-of-your-repository-and-python-environment">Initial Setup of Your Repository and Python Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-a-jupyterlab-session">Launching a JupyterLab Session</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-conda-mamba-environment">Via Conda (Mamba) Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-container">Via Container</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-notebooks">3.4. Working on Notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulling-new-notebooks">3.5. Pulling New Notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-new-packages">3.6. Installing New Packages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-packages-via-pip">3.6.1. New Packages via <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-packages-via-requirements-txt">3.6.2. New Packages via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-notebooks">Working on Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulling-new-notebooks">Pulling New Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-new-packages">Installing New Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-packages-via-pip">New Packages via <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-packages-via-requirements-txt">New Packages via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-completed-assignments-via-github">3.7. Submitting Completed Assignments via GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-dr-godat-and-dr-kalescky-to-your-forked-github-repository">3.8. Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-completed-assignments-via-github">Submitting Completed Assignments via GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-dr-godat-and-dr-kalescky-to-your-forked-github-repository">Add Dr. Godat and Dr. Kalescky to Your Forked GitHub Repository</a></li>
 </ul>
   </nav></div>
 
