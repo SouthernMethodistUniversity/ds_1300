@@ -24,10 +24,10 @@ when working with datasets.
   - False positives
 - Pictures Can Be Deceiving
   - Examples via [Finding Examples of Misleading and Deceptive Graphs](https://www.forbes.com/sites/naomirobbins/2012/03/13/finding-examples-of-misleading-and-deceptive-graphs/?sh=4b68872b73c6)
-  - ![What's wrong with this figue?](images/bad_figure_0.jpg)
-  - ![What's wrong with this figue?](images/bad_figure_1.jpg)
-  - ![What's wrong with this figue?](images/bad_figure_2.jpg)
-  - ![What's wrong with this figue?](images/bad_figure_3.png)
+  - ![What's wrong with this figure?](images/bad_figure_0.jpg)
+  - ![What's wrong with this figure?](images/bad_figure_1.jpg)
+  - ![What's wrong with this figure?](images/bad_figure_2.jpg)
+  - ![What's wrong with this figure?](images/bad_figure_3.png)
 - *Cum Hoc Ergo Propter Hoc*
   - Correlation is when two variables move via some relationship
     - Positive correlation when they move in the same direction
@@ -42,4 +42,25 @@ when working with datasets.
   - Convenience or accidental sampling
 - Context Matters
   - Statistics must be thought of in the wider context
+
+## Large Language Models
+
+Large language models (LLM) are machine-learned models trained on extremely
+large datasets through the process of deep learning. Generally, an LLM is
+distinguished from a standard language model by its conversational proficiency
+and reasoning capabilities.
+
+Notable LLMs include OpenAI's GPT-3, ChatGPT, and GPT-4, Google's Bard, and
+Meta's LLaMA. Microsoft's Bing Chat uses GPT-4.
+
+| Company | LLM Link | Notes |
+| ------- | -------- | ----- |
+| OpenAI  | [ChatGPT](https://chat.openai.com/) | Requires free account. |
+| Google  | [Bard](https://bard.google.com) | Requires free account. |
+| Microsoft | [Bing Chat](https://bing.com/chat) | Requires free account and the Microsoft Edge browser. |
+| Meta | [LLaMA](https://ai.facebook.com/blog/large-language-model-llama-meta-ai/) | Requires application to private beta. |
+
+Use of these models has prompted many discussions on how they can be used
+constructively, how they can be abused, and how to effectively manage their
+biases.
 
