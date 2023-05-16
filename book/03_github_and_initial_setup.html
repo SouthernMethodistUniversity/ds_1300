@@ -466,9 +466,10 @@ module<span class="w"> </span>load<span class="w"> </span>ds_1300
 <li><p>Open a terminal session via “File”, “New”, “Terminal”.</p></li>
 <li><p>In the terminal session, type each command and press Enter after each line:</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ds_1300_notebooks</span>
-<span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
-<span class="n">git</span> <span class="n">merge</span> <span class="n">upstream</span><span class="o">/</span><span class="n">main</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Merge from upstream.&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ds_1300_notebooks
+git fetch upstream
+git stash push -- $(&lt;.gitignore)
+git merge upstream/main -m &quot;Merge from upstream.&quot;
 </pre></div>
 </div>
 <div class="admonition note">

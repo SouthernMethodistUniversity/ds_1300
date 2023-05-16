@@ -90,6 +90,7 @@ DS 1300 container environment.
 ```
 cd ds_1300_notebooks
 git fetch upstream
+git stash push -- $(<.gitignore)
 git merge upstream/main -m "Merge from upstream."
 ```
 
