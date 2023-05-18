@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/07_workbook';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Dask Arrays" href="06_workbook.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,6 +189,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 5</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../book/09_modeling.html">Building Models with Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Day 6</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="05_workbook.html">Dask Delayed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_workbook.html">Dask Arrays</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dask DataFrames</a></li>
 </ul>
 
     </div>
@@ -405,7 +412,7 @@ document.write(`
 <p>We create artifical data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">dask</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;accounts.*.csv&#39;</span><span class="p">)</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/work/classes/ds_1300/data&#39;</span><span class="p">,</span> <span class="s1">&#39;accounts.*.csv&#39;</span><span class="p">)</span>
 <span class="n">filename</span>
 </pre></div>
 </div>
@@ -429,7 +436,7 @@ document.write(`
 <section id="real-data">
 <h3>Real Data<a class="headerlink" href="#real-data" title="Permalink to this heading">#</a></h3>
 <p>Lets try this with an extract of flights in the USA across several years. This data is specific to flights out of the three airports in the New York City area.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">),</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/work/classes/ds_1300/data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">),</span>
                  <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
 </pre></div>
 </div>
@@ -455,7 +462,7 @@ document.write(`
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">assume_missing</span></code> to make <code class="docutils literal notranslate"><span class="pre">dask</span></code> assume that columns inferred to be <code class="docutils literal notranslate"><span class="pre">int</span></code> (which don’t allow missing values) are actually floats (which do allow missing values). In our particular case this doesn’t apply.</p></li>
 </ul>
 <p>In our case we’ll use the first option and directly specify the <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> of the offending columns.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/hpc/classes/ds_1300_data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">),</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/work/classes/ds_1300/data&#39;</span><span class="p">,</span> <span class="s1">&#39;nycflights&#39;</span><span class="p">,</span> <span class="s1">&#39;*.csv&#39;</span><span class="p">),</span>
                  <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]},</span>
                  <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;TailNum&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                         <span class="s1">&#39;CRSElapsedTime&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
@@ -465,10 +472,20 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>  <span class="c1"># now works</span>
 </pre></div>
 </div>
+<!-- #region -->
 </section>
 </section>
 <section id="computations-with-dask-dataframe">
 <h2>Computations with <code class="docutils literal notranslate"><span class="pre">dask.dataframe</span></code><a class="headerlink" href="#computations-with-dask-dataframe" title="Permalink to this heading">#</a></h2>
+<p>We compute the maximum of the <code class="docutils literal notranslate"><span class="pre">DepDelay</span></code> column. With just pandas, we would loop over each file to find the individual maximums, then find the final maximum over all the individual maximums</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">maxes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    <span class="n">maxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+    
+<span class="n">final_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxes</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>We could wrap that <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> with <code class="docutils literal notranslate"><span class="pre">dask.delayed</span></code> so that it runs in parallel. Regardless, we’re still having to think about loops, intermediate results (one per file) and the final reduction (<code class="docutils literal notranslate"><span class="pre">max</span></code> of the intermediate maxes). This is just noise around the real task, which pandas solves with</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">DepDelay</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
@@ -735,6 +752,15 @@ than in Pandas because they include substantial shuffling of data, and may write
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="06_workbook.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Dask Arrays</p>
+      </div>
+    </a>
 </div></div>
   
 </div>

@@ -236,14 +236,14 @@ The computation we will parallelize is to compute the mean departure delay per a
 
 ```python
 import os
-sorted(os.listdir(os.path.join('/hpc/classes/ds_1300_data', 'nycflights')))
+sorted(os.listdir(os.path.join('/work/classes/ds_1300/data', 'nycflights')))
 ```
 
 ### Read one file with `pandas.read_csv` and compute mean departure delay
 
 ```python
 import pandas as pd
-df = pd.read_csv(os.path.join('/hpc/classes/ds_1300_data', 'nycflights', '1990.csv'))
+df = pd.read_csv(os.path.join('/work/classes/ds_1300/data', 'nycflights', '1990.csv'))
 df.head()
 ```
 
@@ -268,7 +268,7 @@ The above cell computes the mean departure delay per-airport for one year. Here 
 
 ```python
 from glob import glob
-filenames = sorted(glob(os.path.join('/hpc/classes/ds_1300_data', 'nycflights', '*.csv')))
+filenames = sorted(glob(os.path.join('/work/classes/ds_1300/data', 'nycflights', '*.csv')))
 ```
 
 ```python

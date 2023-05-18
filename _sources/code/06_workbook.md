@@ -57,7 +57,7 @@ We do exactly this with Python and NumPy in the following example:
 # this creates a pointer to the data, but does not actually load
 import h5py
 import os
-f = h5py.File(os.path.join('/hpc/classes/ds_1300_data', 'random.hdf5'), mode='r')
+f = h5py.File(os.path.join('/work/classes/ds_1300/data', 'random.hdf5'), mode='r')
 dset = f['/x']
 ```
 
@@ -266,7 +266,7 @@ import h5py
 from glob import glob
 import os
 
-filenames = sorted(glob(os.path.join('/hpc/classes/ds_1300_data', 'weather-big', '*.hdf5')))
+filenames = sorted(glob(os.path.join('/work/classes/ds_1300/data', 'weather-big', '*.hdf5')))
 dsets = [h5py.File(filename, mode='r')['/t2m'] for filename in filenames]
 dsets[0]
 ```
@@ -351,7 +351,7 @@ from glob import glob
 import os
 import dask.array as da
 
-filenames = sorted(glob(os.path.join('/hpc/classes/ds_1300_data', 'weather-big', '*.hdf5')))
+filenames = sorted(glob(os.path.join('/work/classes/ds_1300/data', 'weather-big', '*.hdf5')))
 dsets = [h5py.File(filename, mode='r')['/t2m'] for filename in filenames]
 
 arrays = [da.from_array(dset, chunks=(500, 500)) for dset in dsets]
