@@ -33,7 +33,7 @@ Greedy algorithms find approximate solutions, but are generaly fast at providing
 import numpy as np
 import pandas as pd
 import locale
-locale.setlocale(locale.LC_ALL, 'en_US')
+locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 datasets = {'small': (50, "small"), 'large': (100, "large"), 'very_large': (190, "very_large")}
 ```
 
